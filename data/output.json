@@ -1,0 +1,1623 @@
+{
+    "DTS:Executable": {
+        "@DTS:refId": "Package",
+        "@xmlns:DTS": "www.microsoft.com/SqlServer/Dts",
+        "@DTS:ExecutableType": "SSIS.Package.3",
+        "@DTS:CreatorName": "REDWOOD\\Barry",
+        "@DTS:CreatorComputerName": "REDWOOD",
+        "@DTS:CreationDate": "6/9/2012 4:03:57 PM",
+        "@DTS:PackageType": "5",
+        "@DTS:VersionBuild": "11",
+        "@DTS:VersionGUID": "{74F959A6-4940-4133-9CD5-CBECFEBB2996}",
+        "@DTS:LastModifiedProductVersion": "11.0.2100.60",
+        "@DTS:LocaleID": "1033",
+        "@DTS:ObjectName": "Lesson 6",
+        "@DTS:DTSID": "{D534E1F2-A91F-4CB7-84C7-674A974F7E68}",
+        "@DTS:CreationName": "SSIS.Package.3",
+        "DTS:Property": {
+            "@DTS:Name": "PackageFormatVersion",
+            "#text": "6"
+        },
+        "DTS:ConnectionManagers": {
+            "DTS:ConnectionManager": [
+                {
+                    "@DTS:refId": "Package.ConnectionManagers[Error Data]",
+                    "@DTS:ObjectName": "Error Data",
+                    "@DTS:DTSID": "{FDC75CF5-FA0C-40D6-9107-AEC033B4A81A}",
+                    "@DTS:CreationName": "FLATFILE",
+                    "DTS:ObjectData": {
+                        "DTS:ConnectionManager": {
+                            "@DTS:Format": "Delimited",
+                            "@DTS:LocaleID": "1033",
+                            "@DTS:HeaderRowDelimiter": "_x000D__x000A_",
+                            "@DTS:RowDelimiter": "",
+                            "@DTS:TextQualifier": "_x003C_none_x003E_",
+                            "@DTS:CodePage": "1252",
+                            "@DTS:ConnectionString": "C:\\Development\\SQL Projects\\1.SSIS Tutorial\\Logs\\ErrorOutput.txt",
+                            "DTS:FlatFileColumns": {
+                                "DTS:FlatFileColumn": [
+                                    {
+                                        "@DTS:ColumnType": "Delimited",
+                                        "@DTS:ColumnDelimiter": "_x002C_",
+                                        "@DTS:DataType": "4",
+                                        "@DTS:TextQualified": "True",
+                                        "@DTS:ObjectName": "AverageRate",
+                                        "@DTS:DTSID": "{1C2365F6-7097-400D-9784-B894E4D4FBC3}",
+                                        "@DTS:CreationName": ""
+                                    },
+                                    {
+                                        "@DTS:ColumnType": "Delimited",
+                                        "@DTS:ColumnDelimiter": "_x002C_",
+                                        "@DTS:MaximumWidth": "3",
+                                        "@DTS:DataType": "130",
+                                        "@DTS:TextQualified": "True",
+                                        "@DTS:ObjectName": "CurrencyID",
+                                        "@DTS:DTSID": "{1A72E7FC-EECC-4AEE-8EA2-C8D6722BBBCC}",
+                                        "@DTS:CreationName": ""
+                                    },
+                                    {
+                                        "@DTS:ColumnType": "Delimited",
+                                        "@DTS:ColumnDelimiter": "_x002C_",
+                                        "@DTS:DataType": "133",
+                                        "@DTS:TextQualified": "True",
+                                        "@DTS:ObjectName": "CurrencyDate",
+                                        "@DTS:DTSID": "{6D804B7E-D0B2-4669-A6B4-3C4BFD359095}",
+                                        "@DTS:CreationName": ""
+                                    },
+                                    {
+                                        "@DTS:ColumnType": "Delimited",
+                                        "@DTS:ColumnDelimiter": "_x002C_",
+                                        "@DTS:DataType": "4",
+                                        "@DTS:TextQualified": "True",
+                                        "@DTS:ObjectName": "EndOfDayRate",
+                                        "@DTS:DTSID": "{381D0533-FB97-40E3-827A-68A16AD8895A}",
+                                        "@DTS:CreationName": ""
+                                    },
+                                    {
+                                        "@DTS:ColumnType": "Delimited",
+                                        "@DTS:ColumnDelimiter": "_x002C_",
+                                        "@DTS:DataType": "3",
+                                        "@DTS:TextQualified": "True",
+                                        "@DTS:ObjectName": "ErrorCode",
+                                        "@DTS:DTSID": "{242D8EFF-D0BD-423F-A075-71F873BF0753}",
+                                        "@DTS:CreationName": ""
+                                    },
+                                    {
+                                        "@DTS:ColumnType": "Delimited",
+                                        "@DTS:ColumnDelimiter": "_x002C_",
+                                        "@DTS:DataType": "3",
+                                        "@DTS:TextQualified": "True",
+                                        "@DTS:ObjectName": "ErrorColumn",
+                                        "@DTS:DTSID": "{E3BFB205-193F-4D88-B1A8-52297AAFA541}",
+                                        "@DTS:CreationName": ""
+                                    },
+                                    {
+                                        "@DTS:ColumnType": "Delimited",
+                                        "@DTS:ColumnDelimiter": "_x000D__x000A_",
+                                        "@DTS:MaximumWidth": "50",
+                                        "@DTS:DataType": "130",
+                                        "@DTS:TextQualified": "True",
+                                        "@DTS:ObjectName": "ErrorDescription",
+                                        "@DTS:DTSID": "{72256548-15F3-425D-8CB3-AF12F3F20FC1}",
+                                        "@DTS:CreationName": ""
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "@DTS:refId": "Package.ConnectionManagers[localhost.AdventureWorksDW2012]",
+                    "@DTS:ObjectName": "localhost.AdventureWorksDW2012",
+                    "@DTS:DTSID": "{AD719B0E-7934-48F5-AB1C-B19CE70FF420}",
+                    "@DTS:CreationName": "OLEDB",
+                    "DTS:ObjectData": {
+                        "DTS:ConnectionManager": {
+                            "@DTS:ConnectionString": "Data Source=localhost;Initial Catalog=AdventureWorksDW2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;"
+                        }
+                    }
+                },
+                {
+                    "@DTS:refId": "Package.ConnectionManagers[Sample Flat File Source Data]",
+                    "@DTS:ObjectName": "Sample Flat File Source Data",
+                    "@DTS:DTSID": "{FDD6E63B-5B62-4696-A92E-8C4921EB1DC0}",
+                    "@DTS:CreationName": "FLATFILE",
+                    "DTS:PropertyExpression": {
+                        "@DTS:Name": "ConnectionString",
+                        "#text": "@[User::varFileName]"
+                    },
+                    "DTS:ObjectData": {
+                        "DTS:ConnectionManager": {
+                            "@DTS:Format": "Delimited",
+                            "@DTS:LocaleID": "1033",
+                            "@DTS:HeaderRowDelimiter": "_x000D__x000A_",
+                            "@DTS:RowDelimiter": "",
+                            "@DTS:TextQualifier": "_x003C_none_x003E_",
+                            "@DTS:CodePage": "1252",
+                            "DTS:FlatFileColumns": {
+                                "DTS:FlatFileColumn": [
+                                    {
+                                        "@DTS:ColumnType": "Delimited",
+                                        "@DTS:ColumnDelimiter": "_x0009_",
+                                        "@DTS:DataType": "4",
+                                        "@DTS:TextQualified": "True",
+                                        "@DTS:ObjectName": "AverageRate",
+                                        "@DTS:DTSID": "{294EA8A6-D7B0-487B-AEF4-EFA6C7E57EBD}",
+                                        "@DTS:CreationName": ""
+                                    },
+                                    {
+                                        "@DTS:ColumnType": "Delimited",
+                                        "@DTS:ColumnDelimiter": "_x0009_",
+                                        "@DTS:MaximumWidth": "3",
+                                        "@DTS:DataType": "130",
+                                        "@DTS:TextQualified": "True",
+                                        "@DTS:ObjectName": "CurrencyID",
+                                        "@DTS:DTSID": "{8320F0F5-375D-419D-8DFA-29D398D6D055}",
+                                        "@DTS:CreationName": ""
+                                    },
+                                    {
+                                        "@DTS:ColumnType": "Delimited",
+                                        "@DTS:ColumnDelimiter": "_x0009_",
+                                        "@DTS:DataType": "133",
+                                        "@DTS:TextQualified": "True",
+                                        "@DTS:ObjectName": "CurrencyDate",
+                                        "@DTS:DTSID": "{4500A0E9-2ABB-4480-B9CD-3AD073086608}",
+                                        "@DTS:CreationName": ""
+                                    },
+                                    {
+                                        "@DTS:ColumnType": "Delimited",
+                                        "@DTS:ColumnDelimiter": "_x000D__x000A_",
+                                        "@DTS:DataType": "4",
+                                        "@DTS:TextQualified": "True",
+                                        "@DTS:ObjectName": "EndOfDayRate",
+                                        "@DTS:DTSID": "{8C646F41-5173-4FD8-BEC1-1CF108ABD18D}",
+                                        "@DTS:CreationName": ""
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "@DTS:refId": "Package.ConnectionManagers[TutorialLog.log]",
+                    "@DTS:ObjectName": "TutorialLog.log",
+                    "@DTS:DTSID": "{FDA68993-119F-4F92-A6AA-9601649F3842}",
+                    "@DTS:CreationName": "FILE",
+                    "DTS:ObjectData": {
+                        "DTS:ConnectionManager": {
+                            "@DTS:FileUsageType": "1",
+                            "@DTS:ConnectionString": "C:\\Development\\SQL Projects\\1.SSIS Tutorial\\Logs\\TutorialLog.log"
+                        }
+                    }
+                }
+            ]
+        },
+        "DTS:LogProviders": {
+            "DTS:LogProvider": {
+                "@DTS:ConfigString": "TutorialLog.log",
+                "@DTS:ObjectName": "Lesson 3 Log File",
+                "@DTS:DTSID": "{44E695EC-2943-4E14-8FCD-B21AFC991780}",
+                "@DTS:Description": "Writes log entries for events to a CSV file",
+                "@DTS:CreationName": "DTS.LogProviderTextFile.3",
+                "DTS:ObjectData": {
+                    "InnerObject": null
+                }
+            }
+        },
+        "DTS:PackageParameters": {
+            "DTS:PackageParameter": {
+                "@DTS:DataType": "8",
+                "@DTS:ObjectName": "VarFolderName",
+                "@DTS:DTSID": "{A4661B60-0BA7-41AF-B82F-27E8293786AA}",
+                "@DTS:CreationName": "",
+                "DTS:Property": {
+                    "@DTS:Name": "ParameterValue",
+                    "@DTS:DataType": "8",
+                    "#text": "C:\\New Sample Data"
+                }
+            }
+        },
+        "DTS:Variables": {
+            "DTS:Variable": [
+                {
+                    "@DTS:Namespace": "User",
+                    "@DTS:IncludeInDebugDump": "2345",
+                    "@DTS:ObjectName": "varFileName",
+                    "@DTS:DTSID": "{49AD3083-51DB-4390-BD53-DE73C409ACAA}",
+                    "@DTS:CreationName": "",
+                    "DTS:VariableValue": {
+                        "@DTS:DataType": "8",
+                        "@xml:space": "preserve"
+                    }
+                },
+                {
+                    "@DTS:Expression": "@[$Package::VarFolderName]",
+                    "@DTS:EvaluateAsExpression": "True",
+                    "@DTS:Namespace": "User",
+                    "@DTS:IncludeInDebugDump": "2345",
+                    "@DTS:ObjectName": "varFolderName",
+                    "@DTS:DTSID": "{EA035300-B09F-4FDC-8CA2-557CD078D71E}",
+                    "@DTS:CreationName": "",
+                    "DTS:VariableValue": {
+                        "@DTS:DataType": "8",
+                        "#text": "C:\\New Sample Data"
+                    }
+                }
+            ]
+        },
+        "DTS:LoggingOptions": {
+            "@DTS:LoggingMode": "2",
+            "@DTS:FilterKind": "0"
+        },
+        "DTS:Executables": {
+            "DTS:Executable": {
+                "@DTS:refId": "Package\\Foreach File in Folder",
+                "@DTS:ExecutableType": "STOCK:FOREACHLOOP",
+                "@DTS:LocaleID": "-1",
+                "@DTS:ObjectName": "Foreach File in Folder",
+                "@DTS:DTSID": "{5C4C15B7-430B-4135-9817-A8BF10D61F9C}",
+                "@DTS:Description": "Foreach Loop Container",
+                "@DTS:CreationName": "STOCK:FOREACHLOOP",
+                "DTS:ForEachEnumerator": {
+                    "@DTS:ObjectName": "{54F1A788-AA25-4BCA-A7CA-2F3FA94F1331}",
+                    "@DTS:DTSID": "{54F1A788-AA25-4BCA-A7CA-2F3FA94F1331}",
+                    "@DTS:CreationName": "DTS.ForEachFileEnumerator.3",
+                    "DTS:PropertyExpression": {
+                        "@DTS:Name": "Directory",
+                        "#text": "@[User::varFolderName]"
+                    },
+                    "DTS:ObjectData": {
+                        "ForEachFileEnumeratorProperties": {
+                            "FEFEProperty": [
+                                {
+                                    "@Folder": "C:\\New Sample Data"
+                                },
+                                {
+                                    "@FileSpec": "Currency_*.txt"
+                                },
+                                {
+                                    "@FileNameRetrievalType": "0"
+                                },
+                                {
+                                    "@Recurse": "0"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "DTS:Variables": null,
+                "DTS:LoggingOptions": {
+                    "@DTS:LoggingMode": "2",
+                    "@DTS:FilterKind": "0"
+                },
+                "DTS:Executables": {
+                    "DTS:Executable": {
+                        "@DTS:refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data",
+                        "@DTS:ExecutableType": "SSIS.Pipeline.3",
+                        "@DTS:TaskContact": "Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1",
+                        "@DTS:LocaleID": "-1",
+                        "@DTS:ObjectName": "Extract Sample Currency Data",
+                        "@DTS:DTSID": "{47530AEE-AD5E-4150-BF94-9EB43088B9D8}",
+                        "@DTS:Description": "Data Flow Task",
+                        "@DTS:CreationName": "SSIS.Pipeline.3",
+                        "DTS:Variables": null,
+                        "DTS:LoggingOptions": {
+                            "@DTS:LoggingMode": "1",
+                            "@DTS:FilterKind": "0",
+                            "DTS:Property": [
+                                {
+                                    "@DTS:Name": "EventFilter",
+                                    "@DTS:DataType": "8",
+                                    "#text": "2,21,PipelineExecutionPlan,22,PipelineExecutionTrees"
+                                },
+                                {
+                                    "@DTS:Name": "ColumnFilter",
+                                    "@DTS:EventName": "PipelineExecutionPlan",
+                                    "DTS:Property": [
+                                        {
+                                            "@DTS:Name": "Computer",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "Operator",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "SourceName",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "SourceID",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "ExecutionID",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "MessageText",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "DataBytes",
+                                            "#text": "-1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "@DTS:Name": "ColumnFilter",
+                                    "@DTS:EventName": "PipelineExecutionTrees",
+                                    "DTS:Property": [
+                                        {
+                                            "@DTS:Name": "Computer",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "Operator",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "SourceName",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "SourceID",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "ExecutionID",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "MessageText",
+                                            "#text": "-1"
+                                        },
+                                        {
+                                            "@DTS:Name": "DataBytes",
+                                            "#text": "-1"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "DTS:SelectedLogProviders": {
+                                "DTS:SelectedLogProvider": {
+                                    "@DTS:InstanceID": "{44E695EC-2943-4E14-8FCD-B21AFC991780}"
+                                }
+                            }
+                        },
+                        "DTS:ObjectData": {
+                            "pipeline": {
+                                "@version": "1",
+                                "components": {
+                                    "component": [
+                                        {
+                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data",
+                                            "@name": "Extract Sample Currency Data",
+                                            "@componentClassID": "{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}",
+                                            "@description": "Flat File Source",
+                                            "@localeId": "1033",
+                                            "@usesDispositions": "true",
+                                            "@version": "1",
+                                            "@contactInfo": "Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1",
+                                            "properties": {
+                                                "property": [
+                                                    {
+                                                        "@name": "RetainNulls",
+                                                        "@dataType": "System.Boolean",
+                                                        "@description": "Specifies whether zero-length columns are treated as null.",
+                                                        "#text": "false"
+                                                    },
+                                                    {
+                                                        "@name": "FileNameColumnName",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                                                    }
+                                                ]
+                                            },
+                                            "connections": {
+                                                "connection": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Connections[FlatFileConnection]",
+                                                    "@name": "FlatFileConnection",
+                                                    "@connectionManagerID": "Package.ConnectionManagers[Sample Flat File Source Data]",
+                                                    "@connectionManagerRefId": "Package.ConnectionManagers[Sample Flat File Source Data]"
+                                                }
+                                            },
+                                            "outputs": {
+                                                "output": [
+                                                    {
+                                                        "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output]",
+                                                        "@name": "Flat File Source Output",
+                                                        "outputColumns": {
+                                                            "outputColumn": [
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[AverageRate]",
+                                                                    "@name": "AverageRate",
+                                                                    "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[AverageRate]",
+                                                                    "@dataType": "r4",
+                                                                    "@errorOrTruncationOperation": "Conversion",
+                                                                    "@errorRowDisposition": "FailComponent",
+                                                                    "@truncationRowDisposition": "FailComponent",
+                                                                    "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].ExternalColumns[AverageRate]",
+                                                                    "properties": {
+                                                                        "property": [
+                                                                            {
+                                                                                "@name": "FastParse",
+                                                                                "@dataType": "System.Boolean",
+                                                                                "@description": "Indicates whether the column uses the faster, locale-neutral parsing routines.",
+                                                                                "#text": "false"
+                                                                            },
+                                                                            {
+                                                                                "@name": "UseBinaryFormat",
+                                                                                "@dataType": "System.Boolean",
+                                                                                "@description": "Indicates whether the data is in binary format.",
+                                                                                "#text": "false"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[CurrencyID]",
+                                                                    "@name": "CurrencyID",
+                                                                    "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[CurrencyID]",
+                                                                    "@length": "3",
+                                                                    "@dataType": "wstr",
+                                                                    "@errorOrTruncationOperation": "Conversion",
+                                                                    "@errorRowDisposition": "FailComponent",
+                                                                    "@truncationRowDisposition": "FailComponent",
+                                                                    "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].ExternalColumns[CurrencyID]",
+                                                                    "properties": {
+                                                                        "property": [
+                                                                            {
+                                                                                "@name": "FastParse",
+                                                                                "@dataType": "System.Boolean",
+                                                                                "@description": "Indicates whether the column uses the faster, locale-neutral parsing routines.",
+                                                                                "#text": "false"
+                                                                            },
+                                                                            {
+                                                                                "@name": "UseBinaryFormat",
+                                                                                "@dataType": "System.Boolean",
+                                                                                "@description": "Indicates whether the data is in binary format.",
+                                                                                "#text": "false"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[CurrencyDate]",
+                                                                    "@name": "CurrencyDate",
+                                                                    "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[CurrencyDate]",
+                                                                    "@dataType": "dbDate",
+                                                                    "@errorOrTruncationOperation": "Conversion",
+                                                                    "@errorRowDisposition": "FailComponent",
+                                                                    "@truncationRowDisposition": "FailComponent",
+                                                                    "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].ExternalColumns[CurrencyDate]",
+                                                                    "properties": {
+                                                                        "property": [
+                                                                            {
+                                                                                "@name": "FastParse",
+                                                                                "@dataType": "System.Boolean",
+                                                                                "@description": "Indicates whether the column uses the faster, locale-neutral parsing routines.",
+                                                                                "#text": "false"
+                                                                            },
+                                                                            {
+                                                                                "@name": "UseBinaryFormat",
+                                                                                "@dataType": "System.Boolean",
+                                                                                "@description": "Indicates whether the data is in binary format.",
+                                                                                "#text": "false"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[EndOfDayRate]",
+                                                                    "@name": "EndOfDayRate",
+                                                                    "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[EndOfDayRate]",
+                                                                    "@dataType": "r4",
+                                                                    "@errorOrTruncationOperation": "Conversion",
+                                                                    "@errorRowDisposition": "FailComponent",
+                                                                    "@truncationRowDisposition": "FailComponent",
+                                                                    "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].ExternalColumns[EndOfDayRate]",
+                                                                    "properties": {
+                                                                        "property": [
+                                                                            {
+                                                                                "@name": "FastParse",
+                                                                                "@dataType": "System.Boolean",
+                                                                                "@description": "Indicates whether the column uses the faster, locale-neutral parsing routines.",
+                                                                                "#text": "false"
+                                                                            },
+                                                                            {
+                                                                                "@name": "UseBinaryFormat",
+                                                                                "@dataType": "System.Boolean",
+                                                                                "@description": "Indicates whether the data is in binary format.",
+                                                                                "#text": "false"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "externalMetadataColumns": {
+                                                            "@isUsed": "True",
+                                                            "externalMetadataColumn": [
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].ExternalColumns[AverageRate]",
+                                                                    "@name": "AverageRate",
+                                                                    "@dataType": "r4"
+                                                                },
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].ExternalColumns[CurrencyID]",
+                                                                    "@name": "CurrencyID",
+                                                                    "@dataType": "wstr",
+                                                                    "@length": "3"
+                                                                },
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].ExternalColumns[CurrencyDate]",
+                                                                    "@name": "CurrencyDate",
+                                                                    "@dataType": "dbDate"
+                                                                },
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].ExternalColumns[EndOfDayRate]",
+                                                                    "@name": "EndOfDayRate",
+                                                                    "@dataType": "r4"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Error Output]",
+                                                        "@name": "Flat File Source Error Output",
+                                                        "@isErrorOut": "true",
+                                                        "outputColumns": {
+                                                            "outputColumn": [
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]",
+                                                                    "@name": "Flat File Source Error Output Column",
+                                                                    "@description": "Flat File Source Error Output Column",
+                                                                    "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]",
+                                                                    "@dataType": "text",
+                                                                    "@codePage": "1252"
+                                                                },
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Error Output].Columns[ErrorCode]",
+                                                                    "@name": "ErrorCode",
+                                                                    "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Error Output].Columns[ErrorCode]",
+                                                                    "@dataType": "i4",
+                                                                    "@specialFlags": "1"
+                                                                },
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]",
+                                                                    "@name": "ErrorColumn",
+                                                                    "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]",
+                                                                    "@dataType": "i4",
+                                                                    "@specialFlags": "2"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "externalMetadataColumns": null
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows",
+                                            "@name": "Failed Rows",
+                                            "@componentClassID": "{8DA75FED-1B7C-407D-B2AD-2B24209CCCA4}",
+                                            "@description": "Flat File Destination",
+                                            "@localeId": "1033",
+                                            "@contactInfo": "Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0",
+                                            "properties": {
+                                                "property": [
+                                                    {
+                                                        "@name": "Overwrite",
+                                                        "@dataType": "System.Boolean",
+                                                        "@description": "Specifies whether the data will overwrite or append to the destination file.",
+                                                        "#text": "false"
+                                                    },
+                                                    {
+                                                        "@name": "Header",
+                                                        "@dataType": "System.Null",
+                                                        "@description": "Specifies the text to write to the destination file before any data is written.",
+                                                        "@expressionType": "Notify"
+                                                    }
+                                                ]
+                                            },
+                                            "connections": {
+                                                "connection": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Connections[FlatFileConnection]",
+                                                    "@name": "FlatFileConnection",
+                                                    "@connectionManagerID": "Package.ConnectionManagers[Error Data]",
+                                                    "@connectionManagerRefId": "Package.ConnectionManagers[Error Data]"
+                                                }
+                                            },
+                                            "inputs": {
+                                                "input": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input]",
+                                                    "@name": "Flat File Destination Input",
+                                                    "@hasSideEffects": "true",
+                                                    "inputColumns": {
+                                                        "inputColumn": [
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].Columns[AverageRate]",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[AverageRate]",
+                                                                "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[AverageRate]",
+                                                                "@cachedName": "AverageRate",
+                                                                "@cachedDataType": "r4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].Columns[CurrencyID]",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[CurrencyID]",
+                                                                "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[CurrencyID]",
+                                                                "@cachedName": "CurrencyID",
+                                                                "@cachedDataType": "wstr",
+                                                                "@cachedLength": "3"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].Columns[CurrencyDate]",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[CurrencyDate]",
+                                                                "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[CurrencyDate]",
+                                                                "@cachedName": "CurrencyDate",
+                                                                "@cachedDataType": "dbDate"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].Columns[EndOfDayRate]",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[EndOfDayRate]",
+                                                                "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[EndOfDayRate]",
+                                                                "@cachedName": "EndOfDayRate",
+                                                                "@cachedDataType": "r4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].Columns[ErrorCode]",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Error Output].Columns[ErrorCode]",
+                                                                "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]",
+                                                                "@cachedName": "ErrorCode",
+                                                                "@cachedDataType": "i4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].Columns[ErrorColumn]",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Error Output].Columns[ErrorColumn]",
+                                                                "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]",
+                                                                "@cachedName": "ErrorColumn",
+                                                                "@cachedDataType": "i4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].Columns[ErrorDescription]",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Get Error Description.Outputs[Output 0].Columns[ErrorDescription]",
+                                                                "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]",
+                                                                "@cachedName": "ErrorDescription",
+                                                                "@cachedDataType": "wstr",
+                                                                "@cachedLength": "50"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "externalMetadataColumns": {
+                                                        "@isUsed": "True",
+                                                        "externalMetadataColumn": [
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[AverageRate]",
+                                                                "@name": "AverageRate",
+                                                                "@dataType": "r4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[CurrencyID]",
+                                                                "@name": "CurrencyID",
+                                                                "@dataType": "wstr",
+                                                                "@length": "3"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[CurrencyDate]",
+                                                                "@name": "CurrencyDate",
+                                                                "@dataType": "dbDate"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[EndOfDayRate]",
+                                                                "@name": "EndOfDayRate",
+                                                                "@dataType": "r4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]",
+                                                                "@name": "ErrorCode",
+                                                                "@dataType": "i4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]",
+                                                                "@name": "ErrorColumn",
+                                                                "@dataType": "i4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input].ExternalColumns[ErrorDescription]",
+                                                                "@name": "ErrorDescription",
+                                                                "@dataType": "wstr",
+                                                                "@length": "50"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Get Error Description",
+                                            "@name": "Get Error Description",
+                                            "@componentClassID": "{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}",
+                                            "@description": "Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an \"income\" column or add values in two columns and calculate the average of the sum.",
+                                            "@version": "8",
+                                            "@contactInfo": "Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an \"income\" column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;8",
+                                            "properties": {
+                                                "property": [
+                                                    {
+                                                        "@name": "SourceCode",
+                                                        "@state": "cdata",
+                                                        "@dataType": "System.String",
+                                                        "@isArray": "true",
+                                                        "@description": "Stores the source code of the component",
+                                                        "arrayElements": {
+                                                            "@arrayElementCount": "30",
+                                                            "arrayElement": [
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "Properties\\Resources.resx"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "UTF8"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<root>\n  <!-- \n    Microsoft ResX Schema \n    \n    Version 2.0\n    \n    The primary goals of this format is to allow a simple XML format \n    that is mostly human readable. The generation and parsing of the \n    various data types are done through the TypeConverter classes \n    associated with the data types.\n    \n    Example:\n    \n    ... ado.net/XML headers & schema ...\n    <resheader name=\"resmimetype\">text/microsoft-resx</resheader>\n    <resheader name=\"version\">2.0</resheader>\n    <resheader name=\"reader\">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>\n    <resheader name=\"writer\">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>\n    <data name=\"Name1\"><value>this is my long string</value><comment>this is a comment</comment></data>\n    <data name=\"Color1\" type=\"System.Drawing.Color, System.Drawing\">Blue</data>\n    <data name=\"Bitmap1\" mimetype=\"application/x-microsoft.net.object.binary.base64\">\n        <value>[base64 mime encoded serialized .NET Framework object]</value>\n    </data>\n    <data name=\"Icon1\" type=\"System.Drawing.Icon, System.Drawing\" mimetype=\"application/x-microsoft.net.object.bytearray.base64\">\n        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>\n        <comment>This is a comment</comment>\n    </data>\n                \n    There are any number of \"resheader\" rows that contain simple \n    name/value pairs.\n    \n    Each data row contains a name, and value. The row also contains a \n    type or mimetype. Type corresponds to a .NET class that support \n    text/value conversion through the TypeConverter architecture. \n    Classes that don't support this are serialized and stored with the \n    mimetype set.\n    \n    The mimetype is used for serialized objects, and tells the \n    ResXResourceReader how to depersist the object. This is currently not \n    extensible. For a given mimetype the value must be set accordingly:\n    \n    Note - application/x-microsoft.net.object.binary.base64 is the format \n    that the ResXResourceWriter will generate, however the reader can \n    read any of the formats listed below.\n    \n    mimetype: application/x-microsoft.net.object.binary.base64\n    value   : The object must be serialized with \n            : System.Serialization.Formatters.Binary.BinaryFormatter\n            : and then encoded with base64 encoding.\n    \n    mimetype: application/x-microsoft.net.object.soap.base64\n    value   : The object must be serialized with \n            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter\n            : and then encoded with base64 encoding.\n\n    mimetype: application/x-microsoft.net.object.bytearray.base64\n    value   : The object must be serialized into a byte array \n            : using a System.ComponentModel.TypeConverter\n            : and then encoded with base64 encoding.\n    -->\n  <xsd:schema id=\"root\" xmlns=\"\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\">\n    <xsd:element name=\"root\" msdata:IsDataSet=\"true\">\n      <xsd:complexType>\n        <xsd:choice maxOccurs=\"unbounded\">\n          <xsd:element name=\"metadata\">\n            <xsd:complexType>\n              <xsd:sequence>\n                <xsd:element name=\"value\" type=\"xsd:string\" minOccurs=\"0\" />\n              </xsd:sequence>\n              <xsd:attribute name=\"name\" type=\"xsd:string\" />\n              <xsd:attribute name=\"type\" type=\"xsd:string\" />\n              <xsd:attribute name=\"mimetype\" type=\"xsd:string\" />\n            </xsd:complexType>\n          </xsd:element>\n          <xsd:element name=\"assembly\">\n            <xsd:complexType>\n              <xsd:attribute name=\"alias\" type=\"xsd:string\" />\n              <xsd:attribute name=\"name\" type=\"xsd:string\" />\n            </xsd:complexType>\n          </xsd:element>\n          <xsd:element name=\"data\">\n            <xsd:complexType>\n              <xsd:sequence>\n                <xsd:element name=\"value\" type=\"xsd:string\" minOccurs=\"0\" msdata:Ordinal=\"1\" />\n                <xsd:element name=\"comment\" type=\"xsd:string\" minOccurs=\"0\" msdata:Ordinal=\"2\" />\n              </xsd:sequence>\n              <xsd:attribute name=\"name\" type=\"xsd:string\" msdata:Ordinal=\"1\" />\n              <xsd:attribute name=\"type\" type=\"xsd:string\" msdata:Ordinal=\"3\" />\n              <xsd:attribute name=\"mimetype\" type=\"xsd:string\" msdata:Ordinal=\"4\" />\n            </xsd:complexType>\n          </xsd:element>\n          <xsd:element name=\"resheader\">\n            <xsd:complexType>\n              <xsd:sequence>\n                <xsd:element name=\"value\" type=\"xsd:string\" minOccurs=\"0\" msdata:Ordinal=\"1\" />\n              </xsd:sequence>\n              <xsd:attribute name=\"name\" type=\"xsd:string\" use=\"required\" />\n            </xsd:complexType>\n          </xsd:element>\n        </xsd:choice>\n      </xsd:complexType>\n    </xsd:element>\n  </xsd:schema>\n  <resheader name=\"resmimetype\">\n    <value>text/microsoft-resx</value>\n  </resheader>\n  <resheader name=\"version\">\n    <value>2.0</value>\n  </resheader>\n  <resheader name=\"reader\">\n    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>\n  </resheader>\n  <resheader name=\"writer\">\n    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>\n  </resheader>\n</root>"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "main.cs"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "UTF8"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "#region Help:  Introduction to the Script Component\n/* The Script Component allows you to perform virtually any operation that can be accomplished in\n * a .Net application within the context of an Integration Services data flow.\n *\n * Expand the other regions which have \"Help\" prefixes for examples of specific ways to use\n * Integration Services features within this script component. */\n#endregion\n\n#region Namespaces\nusing System;\nusing System.Data;\nusing Microsoft.SqlServer.Dts.Pipeline.Wrapper;\nusing Microsoft.SqlServer.Dts.Runtime.Wrapper;\n#endregion\n\n/// <summary>\n/// This is the class to which to add your code.  Do not change the name, attributes, or parent\n/// of this class.\n/// </summary>\n[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]\npublic class ScriptMain : UserComponent\n{\n    #region Help:  Using Integration Services variables and parameters\n    /* To use a variable in this script, first ensure that the variable has been added to\n     * either the list contained in the ReadOnlyVariables property or the list contained in\n     * the ReadWriteVariables property of this script component, according to whether or not your\n     * code needs to write into the variable.  To do so, save this script, close this instance of\n     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the\n     * Script Transformation Editor window.\n     * To use a parameter in this script, follow the same steps. Parameters are always read-only.\n     *\n     * Example of reading from a variable or parameter:\n     *  DateTime startTime = Variables.MyStartTime;\n     *\n     * Example of writing to a variable:\n     *  Variables.myStringVariable = \"new value\";\n     */\n    #endregion\n\n    #region Help:  Using Integration Services Connnection Managers\n    /* Some types of connection managers can be used in this script component.  See the help topic\n     * \"Working with Connection Managers Programatically\" for details.\n     *\n     * To use a connection manager in this script, first ensure that the connection manager has\n     * been added to either the list of connection managers on the Connection Managers page of the\n     * script component editor.  To add the connection manager, save this script, close this instance of\n     * Visual Studio, and add the Connection Manager to the list.\n     *\n     * If the component needs to hold a connection open while processing rows, override the\n     * AcquireConnections and ReleaseConnections methods.\n     * \n     * Example of using an ADO.Net connection manager to acquire a SqlConnection:\n     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);\n     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;\n     *\n     * Example of using a File connection manager to acquire a file path:\n     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);\n     *  string filePath = (string)rawConnection;\n     *\n     * Example of releasing a connection manager:\n     *  Connections.SalesDB.ReleaseConnection(rawConnection);\n     */\n    #endregion\n\n    #region Help:  Firing Integration Services Events\n    /* This script component can fire events.\n     *\n     * Example of firing an error event:\n     *  ComponentMetaData.FireError(10, \"Process Values\", \"Bad value\", \"\", 0, out cancel);\n     *\n     * Example of firing an information event:\n     *  ComponentMetaData.FireInformation(10, \"Process Values\", \"Processing has started\", \"\", 0, fireAgain);\n     *\n     * Example of firing a warning event:\n     *  ComponentMetaData.FireWarning(10, \"Process Values\", \"No rows were received\", \"\", 0);\n     */\n    #endregion\n\n    /// <summary>\n    /// This method is called once, before rows begin to be processed in the data flow.\n    ///\n    /// You can remove this method if you don't need to do anything here.\n    /// </summary>\n    public override void PreExecute()\n    {\n        base.PreExecute();\n        /*\n         * Add your code here\n         */\n    }\n\n    /// <summary>\n    /// This method is called after all the rows have passed through this component.\n    ///\n    /// You can delete this method if you don't need to do anything here.\n    /// </summary>\n    public override void PostExecute()\n    {\n        base.PostExecute();\n        /*\n         * Add your code here\n         */\n    }\n\n    /// <summary>\n    /// This method is called once for every row that passes through the component from Input0.\n    ///\n    /// Example of reading a value from a column in the the row:\n    ///  string zipCode = Row.ZipCode\n    ///\n    /// Example of writing a value to a column in the row:\n    ///  Row.ZipCode = zipCode\n    /// </summary>\n    /// <param name=\"Row\">The row that is currently passing through the component</param>\n    public override void Input0_ProcessInputRow(Input0Buffer Row)\n    {\n      Row.ErrorDescription = this.ComponentMetaData.GetErrorDescription(Row.ErrorCode);\n    }\n\n}"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "SC_f3f66d9f8ff5447a98949db6594769ca.csproj"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "UTF8"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\n  <PropertyGroup>\n    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>\n    <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\n    <Platform Condition=\" '$(Platform)' == '' \">AnyCPU</Platform>\n    <ProductVersion>8.0.30703</ProductVersion>\n    <SchemaVersion>2.0</SchemaVersion>\n    <ProjectGuid>{20CD423A-D4B9-4DBC-849C-095C032D8F8F}</ProjectGuid>\n    <OutputType>Library</OutputType>\n    <AppDesignerFolder>Properties</AppDesignerFolder>\n    <RootNamespace>SC_f3f66d9f8ff5447a98949db6594769ca</RootNamespace>\n    <AssemblyName>SC_f3f66d9f8ff5447a98949db6594769ca</AssemblyName>\n    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>\n    <FileAlignment>512</FileAlignment>\n  </PropertyGroup>\n  <PropertyGroup Condition=\" '$(Configuration)' == 'Debug' \">\n    <DebugSymbols>true</DebugSymbols>\n    <DebugType>full</DebugType>\n    <Optimize>false</Optimize>\n    <OutputPath>.\\bin\\Debug\\</OutputPath>\n    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <PropertyGroup Condition=\" '$(Configuration)' == 'Release' \">\n    <DebugSymbols>false</DebugSymbols>\n    <Optimize>true</Optimize>\n    <OutputPath>.\\bin\\Release\\</OutputPath>\n    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>\n    <DefineConstants>TRACE</DefineConstants>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <ItemGroup>\n    <Reference Include=\"System\" />\n    <Reference Include=\"System.Data\" />\n    <Reference Include=\"System.Windows.Forms\" />\n    <Reference Include=\"System.Xml\" />\n    <Reference Include=\"Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91\" />\n    <Reference Include=\"Microsoft.SqlServer.DTSRuntimeWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91\" />\n    <Reference Include=\"Microsoft.SqlServer.DTSPipelineWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91\" />\n    <Reference Include=\"Microsoft.SqlServer.PipelineHost, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91\" />\n    <Compile Include=\"main.cs\" />\n    <Compile Include=\"BufferWrapper.cs\" />\n    <Compile Include=\"ComponentWrapper.cs\" />\n  </ItemGroup>\n  <ItemGroup>\n    <AppDesigner Include=\"Properties\\\" />\n    <Compile Include=\"Properties\\AssemblyInfo.cs\">\n      <SubType>Code</SubType>\n    </Compile>\n    <EmbeddedResource Include=\"Properties\\Resources.resx\">\n      <Generator>ResXFileCodeGenerator</Generator>\n      <LastGenOutput>Resources.Designer.cs</LastGenOutput>\n    </EmbeddedResource>\n    <Compile Include=\"Properties\\Resources.Designer.cs\">\n      <AutoGen>True</AutoGen>\n      <DependentUpon>Resources.resx</DependentUpon>\n    </Compile>\n    <None Include=\"Properties\\Settings.settings\">\n      <Generator>SettingsSingleFileGenerator</Generator>\n      <LastGenOutput>Settings.Designer.cs</LastGenOutput>\n    </None>\n    <Compile Include=\"Properties\\Settings.Designer.cs\">\n      <AutoGen>True</AutoGen>\n      <DependentUpon>Settings.settings</DependentUpon>\n    </Compile>\n  </ItemGroup>\n  <!-- Include the build rules for a C# project.-->\n  <Import Project=\"$(MSBuildBinPath)\\Microsoft.CSharp.targets\" />\n  <!-- This section defines VSTA properties that describe the host-changable project properties. -->\n  <ProjectExtensions>\n    <VisualStudio>\n      <FlavorProperties GUID=\"{30D016F9-3734-4E33-A861-5E7D899E18F3}\">\n        <ProjectProperties HostName=\"VSTAHostName\" HostPackage=\"{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}\" ApplicationType=\"usd\" Language=\"cs\" TemplatesPath=\"\" />\n        <Host Name=\"ScriptComponent\" IconIndex=\"0\" />\n        <ProjectClient>\n          <HostIdentifier>SSIS_SC110</HostIdentifier>\n        </ProjectClient>\n      </FlavorProperties>\n    </VisualStudio>\n  </ProjectExtensions>\n</Project>"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "ComponentWrapper.cs"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "UTF8"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!\n*  Microsoft SQL Server Integration Services component wrapper\n*  This module defines the base class for your component\n*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */\n\nusing System;\nusing System.Data;\nusing Microsoft.SqlServer.Dts.Pipeline;\nusing Microsoft.SqlServer.Dts.Pipeline.Wrapper;\nusing Microsoft.SqlServer.Dts.Runtime.Wrapper;\n\npublic class UserComponent: ScriptComponent\n{\n    public Connections Connections;\n    public Variables Variables;\n    public UserComponent()\n    {\n        Connections = new Connections(this);\n        Variables = new Variables(this);\n    }\n\n    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)\n    {\n\n        if (InputName.Equals(@\"Input 0\", StringComparison.Ordinal))\n        {\n            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));\n        }\n\n    }\n\n    public virtual void Input0_ProcessInput(Input0Buffer Buffer)\n    {\n        while (Buffer.NextRow())\n        {\n            Input0_ProcessInputRow(Buffer);\n        }\n    }\n\n    public virtual void Input0_ProcessInputRow(Input0Buffer Row)\n    {\n    }\n\n}\n\npublic class Connections\n{\n    ScriptComponent ParentComponent;\n\n    public Connections(ScriptComponent Component)\n    {\n        ParentComponent = Component;\n    }\n\n}\n\npublic class Variables\n{\n    ScriptComponent ParentComponent;\n\n    public Variables(ScriptComponent Component)\n    {\n        ParentComponent = Component;\n    }\n\n}"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "Properties\\Settings.Designer.cs"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "UTF8"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "//------------------------------------------------------------------------------\n// <auto-generated>\n//     This code was generated by a tool.\n//\n//     Changes to this file may cause incorrect behavior and will be lost if\n//     the code is regenerated.\n// </auto-generated>\n//------------------------------------------------------------------------------\n\n[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute(\"Microsoft.Performance\", \"CA1811:AvoidUncalledPrivateCode\", Scope=\"member\", Target=\"SC_f3f66d9f8ff5447a98949db6594769ca.Properties.Settings.get_Default():SC_f3f66d9f8ff5447a98949db6594769ca.Properties.Sett\" +\n    \"ings\")]\n\nnamespace SC_f3f66d9f8ff5447a98949db6594769ca.Properties {\n    \n    \n    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {\n        \n        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]\n        private static Settings defaultInstance = new Settings();\n        \n        public static Settings Default {\n            get {\n                return defaultInstance;\n            }\n        }\n    }\n}"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "BufferWrapper.cs"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "UTF8"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!\n*  Microsoft SQL Server Integration Services buffer wrappers\n*  This module defines classes for accessing data flow buffers\n*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */\n\n\n\nusing System;\nusing System.Data;\nusing Microsoft.SqlServer.Dts.Pipeline;\nusing Microsoft.SqlServer.Dts.Pipeline.Wrapper;\n\npublic class Input0Buffer: ScriptBuffer\n\n{\n    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)\n        : base(Buffer, BufferColumnIndexes, OutputMap)\n    {\n    }\n\n    public Int32 ErrorCode\n    {\n        get\n        {\n            return Buffer.GetInt32(BufferColumnIndexes[0]);\n        }\n    }\n    public bool ErrorCode_IsNull\n    {\n        get\n        {\n            return IsNull(0);\n        }\n    }\n\n    public String ErrorDescription\n    {\n        set\n        {\n            this[1] = value;\n        }\n    }\n    public bool ErrorDescription_IsNull\n    {\n        set\n        {\n            if (value)\n            {\n                SetNull(1);\n            }\n            else\n            {\n                throw new InvalidOperationException(\"IsNull property cannot be set to False. Assign a value to the column instead.\");\n            }\n        }\n    }\n\n    new public bool NextRow()\n    {\n        return base.NextRow();\n    }\n\n    new public bool EndOfRowset()\n    {\n        return base.EndOfRowset();\n    }\n\n}"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "Project"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "UTF16LE"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"yes\"?>\n<c:Project xmlns:c=\"http://schemas.microsoft.com/codeprojectml/2010/08/main\" xmlns:msb=\"http://schemas.microsoft.com/developer/msbuild/2003\" runtimeVersion=\"3.0\" schemaVersion=\"1.0\">\n\t<msb:PropertyGroup>\n\t\t<msb:CodeName>SC_f3f66d9f8ff5447a98949db6594769ca</msb:CodeName>\n\t\t<msb:DisplayName>SC_f3f66d9f8ff5447a98949db6594769ca</msb:DisplayName>\n\t\t<msb:ProjectId>{8AE14899-A36D-4C0F-83B2-A1275FA38E68}</msb:ProjectId>\n\t\t<msb:Language>msBuild</msb:Language>\n\t</msb:PropertyGroup>\n\t<msb:ItemGroup>\n\t\t<msb:Project Include=\"SC_f3f66d9f8ff5447a98949db6594769ca.csproj\"/>\n\t\t<msb:File Include=\"main.cs\"/>\n\t\t<msb:File Include=\"Properties\\AssemblyInfo.cs\"/>\n\t\t<msb:File Include=\"ComponentWrapper.cs\"/>\n\t\t<msb:File Include=\"Properties\\Resources.resx\"/>\n\t\t<msb:File Include=\"BufferWrapper.cs\"/>\n\t\t<msb:File Include=\"Properties\\Settings.Designer.cs\"/>\n\t\t<msb:File Include=\"Properties\\Resources.Designer.cs\"/>\n\t\t<msb:File Include=\"Properties\\Settings.settings\"/>\n\t</msb:ItemGroup>\n</c:Project>"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "Properties\\AssemblyInfo.cs"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "UTF8"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "using System.Reflection;\nusing System.Runtime.CompilerServices;\n\n//\n// General Information about an assembly is controlled through the following \n// set of attributes. Change these attribute values to modify the information\n// associated with an assembly.\n//\n[assembly: AssemblyTitle(\"SC_f3f66d9f8ff5447a98949db6594769ca\")]\n[assembly: AssemblyDescription(\"\")]\n[assembly: AssemblyConfiguration(\"\")]\n[assembly: AssemblyCompany(\"Blue Car Software\")]\n[assembly: AssemblyProduct(\"SC_f3f66d9f8ff5447a98949db6594769ca\")]\n[assembly: AssemblyCopyright(\"Copyright @ Blue Car Software 2012\")]\n[assembly: AssemblyTrademark(\"\")]\n[assembly: AssemblyCulture(\"\")]\n//\n// Version information for an assembly consists of the following four values:\n//\n//      Major Version\n//      Minor Version \n//      Build Number\n//      Revision\n//\n// You can specify all the values or you can default the Revision and Build Numbers \n// by using the '*' as shown below:\n\n[assembly: AssemblyVersion(\"1.0.*\")]"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "Properties\\Settings.settings"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "UTF8"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "<?xml version='1.0' encoding='iso-8859-1'?>\n<SettingsFile xmlns=\"uri:settings\" CurrentProfile=\"(Default)\">\n  <Profiles>\n    <Profile Name=\"(Default)\" />\n  </Profiles>\n  <Settings />\n</SettingsFile>"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "Properties\\Resources.Designer.cs"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "UTF8"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "//------------------------------------------------------------------------------\n// <auto-generated>\n//     This code was generated by a tool.\n//\n//     Changes to this file may cause incorrect behavior and will be lost if\n//     the code is regenerated.\n// </auto-generated>\n//------------------------------------------------------------------------------\n\n[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute(\"Microsoft.Performance\", \"CA1811:AvoidUncalledPrivateCode\", Scope=\"member\", Target=\"SC_f3f66d9f8ff5447a98949db6594769ca.Properties.Resources.get_ResourceManager():System.Resources.Resou\" +\n    \"rceManager\")]\n[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute(\"Microsoft.Performance\", \"CA1811:AvoidUncalledPrivateCode\", Scope=\"member\", Target=\"SC_f3f66d9f8ff5447a98949db6594769ca.Properties.Resources.get_Culture():System.Globalization.CultureIn\" +\n    \"fo\")]\n[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute(\"Microsoft.Performance\", \"CA1811:AvoidUncalledPrivateCode\", Scope=\"member\", Target=\"SC_f3f66d9f8ff5447a98949db6594769ca.Properties.Resources.set_Culture(System.Globalization.CultureInfo\" +\n    \"):Void\")]\n\nnamespace SC_f3f66d9f8ff5447a98949db6594769ca.Properties {\n    \n    \n    /// <summary>\n    ///   A strongly-typed resource class, for looking up localized strings, etc.\n    /// </summary>\n    // This class was auto-generated by the StronglyTypedResourceBuilder\n    // class via a tool like ResGen or Visual Studio.\n    // To add or remove a member, edit your .ResX file then rerun ResGen\n    // with the /str option, or rebuild your VS project.\n    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]\n    internal class Resources {\n        \n        private static global::System.Resources.ResourceManager resourceMan;\n        \n        private static global::System.Globalization.CultureInfo resourceCulture;\n        \n        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute(\"Microsoft.Performance\", \"CA1811:AvoidUncalledPrivateCode\")]\n        internal Resources() {\n        }\n        \n        /// <summary>\n        ///   Returns the cached ResourceManager instance used by this class.\n        /// </summary>\n        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]\n        internal static global::System.Resources.ResourceManager ResourceManager {\n            get {\n                if ((resourceMan == null)) {\n                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager(\"SC_f3f66d9f8ff5447a98949db6594769ca.Properties.Resources\", typeof(Resources).Assembly);\n                    resourceMan = temp;\n                }\n                return resourceMan;\n            }\n        }\n        \n        /// <summary>\n        ///   Overrides the current thread's CurrentUICulture property for all\n        ///   resource lookups using this strongly typed resource class.\n        /// </summary>\n        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]\n        internal static global::System.Globalization.CultureInfo Culture {\n            get {\n                return resourceCulture;\n            }\n            set {\n                resourceCulture = value;\n            }\n        }\n    }\n}"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "@name": "BinaryCode",
+                                                        "@state": "cdata",
+                                                        "@dataType": "System.String",
+                                                        "@isArray": "true",
+                                                        "@description": "Stores the binary representation of the component",
+                                                        "arrayElements": {
+                                                            "@arrayElementCount": "2",
+                                                            "arrayElement": [
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "SC_f3f66d9f8ff5447a98949db6594769ca.dll"
+                                                                },
+                                                                {
+                                                                    "@dataType": "System.String",
+                                                                    "#text": "TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v\nZGUuDQ0KJAAAAAAAAABQRQAATAEDAKz+008AAAAAAAAAAOAAAiELAQgAABQAAAAIAAAAAAAAXjMA\nAAAgAAAAQAAAAABAAAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA\nABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAgzAABTAAAAAEAAAHAEAAAAAAAAAAAAAAAAAAAA\nAAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAZBMAAAAgAAAAFAAAAAIA\nAAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHAEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA\nLnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABA\nMwAAAAAAAEgAAAACAAUAeCIAAJAQAAABAAAAAAAAAMAhAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4CKA0AAAoCAnMQAAAGfQEAAAQCAnMRAAAGfQIAAAQqkgRy\nAQAAcBpvDgAACiwVAgUCAygPAAAKDgRzCQAABm8DAAAGKkorBwIDbwQAAAYDbw4AAAYt8SoGKh4C\nKBEAAAoqHgIoEgAACipiAwIoEwAACgNvCgAABm8UAAAKbwwAAAYqHgIoAQAABioqAgMEBSgVAAAK\nKlICexYAAAoCexcAAAoWlG8YAAAKKiICFigZAAAKKiYCFwMoGgAACipaAywIAhcoGwAACipyEQAA\ncHMcAAAKeh4CKB0AAAoqHgIoHgAACio6AigfAAAKAgN9AwAABCo6AigfAAAKAgN9BAAABCoeAigf\nAAAKKgATMAMALQAAAAEAABF+BQAABC0gcq4AAHDQBwAAAighAAAKbyIAAApzIwAACgoGgAUAAAR+\nBQAABCoafgYAAAQqHgKABgAABCoafgcAAAQqLnMXAAAGgAcAAAQqHgIoJgAACioAtAAAAM7K774B\nAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lv\nbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUw\nODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQ\ntAAAAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAJAFAAAjfgAA/AUAAJAHAAAj\nU3RyaW5ncwAAAACMDQAAIAEAACNVUwCsDgAAEAAAACNHVUlEAAAAvA4AANQBAAAjQmxvYgAAAAAA\nAAACAAABVxWiAQkBAAAA+iUzABYAAAEAAAAgAAAACAAAAAcAAAAYAAAADwAAACYAAAAPAAAAAQAA\nAAMAAAAHAAAACAAAAAEAAAAFAAAAAQAAAAAACgABAAAAAAAGAO4AzQAGAP4AzQAKABsBFAEOADcB\nIgESAHYBzQAGAIUBzQAKAK8CngIKAOACywIKALkDnwMKAOQD0gMKAPsD0gMKABgE0gMKADcE0gMK\nAFAE0gMKAGkE0gMKAIQE0gMKAJ8E0gMKALgE0gMKAPEE0QQKABEF0QQKAFMFFAEKAFoFFAEGAIMF\nzQAWAPcFzgUKAFsGFAEKAIgGdQYKAKUGFAEKAKoGFAEKAM4G0gMOAPoG5AYOABMH5AYKACgH0QQA\nAAAAAQAAAAAAAQABAAEAEAAyAAAABQABAAEAAQAQAEAAAAAIAAMABQABABAASwAAAAkAAwAJAAEA\nEABYAAAADQADABAAAQAQAGQAAAANAAQAEQAAABAAbgB4AA0ABQASAAABEACnAHgAEQAHABYABgBY\nABMABgBkABcAAQCOAlcAAQCOAlcAEQC/AmEAEQDsAmUAEQAwA4MAUCAAAAAAhhhPARsAAQBwIAAA\nAADGAJMBHwABAJUgAAAAAMYBoAEpAAUAqCAAAAAAxgG0ASkABgCqIAAAAADGAMsBGwAHALIgAAAA\nAMYA1gEbAAcAuiAAAAAAxgC0ASkABwDTIAAAAACGGE8BGwAIANsgAAAAAIYYTwEvAAgA5iAAAAAA\nhgjiATkACwD7IAAAAACGCPABPQALAAQhAAAAAIYIBQJBAAsADiEAAAAAhggaAkYADAAlIQAAAACG\nADYCPQANAC0hAAAAAIYAPgI9AA0ANSEAAAAAhhhPAVsADQBEIQAAAACGGE8BWwAOAFMhAAAAAIMY\nTwEbAA8AXCEAAAAAkwj8AmkADwCVIQAAAACTCBADbgAPAJwhAAAAAJMIHANzAA8ApCEAAAAAlghA\nA4cAEAC3IQAAAACGGE8BGwAQAKshAAAAAJEYQwfxABAAAAABAFQDAAACAFwDAAADAGYDAAAEAG0D\nAAABAGYDAAABAHcDAAABAHcDAAABAGYDAAACAHsDAAADAG0DAAABAI8DAAABAI8DAAABAJUDAAAB\nAJUDAAABAI8DSQBPAUEAUQBPAUEAWQBPAUEAYQBPAUEAaQBPAUEAcQBPAUEAeQBPAUEAgQBPAUEA\niQBPAUEAkQBPAUEAmQBPAZEAoQBPARsACQBPARsAqQBrBZYACQByBZ0AuQBPARsACQDLARsACQDW\nARsACQAQBqgAwQAmBq0AEQBPAS8AEQBmA7IAEQB7A7YAKQA6BroAEQBDBr8AEQBKBsQAEQBTBpEA\nyQBPAUEAEQA2Aj0AEQA+Aj0AGQBPARsA0QBPARsA2QC8BsoA2QDXBtEAOQBPAdYA8QBPAeIAAQFP\nARsAIQBPARsALgAbAGYBLgBjALQBLgALAPUALgATAD0BLgAjAGYBLgArAGwBLgAzAD0BLgA7AIMB\nLgBDAGYBLgBbAKsBYwCDAKMAqQAjAegAyQAjAegA4QArAaMA4wADAaMA3QAEAAEABwAFAAgABwAA\nAEoCSwAAAFQCTwAAAGUCUwAAAHYCTwAAAK8CeQAAACgDfgAAAEwDjAACAAoAAwACAAsABQABAAwA\nBwABAA0ACQACABMACwACABQADQABABUADQACABYADwAEgAAAAQAAAL8RFn4AAAAAAAAvBQAACwAA\nAAAAAAAAAAAAAQCwAAAAAAAEAAAAAAAAAAAAAAAKAAsBAAAAAAQAAAAAAAAAAAAAAAoAFAEAAAAA\nCwAAAAAAAAAAAAAAAQBVAQAAAAALAAAAAAAAAAAAAAABAKoFAAAAAAAAAAABAAAASgcAAAAAADxN\nb2R1bGU+AFNDX2YzZjY2ZDlmOGZmNTQ0N2E5ODk0OWRiNjU5NDc2OWNhLmRsbABVc2VyQ29tcG9u\nZW50AFNjcmlwdE1haW4ASW5wdXQwQnVmZmVyAENvbm5lY3Rpb25zAFZhcmlhYmxlcwBSZXNvdXJj\nZXMAU0NfZjNmNjZkOWY4ZmY1NDQ3YTk4OTQ5ZGI2NTk0NzY5Y2EuUHJvcGVydGllcwBTZXR0aW5n\ncwBNaWNyb3NvZnQuU3FsU2VydmVyLlR4U2NyaXB0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBp\ncGVsaW5lAFNjcmlwdENvbXBvbmVudABTY3JpcHRCdWZmZXIAbXNjb3JsaWIAU3lzdGVtAE9iamVj\ndABTeXN0ZW0uQ29uZmlndXJhdGlvbgBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQAuY3RvcgBNaWNy\nb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABQaXBlbGluZUJ1ZmZlcgBPdXRwdXROYW1lTWFw\nAFByb2Nlc3NJbnB1dABJbnB1dDBfUHJvY2Vzc0lucHV0AElucHV0MF9Qcm9jZXNzSW5wdXRSb3cA\nUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQBnZXRfRXJyb3JDb2RlAGdldF9FcnJvckNvZGVfSXNOdWxs\nAHNldF9FcnJvckRlc2NyaXB0aW9uAHNldF9FcnJvckRlc2NyaXB0aW9uX0lzTnVsbABOZXh0Um93\nAEVuZE9mUm93c2V0AEVycm9yQ29kZQBFcnJvckNvZGVfSXNOdWxsAEVycm9yRGVzY3JpcHRpb24A\nRXJyb3JEZXNjcmlwdGlvbl9Jc051bGwAUGFyZW50Q29tcG9uZW50AFN5c3RlbS5SZXNvdXJjZXMA\nUmVzb3VyY2VNYW5hZ2VyAHJlc291cmNlTWFuAFN5c3RlbS5HbG9iYWxpemF0aW9uAEN1bHR1cmVJ\nbmZvAHJlc291cmNlQ3VsdHVyZQBnZXRfUmVzb3VyY2VNYW5hZ2VyAGdldF9DdWx0dXJlAHNldF9D\ndWx0dXJlAEN1bHR1cmUAZGVmYXVsdEluc3RhbmNlAGdldF9EZWZhdWx0AERlZmF1bHQASW5wdXRJ\nRABJbnB1dE5hbWUAQnVmZmVyAE91dHB1dE1hcABSb3cAQnVmZmVyQ29sdW1uSW5kZXhlcwB2YWx1\nZQBDb21wb25lbnQAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUYXJnZXRGcmFtZXdvcmtBdHRy\naWJ1dGUAU3lzdGVtLlJlZmxlY3Rpb24AQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseURl\nc2NyaXB0aW9uQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJs\neUNvbXBhbnlBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJp\nZ2h0QXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAEFzc2VtYmx5Q3VsdHVyZUF0\ndHJpYnV0ZQBBc3NlbWJseVZlcnNpb25BdHRyaWJ1dGUAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJT\nZXJ2aWNlcwBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmls\naXR5QXR0cmlidXRlAFNDX2YzZjY2ZDlmOGZmNTQ0N2E5ODk0OWRiNjU5NDc2OWNhAFN0cmluZwBT\ndHJpbmdDb21wYXJpc29uAEVxdWFscwBHZXRDb2x1bW5JbmRleGVzAFNTSVNTY3JpcHRDb21wb25l\nbnRFbnRyeVBvaW50QXR0cmlidXRlAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRFRTUGlwZWxpbmVXcmFw\nAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5lLldyYXBwZXIASURUU0NvbXBvbmVudE1l\ndGFEYXRhMTAwAGdldF9Db21wb25lbnRNZXRhRGF0YQBHZXRFcnJvckRlc2NyaXB0aW9uAEdldElu\ndDMyAElzTnVsbABzZXRfSXRlbQBTZXROdWxsAEludmFsaWRPcGVyYXRpb25FeGNlcHRpb24AU3lz\ndGVtLkRpYWdub3N0aWNzAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUAVHlwZQBSdW50aW1l\nVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBBc3NlbWJseQBnZXRfQXNzZW1ibHkAU3lzdGVt\nLkNvbXBvbmVudE1vZGVsAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVT\ndGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQAuY2N0b3IAU0NfZjNmNjZkOWY4ZmY1NDQ3\nYTk4OTQ5ZGI2NTk0NzY5Y2EuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAAAAAAAPSQBu\nAHAAdQB0ACAAMAAAgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMAYQBuAG4AbwB0\nACAAYgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYA\nYQBsAHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAHFT\nAEMAXwBmADMAZgA2ADYAZAA5AGYAOABmAGYANQA0ADQANwBhADkAOAA5ADQAOQBkAGIANgA1ADkA\nNAA3ADYAOQBjAGEALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAKnI\nyRGtqrlNn/dWAScSkPkACImEXc2AgMyRCLd6XFYZNOCJAwYSFAMGEhgDIAABCSAEAQgOEhUSGQUg\nAQESEAkgAwESFR0IEhkDIAAIAyAAAgQgAQEOBCABAQIDKAAIAygAAgMoAA4DBhIFBSABARIFAwYS\nHQMGEiEEAAASHQQAABIhBQABARIhBAgAEh0ECAASIQMGEiAEAAASIAQIABIgBCABAQgGIAICDhFZ\nBSABHQgIBAEAAAAEIAASYQQgAQ4IAwYSFQMGHQgEIAEICAQgAQIIBSACAQgcBgABEm0RcQQgABJ1\nBiACAQ4SdQQHARIdBSABARF9CAEAAgAAAAAAAwAAAUcBABouTkVURnJhbWV3b3JrLFZlcnNpb249\ndjQuMAEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUQLk5FVCBGcmFtZXdvcmsgNCgBACNTQ19mM2Y2\nNmQ5ZjhmZjU0NDdhOTg5NDlkYjY1OTQ3NjljYQAABQEAAAAAFgEAEUJsdWUgQ2FyIFNvZnR3YXJl\nAAAnAQAiQ29weXJpZ2h0IEAgQmx1ZSBDYXIgU29mdHdhcmUgMjAxMgAACAEACAAAAAAAHgEAAQBU\nAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQAwMwAAAAAAAAAAAABOMwAAACAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAQDMAAAAAAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8l\nACBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA\nSAAAAFhAAAAYBAAAAAAAAAAAAAAYBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA\nAAAAvQTv/gAAAQAAAAEAFn6/EQAAAQAWfr8RPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA\nAAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu\nAAAAAAAAALAEeAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAVAMAAAEAMAAwADAA\nMAAwADQAYgAwAAAARAASAAEAQwBvAG0AcABhAG4AeQBOAGEAbQBlAAAAAABCAGwAdQBlACAAQwBh\nAHIAIABTAG8AZgB0AHcAYQByAGUAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8A\nbgAAAAAAUwBDAF8AZgAzAGYANgA2AGQAOQBmADgAZgBmADUANAA0ADcAYQA5ADgAOQA0ADkAZABi\nADYANQA5ADQANwA2ADkAYwBhAAAAQAAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4A\nMAAuADQANQA0ADMALgAzADIAMgA3ADgAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBl\nAAAAUwBDAF8AZgAzAGYANgA2AGQAOQBmADgAZgBmADUANAA0ADcAYQA5ADgAOQA0ADkAZABiADYA\nNQA5ADQANwA2ADkAYwBhAC4AZABsAGwAAABsACMAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBo\nAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIABCAGwAdQBlACAAQwBhAHIAIABTAG8AZgB0AHcA\nYQByAGUAIAAyADAAMQAyAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBl\nAAAAUwBDAF8AZgAzAGYANgA2AGQAOQBmADgAZgBmADUANAA0ADcAYQA5ADgAOQA0ADkAZABiADYA\nNQA5ADQANwA2ADkAYwBhAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAA\nAFMAQwBfAGYAMwBmADYANgBkADkAZgA4AGYAZgA1ADQANAA3AGEAOQA4ADkANAA5AGQAYgA2ADUA\nOQA0ADcANgA5AGMAYQAAAEQADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAw\nAC4ANAA1ADQAMwAuADMAMgAyADcAOAAAAAAASAAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIA\ncwBpAG8AbgAAADEALgAwAC4ANAA1ADQAMwAuADMAMgAyADcAOAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAYDMAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "@name": "VSTAProjectName",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package.",
+                                                        "@typeConverter": "NOTBROWSABLE",
+                                                        "#text": "SC_f3f66d9f8ff5447a98949db6594769ca"
+                                                    },
+                                                    {
+                                                        "@name": "ScriptLanguage",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies the programming language used by the script.",
+                                                        "@typeConverter": "Microsoft.SqlServer.VSTAHosting.ScriptingLanguages, Microsoft.SqlServer.VSTAScriptingLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91",
+                                                        "#text": "CSharp"
+                                                    },
+                                                    {
+                                                        "@name": "ReadOnlyVariables",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies a comma-separated list of read-only variables.",
+                                                        "@UITypeEditor": "Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                                                    },
+                                                    {
+                                                        "@name": "ReadWriteVariables",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies a comma-separated list of read/write variables.",
+                                                        "@UITypeEditor": "Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                                                    },
+                                                    {
+                                                        "@name": "BreakpointCollection",
+                                                        "@dataType": "System.String",
+                                                        "@isArray": "true",
+                                                        "@description": "List of breakpoints present on the script.",
+                                                        "@typeConverter": "NOTBROWSABLE",
+                                                        "arrayElements": {
+                                                            "@arrayElementCount": "0"
+                                                        }
+                                                    },
+                                                    {
+                                                        "@name": "MetadataChecksum",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Checksum to match component metedata against compiled codes.",
+                                                        "@typeConverter": "NOTBROWSABLE",
+                                                        "#text": "4f80429439dfc6d468500b8cbec3d3ee"
+                                                    },
+                                                    {
+                                                        "@name": "UserComponentTypeName",
+                                                        "@dataType": "System.String",
+                                                        "#text": "Microsoft.SqlServer.Dts.Pipeline.ScriptComponentHost, Microsoft.SqlServer.TxScript, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                                                    }
+                                                ]
+                                            },
+                                            "inputs": {
+                                                "input": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Get Error Description.Inputs[Input 0]",
+                                                    "@name": "Input 0",
+                                                    "@hasSideEffects": "true",
+                                                    "inputColumns": {
+                                                        "inputColumn": {
+                                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Get Error Description.Inputs[Input 0].Columns[ErrorCode]",
+                                                            "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Error Output].Columns[ErrorCode]",
+                                                            "@cachedName": "ErrorCode",
+                                                            "@cachedDataType": "i4"
+                                                        }
+                                                    },
+                                                    "externalMetadataColumns": null
+                                                }
+                                            },
+                                            "outputs": {
+                                                "output": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Get Error Description.Outputs[Output 0]",
+                                                    "@name": "Output 0",
+                                                    "@synchronousInputId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Get Error Description.Inputs[Input 0]",
+                                                    "outputColumns": {
+                                                        "outputColumn": {
+                                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Get Error Description.Outputs[Output 0].Columns[ErrorDescription]",
+                                                            "@name": "ErrorDescription",
+                                                            "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Get Error Description.Outputs[Output 0].Columns[ErrorDescription]",
+                                                            "@length": "50",
+                                                            "@dataType": "wstr"
+                                                        }
+                                                    },
+                                                    "externalMetadataColumns": null
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key",
+                                            "@name": "Lookup Currency Key",
+                                            "@componentClassID": "{671046B0-AA63-4C9F-90E4-C06E0B710CE3}",
+                                            "@description": "Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory.",
+                                            "@usesDispositions": "true",
+                                            "@version": "6",
+                                            "@contactInfo": "Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6",
+                                            "properties": {
+                                                "property": [
+                                                    {
+                                                        "@name": "SqlCommand",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies the SQL statement that generates the lookup table.",
+                                                        "@UITypeEditor": "Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91",
+                                                        "@expressionType": "Notify",
+                                                        "#text": "select * from (select * from [dbo].[DimCurrency]) as refTable\nwhere [refTable].[CurrencyAlternateKey] = 'ARS'\nOR\n[refTable].[CurrencyAlternateKey] = 'AUD'\nOR\n[refTable].[CurrencyAlternateKey] = 'BRL'\nOR\n[refTable].[CurrencyAlternateKey] = 'CAD'\nOR\n[refTable].[CurrencyAlternateKey] = 'CNY'\nOR\n[refTable].[CurrencyAlternateKey] = 'DEM'\nOR\n[refTable].[CurrencyAlternateKey] = 'EUR'\nOR\n[refTable].[CurrencyAlternateKey] = 'FRF'\nOR\n[refTable].[CurrencyAlternateKey] = 'GBP'\nOR\n[refTable].[CurrencyAlternateKey] = 'JPY'\nOR\n[refTable].[CurrencyAlternateKey] = 'MXN'\nOR\n[refTable].[CurrencyAlternateKey] = 'SAR'\nOR\n[refTable].[CurrencyAlternateKey] = 'USD'\nOR\n[refTable].[CurrencyAlternateKey] = 'VEB'"
+                                                    },
+                                                    {
+                                                        "@name": "SqlCommandParam",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies a SQL statement that uses parameters to generate the lookup table.",
+                                                        "@UITypeEditor": "Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91",
+                                                        "@expressionType": "Notify",
+                                                        "#text": "select * from (select * from (select * from [dbo].[DimCurrency]) as refTable\nwhere [refTable].[CurrencyAlternateKey] = 'ARS'\nOR\n[refTable].[CurrencyAlternateKey] = 'AUD'\nOR\n[refTable].[CurrencyAlternateKey] = 'BRL'\nOR\n[refTable].[CurrencyAlternateKey] = 'CAD'\nOR\n[refTable].[CurrencyAlternateKey] = 'CNY'\nOR\n[refTable].[CurrencyAlternateKey] = 'DEM'\nOR\n[refTable].[CurrencyAlternateKey] = 'EUR'\nOR\n[refTable].[CurrencyAlternateKey] = 'FRF'\nOR\n[refTable].[CurrencyAlternateKey] = 'GBP'\nOR\n[refTable].[CurrencyAlternateKey] = 'JPY'\nOR\n[refTable].[CurrencyAlternateKey] = 'MXN'\nOR\n[refTable].[CurrencyAlternateKey] = 'SAR'\nOR\n[refTable].[CurrencyAlternateKey] = 'USD'\nOR\n[refTable].[CurrencyAlternateKey] = 'VEB') [refTable]\nwhere [refTable].[CurrencyAlternateKey] = ?"
+                                                    },
+                                                    {
+                                                        "@name": "ConnectionType",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies the type of connection used to access the reference dataset.",
+                                                        "@typeConverter": "LookupConnectionType",
+                                                        "#text": "0"
+                                                    },
+                                                    {
+                                                        "@name": "CacheType",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies the cache type of the lookup table.",
+                                                        "@typeConverter": "CacheType",
+                                                        "#text": "0"
+                                                    },
+                                                    {
+                                                        "@name": "NoMatchBehavior",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies how the Lookup transformation handles rows without matching entries in the reference data set.",
+                                                        "@typeConverter": "LookupNoMatchBehavior",
+                                                        "#text": "0"
+                                                    },
+                                                    {
+                                                        "@name": "NoMatchCachePercentage",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset.",
+                                                        "#text": "0"
+                                                    },
+                                                    {
+                                                        "@name": "MaxMemoryUsage",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Maximum Memory Usage for Reference Cache on a 32 bit platform.",
+                                                        "#text": "25"
+                                                    },
+                                                    {
+                                                        "@name": "MaxMemoryUsage64",
+                                                        "@dataType": "System.Int64",
+                                                        "@description": "Maximum Memory Usage for Reference Cache on a 64 bit platform.",
+                                                        "#text": "25"
+                                                    },
+                                                    {
+                                                        "@name": "ReferenceMetadataXml",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Indicates whether to reference metadata in an XML format.",
+                                                        "#text": "<referenceMetadata><referenceColumns><referenceColumn name=\"CurrencyKey\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"CurrencyAlternateKey\" dataType=\"DT_WSTR\" length=\"3\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"CurrencyName\" dataType=\"DT_WSTR\" length=\"50\" precision=\"0\" scale=\"0\" codePage=\"0\"/></referenceColumns></referenceMetadata>"
+                                                    },
+                                                    {
+                                                        "@name": "ParameterMap",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons.",
+                                                        "@containsID": "true",
+                                                        "#text": "#{Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[CurrencyID]};"
+                                                    },
+                                                    {
+                                                        "@name": "DefaultCodePage",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies the column code page to use when code page information is unavailable from the data source.",
+                                                        "#text": "1252"
+                                                    },
+                                                    {
+                                                        "@name": "TreatDuplicateKeysAsError",
+                                                        "@dataType": "System.Boolean",
+                                                        "@description": "Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used.",
+                                                        "#text": "false"
+                                                    }
+                                                ]
+                                            },
+                                            "connections": {
+                                                "connection": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Connections[OleDbConnection]",
+                                                    "@name": "OleDbConnection",
+                                                    "@description": "Connection manager used to access lookup data.",
+                                                    "@connectionManagerID": "Package.ConnectionManagers[localhost.AdventureWorksDW2012]",
+                                                    "@connectionManagerRefId": "Package.ConnectionManagers[localhost.AdventureWorksDW2012]"
+                                                }
+                                            },
+                                            "inputs": {
+                                                "input": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Inputs[Lookup Input]",
+                                                    "@name": "Lookup Input",
+                                                    "inputColumns": {
+                                                        "inputColumn": {
+                                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Inputs[Lookup Input].Columns[CurrencyID]",
+                                                            "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[CurrencyID]",
+                                                            "@cachedName": "CurrencyID",
+                                                            "@cachedDataType": "wstr",
+                                                            "@cachedLength": "3",
+                                                            "properties": {
+                                                                "property": [
+                                                                    {
+                                                                        "@name": "JoinToReferenceColumn",
+                                                                        "@dataType": "System.String",
+                                                                        "@description": "Specifies the column in the reference table that a column joins.",
+                                                                        "#text": "CurrencyAlternateKey"
+                                                                    },
+                                                                    {
+                                                                        "@name": "CopyFromReferenceColumn",
+                                                                        "@dataType": "System.Null",
+                                                                        "@description": "Specifies the column in the reference table from which a column is copied."
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "externalMetadataColumns": null
+                                                }
+                                            },
+                                            "outputs": {
+                                                "output": [
+                                                    {
+                                                        "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Match Output]",
+                                                        "@name": "Lookup Match Output",
+                                                        "@exclusionGroup": "1",
+                                                        "@synchronousInputId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Inputs[Lookup Input]",
+                                                        "@errorOrTruncationOperation": "Lookup",
+                                                        "@errorRowDisposition": "RedirectRow",
+                                                        "outputColumns": {
+                                                            "outputColumn": {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Match Output].Columns[CurrencyKey]",
+                                                                "@name": "CurrencyKey",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Match Output].Columns[CurrencyKey]",
+                                                                "@dataType": "i4",
+                                                                "@errorOrTruncationOperation": "Copy Column",
+                                                                "@truncationRowDisposition": "FailComponent",
+                                                                "properties": {
+                                                                    "property": {
+                                                                        "@name": "CopyFromReferenceColumn",
+                                                                        "@dataType": "System.String",
+                                                                        "@description": "Specifies the column in the reference table from which a column is copied.",
+                                                                        "#text": "CurrencyKey"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "externalMetadataColumns": null
+                                                    },
+                                                    {
+                                                        "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup No Match Output]",
+                                                        "@name": "Lookup No Match Output",
+                                                        "@description": "The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to \"Send rows with no matching entries to the no match output.\"",
+                                                        "@exclusionGroup": "1",
+                                                        "@synchronousInputId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Inputs[Lookup Input]",
+                                                        "externalMetadataColumns": null
+                                                    },
+                                                    {
+                                                        "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Error Output]",
+                                                        "@name": "Lookup Error Output",
+                                                        "@exclusionGroup": "1",
+                                                        "@synchronousInputId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Inputs[Lookup Input]",
+                                                        "@isErrorOut": "true",
+                                                        "outputColumns": {
+                                                            "outputColumn": [
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Error Output].Columns[ErrorCode]",
+                                                                    "@name": "ErrorCode",
+                                                                    "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Error Output].Columns[ErrorCode]",
+                                                                    "@dataType": "i4",
+                                                                    "@specialFlags": "1"
+                                                                },
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Error Output].Columns[ErrorColumn]",
+                                                                    "@name": "ErrorColumn",
+                                                                    "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Error Output].Columns[ErrorColumn]",
+                                                                    "@dataType": "i4",
+                                                                    "@specialFlags": "2"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "externalMetadataColumns": null
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key",
+                                            "@name": "Lookup Date Key",
+                                            "@componentClassID": "{671046B0-AA63-4C9F-90E4-C06E0B710CE3}",
+                                            "@description": "Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory.",
+                                            "@usesDispositions": "true",
+                                            "@version": "6",
+                                            "@contactInfo": "Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6",
+                                            "properties": {
+                                                "property": [
+                                                    {
+                                                        "@name": "SqlCommand",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies the SQL statement that generates the lookup table.",
+                                                        "@UITypeEditor": "Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91",
+                                                        "@expressionType": "Notify",
+                                                        "#text": "select * from [dbo].[DimDate]"
+                                                    },
+                                                    {
+                                                        "@name": "SqlCommandParam",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies a SQL statement that uses parameters to generate the lookup table.",
+                                                        "@UITypeEditor": "Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91",
+                                                        "@expressionType": "Notify",
+                                                        "#text": "select * from (select * from [dbo].[DimDate]) [refTable]\nwhere [refTable].[FullDateAlternateKey] = ?"
+                                                    },
+                                                    {
+                                                        "@name": "ConnectionType",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies the type of connection used to access the reference dataset.",
+                                                        "@typeConverter": "LookupConnectionType",
+                                                        "#text": "0"
+                                                    },
+                                                    {
+                                                        "@name": "CacheType",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies the cache type of the lookup table.",
+                                                        "@typeConverter": "CacheType",
+                                                        "#text": "1"
+                                                    },
+                                                    {
+                                                        "@name": "NoMatchBehavior",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies how the Lookup transformation handles rows without matching entries in the reference data set.",
+                                                        "@typeConverter": "LookupNoMatchBehavior",
+                                                        "#text": "0"
+                                                    },
+                                                    {
+                                                        "@name": "NoMatchCachePercentage",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset.",
+                                                        "#text": "0"
+                                                    },
+                                                    {
+                                                        "@name": "MaxMemoryUsage",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Maximum Memory Usage for Reference Cache on a 32 bit platform.",
+                                                        "#text": "25"
+                                                    },
+                                                    {
+                                                        "@name": "MaxMemoryUsage64",
+                                                        "@dataType": "System.Int64",
+                                                        "@description": "Maximum Memory Usage for Reference Cache on a 64 bit platform.",
+                                                        "#text": "25"
+                                                    },
+                                                    {
+                                                        "@name": "ReferenceMetadataXml",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Indicates whether to reference metadata in an XML format.",
+                                                        "#text": "<referenceMetadata><referenceColumns><referenceColumn name=\"DateKey\" dataType=\"DT_I4\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"FullDateAlternateKey\" dataType=\"DT_DBDATE\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"DayNumberOfWeek\" dataType=\"DT_UI1\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"EnglishDayNameOfWeek\" dataType=\"DT_WSTR\" length=\"10\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"SpanishDayNameOfWeek\" dataType=\"DT_WSTR\" length=\"10\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"FrenchDayNameOfWeek\" dataType=\"DT_WSTR\" length=\"10\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"DayNumberOfMonth\" dataType=\"DT_UI1\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"DayNumberOfYear\" dataType=\"DT_I2\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"WeekNumberOfYear\" dataType=\"DT_UI1\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"EnglishMonthName\" dataType=\"DT_WSTR\" length=\"10\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"SpanishMonthName\" dataType=\"DT_WSTR\" length=\"10\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"FrenchMonthName\" dataType=\"DT_WSTR\" length=\"10\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"MonthNumberOfYear\" dataType=\"DT_UI1\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"CalendarQuarter\" dataType=\"DT_UI1\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"CalendarYear\" dataType=\"DT_I2\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"CalendarSemester\" dataType=\"DT_UI1\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"FiscalQuarter\" dataType=\"DT_UI1\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"FiscalYear\" dataType=\"DT_I2\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/><referenceColumn name=\"FiscalSemester\" dataType=\"DT_UI1\" length=\"0\" precision=\"0\" scale=\"0\" codePage=\"0\"/></referenceColumns></referenceMetadata>"
+                                                    },
+                                                    {
+                                                        "@name": "ParameterMap",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons.",
+                                                        "@containsID": "true",
+                                                        "#text": "#{Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[CurrencyDate]};"
+                                                    },
+                                                    {
+                                                        "@name": "DefaultCodePage",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies the column code page to use when code page information is unavailable from the data source.",
+                                                        "#text": "1252"
+                                                    },
+                                                    {
+                                                        "@name": "TreatDuplicateKeysAsError",
+                                                        "@dataType": "System.Boolean",
+                                                        "@description": "Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used.",
+                                                        "#text": "false"
+                                                    }
+                                                ]
+                                            },
+                                            "connections": {
+                                                "connection": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Connections[OleDbConnection]",
+                                                    "@name": "OleDbConnection",
+                                                    "@description": "Connection manager used to access lookup data.",
+                                                    "@connectionManagerID": "Package.ConnectionManagers[localhost.AdventureWorksDW2012]",
+                                                    "@connectionManagerRefId": "Package.ConnectionManagers[localhost.AdventureWorksDW2012]"
+                                                }
+                                            },
+                                            "inputs": {
+                                                "input": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Inputs[Lookup Input]",
+                                                    "@name": "Lookup Input",
+                                                    "inputColumns": {
+                                                        "inputColumn": {
+                                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Inputs[Lookup Input].Columns[CurrencyDate]",
+                                                            "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[CurrencyDate]",
+                                                            "@cachedName": "CurrencyDate",
+                                                            "@cachedDataType": "dbDate",
+                                                            "properties": {
+                                                                "property": [
+                                                                    {
+                                                                        "@name": "JoinToReferenceColumn",
+                                                                        "@dataType": "System.String",
+                                                                        "@description": "Specifies the column in the reference table that a column joins.",
+                                                                        "#text": "FullDateAlternateKey"
+                                                                    },
+                                                                    {
+                                                                        "@name": "CopyFromReferenceColumn",
+                                                                        "@dataType": "System.Null",
+                                                                        "@description": "Specifies the column in the reference table from which a column is copied."
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "externalMetadataColumns": null
+                                                }
+                                            },
+                                            "outputs": {
+                                                "output": [
+                                                    {
+                                                        "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Outputs[Lookup Match Output]",
+                                                        "@name": "Lookup Match Output",
+                                                        "@exclusionGroup": "1",
+                                                        "@synchronousInputId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Inputs[Lookup Input]",
+                                                        "@errorOrTruncationOperation": "Lookup",
+                                                        "@errorRowDisposition": "FailComponent",
+                                                        "outputColumns": {
+                                                            "outputColumn": {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Outputs[Lookup Match Output].Columns[DateKey]",
+                                                                "@name": "DateKey",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Outputs[Lookup Match Output].Columns[DateKey]",
+                                                                "@dataType": "i4",
+                                                                "@errorOrTruncationOperation": "Copy Column",
+                                                                "@truncationRowDisposition": "FailComponent",
+                                                                "properties": {
+                                                                    "property": {
+                                                                        "@name": "CopyFromReferenceColumn",
+                                                                        "@dataType": "System.String",
+                                                                        "@description": "Specifies the column in the reference table from which a column is copied.",
+                                                                        "#text": "DateKey"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "externalMetadataColumns": null
+                                                    },
+                                                    {
+                                                        "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Outputs[Lookup No Match Output]",
+                                                        "@name": "Lookup No Match Output",
+                                                        "@description": "The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to \"Send rows with no matching entries to the no match output.\"",
+                                                        "@exclusionGroup": "1",
+                                                        "@synchronousInputId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Inputs[Lookup Input]",
+                                                        "externalMetadataColumns": null
+                                                    },
+                                                    {
+                                                        "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Outputs[Lookup Error Output]",
+                                                        "@name": "Lookup Error Output",
+                                                        "@exclusionGroup": "1",
+                                                        "@synchronousInputId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Inputs[Lookup Input]",
+                                                        "@isErrorOut": "true",
+                                                        "outputColumns": {
+                                                            "outputColumn": [
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Outputs[Lookup Error Output].Columns[ErrorCode]",
+                                                                    "@name": "ErrorCode",
+                                                                    "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Outputs[Lookup Error Output].Columns[ErrorCode]",
+                                                                    "@dataType": "i4",
+                                                                    "@specialFlags": "1"
+                                                                },
+                                                                {
+                                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Outputs[Lookup Error Output].Columns[ErrorColumn]",
+                                                                    "@name": "ErrorColumn",
+                                                                    "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Outputs[Lookup Error Output].Columns[ErrorColumn]",
+                                                                    "@dataType": "i4",
+                                                                    "@specialFlags": "2"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "externalMetadataColumns": null
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination",
+                                            "@name": "Sample OLE DB Destination",
+                                            "@componentClassID": "{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}",
+                                            "@description": "OLE DB Destination",
+                                            "@usesDispositions": "true",
+                                            "@version": "4",
+                                            "@contactInfo": "OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4",
+                                            "properties": {
+                                                "property": [
+                                                    {
+                                                        "@name": "CommandTimeout",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.",
+                                                        "#text": "0"
+                                                    },
+                                                    {
+                                                        "@name": "OpenRowset",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies the name of the database object used to open a rowset.",
+                                                        "#text": "[dbo].[FactCurrency]"
+                                                    },
+                                                    {
+                                                        "@name": "OpenRowsetVariable",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies the variable that contains the name of the database object used to open a rowset."
+                                                    },
+                                                    {
+                                                        "@name": "SqlCommand",
+                                                        "@dataType": "System.String",
+                                                        "@description": "The SQL command to be executed.",
+                                                        "@UITypeEditor": "Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                                                    },
+                                                    {
+                                                        "@name": "DefaultCodePage",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies the column code page to use when code page information is unavailable from the data source.",
+                                                        "#text": "1252"
+                                                    },
+                                                    {
+                                                        "@name": "AlwaysUseDefaultCodePage",
+                                                        "@dataType": "System.Boolean",
+                                                        "@description": "Forces the use of the DefaultCodePage property value when describing character data.",
+                                                        "#text": "false"
+                                                    },
+                                                    {
+                                                        "@name": "AccessMode",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies the mode used to access the database.",
+                                                        "@typeConverter": "AccessMode",
+                                                        "#text": "3"
+                                                    },
+                                                    {
+                                                        "@name": "FastLoadKeepIdentity",
+                                                        "@dataType": "System.Boolean",
+                                                        "@description": "Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.",
+                                                        "#text": "false"
+                                                    },
+                                                    {
+                                                        "@name": "FastLoadKeepNulls",
+                                                        "@dataType": "System.Boolean",
+                                                        "@description": "Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.",
+                                                        "#text": "false"
+                                                    },
+                                                    {
+                                                        "@name": "FastLoadOptions",
+                                                        "@dataType": "System.String",
+                                                        "@description": "Specifies options to be used with fast load.  Applies only if fast load is turned on.",
+                                                        "#text": "TABLOCK,CHECK_CONSTRAINTS"
+                                                    },
+                                                    {
+                                                        "@name": "FastLoadMaxInsertCommitSize",
+                                                        "@dataType": "System.Int32",
+                                                        "@description": "Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.",
+                                                        "#text": "2147483647"
+                                                    }
+                                                ]
+                                            },
+                                            "connections": {
+                                                "connection": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Connections[OleDbConnection]",
+                                                    "@name": "OleDbConnection",
+                                                    "@description": "The OLE DB runtime connection used to access the database.",
+                                                    "@connectionManagerID": "Package.ConnectionManagers[localhost.AdventureWorksDW2012]",
+                                                    "@connectionManagerRefId": "Package.ConnectionManagers[localhost.AdventureWorksDW2012]"
+                                                }
+                                            },
+                                            "inputs": {
+                                                "input": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input]",
+                                                    "@name": "OLE DB Destination Input",
+                                                    "@hasSideEffects": "true",
+                                                    "@errorOrTruncationOperation": "Insert",
+                                                    "@errorRowDisposition": "FailComponent",
+                                                    "inputColumns": {
+                                                        "inputColumn": [
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AverageRate]",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[AverageRate]",
+                                                                "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AverageRate]",
+                                                                "@cachedName": "AverageRate",
+                                                                "@cachedDataType": "r4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EndOfDayRate]",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output].Columns[EndOfDayRate]",
+                                                                "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndOfDayRate]",
+                                                                "@cachedName": "EndOfDayRate",
+                                                                "@cachedDataType": "r4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CurrencyKey]",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Match Output].Columns[CurrencyKey]",
+                                                                "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyKey]",
+                                                                "@cachedName": "CurrencyKey",
+                                                                "@cachedDataType": "i4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateKey]",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Outputs[Lookup Match Output].Columns[DateKey]",
+                                                                "@externalMetadataColumnId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]",
+                                                                "@cachedName": "DateKey",
+                                                                "@cachedDataType": "i4"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "externalMetadataColumns": {
+                                                        "@isUsed": "True",
+                                                        "externalMetadataColumn": [
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyKey]",
+                                                                "@name": "CurrencyKey",
+                                                                "@dataType": "i4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]",
+                                                                "@name": "DateKey",
+                                                                "@dataType": "i4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AverageRate]",
+                                                                "@name": "AverageRate",
+                                                                "@dataType": "r4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndOfDayRate]",
+                                                                "@name": "EndOfDayRate",
+                                                                "@dataType": "r4"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyID]",
+                                                                "@name": "CurrencyID",
+                                                                "@dataType": "wstr",
+                                                                "@length": "3"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyDate]",
+                                                                "@name": "CurrencyDate",
+                                                                "@dataType": "dbDate"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "outputs": {
+                                                "output": {
+                                                    "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Outputs[OLE DB Destination Error Output]",
+                                                    "@name": "OLE DB Destination Error Output",
+                                                    "@exclusionGroup": "1",
+                                                    "@synchronousInputId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input]",
+                                                    "@isErrorOut": "true",
+                                                    "outputColumns": {
+                                                        "outputColumn": [
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]",
+                                                                "@name": "ErrorCode",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]",
+                                                                "@dataType": "i4",
+                                                                "@specialFlags": "1"
+                                                            },
+                                                            {
+                                                                "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]",
+                                                                "@name": "ErrorColumn",
+                                                                "@lineageId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]",
+                                                                "@dataType": "i4",
+                                                                "@specialFlags": "2"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "externalMetadataColumns": null
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "paths": {
+                                    "path": [
+                                        {
+                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data.Paths[Flat File Source Output]",
+                                            "@name": "Flat File Source Output",
+                                            "@startId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data.Outputs[Flat File Source Output]",
+                                            "@endId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Inputs[Lookup Input]"
+                                        },
+                                        {
+                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data.Paths[Lookup Error Output]",
+                                            "@name": "Lookup Error Output",
+                                            "@startId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Error Output]",
+                                            "@endId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Get Error Description.Inputs[Input 0]"
+                                        },
+                                        {
+                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data.Paths[Lookup Match Output]",
+                                            "@name": "Lookup Match Output",
+                                            "@startId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Outputs[Lookup Match Output]",
+                                            "@endId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination.Inputs[OLE DB Destination Input]"
+                                        },
+                                        {
+                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data.Paths[Lookup Match Output1]",
+                                            "@name": "Lookup Match Output",
+                                            "@startId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key.Outputs[Lookup Match Output]",
+                                            "@endId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key.Inputs[Lookup Input]"
+                                        },
+                                        {
+                                            "@refId": "Package\\Foreach File in Folder\\Extract Sample Currency Data.Paths[Output 0]",
+                                            "@name": "Output 0",
+                                            "@startId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Get Error Description.Outputs[Output 0]",
+                                            "@endId": "Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows.Inputs[Flat File Destination Input]"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "DTS:ForEachVariableMappings": {
+                    "DTS:ForEachVariableMapping": {
+                        "@DTS:VariableName": "User::varFileName",
+                        "@DTS:ValueIndex": "0",
+                        "@DTS:ObjectName": "{1D44BE65-0EB3-45C1-B5FC-7986BB4F60B0}",
+                        "@DTS:DTSID": "{1D44BE65-0EB3-45C1-B5FC-7986BB4F60B0}",
+                        "@DTS:CreationName": ""
+                    }
+                }
+            }
+        },
+        "DTS:DesignTimeProperties": "<?xml version=\"1.0\"?>\n<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->\n<!--If you manually edit this section and make a mistake, you can delete it. -->\n<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->\n<Objects\n  Version=\"sql11\">\n  <!--Each node below will contain properties that do not affect runtime behavior.-->\n  <Package\n    design-time-name=\"Package\">\n    <LayoutInfo>\n      <GraphLayout\n        Capacity=\"4\" xmlns=\"clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph\">\n        <NodeLayout\n          Size=\"240,42\"\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\"\n          TopLeft=\"5.5,7.00000273480134\" />\n        <ContainerLayout\n          HeaderHeight=\"43\"\n          IsExpanded=\"True\"\n          PanelSize=\"250,58\"\n          Size=\"250,101\"\n          Id=\"Package\\Foreach File in Folder\"\n          TopLeft=\"363.166652195984,144.294119684754\" />\n      </GraphLayout>\n    </LayoutInfo>\n  </Package>\n  <TaskHost\n    design-time-name=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\">\n    <LayoutInfo>\n      <GraphLayout\n        Capacity=\"16\" xmlns=\"clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph\" xmlns:mssgle=\"clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph\" xmlns:assembly=\"http://schemas.microsoft.com/winfx/2006/xaml\" xmlns:mssgm=\"clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph\">\n        <NodeLayout\n          Size=\"195,42\"\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\\Get Error Description\"\n          TopLeft=\"446.083315567838,228.000003646402\" />\n        <NodeLayout\n          Size=\"195,42\"\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\\Failed Rows\"\n          TopLeft=\"446.083315567838,307.294122054915\" />\n        <NodeLayout\n          Size=\"240,42\"\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key\"\n          TopLeft=\"165.666660043928,140.803923431152\" />\n        <NodeLayout\n          Size=\"240,42\"\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination\"\n          TopLeft=\"165.666660043928,313.117651337983\" />\n        <NodeLayout\n          Size=\"240,42\"\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\\Extract Sample Currency Data\"\n          TopLeft=\"165.666660043928,54.6470594777368\" />\n        <NodeLayout\n          Size=\"240,42\"\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key\"\n          TopLeft=\"165.666660043928,226.960787384568\" />\n        <EdgeLayout\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data.Paths[Output 0]\"\n          TopLeft=\"543.583315567838,270.000003646402\">\n          <EdgeLayout.Curve>\n            <mssgle:Curve\n              StartConnector=\"{assembly:Null}\"\n              EndConnector=\"0,37.2941184085132\"\n              Start=\"0,0\"\n              End=\"0,29.7941184085132\">\n              <mssgle:Curve.Segments>\n                <mssgle:SegmentCollection\n                  Capacity=\"5\">\n                  <mssgle:LineSegment\n                    End=\"0,29.7941184085132\" />\n                </mssgle:SegmentCollection>\n              </mssgle:Curve.Segments>\n            </mssgle:Curve>\n          </EdgeLayout.Curve>\n          <EdgeLayout.Labels>\n            <EdgeLabelCollection />\n          </EdgeLayout.Labels>\n        </EdgeLayout>\n        <EdgeLayout\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data.Paths[Lookup Match Output1]\"\n          TopLeft=\"246.999993377262,182.803923431152\">\n          <EdgeLayout.Curve>\n            <mssgle:Curve\n              StartConnector=\"{assembly:Null}\"\n              EndConnector=\"38.6666666666667,44.1568639534155\"\n              Start=\"0,0\"\n              End=\"38.6666666666667,36.6568639534155\">\n              <mssgle:Curve.Segments>\n                <mssgle:SegmentCollection\n                  Capacity=\"5\">\n                  <mssgle:LineSegment\n                    End=\"0,13.8382033189294\" />\n                  <mssgle:CubicBezierSegment\n                    Point1=\"0,13.8382033189294\"\n                    Point2=\"0,17.8382033189294\"\n                    Point3=\"4,17.8382033189294\" />\n                  <mssgle:LineSegment\n                    End=\"34.6666666666667,17.8382033189294\" />\n                  <mssgle:CubicBezierSegment\n                    Point1=\"34.6666666666667,17.8382033189294\"\n                    Point2=\"38.6666666666667,17.8382033189294\"\n                    Point3=\"38.6666666666667,21.8382033189294\" />\n                  <mssgle:LineSegment\n                    End=\"38.6666666666667,36.6568639534155\" />\n                </mssgle:SegmentCollection>\n              </mssgle:Curve.Segments>\n            </mssgle:Curve>\n          </EdgeLayout.Curve>\n          <EdgeLayout.Labels>\n            <mssgm:EdgeLabel\n              BoundingBox=\"-27.8580533854167,22.8382033189294,96.3827734375,11.609375\"\n              RelativePosition=\"Any\" />\n          </EdgeLayout.Labels>\n        </EdgeLayout>\n        <EdgeLayout\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data.Paths[Lookup Match Output]\"\n          TopLeft=\"285.666660043928,268.960787384568\">\n          <EdgeLayout.Curve>\n            <mssgle:Curve\n              StartConnector=\"{assembly:Null}\"\n              EndConnector=\"0,44.1568639534154\"\n              Start=\"0,0\"\n              End=\"0,36.6568639534154\">\n              <mssgle:Curve.Segments>\n                <mssgle:SegmentCollection\n                  Capacity=\"5\">\n                  <mssgle:LineSegment\n                    End=\"0,36.6568639534154\" />\n                </mssgle:SegmentCollection>\n              </mssgle:Curve.Segments>\n            </mssgle:Curve>\n          </EdgeLayout.Curve>\n          <EdgeLayout.Labels>\n            <mssgm:EdgeLabel\n              BoundingBox=\"-47.19138671875,13.5237444767077,96.3827734375,11.609375\"\n              RelativePosition=\"Any\" />\n          </EdgeLayout.Labels>\n        </EdgeLayout>\n        <EdgeLayout\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data.Paths[Lookup Error Output]\"\n          TopLeft=\"324.333326710595,182.803923431152\">\n          <EdgeLayout.Curve>\n            <mssgle:Curve\n              StartConnector=\"{assembly:Null}\"\n              EndConnector=\"219.249988857243,45.1960802152495\"\n              Start=\"0,0\"\n              End=\"219.249988857243,37.6960802152495\">\n              <mssgle:Curve.Segments>\n                <mssgle:SegmentCollection\n                  Capacity=\"5\">\n                  <mssgle:LineSegment\n                    End=\"0,14.2580191598028\" />\n                  <mssgle:CubicBezierSegment\n                    Point1=\"0,14.2580191598028\"\n                    Point2=\"0,18.2580191598028\"\n                    Point3=\"4,18.2580191598028\" />\n                  <mssgle:LineSegment\n                    End=\"215.249988857243,18.2580191598028\" />\n                  <mssgle:CubicBezierSegment\n                    Point1=\"215.249988857243,18.2580191598028\"\n                    Point2=\"219.249988857243,18.2580191598028\"\n                    Point3=\"219.249988857243,22.2580191598028\" />\n                  <mssgle:LineSegment\n                    End=\"219.249988857243,37.6960802152495\" />\n                </mssgle:SegmentCollection>\n              </mssgle:Curve.Segments>\n            </mssgle:Curve>\n          </EdgeLayout.Curve>\n          <EdgeLayout.Labels>\n            <mssgm:EdgeLabel\n              BoundingBox=\"64.7586077098715,23.2580191598028,91.7327734375,11.609375\"\n              RelativePosition=\"Any\" />\n          </EdgeLayout.Labels>\n        </EdgeLayout>\n        <EdgeLayout\n          Id=\"Package\\Foreach File in Folder\\Extract Sample Currency Data.Paths[Flat File Source Output]\"\n          TopLeft=\"285.666660043928,96.6470594777368\">\n          <EdgeLayout.Curve>\n            <mssgle:Curve\n              StartConnector=\"{assembly:Null}\"\n              EndConnector=\"0,44.1568639534155\"\n              Start=\"0,0\"\n              End=\"0,36.6568639534155\">\n              <mssgle:Curve.Segments>\n                <mssgle:SegmentCollection\n                  Capacity=\"5\">\n                  <mssgle:LineSegment\n                    End=\"0,36.6568639534155\" />\n                </mssgle:SegmentCollection>\n              </mssgle:Curve.Segments>\n            </mssgle:Curve>\n          </EdgeLayout.Curve>\n          <EdgeLayout.Labels>\n            <EdgeLabelCollection />\n          </EdgeLayout.Labels>\n        </EdgeLayout>\n        <AnnotationLayout\n          Text=\"The data flow extracts data from a file, looks up values in the&#xA;CurrencyKey column in the DimCurrency table and the DateKey&#xA;column in the DimDate table, and writes the  data to the &#xA;FactCurrencyRate table.\"\n          ParentId=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\"\n          FontInfo=\"{assembly:Null}\"\n          Size=\"365,90\"\n          Id=\"4a76f81e-aa6f-44c6-9507-6fe82c044c1f\"\n          TopLeft=\"746.999972979229,35.0588241192708\" />\n      </GraphLayout>\n    </LayoutInfo>\n  </TaskHost>\n  <PipelineComponentMetadata\n    design-time-name=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Currency Key\">\n    <Properties>\n      <Property>\n        <Name>OverwriteParamsSQLProp</Name>\n        <Value\n          type=\"q2:string\">false</Value>\n      </Property>\n      <Property>\n        <Name>UsedTableName</Name>\n        <Value\n          type=\"q3:string\"></Value>\n      </Property>\n      <Property>\n        <Name>TableInfoObjectType</Name>\n        <Value\n          type=\"q4:string\">0</Value>\n      </Property>\n      <Property>\n        <Name>DataSourceViewID</Name>\n      </Property>\n    </Properties>\n  </PipelineComponentMetadata>\n  <PipelineComponentMetadata\n    design-time-name=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\\Sample OLE DB Destination\">\n    <Properties>\n      <Property>\n        <Name>DataSourceViewID</Name>\n      </Property>\n      <Property>\n        <Name>TableInfoObjectType</Name>\n        <Value\n          type=\"q2:string\">Table</Value>\n      </Property>\n    </Properties>\n  </PipelineComponentMetadata>\n  <PipelineComponentMetadata\n    design-time-name=\"Package\\Foreach File in Folder\\Extract Sample Currency Data\\Lookup Date Key\">\n    <Properties>\n      <Property>\n        <Name>OverwriteParamsSQLProp</Name>\n        <Value\n          type=\"q2:string\">false</Value>\n      </Property>\n      <Property>\n        <Name>UsedTableName</Name>\n        <Value\n          type=\"q3:string\">[dbo].[DimDate]</Value>\n      </Property>\n      <Property>\n        <Name>TableInfoObjectType</Name>\n        <Value\n          type=\"q4:string\">0</Value>\n      </Property>\n      <Property>\n        <Name>DataSourceViewID</Name>\n      </Property>\n    </Properties>\n  </PipelineComponentMetadata>\n</Objects>"
+    }
+}
