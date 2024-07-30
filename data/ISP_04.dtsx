@@ -1,0 +1,1947 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/2/2019 10:37:07 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SVQ-4MJWBG2"
+  DTS:CreatorName="yourprofile"
+  DTS:DTSID="{389FB35E-BCB6-4573-ABDF-B776F2659F59}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="ISP_04"
+  DTS:PackageType="5"
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{1D6DC959-AC90-48A2-B0CE-068264E37806}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AdventureWorksDW2012]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{223CBD19-A4EC-44CC-9326-B007A6A1BD68}"
+      DTS:ObjectName="AdventureWorksDW2012">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SVQ-4MJWBG2;Initial Catalog=AdventureWorksDW2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NewFactCurrencyRate.xls]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{57E78701-041C-40A8-A2AE-83F3B39B3FF6}"
+      DTS:ObjectName="NewFactCurrencyRate.xls">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:	3ch_ssis\Shared\NewFactCurrencyRate.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SampleCurrencyData.txt]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{69FE6DED-A374-4A29-B8EF-3D4947FC717F}"
+      DTS:ObjectName="SampleCurrencyData.txt">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::varFileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AverageRate"
+              DTS:DTSID="{B141E6BB-5617-4D80-A184-44E80EDEDEC3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrencyID"
+              DTS:DTSID="{C481CAD0-73FF-440D-826F-35D9866DBDC1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrencyDate"
+              DTS:DTSID="{AD95D6DC-CDF9-4D6F-ACC3-51D0B92967EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EndOfDayRate"
+              DTS:DTSID="{09E5E302-E2D9-4DF2-9030-DFCBC0E0E424}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SVQ-4MJWBG2]"
+      DTS:CreationName="ADO.NET:SQL"
+      DTS:DTSID="{81F849C0-07FD-431D-95DB-859B13890B4B}"
+      DTS:ObjectName="SVQ-4MJWBG2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SVQ-4MJWBG2;Integrated Security=True;Connect Timeout=30;Application Name=SSIS-ISP_04-{81F849C0-07FD-431D-95DB-859B13890B4B}SVQ-4MJWBG2;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="C:	3ch_ssis\ISP-04\ISP-04\ISP-04.dtsConfig"
+      DTS:ConfigurationType="1"
+      DTS:CreationName=""
+      DTS:DTSID="{60495171-C3E9-43F4-B88B-855279AEA6F6}"
+      DTS:ObjectName="ISP-04_Configuration" />
+  </DTS:Configurations>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{46114A42-C832-4563-824C-8EA297335194}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="var7zExecutable">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Program Files\7-Zip\7z.exe</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{71ECF169-6D08-48EC-A426-FA5C5AE90D15}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varEDLCc">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E77414E3-DA20-48B5-8146-A5E4DB9DB340}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varEDLCco">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E00199E-0C3A-483B-BC80-2BD9E870DF4E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varEDLProfile">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E9FF7893-92E3-4E79-BE68-669FC67EB7DB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varEDLSSIS">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7774DBE3-002B-4250-A4E0-5FF9750701F4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varEDLTo">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{65BBA864-D0A1-464F-8CE7-4F9BE252BEDE}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::varSharedFolder] + &quot;\\&quot; +  @[User::varZIPOutputFile]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFileAttachment">
+      <DTS:VariableValue
+        DTS:DataType="8">C:	3ch_ssis\Shared\NewFactCurrencyRate.zip</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3D66CE6F-C88F-46EC-8203-37C91DFCCE39}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F9A3DC63-EEEB-4846-A9EF-DCA81AFD8A5F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varSharedFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">C:	3ch_ssis\Shared</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7E9C4441-6D8A-4B7B-B6ED-5FB0960A1BC4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varXLSOutputFile">
+      <DTS:VariableValue
+        DTS:DataType="8">NewFactCurrencyRate.xls</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8CA6E351-1AE4-4FDD-BD58-1FAF26C96FCE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varZIPOutputFile">
+      <DTS:VariableValue
+        DTS:DataType="8">NewFactCurrencyRate.zip</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Compress the output file"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task - Compress the output file"
+      DTS:DTSID="{55807243-016C-4FE9-BE89-8AE411CC4BDC}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Compress the output file"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">"a -tzip " + @[User::varZIPOutputFile] + " " + @[User::varXLSOutputFile]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Executable">@[User::var7zExecutable]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="WorkingDirectory">@[User::varSharedFolder]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\7-Zip\7z.exe"
+          Arguments="a -tzip NewFactCurrencyRate.zip NewFactCurrencyRate.xls"
+          WorkingDirectory="C:	3ch_ssis\Shared"
+          WindowStyle="Hidden" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete ZIP file and Copy XLS template"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task - Delete ZIP file and Copy XLS template"
+      DTS:DTSID="{BD1C455D-475E-4C63-A321-AC72240D75C8}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete ZIP file and Copy XLS template"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:	3ch_ssis\Shared\NewFactCurrency.cmd"
+          WorkingDirectory="C:	3ch_ssis\Shared"
+          WindowStyle="Hidden" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach File in Folder"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{F027905C-7A98-44D7-A1DD-E649692CB1E8}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach File in Folder">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{ECFD9B73-CBFB-4983-8A68-A2FA7403A844}"
+        DTS:ObjectName="{ECFD9B73-CBFB-4983-8A68-A2FA7403A844}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:	3ch_ssis\Sample Data" />
+            <FEFEProperty
+              FileSpec="Currency_*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach File in Folder\Extra Sample Data Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{16F7B805-6135-4C90-A163-451484A5A646}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Extra Sample Data Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup Currency Key"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM [dbo].[DimCurrency]
+WHERE [CurrencyAlternateKey]
+IN ('ARS', 'AUD', 'BRL', 'CAD', 'CNY',
+    'DEM', 'EUR', 'FRF', 'GBP', 'JPY',
+    'MXN', 'SAR', 'USD', 'VEB')</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT * FROM [dbo].[DimCurrency]
+WHERE [CurrencyAlternateKey]
+IN ('ARS', 'AUD', 'BRL', 'CAD', 'CNY',
+    'DEM', 'EUR', 'FRF', 'GBP', 'JPY',
+    'MXN', 'SAR', 'USD', 'VEB')) [refTable]
+where [refTable].[CurrencyAlternateKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CurrencyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrencyAlternateKey" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrencyName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[CurrencyID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[AdventureWorksDW2012]"
+                      connectionManagerRefId="Package.ConnectionManagers[AdventureWorksDW2012]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Inputs[Lookup Input].Columns[CurrencyID]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CurrencyID"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[CurrencyID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CurrencyAlternateKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Outputs[Lookup Match Output].Columns[CurrencyAlternateKey]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copy Column"
+                          length="3"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Outputs[Lookup Match Output].Columns[CurrencyAlternateKey]"
+                          name="CurrencyAlternateKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">CurrencyAlternateKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup Date Key"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimDate]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimDate]) [refTable]
+where [refTable].[FullDateAlternateKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDateAlternateKey" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfWeek" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EnglishDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SpanishDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FrenchDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfMonth" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekNumberOfYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EnglishMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SpanishMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FrenchMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumberOfYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarQuarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarSemester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalQuarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalSemester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[CurrencyDate]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[AdventureWorksDW2012]"
+                      connectionManagerRefId="Package.ConnectionManagers[AdventureWorksDW2012]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Inputs[Lookup Input].Columns[CurrencyDate]"
+                          cachedDataType="dbDate"
+                          cachedName="CurrencyDate"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[CurrencyDate]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">FullDateAlternateKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Outputs[Lookup Match Output].Columns[DateKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Outputs[Lookup Match Output].Columns[DateKey]"
+                          name="DateKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">DateKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Sample OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[NewFactCurrencyRate]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[AdventureWorksDW2012]"
+                      connectionManagerRefId="Package.ConnectionManagers[AdventureWorksDW2012]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AverageRate]"
+                          cachedDataType="r4"
+                          cachedName="AverageRate"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AverageRate]"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[AverageRate]" />
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CurrencyID]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CurrencyID"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyID]"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[CurrencyID]" />
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CurrencyDate]"
+                          cachedDataType="dbDate"
+                          cachedName="CurrencyDate"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyDate]"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[CurrencyDate]" />
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EndOfDayRate]"
+                          cachedDataType="r4"
+                          cachedName="EndOfDayRate"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndOfDayRate]"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[EndOfDayRate]" />
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateKey]"
+                          cachedDataType="i4"
+                          cachedName="DateKey"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Outputs[Lookup Match Output].Columns[DateKey]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AverageRate]"
+                          dataType="r4"
+                          name="AverageRate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyID]"
+                          dataType="wstr"
+                          length="50"
+                          name="CurrencyID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyDate]"
+                          dataType="dbDate"
+                          name="CurrencyDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndOfDayRate]"
+                          dataType="r4"
+                          name="EndOfDayRate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateKey]"
+                          dataType="i4"
+                          name="DateKey" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyAlternateKey]"
+                          dataType="wstr"
+                          length="3"
+                          name="CurrencyAlternateKey" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="2057"
+                  name="SampleCurrencyData Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[SampleCurrencyData.txt]"
+                      connectionManagerRefId="Package.ConnectionManagers[SampleCurrencyData.txt]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[AverageRate]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AverageRate]"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[AverageRate]"
+                          name="AverageRate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[CurrencyID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CurrencyID]"
+                          length="50"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[CurrencyID]"
+                          name="CurrencyID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[CurrencyDate]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CurrencyDate]"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[CurrencyDate]"
+                          name="CurrencyDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[EndOfDayRate]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EndOfDayRate]"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].Columns[EndOfDayRate]"
+                          name="EndOfDayRate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AverageRate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="AverageRate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CurrencyID]"
+                          dataType="wstr"
+                          length="50"
+                          name="CurrencyID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CurrencyDate]"
+                          dataType="dbDate"
+                          name="CurrencyDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EndOfDayRate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="EndOfDayRate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach File in Folder\Extra Sample Data Task.Paths[Flat File Source Output]"
+                  endId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Inputs[Lookup Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Foreach File in Folder\Extra Sample Data Task.Paths[Lookup Match Output]"
+                  endId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Foreach File in Folder\Extra Sample Data Task.Paths[Lookup Match Output1]"
+                  endId="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key.Outputs[Lookup Match Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{C9512158-97EB-4DA4-9C03-4F37F556E75E}"
+          DTS:ObjectName="{C9512158-97EB-4DA4-9C03-4F37F556E75E}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::varFileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Reset the NewFactCurrencyRate table"
+      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:Description="Execute T-SQL Statement Task - Reset the NewFactCurrencyRate table"
+      DTS:DTSID="{7EC37B7A-9EC5-44C7-9DE6-C9165968AA82}"
+      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Reset the NewFactCurrencyRate table"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{81F849C0-07FD-431D-95DB-859B13890B4B}"
+          SQLTask:SqlStatementSource="EXECUTE [AdventureWorksDW2012].[dbo].[ResetNewFactCurrencyRate];"
+          SQLTask:ServerVersion="9"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Retrieve the Email Distribution List"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task - Retrieve the Email Distribution List"
+      DTS:DTSID="{0AE37D66-191D-47EC-BE59-F06AACD3DC9B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Retrieve the Email Distribution List"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{223CBD19-A4EC-44CC-9326-B007A6A1BD68}"
+          SQLTask:SqlStatementSource="SELECT [EDLSSIS]&#xA;      ,[EDLProfile]&#xA;      ,[EDLTo]&#xA;      ,[EDLCc]&#xA;      ,[EDLCco]&#xA;FROM [AdventureWorksDW2012].[dbo].[EmailDL] (nolock)&#xA;WHERE [EDLSSIS] = 'ISP-04';"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="EDLSSIS"
+            SQLTask:DtsVariableName="User::varEDLSSIS" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="EDLProfile"
+            SQLTask:DtsVariableName="User::varEDLProfile" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="EDLTo"
+            SQLTask:DtsVariableName="User::varEDLTo" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="EDLCc"
+            SQLTask:DtsVariableName="User::varEDLCc" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="EDLCco"
+            SQLTask:DtsVariableName="User::varEDLCco" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Retrieve the FactCurrency data"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task - Retrieve the FactCurrency data"
+      DTS:DTSID="{349A07B6-7A2B-4FB3-8B24-E9D81B87AD0E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Retrieve the FactCurrency data"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Retrieve the FactCurrency data\Excel Destination"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="Excel Destination"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Excel_Destination</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Retrieve the FactCurrency data\Excel Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NewFactCurrencyRate.xls]"
+                  connectionManagerRefId="Package.ConnectionManagers[NewFactCurrencyRate.xls]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Excel Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].Columns[AverageRate]"
+                      cachedDataType="r4"
+                      cachedName="AverageRate"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[AverageRate]"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AverageRate]" />
+                    <inputColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].Columns[CurrencyID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CurrencyID"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CurrencyID]"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyID]" />
+                    <inputColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].Columns[CurrencyDate]"
+                      cachedDataType="dbDate"
+                      cachedName="CurrencyDate"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CurrencyDate]"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyDate]" />
+                    <inputColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].Columns[EndOfDayRate]"
+                      cachedDataType="r4"
+                      cachedName="EndOfDayRate"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[EndOfDayRate]"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EndOfDayRate]" />
+                    <inputColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].Columns[CurrencyAlternateKey]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CurrencyAlternateKey"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CurrencyAlternateKey]"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[DateKey]"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[AverageRate]"
+                      dataType="r8"
+                      name="AverageRate" />
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CurrencyID]"
+                      dataType="nText"
+                      name="CurrencyID" />
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CurrencyDate]"
+                      dataType="date"
+                      name="CurrencyDate" />
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[EndOfDayRate]"
+                      dataType="r8"
+                      name="EndOfDayRate" />
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CurrencyAlternateKey]"
+                      dataType="nText"
+                      name="CurrencyAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[DateKey]"
+                      dataType="r8"
+                      name="DateKey" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Retrieve the FactCurrency data\Excel Destination.Outputs[Excel Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Retrieve the FactCurrency data\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Retrieve the FactCurrency data\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Retrieve the FactCurrency data\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[NewFactCurrencyRate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Retrieve the FactCurrency data\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AdventureWorksDW2012]"
+                  connectionManagerRefId="Package.ConnectionManagers[AdventureWorksDW2012]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AverageRate]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AverageRate]"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[AverageRate]"
+                      name="AverageRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrencyID]"
+                      length="50"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyID]"
+                      name="CurrencyID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrencyDate]"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyDate]"
+                      name="CurrencyDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EndOfDayRate]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EndOfDayRate]"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[EndOfDayRate]"
+                      name="EndOfDayRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyAlternateKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrencyAlternateKey]"
+                      length="3"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyAlternateKey]"
+                      name="CurrencyAlternateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AverageRate]"
+                      dataType="r4"
+                      name="AverageRate" />
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrencyID]"
+                      dataType="wstr"
+                      length="50"
+                      name="CurrencyID" />
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrencyDate]"
+                      dataType="dbDate"
+                      name="CurrencyDate" />
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EndOfDayRate]"
+                      dataType="r4"
+                      name="EndOfDayRate" />
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrencyAlternateKey]"
+                      dataType="wstr"
+                      length="3"
+                      name="CurrencyAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AverageRate]"
+                      dataType="r4"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AverageRate]"
+                      name="AverageRate" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrencyID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrencyID]"
+                      name="CurrencyID" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrencyDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrencyDate]"
+                      name="CurrencyDate" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EndOfDayRate]"
+                      dataType="r4"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EndOfDayRate]"
+                      name="EndOfDayRate" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrencyAlternateKey]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrencyAlternateKey]"
+                      name="CurrencyAlternateKey" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      name="DateKey" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Retrieve the FactCurrency data.Paths[OLE DB Source Output]"
+              endId="Package\Retrieve the FactCurrency data\Excel Destination.Inputs[Excel Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Retrieve the FactCurrency data\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send e-mails"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task - Send e-mails"
+      DTS:DTSID="{C68B0FFF-8C06-4684-9784-5960BCBC9832}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send e-mails"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{223CBD19-A4EC-44CC-9326-B007A6A1BD68}"
+          SQLTask:SqlStatementSource="EXEC msdb.dbo.sp_send_dbmail&#xA;@profile_name = ?,&#xA;@recipients = ?,&#xA;@copy_recipients = ?,&#xA;@blind_copy_recipients = ?,&#xA;@file_attachments = ?,&#xA;@subject = 'T3ch SSIS - ISP-04',&#xA;@body_format = 'HTML',&#xA;@body = 'Please, find attached the retrieved data.';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::varEDLProfile"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::varEDLTo"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::varEDLCc"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::varEDLCco"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::varFileAttachment"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{BFDB775F-BFF1-4B83-AC79-4BE34C98FCF9}"
+      DTS:From="Package\Reset the NewFactCurrencyRate table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach File in Folder" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{64CF1A9C-87E1-4231-A684-00E75F0102BF}"
+      DTS:From="Package\Retrieve the FactCurrency data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Compress the output file" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{07A93D1E-BF79-478D-94F0-5035D59C51C1}"
+      DTS:From="Package\Compress the output file"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Retrieve the Email Distribution List" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{66D9377A-6BA1-4D0F-8CF9-4E9FBCF079B7}"
+      DTS:From="Package\Retrieve the Email Distribution List"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Send e-mails" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{7778394C-EFD8-41EC-9C68-BDB4FAF6451A}"
+      DTS:From="Package\Foreach File in Folder"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Delete ZIP file and Copy XLS template" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{37CF89D6-AA4C-48EB-8947-9C467B73A0A8}"
+      DTS:From="Package\Delete ZIP file and Copy XLS template"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Retrieve the FactCurrency data" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,44.8"
+          Id="Package\Compress the output file"
+          TopLeft="75.1755111271716,433.160788612189" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Delete ZIP file and Copy XLS template"
+          TopLeft="61.1755111271716,286.603923953803" />
+        <NodeLayout
+          Size="191.2,41.6"
+          Id="Package\Foreach File in Folder\Extra Sample Data Task"
+          TopLeft="7.88571575515128,8.56470848202295" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="210.4,104.8"
+          Size="210.4,148"
+          Id="Package\Foreach File in Folder"
+          TopLeft="45.5755111271716,106.92549162461" />
+        <NodeLayout
+          Size="224.8,41.6"
+          Id="Package\Reset the NewFactCurrencyRate table"
+          TopLeft="38.3755111271716,33.6470592954167" />
+        <NodeLayout
+          Size="200,43.2"
+          Id="Package\Retrieve the Email Distribution List"
+          TopLeft="50.7755111271716,509.639220941383" />
+        <NodeLayout
+          Size="224,41.6"
+          Id="Package\Retrieve the FactCurrency data"
+          TopLeft="38.7755111271716,359.882356282996" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Send e-mails"
+          TopLeft="69.5755111271716,584.517653270576" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="150.775511127172,75.2470592954167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6784323291932"
+              Start="0,0"
+              End="0,24.1784323291932">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1784323291932" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="150.775511127172,401.482356282996">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6784323291932"
+              Start="0,0"
+              End="0,24.1784323291932">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1784323291932" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="150.775511127172,477.96078861219">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6784323291931"
+              Start="0,0"
+              End="0,24.1784323291931">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1784323291931" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="150.775511127172,552.839220941383">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6784323291932"
+              Start="0,0"
+              End="0,24.1784323291932">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1784323291932" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="150.775511127172,254.92549162461">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6784323291932"
+              Start="0,0"
+              End="0,24.1784323291932">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1784323291932" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="150.775511127172,328.203923953803">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6784323291932"
+              Start="0,0"
+              End="0,24.1784323291932">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1784323291932" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Author: ejpalma&#xA;Build: 20190421&#xA;Description: This package is based on the ISP_02 one.&#xA;Added an Execute Process Task to delete the ZIP output file,&#xA;and copy the XLS output template.&#xA;It extracts all the rows store in the NewFactCurrencyRate&#xA;table and loads them to the XLS output file.&#xA;After that the Excel file is compressed using the 7zip app.&#xA;Finally, before sending by email the generated ZIP, the&#xA;distribution list is retrieved from the EmailDL table."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="344.8,184"
+          Id="c0f48a82-4bba-479c-bad7-6107aa7a1959"
+          TopLeft="321.714291193047,170.682355334932" />
+        <AnnotationLayout
+          Text="* Go to the script folder and execute the next T-SQL code:&#xA;1. CREATE_PROCEDURE_ResetNewFactCurrencyRate.sql&#xA;2. CREATE_TABLE_EmailDL.sql&#xA;3. INSERT_INTO_EmailDL.sql&#xA;&#xA;Set up the your Database Mail properly before executing this package."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="400.8,120"
+          Id="79cc8230-1400-40ca-8389-07475960d09e"
+          TopLeft="321.714291193048,36.7058828677272" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach File in Folder\Extra Sample Data Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="252,41.6"
+          Id="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key"
+          TopLeft="62.9523816005989,254.69804278773" />
+        <NodeLayout
+          Size="252,41.6"
+          Id="Package\Foreach File in Folder\Extra Sample Data Task\SampleCurrencyData Flat File Source"
+          TopLeft="62.9523816005989,40.9882358689622" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination"
+          TopLeft="88.0952391716365,362.776475676038" />
+        <NodeLayout
+          Size="252,41.6"
+          Id="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key"
+          TopLeft="62.9523816005989,147.843139328346" />
+        <EdgeLayout
+          Id="Package\Foreach File in Folder\Extra Sample Data Task.Paths[Lookup Match Output1]"
+          TopLeft="190.523810386118,296.29804278773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.4784328883082"
+              Start="0,0"
+              End="0,58.9784328883082">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.9784328883082" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,23.6845289441541,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach File in Folder\Extra Sample Data Task.Paths[Lookup Match Output]"
+          TopLeft="188.952381600599,189.443139328346">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.2549034593839"
+              Start="0,0"
+              End="0,57.7549034593839">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.7549034593839" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,23.0727642296919,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach File in Folder\Extra Sample Data Task.Paths[Flat File Source Output]"
+          TopLeft="188.952381600599,82.5882358689622">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.2549034593839"
+              Start="0,0"
+              End="0,57.7549034593839">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.7549034593839" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="The data flow extracts data from a file, looks up values in the CurrencyKey column in the DimCurrency table and the DateKey column in the DimDate table, and writes the data to the NewFactCurrencyRate table."
+          ParentId="Package\Foreach File in Folder\Extra Sample Data Task"
+          FontInfo="{assembly:Null}"
+          Size="258.4,104"
+          Id="be7b73b6-3347-450b-972d-92e019248c9b"
+          TopLeft="342.118331520712,43.2190142722028" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Date Key">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach File in Folder\Extra Sample Data Task\Sample OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach File in Folder\Extra Sample Data Task\Lookup Currency Key">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Retrieve the FactCurrency data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Retrieve the FactCurrency data\Excel Destination"
+          TopLeft="136.57142858116,144.383710081208" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Retrieve the FactCurrency data\OLE DB Source"
+          TopLeft="140.8,63.2" />
+        <EdgeLayout
+          Id="Package\Retrieve the FactCurrency data.Paths[OLE DB Source Output]"
+          TopLeft="215.88571429058,104.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.5837100812084"
+              Start="0,0"
+              End="0,32.0837100812084">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.0837100812084" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Retrieve the FactCurrency data\Excel Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Retrieve the FactCurrency data\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
