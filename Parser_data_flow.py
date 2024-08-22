@@ -61,15 +61,10 @@ def excel_dest(comp: dict) -> pd.DataFrame:
 
 
 def dervide_column(comp: dict) -> pd.DataFrame:
-<<<<<<< HEAD
     df_save = pd.DataFrame(columns=["column_input", "column", "expression"])
     
     
     # when multiple input columns
-    for der_comp in comp["inputs"]["input"]["inputColumns"]["inputColumn"]:
-
-=======
-    df_save = pd.DataFrame(columns=["column", "expression"])
     for der_comp in comp["inputs"]["input"]["inputColumns"]["inputColumn"]:
 
         try:
@@ -78,28 +73,34 @@ def dervide_column(comp: dict) -> pd.DataFrame:
                 if exp["description"] == "Derived Column Friendly Expression":
                     expression = exp["#text"]
                     df_save = pd.concat([df_save, pd.DataFrame({"column": [der_comp["cachedName"]], "expression": [expression]})], ignore_index=True)
-                    
+                   
         except:
-            pass
+           pass
+        
+    # when only one input column
     der_comp = comp["inputs"]["input"]["inputColumns"]["inputColumn"]
     try:
         for exp in der_comp["properties"]["property"]:
             
             if exp["description"] == "Derived Column Friendly Expression":
                 expression = exp["#text"]
-                df_save = pd.concat([df_save, pd.DataFrame({"column": [der_comp["cachedName"]], "expression": [expression]})], ignore_index=True)    
+                df_save = pd.concat([df_save, pd.DataFrame({"column_input":[der_comp["lineageId"]], "column": [der_comp["cachedName"]], "expression": [expression]})], ignore_index=True)    
     
     except:
         pass
-    for der_comp in comp["outputs"]["output"]:
-        try:
-            for exp in der_comp["outputColumns"]["outputColumn"]["properties"]["property"]:
-                if exp["description"] == "Derived Column Friendly Expression":
-                    expression = exp["#text"]
-                    df_save = pd.concat([df_save, pd.DataFrame({"column": [der_comp["outputColumns"]["outputColumn"]["name"]], "expression": [expression]})], ignore_index=True)
-        except:
-            pass
+   # ????
+    #for der_comp in comp["outputs"]["output"]:
+    #    try:
+    #        for exp in der_comp["outputColumns"]["outputColumn"]["properties"]["property"]:
+    #            if exp["description"] == "Derived Column Friendly Expression":
+    #                expression = exp["#text"]
+    #                df_save = pd.concat([df_save, pd.DataFrame({"column": [der_comp["outputColumns"]["outputColumn"]["name"]], "expression": [expression]})], ignore_index=True)
+    #    except:
+    #        pass
+        
     return df_save
+
+
 
 def ODBC_source(comp: dict) -> pd.DataFrame:
     mapping = pd.DataFrame(columns=["Column_ext","Column_name"])
@@ -156,7 +157,7 @@ def lookup(comp: dict) -> dict:
 
 def split_cond(comp: dict) -> str:
     for comps in comp["outputs"]["output"]:
->>>>>>> f3d81ba2595fd223323b5e6921b568eecb2309bd
+#>>>>>>> f3d81ba2595fd223323b5e6921b568eecb2309bd
         try:
             for cases in comps["properties"]["property"]:
                 if cases["description"] == "Specifies the friendly version of the expression. This expression version uses column names.":
@@ -183,7 +184,7 @@ def union_all(path_flow: list[dict], comp: dict) -> pd.DataFrame:
                 inp_col = union_comp["cachedName"]
                 out_col = union_comp["properties"]["property"]["#text"].split(".Columns[")[1].rstrip("]}")
                 
-<<<<<<< HEAD
+#<<<<<<< HEAD
                 if exp["description"] == "Derived Column Friendly Expression":
                     expression = exp["#text"]
                     df_save = pd.concat([df_save, pd.DataFrame({"column": [der_comp["cachedName"]], "expression": [expression]})], ignore_index=True)
@@ -311,8 +312,8 @@ def union_all(path_flow: list[dict], comp: dict) -> pd.DataFrame:
                 inp_col = union_comp["cachedName"]
                 out_col = union_comp["properties"]["property"]["#text"].split(".Columns[")[1].rstrip("]}")
                 
-=======
->>>>>>> f3d81ba2595fd223323b5e6921b568eecb2309bd
+#=======
+#>>>>>>> f3d81ba2595fd223323b5e6921b568eecb2309bd
                 mapping = pd.concat([mapping, pd.DataFrame({"Column_in": [prefix+"."+inp_col], "Column_out": [out_col]})], ignore_index=True)
     return mapping
    
