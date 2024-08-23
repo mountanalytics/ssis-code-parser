@@ -1,8 +1,8 @@
-,ID_block_out,ID_block_in
-0,Package\Merge and filter\Split preferences,Package\Merge and filter\Alter name pref
-1,Package\Merge and filter\Split preferences,Package\Merge and filter\Union suppliers
-2,Package\Merge and filter\Alter name pref,Package\Merge and filter\Union suppliers
-3,Package\Merge and filter\Match with products,Package\Merge and filter\Split preferences
-4,Package\Merge and filter\Load supplier,Package\Merge and filter\Determine rows sup
-5,Package\Merge and filter\Determine rows sup,Package\Merge and filter\Match with products
-6,Package\Merge and filter\Union suppliers,Package\Merge and filter\Write Update sup table
+,ID_block_out,ID_block_in,type_block_out,type_block_in
+0,Package\Merge and filter\Split preferences,Package\Merge and filter\Alter name pref,Microsoft.ConditionalSplit,Microsoft.DerivedColumn
+1,Package\Merge and filter\Split preferences,Package\Merge and filter\Union suppliers,Microsoft.ConditionalSplit,Microsoft.UnionAll
+2,Package\Merge and filter\Alter name pref,Package\Merge and filter\Union suppliers,Microsoft.DerivedColumn,Microsoft.UnionAll
+3,Package\Merge and filter\Match with products,Package\Merge and filter\Split preferences,Microsoft.Lookup,Microsoft.ConditionalSplit
+4,Package\Merge and filter\Load supplier,Package\Merge and filter\Determine rows sup,Microsoft.SSISODBCSrc,Microsoft.RowCount
+5,Package\Merge and filter\Determine rows sup,Package\Merge and filter\Match with products,Microsoft.RowCount,Microsoft.Lookup
+6,Package\Merge and filter\Union suppliers,Package\Merge and filter\Write Update sup table,Microsoft.UnionAll,Microsoft.SSISODBCDst

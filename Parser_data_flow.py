@@ -61,8 +61,8 @@ def excel_dest(comp: dict) -> pd.DataFrame:
 
 
 
-def dervide_column(comp: dict) -> pd.DataFrame:
-    df_save = pd.DataFrame(columns=["column_input", "column", "expression"])
+def derive_column(comp: dict) -> pd.DataFrame:
+    df_save = pd.DataFrame(columns=["Column_input", "Column_name", "expression"])
     
     
     # when multiple input columns
@@ -73,7 +73,7 @@ def dervide_column(comp: dict) -> pd.DataFrame:
                 
                 if exp["description"] == "Derived Column Friendly Expression":
                     expression = exp["#text"]
-                    df_save = pd.concat([df_save, pd.DataFrame({"column": [der_comp["cachedName"]], "expression": [expression]})], ignore_index=True)
+                    df_save = pd.concat([df_save, pd.DataFrame({"Column_name": [der_comp["cachedName"]], "expression": [expression]})], ignore_index=True)
                    
         except:
            pass
@@ -85,7 +85,7 @@ def dervide_column(comp: dict) -> pd.DataFrame:
             
             if exp["description"] == "Derived Column Friendly Expression":
                 expression = exp["#text"]
-                df_save = pd.concat([df_save, pd.DataFrame({"column_input":[der_comp["lineageId"]], "column": [der_comp["cachedName"]], "expression": [expression]})], ignore_index=True)    
+                df_save = pd.concat([df_save, pd.DataFrame({"Column_input":[der_comp["lineageId"]], "Column_name": [der_comp["cachedName"]], "expression": [expression]})], ignore_index=True)    
     
     except:
         pass
@@ -124,13 +124,13 @@ def ODBC_source(comp: dict) -> pd.DataFrame:
     return mapping
 
 def ODBC_dest(comp: dict) -> pd.DataFrame:
-    mapping = pd.DataFrame(columns=["Column_in", "Column_ext", "Column_name"])
+    mapping = pd.DataFrame(columns=["Column_input", "Column_ext", "Column_name"])
     try:
         for columns in comp["inputs"]["input"]["inputColumns"]["inputColumn"]:
             external_col = columns["externalMetadataColumnId"]#.split(".ExternalColumns[")[1].replace("]","")
             col_name = columns["refId"].split(".Columns[")[1].replace("]","") # column name
             col_in = columns["lineageId"] # input col with lineage
-            mapping = pd.concat([mapping, pd.DataFrame({"Column_in": [col_in], "Column_ext": [external_col], "Column_name": [col_name]})], ignore_index=True)
+            mapping = pd.concat([mapping, pd.DataFrame({"Column_input": [col_in], "Column_ext": [external_col], "Column_name": [col_name]})], ignore_index=True)
     except:
         pass
     return mapping
@@ -164,8 +164,8 @@ def lookup(comp: dict) -> dict:
             #here has to come sth when the output has no match
     
     data_dict = {
-        "mapping": mapping,
-        "columns": columns_match
+        "on": mapping,
+        "merged_columns": columns_match
         }
     
     return data_dict
@@ -182,7 +182,7 @@ def split_cond(comp: dict) -> str:
 
 def union_all(path_flow: list[dict], comp: dict) -> pd.DataFrame:
     df_lineage_union = pd.DataFrame(columns=["ID_block_out","ID_block_in"])
-    mapping = pd.DataFrame(columns=["Column_in","Column_out"])
+    mapping = pd.DataFrame(columns=["Column_input","Column_name"])
     for blocks in path_flow:
         if comp["refId"] in blocks["endId"]:
             from_block = blocks["startId"].split(".Outputs")[0]
@@ -198,7 +198,7 @@ def union_all(path_flow: list[dict], comp: dict) -> pd.DataFrame:
                 inp_col = union_comp["cachedName"]
                 out_col = union_comp["properties"]["property"]["#text"].split(".Columns[")[1].rstrip("]}")
                 
-                mapping = pd.concat([mapping, pd.DataFrame({"Column_in": [prefix+"."+inp_col], "Column_out": [out_col]})], ignore_index=True)
+                mapping = pd.concat([mapping, pd.DataFrame({"Column_input": [prefix+"["+inp_col+"]"], "Column_name": [out_col]})], ignore_index=True)
     return mapping
    
     
@@ -206,17 +206,31 @@ if __name__ == "__main__":
     
     kaggle = Load("Demo_rabo/Demo_rabo/Demo_SSIS.dtsx")
     open_dtsx = kaggle.run()
-    df_lineage = pd.DataFrame(columns=["ID_block_out","ID_block_in"])
+    df_lineage = pd.DataFrame(columns=["ID_block_out","ID_block_in", "type_block_out", "type_block_in"])
     
     components = open_dtsx["DTS:Executables"]["DTS:Executable"][1]["DTS:ObjectData"]["pipeline"]["components"]["component"]
     path_flow = open_dtsx["DTS:Executables"]["DTS:Executable"][1]["DTS:ObjectData"]["pipeline"]["paths"]["path"]
+
     for blocks in path_flow:
-        df_lineage = pd.concat([df_lineage, pd.DataFrame({"ID_block_out": [blocks["startId"].split(".Outputs")[0]], "ID_block_in": [blocks["endId"].split(".Inputs")[0]]})], ignore_index=True)
+
+        # add name blocks
+        id_block_out = [blocks["startId"].split(".Outputs")[0]]
+        id_block_in = [blocks["endId"].split(".Inputs")[0]]
+
+        # add type blocks
+        type_block_in = [component['componentClassID'] for component in components if component['refId'] == id_block_in[0]][0]
+        type_block_out = [component['componentClassID'] for component in components if component['refId'] == id_block_out[0]][0]
+
+
+        df_lineage = pd.concat([df_lineage, pd.DataFrame({"ID_block_out": id_block_out, "ID_block_in": id_block_in, 'type_block_in':type_block_in, 'type_block_out': type_block_out})], ignore_index=True)
+
+
+    
     dict_blocks = {}
     
     for comp in components:
         if comp["componentClassID"] == "Microsoft.DerivedColumn":
-            dict_blocks[comp["refId"]] = dervide_column(comp)
+            dict_blocks[comp["refId"]] = derive_column(comp)
         if comp["componentClassID"] == "Microsoft.RowCount":
             dict_blocks[comp["refId"]] = comp["properties"]["property"]["#text"]
         if comp["componentClassID"] == "Microsoft.SSISODBCSrc":
