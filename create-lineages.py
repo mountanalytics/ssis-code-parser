@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 import re
-
+import numpy as np
 
 # sort nodes
 def order_df(nodes: pd.DataFrame) -> list[list]:
@@ -22,8 +22,6 @@ def order_df(nodes: pd.DataFrame) -> list[list]:
     return list_of_lists
 
             
-
-
 # add columns data to sorted nodes
 def add_metadata(sorted_nodes:list) -> list:
     sorted_nodes_metadata = []
@@ -38,20 +36,19 @@ def add_metadata(sorted_nodes:list) -> list:
         
     return sorted_nodes_metadata
 
-
-
 # extract column from between []
 def extract_column(text:str)->str:
     match = re.search(r'\[([^\]]*)\]', text)
     return match.group(1) if match else ''
 
 
+
 if __name__ == "__main__":
 
     # load nodes data
-    nodes = pd.read_csv('nodes.csv') # nodes
+    nodes = pd.read_csv('output-data/nodes-order.csv') # nodes
 
-    with open('dict_blocks.json', 'r') as json_file: # columns data
+    with open('output-data/dict_blocks.json', 'r') as json_file: # columns data
         dict_blocks = json.load(json_file)
 
 
@@ -98,6 +95,8 @@ if __name__ == "__main__":
                 columns_in = [d['Column_input'] for d in nodes_pair[node]]
                 columns_out = [node +'[' + d['Column_name']  +']' for d in nodes_pair[node]]
 
+                print(node, len(columns_in), len(columns_out))
+
                 columns_input += columns_in
                 columns_output += columns_out
 
@@ -106,6 +105,7 @@ if __name__ == "__main__":
 
                 columns_in =[d['Column_lookup'] for d in nodes_pair[node]['merged_columns']] + [previous_node + '[' +column+']' for column in columns]
                 columns_out=[node +'[' +d['Column_name']+']' for d in nodes_pair[node]['merged_columns']]+ [node + '[' +column+']' for column in columns]
+                print(node, len(columns_in), len(columns_out))
 
                 columns_input +=columns_in
                 columns_output +=columns_out
@@ -117,22 +117,24 @@ if __name__ == "__main__":
                 expression = [d['expression'] for d in nodes_pair[node]]
                 expression_columns = [d['Column_name'] for d in nodes_pair[node]]
 
-                column_in =[]
-                column_out =[]
+                columns_in =[]
+                columns_out =[]
 
                 for column in columns:
                     for idx, expression_column in enumerate(expression_columns):
                         if column == expression_column:
+                            derived_column = column
 
                             columns_in.append(previous_node + '[' + column+']')
                             columns_out.append(node + '[' + column+']' + " {"+ expression[idx] +"}")
-                        else:
-                            columns_in.append(previous_node + '[' + column+']')
-                            columns_out.append(node + '[' + column+']')
+                        
+                            
 
 
-                #columns_in = [previous_node + '[' + column+']' for column in columns]
-                #columns_out = [node +'[' +column+']' for column in columns]
+                columns_in += [previous_node + '[' + column+']' for column in columns if column != derived_column]
+                columns_out += [node +'[' +column+']'  for column in columns if column != derived_column]
+
+                print(node, len(columns_in), len(columns_out))
 
                 columns_input +=columns_in
                 columns_output +=columns_out
@@ -144,6 +146,10 @@ if __name__ == "__main__":
                 columns_out=[node +'[' +column+']' for column in columns]
 
                 variable = nodes_pair[node]
+                print(node, len(columns_in), len(columns_out))
+
+                columns_in.append(node +'['+"Row Count"+']')
+                columns_out.append(variable +'['+variable+']')
 
 
                 columns_input +=columns_in
@@ -153,6 +159,7 @@ if __name__ == "__main__":
             if type == 'Microsoft.ConditionalSplit':
                 columns_in=[previous_node + '[' + column+']' for column in columns]
                 columns_out=[node +'[' +column+']' for column in columns]
+                print(node, len(columns_in), len(columns_out))
 
                 columns_input +=columns_in
                 columns_output +=columns_out          
@@ -167,6 +174,7 @@ if __name__ == "__main__":
                 columns_in = sorted(columns_in, key=extract_column)
                 columns_out = sorted(columns_out, key=extract_column)
 
+                print(node, len(columns_in), len(columns_out))
 
                 columns_input +=columns_in
                 columns_output +=columns_out
@@ -174,13 +182,22 @@ if __name__ == "__main__":
 
             # process destination
             if type == 'Microsoft.SSISODBCDst':
+                # second to last node unto last (destination)
                 columns_in =[previous_node + '[' + d['Column_name']+']' for d in nodes_pair[node]]
                 columns_out=[node +'[' +d['Column_name']+']' for d in nodes_pair[node]]
+                print(node, len(columns_in), len(columns_out))
 
                 columns_input +=columns_in
                 columns_output +=columns_out
 
-            print(previous_node)
+                # add last node to destination table lineages
+                columns_in =[node + '[' + d['Column_name']+']' for d in nodes_pair[node]]
+                columns_out=[".".join(d['Column_ext'].split('.')[:-1]) +'['+ d['Column_ext'].split('.')[-1] +']' for d in nodes_pair[node]]
+                print(node, len(columns_in), len(columns_out))
+
+                columns_input +=columns_in
+                columns_output +=columns_out
+
             print()
 
     # create dataframe and save 
@@ -188,13 +205,30 @@ if __name__ == "__main__":
 
     lineages = pd.DataFrame(lineages)
 
-    lineages['expression'] = lineages['column_out'].str.extract(r'\{([^}]*)\}')
+    lineages['TRANSFORMATION'] = lineages['column_out'].str.extract(r'\{([^}]*)\}')
 
-    lineages['col_name_in'] = lineages['column_in'].str.extract(r'\[([^\]]*)\]')
-    lineages['col_name_out'] = lineages['column_out'].str.extract(r'\[([^\]]*)\]')
+    lineages['SOURCE_FIELD'] = lineages['column_in'].str.extract(r'\[([^\]]*)\]')
+    lineages['TARGET_FIELD'] = lineages['column_out'].str.extract(r'\[([^\]]*)\]')
 
-    lineages['node_in'] =lineages['column_in'].apply(lambda x: x.split('[')[0])#.str.extract(r'^(.*?)\s*\[.*\]$')
-    lineages['node_out'] =lineages['column_out'].apply(lambda x: x.split('[')[0])#.str.extract(r'^(.*?)\s*\[.*\]$')
+    lineages['SOURCE_NODE'] =lineages['column_in'].apply(lambda x: "@".join(x.split('[')[0].split('\\')[1:]) if "\\" in x else x.split('[')[0])#.str.extract(r'^(.*?)\s*\[.*\]$')
+    lineages['TARGET_NODE'] =lineages['column_out'].apply(lambda x: "@".join(x.split('[')[0].split('\\')[1:]) if "\\" in x else x.split('[')[0])
+
+    lineages['LINK_VALUE'] = 1
+    lineages['ROW_ID'] = lineages.index
+
+    lineages.fillna("", inplace=True)
+
+    lineages['COLOR'] = ["aliceblue" if i == ""  else "orangered" for i in lineages['TRANSFORMATION']]
 
 
-    lineages.to_csv('lineages.csv')
+    #,TRANSFORMATION,SOURCE_FIELD,SOURCE_NODE,TARGET_FIELD,TARGET_NODE,LINK_VALUE,ROW_ID,COLOR
+    nodes = pd.read_csv('output-data/nodes_sankey.csv')
+    #lineages = pd.merge(lineages, nodes[['ID', 'LABEL_NODE']], left_on='TARGET_NODE', right_on = 'LABEL_NODE', how='left')
+    lineages = pd.merge(lineages, nodes[['ID', 'LABEL_NODE']], left_on='SOURCE_NODE', right_on = 'LABEL_NODE', how='left')
+    lineages['SOURCE_NODE'] = lineages['ID']
+    lineages.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
+    # merge target id
+    lineages = pd.merge(lineages, nodes[['ID', 'LABEL_NODE']], left_on='TARGET_NODE', right_on = 'LABEL_NODE', how='left')
+    lineages['TARGET_NODE'] = lineages['ID']
+
+    lineages.to_csv('output-data/lineages/lineages.csv')

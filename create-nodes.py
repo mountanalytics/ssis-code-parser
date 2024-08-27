@@ -1,6 +1,8 @@
 import xmltodict
 import pandas as pd
 import json
+import numpy as np
+import re
 
 class Load():
     def __init__(self, path):
@@ -106,9 +108,9 @@ def derive_column(comp: dict) -> pd.DataFrame:
 def ODBC_source(comp: dict) -> pd.DataFrame:
     mapping = pd.DataFrame(columns=["Column_input", "Column_ext","Column_name"])
     
-    for property in comp['properties']['property']:
-        if property['name'] == 'TableName':
-            table_name = property['#text']
+    for props in comp['properties']['property']:
+        if props['name'] == 'TableName':
+            table_name = props['#text'].replace('"', '')
             
     for part_comp in comp["outputs"]["output"]:
         if part_comp["name"] == "ODBC Source Output":
@@ -121,19 +123,23 @@ def ODBC_source(comp: dict) -> pd.DataFrame:
                     mapping = pd.concat([mapping, pd.DataFrame({"Column_input": [col_in], "Column_ext": [external_col], "Column_name": [col_name]})], ignore_index=True)
             except:
                 pass
-    return mapping
+    return mapping, table_name
 
 def ODBC_dest(comp: dict) -> pd.DataFrame:
     mapping = pd.DataFrame(columns=["Column_input", "Column_ext", "Column_name"])
     try:
+        for names in comp["properties"]["property"]:
+            if names["description"] == "The name of the table to be fetched.":
+                external_table = names["#text"].replace('"', '')
+
         for columns in comp["inputs"]["input"]["inputColumns"]["inputColumn"]:
-            external_col = columns["externalMetadataColumnId"]#.split(".ExternalColumns[")[1].replace("]","")
+            external_col = columns["externalMetadataColumnId"].split(".ExternalColumns[")[1].replace("]","")
             col_name = columns["refId"].split(".Columns[")[1].replace("]","") # column name
             col_in = columns["lineageId"] # input col with lineage
-            mapping = pd.concat([mapping, pd.DataFrame({"Column_input": [col_in], "Column_ext": [external_col], "Column_name": [col_name]})], ignore_index=True)
+            mapping = pd.concat([mapping, pd.DataFrame({"Column_input": [col_in], "Column_ext": [external_table+"."+external_col], "Column_name": [col_name]})], ignore_index=True)
     except:
         pass
-    return mapping
+    return mapping, external_table
 
 def lookup(comp: dict) -> dict:
     
@@ -168,7 +174,7 @@ def lookup(comp: dict) -> dict:
         "merged_columns": columns_match
         }
     
-    return data_dict
+    return data_dict, table
 
 def split_cond(comp: dict) -> str:
     for comps in comp["outputs"]["output"]:
@@ -201,15 +207,79 @@ def union_all(path_flow: list[dict], comp: dict) -> pd.DataFrame:
                 mapping = pd.concat([mapping, pd.DataFrame({"Column_input": [prefix+"["+inp_col+"]"], "Column_name": [out_col]})], ignore_index=True)
     return mapping
    
+def append_ext_tables(ext_table: str, df_nodes: pd.DataFrame) -> pd.DataFrame:
+    ext_table = ext_table.replace('"','')
+    input_df = pd.DataFrame({"LABEL_NODE": [ext_table], 
+                             'ID': [np.nan],
+                             'FUNCTION': ["DataSources"],
+                             'JOIN_ARG': [np.nan],
+                             'NAME_NODE': [ext_table],
+                             'FILTER': [np.nan],
+                             'COLOR': "black"
+                             })
+    df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
+    return df_nodes
+
+def append_normal_node(refid: str, func: str, df_nodes: pd.DataFrame) -> pd.DataFrame:
+        split_name = refid.split("\\")
+        input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
+                                 'ID': [np.nan],
+                                 'FUNCTION': [func],
+                                 'JOIN_ARG': [np.nan],
+                                 'NAME_NODE': [split_name[2]],
+                                 'FILTER': [np.nan],
+                                 'COLOR': "black"
+                                 })
+        df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
+        return df_nodes
+
+
+def append_join_node(refid: str, func: str, join_argu: str, df_nodes: pd.DataFrame) -> pd.DataFrame:
+        split_name = refid.split("\\")
+        input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
+                                 'ID': [np.nan],
+                                 'FUNCTION': [func],
+                                 'JOIN_ARG': [join_argu],
+                                 'NAME_NODE': [split_name[2]],
+                                 'FILTER': [np.nan],
+                                 'COLOR': "dodgerblue"
+                                 })
+        df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
+        return df_nodes
     
+def vars_df(open_dtsx: dict) -> pd.DataFrame:
+    vars_df = pd.DataFrame(columns=["Variable"])
+    if len(open_dtsx["DTS:Variables"]["DTS:Variable"]) != 0:
+        for var in open_dtsx["DTS:Variables"]["DTS:Variable"]:
+            vars_df = pd.concat([vars_df, pd.DataFrame({"Variable" : [var["DTS:Namespace"] + "::" + var["DTS:ObjectName"]]})])
+    return vars_df
+
+def append_var_node(var_df: pd.DataFrame, df_nodes: pd.DataFrame) -> pd.DataFrame:
+    for var in var_df["Variable"]:
+        input_df = pd.DataFrame({"LABEL_NODE": [var], 
+                                 'ID': [np.nan],
+                                 'FUNCTION': ["Variable"],
+                                 'JOIN_ARG': [np.nan],
+                                 'NAME_NODE': [var],
+                                 'FILTER': [np.nan],
+                                 'COLOR': "green"
+                                 })
+        df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
+    return df_nodes
+
+
+
 if __name__ == "__main__":   
     
-    kaggle = Load("Demo_rabo/Demo_rabo/Demo_SSIS.dtsx")
+    kaggle = Load("data/Demo_rabo/Demo_rabo/Demo_SSIS.dtsx")
     open_dtsx = kaggle.run()
     df_lineage = pd.DataFrame(columns=["ID_block_out","ID_block_in", "type_block_out", "type_block_in"])
-    
+    df_nodes = pd.DataFrame(columns=['LABEL_NODE', 'ID', 'FUNCTION', 'JOIN_ARG', 'NAME_NODE', 'FILTER', 'COLOR'])
+    df_nodes = append_var_node(vars_df(open_dtsx), df_nodes)
+
     components = open_dtsx["DTS:Executables"]["DTS:Executable"][1]["DTS:ObjectData"]["pipeline"]["components"]["component"]
     path_flow = open_dtsx["DTS:Executables"]["DTS:Executable"][1]["DTS:ObjectData"]["pipeline"]["paths"]["path"]
+
 
     for blocks in path_flow:
 
@@ -230,20 +300,32 @@ if __name__ == "__main__":
     
     for comp in components:
         if comp["componentClassID"] == "Microsoft.DerivedColumn":
+            df_nodes = append_normal_node(comp["refId"], "DerivedColumn", df_nodes)
             dict_blocks[comp["refId"]] = derive_column(comp)
         if comp["componentClassID"] == "Microsoft.RowCount":
             dict_blocks[comp["refId"]] = comp["properties"]["property"]["#text"]
+            df_nodes = append_normal_node(comp["refId"], "RowCount", df_nodes)
         if comp["componentClassID"] == "Microsoft.SSISODBCSrc":
-            dict_blocks[comp["refId"]] = ODBC_source(comp)
+            dict_blocks[comp["refId"]],ext_table = ODBC_source(comp)
+            df_nodes = append_normal_node(comp["refId"], "SSISODBCSrc", df_nodes)
+            df_nodes = append_ext_tables(ext_table, df_nodes)
         if comp["componentClassID"] == "Microsoft.SSISODBCDst":
-            dict_blocks[comp["refId"]] = ODBC_dest(comp)
+            dict_blocks[comp["refId"]],ext_table = ODBC_dest(comp)
+            df_nodes = append_normal_node(comp["refId"], "SSISODBCDst", df_nodes)
+            df_nodes = append_ext_tables(ext_table, df_nodes)
         if comp["componentClassID"] == "Microsoft.Lookup":
-            dict_blocks[comp["refId"]] = lookup(comp)
+            dict_blocks[comp["refId"]], lookup_table = lookup(comp)
+            df_nodes = append_ext_tables(lookup_table, df_nodes)
+            joinargu = dict_blocks[comp["refId"]]['on'].loc[0,"Column_lookup"]
+            joinargu = re.search(r'\[(.*?)\]', joinargu).group(1) + " = " + dict_blocks[comp["refId"]]['on'].loc[0,"Column_name"]
+            df_nodes = append_join_node(comp["refId"], "Lookup", joinargu, df_nodes)
         if comp["componentClassID"] == "Microsoft.ConditionalSplit":
+            df_nodes = append_join_node(comp["refId"], "ConditionalSplit", split_cond(comp), df_nodes)
             dict_blocks[comp["refId"]]  = split_cond(comp)
+ 
         if comp["componentClassID"] == "Microsoft.UnionAll":
             dict_blocks[comp["refId"]]  = union_all(path_flow, comp)
-                        
+            df_nodes = append_normal_node(comp["refId"], "UnionAll", df_nodes)
         
         
         
@@ -251,10 +333,12 @@ if __name__ == "__main__":
             dict_blocks[comp["refId"]]  = excel_source(comp)
         if comp["componentClassID"] == "Microsoft.ExcelDestination":
             dict_blocks[comp["refId"]] = excel_dest(comp) 
+
             
-            
+    df_nodes["ID"] = df_nodes.index        
+    df_nodes.to_csv('output-data/nodes_sankey.csv',index=False)   
     ## save data
-    
+    """
     def sort_precedeneces(precedences_list, precedences_list_sorted):
     
         # for element in precedence list, recursively add all the node one by one in order
@@ -283,9 +367,9 @@ if __name__ == "__main__":
 
     print(sort_precedeneces(precedences_list, precedences_list_sorted))
     print()
-
+    """
        
-    df_lineage.to_csv('nodes.csv')
+    df_lineage.to_csv('output-data/nodes-order.csv')
     
     ##########################################
     def convert_dataframes(obj):
@@ -306,6 +390,6 @@ if __name__ == "__main__":
     serializable_data = convert_dataframes(dict_blocks)
     
     # Save the converted dictionary as a JSON file
-    with open('dict_blocks.json', 'w') as json_file:
+    with open('output-data/dict_blocks.json', 'w') as json_file:
         json.dump(serializable_data, json_file, indent=4)
     
