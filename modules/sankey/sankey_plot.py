@@ -25,9 +25,28 @@ def draw_sankey(name, path):
 
     df['source_to_target'] = df[['SOURCE_FIELD', 'TARGET_FIELD']].agg('=>'.join, axis=1)
     # df['source_to_target_transformation'] = df[['source_to_target', 'TRANSFORMATION']].agg('-'.join, axis=1)
-    df['source_to_target_transformation'] = df[['source_to_target','TRANSFORMATION']].apply(lambda x : '{}<br />Transformation: {}'.format(x[0],x[1]), axis=1)
 
-    df_labels['hover_label'] = df_labels[['LABEL_NODE','FILTER']].apply(lambda x : '{}<br />Filter: {}'.format(x[0],x[1]), axis=1)
+    #df['source_to_target_transformation'] = df[['source_to_target','TRANSFORMATION']].apply(lambda x : '{}<br />Transformation: {}'.format(x[0],x[1]), axis=1)
+    df['source_to_target_transformation'] = df[['source_to_target', 'TRANSFORMATION']].apply(
+        lambda x: '{}<br />Transformation: {}'.format(x[0], x[1]) if pd.notna(x[1]) else x[0],
+        axis=1
+    )
+
+
+    #df_labels['hover_label'] = df_labels[['LABEL_NODE','FILTER']].apply(lambda x : '{}<br />Filter: {}'.format(x[0],x[1]), axis=1)
+    #df_labels['hover_label'] = df_labels[['LABEL_NODE', 'FILTER']].apply(
+    #    lambda x: '{}<br />Filter: {}'.format(x[0], x[1]) if pd.notna(x[1]) else x[0],
+    #    axis=1
+    #)
+    df_labels['hover_label'] = df_labels[['LABEL_NODE', 'FILTER', 'JOIN_ARG', 'SPLIT_ARG']].apply(
+        lambda x: '{}{}'.format(
+            x[0],
+            f'<br />Filter: {x[1]}' if pd.notna(x[1]) else ''
+        ) + (f'<br />Join Argument: {x[2]}' if pd.notna(x[2]) else '') 
+        + (f'<br />Split Argument: {x[3]}' if pd.notna(x[3]) else ''),
+        axis=1
+    )
+
 
 
     fig = go.Figure(data=[go.Sankey(

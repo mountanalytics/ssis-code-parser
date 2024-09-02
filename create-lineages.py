@@ -129,8 +129,6 @@ if __name__ == "__main__":
                             columns_out.append(node + '[' + column+']' + " {"+ expression[idx] +"}")
                         
                             
-
-
                 columns_in += [previous_node + '[' + column+']' for column in columns if column != derived_column]
                 columns_out += [node +'[' +column+']'  for column in columns if column != derived_column]
 
@@ -166,6 +164,7 @@ if __name__ == "__main__":
 
             # process unionall
             if type == 'Microsoft.UnionAll':
+
                 columns_in=[d['Column_input'] for d in nodes_pair[node] if previous_node in d['Column_input']] # add the column that are mentioned in the previous node, otherwise the same column is added two times
                 columns_out=[d['Column_name'] for d in nodes_pair[node]]
 
@@ -200,12 +199,13 @@ if __name__ == "__main__":
 
             print()
 
-    # create dataframe and save 
+    # create lineages dataframe and save csv
     lineages = {'column_in': columns_input, 'column_out': columns_output}
 
     lineages = pd.DataFrame(lineages)
 
     lineages['TRANSFORMATION'] = lineages['column_out'].str.extract(r'\{([^}]*)\}')
+
 
     lineages['SOURCE_FIELD'] = lineages['column_in'].str.extract(r'\[([^\]]*)\]')
     lineages['TARGET_FIELD'] = lineages['column_out'].str.extract(r'\[([^\]]*)\]')
@@ -218,17 +218,34 @@ if __name__ == "__main__":
 
     lineages.fillna("", inplace=True)
 
+    # move transformation to successive node
+    name_node = None
+    for i in range(len(lineages) - 1):
+        if lineages.loc[i, 'TRANSFORMATION']:   
+            transformation = lineages.loc[i, 'TRANSFORMATION']
+            name_node = lineages.loc[i, 'column_out']
+            lineages.loc[i, 'TRANSFORMATION'] = ""
+            continue
+
+        if name_node:
+            if lineages.loc[i, 'column_in'] == name_node.split(" {")[0]:
+                #print(lineages.loc[i, 'column_in'], name_node)
+                lineages.loc[i, 'TRANSFORMATION'] = transformation
+
+    # define color lineages
     lineages['COLOR'] = ["aliceblue" if i == ""  else "orangered" for i in lineages['TRANSFORMATION']]
 
 
-    #,TRANSFORMATION,SOURCE_FIELD,SOURCE_NODE,TARGET_FIELD,TARGET_NODE,LINK_VALUE,ROW_ID,COLOR
     nodes = pd.read_csv('output-data/nodes_sankey.csv')
-    #lineages = pd.merge(lineages, nodes[['ID', 'LABEL_NODE']], left_on='TARGET_NODE', right_on = 'LABEL_NODE', how='left')
+    # merge source id
     lineages = pd.merge(lineages, nodes[['ID', 'LABEL_NODE']], left_on='SOURCE_NODE', right_on = 'LABEL_NODE', how='left')
     lineages['SOURCE_NODE'] = lineages['ID']
     lineages.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
+
     # merge target id
     lineages = pd.merge(lineages, nodes[['ID', 'LABEL_NODE']], left_on='TARGET_NODE', right_on = 'LABEL_NODE', how='left')
     lineages['TARGET_NODE'] = lineages['ID']
+    lineages.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
+
 
     lineages.to_csv('output-data/lineages/lineages.csv')

@@ -207,12 +207,13 @@ def union_all(path_flow: list[dict], comp: dict) -> pd.DataFrame:
                 mapping = pd.concat([mapping, pd.DataFrame({"Column_input": [prefix+"["+inp_col+"]"], "Column_name": [out_col]})], ignore_index=True)
     return mapping
    
-def append_ext_tables(ext_table: str, df_nodes: pd.DataFrame) -> pd.DataFrame:
+def append_ext_tables(ext_table: str, df_nodes: pd.DataFrame, func = 'DataSources') -> pd.DataFrame:
     ext_table = ext_table.replace('"','')
     input_df = pd.DataFrame({"LABEL_NODE": [ext_table], 
                              'ID': [np.nan],
-                             'FUNCTION': ["DataSources"],
+                             'FUNCTION': [func],
                              'JOIN_ARG': [np.nan],
+                             'SPLIT_ARG': [np.nan],
                              'NAME_NODE': [ext_table],
                              'FILTER': [np.nan],
                              'COLOR': "black"
@@ -226,6 +227,7 @@ def append_normal_node(refid: str, func: str, df_nodes: pd.DataFrame) -> pd.Data
                                  'ID': [np.nan],
                                  'FUNCTION': [func],
                                  'JOIN_ARG': [np.nan],
+                                 'SPLIT_ARG': [np.nan],
                                  'NAME_NODE': [split_name[2]],
                                  'FILTER': [np.nan],
                                  'COLOR': "black"
@@ -240,12 +242,28 @@ def append_join_node(refid: str, func: str, join_argu: str, df_nodes: pd.DataFra
                                  'ID': [np.nan],
                                  'FUNCTION': [func],
                                  'JOIN_ARG': [join_argu],
+                                 'SPLIT_ARG': [np.nan],
                                  'NAME_NODE': [split_name[2]],
                                  'FILTER': [np.nan],
                                  'COLOR': "dodgerblue"
                                  })
         df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
         return df_nodes
+
+def append_split_node(refid: str, func: str, split_argu: str, df_nodes: pd.DataFrame) -> pd.DataFrame:
+        split_name = refid.split("\\")
+        input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
+                                 'ID': [np.nan],
+                                 'FUNCTION': [func],
+                                 'JOIN_ARG': [np.nan],
+                                 'SPLIT_ARG': [split_argu],
+                                 'NAME_NODE': [split_name[2]],
+                                 'FILTER': [np.nan],
+                                 'COLOR': "dodgerblue"
+                                 })
+        df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
+        return df_nodes
+    
     
 def vars_df(open_dtsx: dict) -> pd.DataFrame:
     vars_df = pd.DataFrame(columns=["Variable"])
@@ -260,6 +278,7 @@ def append_var_node(var_df: pd.DataFrame, df_nodes: pd.DataFrame) -> pd.DataFram
                                  'ID': [np.nan],
                                  'FUNCTION': ["Variable"],
                                  'JOIN_ARG': [np.nan],
+                                 'SPLIT_ARG': [np.nan],
                                  'NAME_NODE': [var],
                                  'FILTER': [np.nan],
                                  'COLOR': "green"
@@ -274,7 +293,7 @@ if __name__ == "__main__":
     kaggle = Load("data/Demo_rabo/Demo_rabo/Demo_SSIS.dtsx")
     open_dtsx = kaggle.run()
     df_lineage = pd.DataFrame(columns=["ID_block_out","ID_block_in", "type_block_out", "type_block_in"])
-    df_nodes = pd.DataFrame(columns=['LABEL_NODE', 'ID', 'FUNCTION', 'JOIN_ARG', 'NAME_NODE', 'FILTER', 'COLOR'])
+    df_nodes = pd.DataFrame(columns=['LABEL_NODE', 'ID', 'FUNCTION', 'JOIN_ARG', 'SPLIT_ARG', 'NAME_NODE', 'FILTER', 'COLOR'])
     df_nodes = append_var_node(vars_df(open_dtsx), df_nodes)
 
     components = open_dtsx["DTS:Executables"]["DTS:Executable"][1]["DTS:ObjectData"]["pipeline"]["components"]["component"]
@@ -312,7 +331,7 @@ if __name__ == "__main__":
         if comp["componentClassID"] == "Microsoft.SSISODBCDst":
             dict_blocks[comp["refId"]],ext_table = ODBC_dest(comp)
             df_nodes = append_normal_node(comp["refId"], "SSISODBCDst", df_nodes)
-            df_nodes = append_ext_tables(ext_table, df_nodes)
+            df_nodes = append_ext_tables(ext_table, df_nodes, 'DataDestinations')
         if comp["componentClassID"] == "Microsoft.Lookup":
             dict_blocks[comp["refId"]], lookup_table = lookup(comp)
             df_nodes = append_ext_tables(lookup_table, df_nodes)
@@ -320,7 +339,7 @@ if __name__ == "__main__":
             joinargu = re.search(r'\[(.*?)\]', joinargu).group(1) + " = " + dict_blocks[comp["refId"]]['on'].loc[0,"Column_name"]
             df_nodes = append_join_node(comp["refId"], "Lookup", joinargu, df_nodes)
         if comp["componentClassID"] == "Microsoft.ConditionalSplit":
-            df_nodes = append_join_node(comp["refId"], "ConditionalSplit", split_cond(comp), df_nodes)
+            df_nodes = append_split_node(comp["refId"], "ConditionalSplit", split_cond(comp), df_nodes)
             dict_blocks[comp["refId"]]  = split_cond(comp)
  
         if comp["componentClassID"] == "Microsoft.UnionAll":
@@ -336,7 +355,7 @@ if __name__ == "__main__":
 
             
     df_nodes["ID"] = df_nodes.index        
-    df_nodes.to_csv('output-data/nodes_sankey.csv',index=False)   
+    df_nodes.to_csv('output-data/nodes.csv',index=False)   
     ## save data
     """
     def sort_precedeneces(precedences_list, precedences_list_sorted):
