@@ -91,6 +91,6 @@ if __name__ == "__main__":
 
 
     # Save the converted dictionary as a JSON file
-    with open('output-data/dict_blocks_control.json', 'w') as json_file:
+    with open('output-data/dict_blocks_controlflow.json', 'w') as json_file:
         json.dump(dict_blocks, json_file, indent=4)
     
