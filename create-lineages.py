@@ -307,7 +307,7 @@ if __name__ == "__main__":
         # load nodes data
         final_lin = pd.concat([final_lin,lineages], ignore_index=True)
     df_no_duplicates = final_lin.drop_duplicates()
-    df_no_duplicates.to_csv('output-data/lineages/Merge and filter.csv')
+    df_no_duplicates.to_csv('output-data/lineages/lineage-Merge and filter.csv')
     
     
     

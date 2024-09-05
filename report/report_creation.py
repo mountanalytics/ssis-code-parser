@@ -334,13 +334,13 @@ last_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
 document.add_paragraph('This section contains the Merge and filter data flow in a Sankey Diagram, giving you insights into the overall lineage and the transformations as well as model-identified focus points of the view.')
 
-SummaryGraph = document.add_picture("data/sankey.jpg", width=Inches(7))
+SummaryGraph = document.add_picture("data/sankey_dataflow.jpg", width=Inches(7))
 last_paragraph = document.paragraphs[-1] 
 last_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
 data = {
-    'SystemName': ['Transformation', 'Data transmission', 'Filter', 'Node'],
-    'Color': ['orangered', 'aliceblue', 'dodgerblue', 'black']
+    'SystemName': ["Node", "External table", "join or split node", "Variable", "Data transmission", "Transformation (existing column)", "Transformation (new column)"],
+    'Color': ['black', 'gold', 'dodgerblue', 'green', 'aliceblue', 'orangred', 'darkred']
 }
 
 SystemSummary = pd.DataFrame(data)
@@ -357,7 +357,7 @@ for cell in Systems_Legend.columns[0].cells:
     cell.width = Inches(1)
 
 for cell in Systems_Legend.columns[1].cells:
-    cell.width = Inches(2)
+    cell.width = Inches(4)
     
 for row in Systems_Legend.rows:
     row.height = Inches(0.18)
@@ -366,9 +366,10 @@ row_idx = 0
 for i in range(len(SystemSummary)*2):
     Systems_Legend.rows[i].height_rule = WD_ROW_HEIGHT_RULE.EXACTLY
 
+
 data = {
-    'SystemName': ['Transformation', 'Data transmission', 'Filter', 'Node'],
-    'Color': ['orangered', 'aliceblue', 'dodgerblue', 'black']
+    'SystemName': ["Node", "External table", "join or split node", "Variable", "Data transmission", "Transformation (existing column)", "Transformation (new column)"],
+    'Color': ['black', 'gold', 'dodgerblue', 'green', 'aliceblue', 'orangered', 'darkred']
 }
 
 SystemSummary = pd.DataFrame(data)
