@@ -1,0 +1,2 @@
+,SOURCE_NAME,SOURCE_FIELD,TRANSFORMATION
+0,Merge and filter@Alter name pref,CompanyName,"""PREF_"" + CompanyName"

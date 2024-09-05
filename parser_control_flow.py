@@ -55,6 +55,7 @@ def pars_sql_task(control_node: dict) -> dict:
             #vars_df = pd.concat([vars_df,new_vars_df], ignore_index=True)
             sql_state = control_node['DTS:ObjectData']['SQLTask:SqlTaskData']['SQLTask:SqlStatementSource']
         dict_sql = {
+            "Description": control_node['DTS:Description'],
             "SQL_state": sql_state,
             "Variables": vars_list
             }

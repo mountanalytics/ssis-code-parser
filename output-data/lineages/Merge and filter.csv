@@ -200,7 +200,7 @@
 283,Package\Merge and filter\Error_match_column[ContactName],Package\Merge and filter\Error output table[ContactName],,ContactName,ContactName,8,6,1,113,aliceblue
 284,Package\Merge and filter\Error_match_column[ContactTitle],Package\Merge and filter\Error output table[ContactTitle],,ContactTitle,ContactTitle,8,6,1,114,aliceblue
 285,Package\Merge and filter\Error_match_column[PostalCode],Package\Merge and filter\Error output table[PostalCode],,PostalCode,PostalCode,8,6,1,115,aliceblue
-286,Package\Merge and filter\Error_match_column[Match_lookup],Package\Merge and filter\Error output table[Match_lookup],,Match_lookup,Match_lookup,8,6,1,116,aliceblue
+286,"Package\Merge and filter\Error_match_column[Match_lookup] {""No_match""}",Package\Merge and filter\Error output table[Match_lookup],"""No_match""",Match_lookup,Match_lookup,8,6,1,116,darkred
 287,Package\Merge and filter\Error_match_column[SupplierID2],Package\Merge and filter\Error output table[SupplierID2],,SupplierID2,SupplierID2,8,6,1,117,aliceblue
 288,Package\Merge and filter\Error output table[ValidFrom],dbo.Error_lines[ValidFrom],,ValidFrom,ValidFrom,6,7,1,118,aliceblue
 289,Package\Merge and filter\Error output table[ValidTo],dbo.Error_lines[ValidTo],,ValidTo,ValidTo,6,7,1,119,aliceblue

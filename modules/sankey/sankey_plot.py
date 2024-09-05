@@ -8,13 +8,13 @@ def draw_sankey(name, path):
     """
     if len(name) == 1:
         df = pd.read_csv(f'{path}/{name[0]}', sep = ',')
-        title = f"Sankey of calculationview: {name[0]}"
+        title = f"Sankey of the data flow: {name[0].split('.')[0]}"
     else:
         lineage_list = []
         if len(name) == 2:
-            title = f"Sankey of merged calculationviews: {name[0]} and {name[1]}"
+            title = f"Sankey of lineages: {name[0]} and {name[1]}"
         else:
-            title = "Sankey of multiple merged calculationviews"
+            title = "Sankey of multiple merged lineages"
         for lins in name: 
             lineage = pd.read_csv(f"{path}/lineage-{lins}.csv")
             lineage_list.append(lineage)

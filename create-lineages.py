@@ -108,7 +108,7 @@ if __name__ == "__main__":
         columns_output = []
         seen_nodes = []
         previous_node = None
-    
+        exp_created = []
         for nodes_pair in sorted_nodes_metadata:
             for i, node in enumerate(nodes_pair):
     
@@ -167,15 +167,19 @@ if __name__ == "__main__":
     
                     columns_in =[]
                     columns_out =[]
-    
-                    for column in columns:
-                        for idx, expression_column in enumerate(expression_columns):
+
+                    for idx, expression_column in enumerate(expression_columns):
+                        matched = False
+                        for column in columns:
                             if column == expression_column:
                                 derived_column = column
-    
                                 columns_in.append(previous_node + '[' + column+']')
                                 columns_out.append(node + '[' + column+']' + " {"+ expression[idx] +"}")
-                            
+                                matched = True
+                        if not matched:
+                            exp_created.append(node + '[' + expression_column + ']' + " {" + expression[idx] + "}")        
+                        
+
                                 
                     columns_in += [previous_node + '[' + column+']' for column in columns if column != derived_column]
                     columns_out += [node +'[' +column+']'  for column in columns if column != derived_column]
@@ -184,7 +188,7 @@ if __name__ == "__main__":
     
                     columns_input +=columns_in
                     columns_output +=columns_out
-    
+                    print()
                 # process rowcount
                 if type == 'Microsoft.RowCount':
     
@@ -251,7 +255,10 @@ if __name__ == "__main__":
         lineages = {'column_in': columns_input, 'column_out': columns_output}
     
         lineages = pd.DataFrame(lineages)
-    
+        exp_dict = {exp.split(" {")[0]: exp for exp in exp_created}
+        lineages['column_in'] = lineages['column_in'].replace(exp_dict)
+        transformation_in = lineages['column_in'].str.extract(r'\{([^}]*)\}')
+
         lineages['TRANSFORMATION'] = lineages['column_out'].str.extract(r'\{([^}]*)\}')
     
     
@@ -279,11 +286,12 @@ if __name__ == "__main__":
                 if lineages.loc[i, 'column_in'] == name_node.split(" {")[0]:
                     #print(lineages.loc[i, 'column_in'], name_node)
                     lineages.loc[i, 'TRANSFORMATION'] = transformation
-    
+        lineages['TRANSFORMATION'] = transformation_in[0].combine_first(lineages['TRANSFORMATION'])
         # define color lineages
         lineages['COLOR'] = ["aliceblue" if i == ""  else "orangered" for i in lineages['TRANSFORMATION']]
-    
-    
+        non_null_indices = transformation_in[0].notna().index[transformation_in[0].notna()]
+        lineages.loc[non_null_indices, 'COLOR'] = 'darkred'
+        
         nodes_load = pd.read_csv('output-data/nodes.csv')
         # merge source id
         lineages = pd.merge(lineages, nodes_load[['ID', 'LABEL_NODE']], left_on='SOURCE_NODE', right_on = 'LABEL_NODE', how='left')
@@ -299,7 +307,7 @@ if __name__ == "__main__":
         # load nodes data
         final_lin = pd.concat([final_lin,lineages], ignore_index=True)
     df_no_duplicates = final_lin.drop_duplicates()
-    df_no_duplicates.to_csv('output-data/lineages/lineages.csv')
+    df_no_duplicates.to_csv('output-data/lineages/Merge and filter.csv')
     
     
     

@@ -209,7 +209,7 @@ def append_ext_tables(ext_table: str, df_nodes: pd.DataFrame, func = 'DataSource
                              'SPLIT_ARG': [np.nan],
                              'NAME_NODE': [ext_table],
                              'FILTER': [np.nan],
-                             'COLOR': "black"
+                             'COLOR': "gold"
                              })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
     return df_nodes
@@ -289,8 +289,8 @@ if __name__ == "__main__":
     df_nodes = pd.DataFrame(columns=['LABEL_NODE', 'ID', 'FUNCTION', 'JOIN_ARG', 'SPLIT_ARG', 'NAME_NODE', 'FILTER', 'COLOR'])
     df_nodes = append_var_node(vars_df(open_dtsx), df_nodes)
 
-    components = open_dtsx["DTS:Executables"]["DTS:Executable"][1]["DTS:ObjectData"]["pipeline"]["components"]["component"]
-    path_flow = open_dtsx["DTS:Executables"]["DTS:Executable"][1]["DTS:ObjectData"]["pipeline"]["paths"]["path"]
+    components = open_dtsx["DTS:Executables"]["DTS:Executable"][2]["DTS:ObjectData"]["pipeline"]["components"]["component"]
+    path_flow = open_dtsx["DTS:Executables"]["DTS:Executable"][2]["DTS:ObjectData"]["pipeline"]["paths"]["path"]
 
 
     for blocks in path_flow:

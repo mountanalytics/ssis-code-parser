@@ -42,24 +42,25 @@ def get_files(path):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     options = get_files(path)
-    
+    print(options)
     if request.method == 'GET':
         a = sankey_plot.draw_sankey([options[0]], path)
         plot_json = json.dumps(a, cls=plotly.utils.PlotlyJSONEncoder)
         
     if request.method == 'POST':
         selected_options = request.form.getlist('option')
+        for i,selec in enumerate(selected_options):
+            selected_options[i] = selec + ".csv"
         stacked_overview_checked = 'stackedOverview' in request.form
         if stacked_overview_checked:
             a = Sankey_stacked.sankey_stacked()
             plot_json = json.dumps(a, cls=plotly.utils.PlotlyJSONEncoder)
         else:
-            print(selected_options)
-            print(path)
             a = sankey_plot.draw_sankey(selected_options, path)
             plot_json = json.dumps(a, cls=plotly.utils.PlotlyJSONEncoder)
     form_width = 270
-
+    for idx,opt in enumerate(options):
+        options[idx] = opt.split('.')[0]
     return render_template('index.html', options=options, graphJSON=plot_json, form_width=form_width)
 
 

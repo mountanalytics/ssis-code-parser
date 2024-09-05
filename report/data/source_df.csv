@@ -1,0 +1,3 @@
+SOURCE_NAME,count
+dbo.Suppliers_Extract,1
+dbo.Products_Extract,1
