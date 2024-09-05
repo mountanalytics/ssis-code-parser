@@ -315,23 +315,28 @@ if __name__ == "__main__":
         if comp["componentClassID"] == "Microsoft.DerivedColumn":
             df_nodes = append_normal_node(comp["refId"], "DerivedColumn", df_nodes)
             dict_blocks[comp["refId"]] = derive_column(comp)
+            
         if comp["componentClassID"] == "Microsoft.RowCount":
             dict_blocks[comp["refId"]] = comp["properties"]["property"]["#text"]
             df_nodes = append_normal_node(comp["refId"], "RowCount", df_nodes)
+
         if comp["componentClassID"] == "Microsoft.SSISODBCSrc":
             dict_blocks[comp["refId"]],ext_table = ODBC_source(comp)
             df_nodes = append_normal_node(comp["refId"], "SSISODBCSrc", df_nodes)
             df_nodes = append_ext_tables(ext_table, df_nodes)
+
         if comp["componentClassID"] == "Microsoft.SSISODBCDst":
             dict_blocks[comp["refId"]],ext_table = ODBC_dest(comp)
             df_nodes = append_normal_node(comp["refId"], "SSISODBCDst", df_nodes)
             df_nodes = append_ext_tables(ext_table, df_nodes, 'DataDestinations')
+
         if comp["componentClassID"] == "Microsoft.Lookup":
             dict_blocks[comp["refId"]], lookup_table = lookup(comp)
             df_nodes = append_ext_tables(lookup_table, df_nodes)
             joinargu = dict_blocks[comp["refId"]]['on'].loc[0,"Column_lookup"]
             joinargu = re.search(r'\[(.*?)\]', joinargu).group(1) + " = " + dict_blocks[comp["refId"]]['on'].loc[0,"Column_name"]
             df_nodes = append_join_node(comp["refId"], "Lookup", joinargu, df_nodes)
+
         if comp["componentClassID"] == "Microsoft.ConditionalSplit":
             df_nodes = append_split_node(comp["refId"], "ConditionalSplit", split_cond(comp), df_nodes)
             dict_blocks[comp["refId"]]  = split_cond(comp)
@@ -339,9 +344,7 @@ if __name__ == "__main__":
         if comp["componentClassID"] == "Microsoft.UnionAll":
             dict_blocks[comp["refId"]]  = union_all(path_flow, comp)
             df_nodes = append_normal_node(comp["refId"], "UnionAll", df_nodes)
-        
-        
-        
+    
         if comp["componentClassID"] == "Microsoft.ExcelSource":
             dict_blocks[comp["refId"]]  = excel_source(comp)
         if comp["componentClassID"] == "Microsoft.ExcelDestination":
