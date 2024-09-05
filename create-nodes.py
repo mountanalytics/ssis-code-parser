@@ -289,6 +289,7 @@ if __name__ == "__main__":
     df_nodes = pd.DataFrame(columns=['LABEL_NODE', 'ID', 'FUNCTION', 'JOIN_ARG', 'SPLIT_ARG', 'NAME_NODE', 'FILTER', 'COLOR'])
     df_nodes = append_var_node(vars_df(open_dtsx), df_nodes)
 
+    #### THE INDEX IS HARDCODED, MAKE IT SMARTER
     components = open_dtsx["DTS:Executables"]["DTS:Executable"][2]["DTS:ObjectData"]["pipeline"]["components"]["component"]
     path_flow = open_dtsx["DTS:Executables"]["DTS:Executable"][2]["DTS:ObjectData"]["pipeline"]["paths"]["path"]
 
@@ -349,41 +350,10 @@ if __name__ == "__main__":
             
     df_nodes["ID"] = df_nodes.index        
     df_nodes.to_csv('output-data/nodes.csv',index=False)   
-    ## save data
-    """
-    def sort_precedeneces(precedences_list, precedences_list_sorted):
-    
-        # for element in precedence list, recursively add all the node one by one in order
-        for i in precedences_list:
-            # if the last element of the sorted list is the same as the first element of the list of lists
-            if precedences_list_sorted[-1] == i[0]:
-    
-                precedences_list_sorted.append(i[1]) # append to sorted list
-                sort_precedeneces(precedences_list, precedences_list_sorted) # recursively recall the function
-    
-        return precedences_list_sorted
-    
-    precedences_list = df_lineage[['ID_block_out', 'ID_block_in']].values.tolist()
-    
-    list_1 = [i[1] for i in precedences_list] # list with second elements of all pairs
 
-    precedences_list_sorted = []
-
-    # for element in precedence list, 
-    for i in precedences_list:
-        # if the first node is never a second node then the node is the first one in the sequence container, therefore append both elements to list, as first and second, then keep adding until done
-        if i[0] not in list_1:
-            precedences_list_sorted.append(i[0])
-            precedences_list_sorted.append(i[1])
-
-
-    print(sort_precedeneces(precedences_list, precedences_list_sorted))
-    print()
-    """
-       
     df_lineage.to_csv('output-data/nodes-order.csv')
     
-    ##########################################
+    ####### THIS FUNCTION CONVERTS DATAFRAME BACK TO DICTS, INSTEAD SAVE THEM AS DICTS DIRECTLY AND DELETE THIS
     def convert_dataframes(obj):
         """
         Recursively traverse the dictionary and convert DataFrames to JSON-serializable format.
@@ -402,6 +372,6 @@ if __name__ == "__main__":
     serializable_data = convert_dataframes(dict_blocks)
     
     # Save the converted dictionary as a JSON file
-    with open('output-data/dict_blocks.json', 'w') as json_file:
+    with open('output-data/dict_blocks_dataflow.json', 'w') as json_file:
         json.dump(serializable_data, json_file, indent=4)
     

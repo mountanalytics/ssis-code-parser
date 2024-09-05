@@ -80,7 +80,7 @@ if __name__ == "__main__":
     final_lin = pd.DataFrame()
     nodes = pd.read_csv('output-data/nodes-order.csv') # nodes
 
-    with open('output-data/dict_blocks.json', 'r') as json_file: # columns data
+    with open('output-data/dict_blocks_dataflow.json', 'r') as json_file: # columns data
         dict_blocks = json.load(json_file)
     
     all_paths = order_df(nodes)
