@@ -1,5 +1,0 @@
-,NAME_NODE,LABEL_NODE,FILTER,FUNCTION,ON,COLOR,ID
-0,Supp_Prod_output,Supp_Prod_output,,DataSources,,grey,0
-1,User::CurrentDateTime,User::CurrentDateTime,,Variable,,grey,1
-2,Package\Overwrite insert table,Package\Overwrite insert table,Region = 'User::CurrentDateTime',Query,,grey,2
-3,New_Supp_Prod_output,New_Supp_Prod_output,,DataDestination,,grey,3

@@ -279,7 +279,7 @@ def append_var_node(var_df: pd.DataFrame, df_nodes: pd.DataFrame) -> pd.DataFram
         df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
     return df_nodes
 
-def lineage_path_flow(path_flow: list, components: list):
+def lineage_path_flow(path_flow: list, components: list, df_name: str):
     df_lineage = pd.DataFrame(columns=["ID_block_out","ID_block_in", "type_block_out", "type_block_in"])
     for blocks in path_flow:
         # add name blocks
@@ -293,10 +293,10 @@ def lineage_path_flow(path_flow: list, components: list):
 
         df_lineage = pd.concat([df_lineage, pd.DataFrame({"ID_block_out": id_block_out, "ID_block_in": id_block_in, 'type_block_in':type_block_in, 'type_block_out': type_block_out})], ignore_index=True)
 
-    df_lineage.to_csv('../output-data/nodes-order.csv')
+    df_lineage.to_csv(f'output-data/nodes-order_{df_name}.csv')
     return
 
-def parse_nodes_df(components: list, df_nodes: pd.DataFrame, path_flow: list) -> dict:
+def parse_nodes_df(components: list, df_nodes: pd.DataFrame, path_flow: list, df_name: str) -> dict:
     dict_blocks = {}
     
     for comp in components:
@@ -337,7 +337,7 @@ def parse_nodes_df(components: list, df_nodes: pd.DataFrame, path_flow: list) ->
 
             
     df_nodes["ID"] = df_nodes.index        
-    df_nodes.to_csv('../output-data/nodes.csv',index=False)
+    df_nodes.to_csv(f'output-data/nodes-{df_name}.csv',index=False)
     return dict_blocks
 
 
@@ -355,7 +355,7 @@ def convert_dataframes(obj: dict) -> dict:
         # If it's neither a dictionary nor a DataFrame, return the object as is
         return obj
 
-def parse_dataflow_nodes(open_dtsx: dict, index: int):
+def parse_dataflow_nodes(open_dtsx: dict, index: int, df_name: str):
     df_nodes = pd.DataFrame(columns=['LABEL_NODE', 'ID', 'FUNCTION', 'JOIN_ARG', 'SPLIT_ARG', 'NAME_NODE', 'FILTER', 'COLOR'])
     df_nodes = append_var_node(vars_df(open_dtsx), df_nodes)
 
@@ -365,21 +365,16 @@ def parse_dataflow_nodes(open_dtsx: dict, index: int):
     path_flow = open_dtsx["DTS:Executables"]["DTS:Executable"][index]["DTS:ObjectData"]["pipeline"]["paths"]["path"]
 
 
-    lineage_path_flow(path_flow, components)
-    dict_blocks = parse_nodes_df(components, df_nodes, path_flow)
+    lineage_path_flow(path_flow, components, df_name)
+    dict_blocks = parse_nodes_df(components, df_nodes, path_flow, df_name)
     serializable_data = convert_dataframes(dict_blocks) 
     
     # Save the converted dictionary as a JSON file
-    with open('../output-data/dict_blocks_dataflow.json', 'w') as json_file:
+    with open(f'output-data/dict_blocks_dataflow_{df_name}.json', 'w') as json_file:
         json.dump(serializable_data, json_file, indent=4)
     return
 
-
-if __name__ == "__main__":   
     
-    kaggle = Load("../data/Demo_rabo/Demo_rabo/Demo_SSIS.dtsx")
-    open_dtsx = kaggle.run()
-    parse_dataflow_nodes(open_dtsx, 2)
     
     
     

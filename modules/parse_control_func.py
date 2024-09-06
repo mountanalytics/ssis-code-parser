@@ -36,13 +36,13 @@ def pars_sql_task(control_node: dict) -> dict:
 
 def parse_control_flow(open_dtsx: dict) -> dict:
     dict_blocks = {}    
-    for control_node in open_dtsx['DTS:Executables']['DTS:Executable']:
+    for idx,control_node in enumerate(open_dtsx['DTS:Executables']['DTS:Executable']):
 
         if control_node['DTS:CreationName'] =='Microsoft.ExecuteSQLTask': # if the task is ExecuteSQL then print query and variables
             dict_blocks[control_node["DTS:refId"]] = pars_sql_task(control_node)
             
         elif control_node['DTS:CreationName'] == 'Microsoft.Pipeline':
-            dict_blocks[control_node["DTS:refId"]] = {'Description': control_node['DTS:Description']}
+            dict_blocks[control_node["DTS:refId"]] = {'Description': control_node['DTS:Description'], 'Index': idx, "Block_name": control_node['DTS:refId'].replace("\\", "@")}
 
         elif control_node['DTS:CreationName'] =='Microsoft.ExpressionTask': 
             dict_blocks[control_node["DTS:refId"]] = {'Description': control_node['DTS:Description'], 'Expression' : control_node['DTS:ObjectData']['ExpressionTask']['Expression']}

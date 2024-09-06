@@ -10,7 +10,9 @@
         "Variables": null
     },
     "Package\\Merge and filter": {
-        "Description": "Data Flow Task"
+        "Description": "Data Flow Task",
+        "Index": 2,
+        "Block_name": "Package@Merge and filter"
     },
     "Package\\Overwrite insert table": {
         "Description": "Execute SQL Task",

@@ -313,6 +313,7 @@ def parse_sql_queries(control_flow:dict):
     trees = []
     queries=[]
     for node in control_flow.keys():
+        print(node)
         if control_flow[node]['Description'] == 'Execute SQL Task':
 
             sql_statement = control_flow[node]['SQL_state'] 
@@ -347,26 +348,26 @@ def parse_sql_queries(control_flow:dict):
                 
                 # add source tables to nodes
                 for table in source_tables:              
-                        nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataSources', 'ON': None})
+                        nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataSources', 'JOIN_ARG': None, 'COLOR': "gold"})
 
                 # add variables to nodes
                 for variable in control_flow[node]['Variables']:
-                    nodes.append({'NAME_NODE': variable,'LABEL_NODE': variable, 'FILTER': None, 'FUNCTION': 'Variable', 'ON': None})
+                    nodes.append({'NAME_NODE': variable,'LABEL_NODE': variable, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
                         
                 # add query node
-                nodes.append({'NAME_NODE': node,'LABEL_NODE': node, 'FILTER': where_exp, 'FUNCTION': 'Query', 'ON': on_condition})
+                nodes.append({'NAME_NODE': node,'LABEL_NODE': node, 'FILTER': where_exp, 'FUNCTION': 'Query', 'JOIN_ARG': on_condition, 'COLOR': 'black'})
                         
                 # add destination table to nodes
                 for table in insert_tables:              
-                    nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataDestination', 'ON': None})
+                    nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataDestination', 'JOIN_ARG': None, 'COLOR': "gold"})
                         
                 
                 nodes = pd.DataFrame(nodes)
-                nodes['COLOR'] = 'grey'
+                
                 nodes['ID'] = nodes.index
 
                 node_name = node.replace("\\", "@")
-                nodes.to_csv(f'output-data/nodes-{node_name}(sql).csv')
+                nodes.to_csv(f'output-data/nodes-{node_name}.csv',index=False)
 
                 # EXTRACT LINEAGES
                 
@@ -426,7 +427,7 @@ def parse_sql_queries(control_flow:dict):
                 lineages = lineages.drop_duplicates(subset =['SOURCE_COLUMNS', 'TARGET_COLUMN', 'TRANSFORMATION']).reset_index(drop=True)
 
 
-                lineages.to_csv(f'output-data/lineages/lineage-{node_name}(sql).csv')
+                lineages.to_csv(f'output-data/lineages/lineage-{node_name}.csv',index=False)
 
 
 if __name__ == '__main__':
