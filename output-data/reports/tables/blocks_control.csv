@@ -1,0 +1,4 @@
+FUNCTION,count
+Execute SQL Task,4
+Data Flow Task,1
+Expression Task,1
