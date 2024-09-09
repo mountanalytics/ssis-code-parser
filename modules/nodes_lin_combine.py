@@ -8,6 +8,9 @@ def replace_after_last_dot(s):
 def node_lin_pars():
     node_final = pd.DataFrame(columns=['LABEL_NODE', 'ID', 'FUNCTION', 'JOIN_ARG', 'SPLIT_ARG', 'NAME_NODE',
            'FILTER', 'COLOR'])
+    #lin_final = pd.DataFrame(columns=['SOURCE_COLUMNS', 'TARGET_COLUMN', 'TRANSFORMATION',
+    #       'SOURCE_FIELD', 'TARGET_FIELD', 'SOURCE_NODE', 'TARGET_NODE',
+    #       'LINK_VALUE', 'ROW_ID', 'COLOR'])
     for files in os.listdir("output-data/lineages"):
         name = files.replace(".csv", "").replace("lineage-","")
         node = pd.read_csv(f"output-data/nodes-{name}.csv")
@@ -35,12 +38,14 @@ def node_lin_pars():
         new_rows = merged[merged['_merge'] == 'left_only']
         node_final = pd.concat([node_final,new_rows],ignore_index=True)
         node_final['ID'] = node_final.index
-        new_rows['NEW_ID'] = range(len(node_final) - len(new_rows), len(node_final))
+        new_rows.loc[:,'NEW_ID'] = range(len(node_final) - len(new_rows), len(node_final))
         new_nodes = pd.concat([new_rows,duplicates],ignore_index=True)
         id_to_new_id = new_nodes.set_index('ID')['NEW_ID'].to_dict()
         lineage = pd.read_csv(f"output-data/lineages/lineage-{name}.csv")
         lineage['SOURCE_NODE'] = lineage['SOURCE_NODE'].map(id_to_new_id)
         lineage['TARGET_NODE'] = lineage['TARGET_NODE'].map(id_to_new_id)
-        lineage.to_csv(f"output-data/lineages/lineage-{name}.csv")
+        #lin_final = pd.concat([lin_final,lineage],ignore_index=True)
+        lineage.to_csv(f"output-data/lineages/lineage-{name}.csv", index = False)
+        #lin_final.to_csv("output-data/lineages/lineage-Complete.csv", index = False)
     node_final.to_csv("output-data/nodes.csv", index = False)
     return

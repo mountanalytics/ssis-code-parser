@@ -313,7 +313,6 @@ def parse_sql_queries(control_flow:dict):
     trees = []
     queries=[]
     for node in control_flow.keys():
-        print(node)
         if control_flow[node]['Description'] == 'Execute SQL Task':
 
             sql_statement = control_flow[node]['SQL_state'] 
@@ -359,7 +358,7 @@ def parse_sql_queries(control_flow:dict):
                         
                 # add destination table to nodes
                 for table in insert_tables:              
-                    nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataDestination', 'JOIN_ARG': None, 'COLOR': "gold"})
+                    nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataDestinations', 'JOIN_ARG': None, 'COLOR': "gold"})
                         
                 
                 nodes = pd.DataFrame(nodes)

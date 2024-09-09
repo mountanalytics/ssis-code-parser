@@ -18,4 +18,4 @@ Merge and filter@Union suppliers,15,UnionAll,,,Union suppliers,,black,left_only
 Merge and filter@Write Update sup table,16,SSISODBCDst,,,Write Update sup table,,black,left_only
 Supp_Prod_output,17,DataDestinations,,,Supp_Prod_output,,gold,left_only
 Package\Overwrite insert table,18,Query,,,Package\Overwrite insert table,"EQ(Region, 'User::CurrentDateTime')",black,left_only
-New_Supp_Prod_output,19,DataDestination,,,New_Supp_Prod_output,,gold,left_only
+New_Supp_Prod_output,19,DataDestinations,,,New_Supp_Prod_output,,gold,left_only

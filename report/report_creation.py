@@ -118,32 +118,33 @@ Goal = 'The goal of this analysis is to uncover the complexity within the system
 
 ############################################################ BEGINNING OF THE DOCUMENT - Section 1
 
-document = Document() #create document
+ #create document
+def front_page(document):
+    emptyrowsloop(5)
 
-emptyrowsloop(5)
+    document.add_picture(LogoPath, width=Inches(2.5)) #logo
 
-document.add_picture(LogoPath, width=Inches(2.5)) #logo
+    #placing the logo in the center
+    last_paragraph = document.paragraphs[-1] 
+    last_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    emptyrowsloop(3)
 
-#placing the logo in the center
-last_paragraph = document.paragraphs[-1] 
-last_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
-emptyrowsloop(3)
+    document.add_heading('Rationalisation Model', 0)
 
-document.add_heading('Rationalisation Model', 0)
+    last_paragraph = document.paragraphs[-1] 
+    last_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
-last_paragraph = document.paragraphs[-1] 
-last_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    emptyrowsloop(8)
 
-emptyrowsloop(8)
+    DateText =  f'Date: {Today}'
+    Date = document.add_paragraph(DateText)
+    Date.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 
-DateText =  f'Date: {Today}'
-Date = document.add_paragraph(DateText)
-Date.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-
-document.add_page_break() #finishing the page/section 1
-
+    document.add_page_break() #finishing the page/section 1
+    return document
 ############################################################ SUMMARY OF THE ANALYSIS - Section 2
-
+document = Document()
+document = front_page(document)
 # Heading of this section
 SummaryHeading = document.add_heading('Summary of the analysis performed', level=1)
 SummaryHeading.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -334,7 +335,7 @@ last_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
 document.add_paragraph('This section contains the Merge and filter data flow in a Sankey Diagram, giving you insights into the overall lineage and the transformations as well as model-identified focus points of the view.')
 
-SummaryGraph = document.add_picture("data/sankey_dataflow.jpg", width=Inches(7))
+document.add_picture("data/sankey_dataflow.jpg", width=Inches(7))
 last_paragraph = document.paragraphs[-1] 
 last_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
