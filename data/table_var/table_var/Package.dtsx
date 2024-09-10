@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{CAC7C1AF-7CCB-4C5D-9106-677DD415B6FA}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{834EA663-A83E-44CB-A25B-669D63A36BD6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,19 +25,33 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=maserver01.database.windows.net;User ID=erwinsiegers;Initial Catalog=MA_DemoDB_01;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package-{A7E7CF0C-321F-4187-9C0A-1DED89E1C4D0}maserver01.database.windows.net.MA_DemoDB_01.erwinsiegers;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=maserver01.database.windows.net;User ID=erwinsiegers;Initial Catalog=MA_DemoDB_01;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package-{A7E7CF0C-321F-4187-9C0A-1DED89E1C4D0}maserver01.database.windows.net.MA_DemoDB_01.erwinsiegers;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAH/4aLgvDIp7HGYk8xlu2A1m/F15CgNYobN3nt7lSp4wAAAAAOgAAAAAIAACAAAAA893D99s4W3vap5+kTqsHxvy9mSnUYvlDLGNNdC+FXDzAAAADD7dI2APyryxsdycowgg2ARwPYP/CBs9QGw0ItNhdWkDwcAcxrCKfHVDKOrviz9V5AAAAABe9ZRbIZSU0XL5QgZztcCykNgqn+0ZcaSOib5xlU3KYjg4cOHnZ0fF992VpFTixflJUSFClWHnJQk+uiS14rOw</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{81B3CDD6-EF59-4F24-9C4B-CD50E39B3A03}"
-      DTS:IncludeInDebugDump="6789"
+      DTS:DTSID="{3C8DA029-A3EF-4955-A61E-273D603F8358}"
+      DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="Active_var">
+      DTS:ObjectName="Cat_id">
       <DTS:VariableValue
-        DTS:DataType="11">-1</DTS:VariableValue>
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -91,7 +105,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Unit_stock">
       <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
+        DTS:DataType="3">30</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -109,7 +123,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{A7E7CF0C-321F-4187-9C0A-1DED89E1C4D0}"
-          SQLTask:SqlStatementSource="SELECT SupplierID, Product_Type FROM [dbo].[Products_Extract]  WHERE Country = ? and UnitsInStock &gt; ?"
+          SQLTask:SqlStatementSource="SELECT distinct SupplierID, CategoryID FROM [dbo].[Products_Extract]  WHERE Country = ? and UnitsInStock &gt; ?"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -124,7 +138,7 @@
             SQLTask:ParameterName="1"
             SQLTask:DtsVariableName="User::Unit_stock"
             SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="3"
+            SQLTask:DataType="131"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -163,12 +177,18 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{A7E7CF0C-321F-4187-9C0A-1DED89E1C4D0}"
-              SQLTask:SqlStatementSource="INSERT INTO Order_write(OrderID, Dateloop) VALUES(?, GETDATE())&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="INSERT INTO Order_write(OrderID, Dateloop,Cat_ID) VALUES(?, GETDATE(),?)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::OrderID"
                 SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Cat_id"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -177,10 +197,16 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{651299EA-6BBC-4D41-9541-1F98CF890727}"
-          DTS:ObjectName="{651299EA-6BBC-4D41-9541-1F98CF890727}"
+          DTS:DTSID="{F0DB5DC1-61B5-4A5E-AAED-B84A1C62CF86}"
+          DTS:ObjectName="{F0DB5DC1-61B5-4A5E-AAED-B84A1C62CF86}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::OrderID" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{6BF9A43F-BAC7-481D-9ED2-C658CE15A4DF}"
+          DTS:ObjectName="{6BF9A43F-BAC7-481D-9ED2-C658CE15A4DF}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::Cat_id" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
   </DTS:Executables>
@@ -211,30 +237,30 @@
           Id="Package\Execute SQL Task"
           TopLeft="799,146" />
         <NodeLayout
-          Size="173.6,41.6"
+          Size="179.2,44"
           Id="Package\Foreach Loop Container\Execute SQL Task 1"
           TopLeft="12,17" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="204.8,116"
-          Size="204.8,159.2"
+          Size="214.4,159.2"
           Id="Package\Foreach Loop Container"
           TopLeft="784,284" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="885.25,188">
+          TopLeft="887.5,187.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,96"
+              EndConnector="0,96.4"
               Start="0,0"
-              End="0,88.5">
+              End="0,88.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,88.5" />
+                    End="0,88.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
