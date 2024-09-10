@@ -1,11 +1,3 @@
 FUNCTION,count
-Variable,2
-DerivedColumn,2
-RowCount,2
-SSISODBCDst,2
-DataDestinations,2
-DataSources,2
-SSISODBCSrc,1
-Lookup,1
-ConditionalSplit,1
-UnionAll,1
+SSISODBCDst,1
+DataDestinations,1

@@ -1,0 +1,13 @@
+{
+    "Package\\Execute SQL Task": {
+        "Description": "Execute SQL Task",
+        "SQL_state": "SELECT SupplierID, Product_Type FROM [dbo].[Products_Extract]  WHERE Country = ? and UnitsInStock > ?",
+        "Variables": [
+            [
+                "User::Ship_country",
+                "User::Unit_stock"
+            ]
+        ],
+        "Result_variable": "User::res_set"
+    }
+}

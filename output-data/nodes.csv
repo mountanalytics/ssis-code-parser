@@ -1,21 +1,26 @@
 LABEL_NODE,ID,FUNCTION,JOIN_ARG,SPLIT_ARG,NAME_NODE,FILTER,COLOR,_merge
-User::CurrentDateTime,0,Variable,,,User::CurrentDateTime,,green,left_only
-User::Errors_lookup,1,Variable,,,User::Errors_lookup,,green,left_only
-User::Rows_suppliers,2,Variable,,,User::Rows_suppliers,,green,left_only
-User::Set_SQL,3,Variable,,,User::Set_SQL,,green,left_only
-Merge and filter@Alter name pref,4,DerivedColumn,,,Alter name pref,,black,left_only
-Merge and filter@Determine rows sup,5,RowCount,,,Determine rows sup,,black,left_only
-Merge and filter@Error output table,6,SSISODBCDst,,,Error output table,,black,left_only
-Error_lines,7,DataDestinations,,,Error_lines,,gold,left_only
-Merge and filter@Error_match_column,8,DerivedColumn,,,Error_match_column,,black,left_only
-Merge and filter@Load supplier,9,SSISODBCSrc,,,Load supplier,,black,left_only
-Suppliers_Extract,10,DataSources,,,Suppliers_Extract,,gold,left_only
-Products_Extract,11,DataSources,,,Products_Extract,,gold,left_only
-Merge and filter@Match with products,12,Lookup,SupplierID = SupplierID2,,Match with products,,dodgerblue,left_only
-Merge and filter@Row Count errors,13,RowCount,,,Row Count errors,,black,left_only
-Merge and filter@Split preferences,14,ConditionalSplit,,Discount > 0,Split preferences,,dodgerblue,left_only
-Merge and filter@Union suppliers,15,UnionAll,,,Union suppliers,,black,left_only
-Merge and filter@Write Update sup table,16,SSISODBCDst,,,Write Update sup table,,black,left_only
-Supp_Prod_output,17,DataDestinations,,,Supp_Prod_output,,gold,left_only
-Package\Overwrite insert table,18,Query,,,Package\Overwrite insert table,Region = 'User::CurrentDateTime',black,left_only
-New_Supp_Prod_output,19,DataDestinations,,,New_Supp_Prod_output,,gold,left_only
+"""dbo""/""Products_Extract""",0,DataSources,,,"""dbo""/""Products_Extract""",,gold,left_only
+User::Ship_country,1,Variable,,,User::Ship_country,,green,left_only
+User::Unit_stock,2,Variable,,,User::Unit_stock,,green,left_only
+Package\Execute SQL Task,3,Query,,,Package\Execute SQL Task,Country = 'User::Ship_country' AND UnitsInStock > 'User::Unit_stock',black,left_only
+User::res_set,4,Variable,,,User::res_set,,green,left_only
+User::CurrentDateTime,5,Variable,,,User::CurrentDateTime,,green,left_only
+User::Errors_lookup,6,Variable,,,User::Errors_lookup,,green,left_only
+User::Rows_suppliers,7,Variable,,,User::Rows_suppliers,,green,left_only
+User::Set_SQL,8,Variable,,,User::Set_SQL,,green,left_only
+Merge and filter@Alter name pref,9,DerivedColumn,,,Alter name pref,,black,left_only
+Merge and filter@Determine rows sup,10,RowCount,,,Determine rows sup,,black,left_only
+Merge and filter@Error output table,11,SSISODBCDst,,,Error output table,,black,left_only
+Error_lines,12,DataDestinations,,,Error_lines,,gold,left_only
+Merge and filter@Error_match_column,13,DerivedColumn,,,Error_match_column,,black,left_only
+Merge and filter@Load supplier,14,SSISODBCSrc,,,Load supplier,,black,left_only
+Suppliers_Extract,15,DataSources,,,Suppliers_Extract,,gold,left_only
+Products_Extract,16,DataSources,,,Products_Extract,,gold,left_only
+Merge and filter@Match with products,17,Lookup,SupplierID = SupplierID2,,Match with products,,dodgerblue,left_only
+Merge and filter@Row Count errors,18,RowCount,,,Row Count errors,,black,left_only
+Merge and filter@Split preferences,19,ConditionalSplit,,Discount > 0,Split preferences,,dodgerblue,left_only
+Merge and filter@Union suppliers,20,UnionAll,,,Union suppliers,,black,left_only
+Merge and filter@Write Update sup table,21,SSISODBCDst,,,Write Update sup table,,black,left_only
+Supp_Prod_output,22,DataDestinations,,,Supp_Prod_output,,gold,left_only
+Package\Overwrite insert table,23,Query,,,Package\Overwrite insert table,Region = 'User::CurrentDateTime',black,left_only
+New_Supp_Prod_output,24,DataDestinations,,,New_Supp_Prod_output,,gold,left_only

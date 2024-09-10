@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "table_var", "table_var\table_var.dtproj", "{F1E4A1E7-BFA8-4B7C-8DD4-40AFC5179D36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1E4A1E7-BFA8-4B7C-8DD4-40AFC5179D36}.Development|Default.ActiveCfg = Development
+		{F1E4A1E7-BFA8-4B7C-8DD4-40AFC5179D36}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D3AC7BC-1432-4A04-87C1-4E9FBD009160}
+	EndGlobalSection
+EndGlobal

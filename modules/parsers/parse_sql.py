@@ -94,6 +94,8 @@ def transformer_functions(node):
 
 
 def replace_variables(query:str, variables: list):
+
+    
     # Convert the string to a list so that we can modify it
     result = list(query)
     
@@ -306,6 +308,11 @@ def extract_source_target_transformation(target_columns :list, lineages: list, s
                 lineages.append({'SOURCE_COLUMNS':f'{source_node_name}.{source_columns[0].split(".")[-1]}', 'TARGET_COLUMN':f'{target_node_name}.{source_columns[0].split(".")[-1]}', 'TRANSFORMATION': target_column[1]})
     return remove_duplicate_dicts(lineages)
 
+def flatten_if_nested(lst):
+    if len(lst) == 1 and isinstance(lst[0], list):
+        return lst[0]  # Flatten the list
+    return lst  # Return the original if not a nested list
+
 
 def parse_sql_queries(control_flow:dict):
 
@@ -315,11 +322,18 @@ def parse_sql_queries(control_flow:dict):
     for node in control_flow.keys():
         if control_flow[node]['Description'] == 'Execute SQL Task':
 
+            try:
+
+                variables = flatten_if_nested(control_flow[node]['Variables'])
+            except:
+                pass
+    
+
             sql_statement = control_flow[node]['SQL_state'] 
 
             # if the sql statement contains a variable, change the ? with the variable name
             if '?' in sql_statement: 
-                sql_statement = replace_variables(sql_statement, control_flow[node]['Variables'])
+                sql_statement = replace_variables(sql_statement, variables)
             
             # get sqlglot tree from query
             tree = parse_query(sql_statement)
@@ -335,30 +349,42 @@ def parse_sql_queries(control_flow:dict):
 
                 # parse source tables and where condition
                 source_tables, where_exp = get_statements(select) 
+                #print(source_tables)
                 
                 # parse on condition
                 on_condition = on_statement(select)
 
                 # parse destination table
                 insert_tables = [table for table in select.find_all(exp.Insert)]
-                insert_tables = [table.this.this.this for table in select.find_all(exp.Into)]
+                insert_tables += [table.this.this.this for table in select.find_all(exp.Into)]
+                try:
+                    insert_tables.append(control_flow[node]['Result_variable'])
+                except:
+                    pass
+
+                #print(insert_tables)
+
 
                 nodes = []
                 
                 # add source tables to nodes
                 for table in source_tables:              
-                        nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataSources', 'JOIN_ARG': None, 'COLOR': "gold"})
+                        nodes.append({'NAME_NODE': table.replace(".", "/"),'LABEL_NODE': table.replace(".", "/"), 'FILTER': None, 'FUNCTION': 'DataSources', 'JOIN_ARG': None, 'COLOR': "gold"})
 
                 # add variables to nodes
-                for variable in control_flow[node]['Variables']:
+                #print(variables)
+                for variable in variables:
                     nodes.append({'NAME_NODE': variable,'LABEL_NODE': variable, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
                         
                 # add query node
                 nodes.append({'NAME_NODE': node,'LABEL_NODE': node, 'FILTER': where_exp, 'FUNCTION': 'Query', 'JOIN_ARG': on_condition, 'COLOR': 'black'})
                         
                 # add destination table to nodes
-                for table in insert_tables:              
-                    nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataDestinations', 'JOIN_ARG': None, 'COLOR': "gold"})
+                for table in insert_tables:     
+                    if '::' in table: # if result table is variable
+                        nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
+                    else:
+                        nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataDestinations', 'JOIN_ARG': None, 'COLOR': "gold"})
                         
                 
                 nodes = pd.DataFrame(nodes)
@@ -369,9 +395,9 @@ def parse_sql_queries(control_flow:dict):
                 nodes.to_csv(f'output-data/nodes/nodes-{node_name}.csv',index=False)
 
                 # EXTRACT LINEAGES
-                
-                target_node = insert_tables[0]
-                source_node = list(source_tables)[0] # CHANGE THIS IN CASE THERE ARE MORE SOURCE TABLES!!!
+                target_node = insert_tables[0].replace(".", "/")
+          
+                source_node = list(source_tables)[0].replace(".", "/") # CHANGE THIS IN CASE THERE ARE MORE SOURCE TABLES!!!
                 query = node
 
                 space_table = find_table_w_spaces(select) # clean tables
@@ -393,7 +419,8 @@ def parse_sql_queries(control_flow:dict):
                 lineages = []
                 lineages += extract_source_target_transformation(target_columns, lineages, space_table, source_node, query) # append lineages of node to lineages list
                 lineages += extract_source_target_transformation(target_columns, lineages, space_table, query, target_node) # append lineages of node to lineage list                
-                for variable in control_flow[node]['Variables']: # append variables to lineages
+                
+                for variable in variables: # append variables to lineages
                     lineages.append({'SOURCE_COLUMNS':f'{variable}.{variable}', 'TARGET_COLUMN':f"{query}.{variable}", 'TRANSFORMATION':""})
 
 
@@ -425,13 +452,12 @@ def parse_sql_queries(control_flow:dict):
 
                 lineages = lineages.drop_duplicates(subset =['SOURCE_COLUMNS', 'TARGET_COLUMN', 'TRANSFORMATION']).reset_index(drop=True)
 
-
                 lineages.to_csv(f'output-data/lineages/lineage-{node_name}.csv',index=False)
 
 
 if __name__ == '__main__':
     
-    with open('./output-data/dict_blocks_control.json', 'r') as json_file: # columns data
+    with open('./output-data/nodes/metadata_nodes_controlflow.json', 'r') as json_file: # columns data
         control_flow = json.load(json_file)
     
     parse_sql_queries(control_flow)

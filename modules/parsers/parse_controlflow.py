@@ -27,13 +27,19 @@ def pars_sql_task(control_node: dict) -> dict:
             "Variables": vars_list
             }
             
-    except: 
+    except: # if there are no variables
         sql_state = control_node['DTS:ObjectData']['SQLTask:SqlTaskData']['SQLTask:SqlStatementSource']
         dict_sql = {
             "Description": control_node['DTS:Description'],
             "SQL_state": sql_state,
             "Variables": None
             }
+        
+    try: # try and parse the destination variable
+        dict_sql['Result_variable'] = control_node['DTS:ObjectData']['SQLTask:SqlTaskData']['SQLTask:ResultBinding']['SQLTask:DtsVariableName']
+
+    except:
+        pass
     return dict_sql
 
 def parse_control_flow(open_dtsx: dict) -> dict:
@@ -51,6 +57,6 @@ def parse_control_flow(open_dtsx: dict) -> dict:
 
         
     # Save the converted dictionary as a JSON file
-    with open('output-data/metadata_nodes_controlflow.json', 'w') as json_file:
+    with open('output-data/nodes/metadata_nodes_controlflow.json', 'w') as json_file:
         json.dump(dict_blocks, json_file, indent=4)
     return dict_blocks

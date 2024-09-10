@@ -26,7 +26,6 @@ def run_ssis_parser(path_dtsx:str):
     for key in control_flow.keys():
         if control_flow[key]["Description"] == "Data Flow Task":
             parse_dataflow_nodes(open_dtsx, control_flow[key]["Index"], control_flow[key]["Block_name"])
-            
             parser_dataflow_lineage(control_flow[key]["Block_name"])
 
     # parse nodes and lineages
@@ -40,7 +39,12 @@ def run_ssis_parser(path_dtsx:str):
     main('output-data/lineages/', 'output-data/nodes.csv') 
 
 if __name__ == "__main__":
-    run_ssis_parser("data/Demo_rabo/Demo_rabo/Demo_SSIS.dtsx")
+    #run_ssis_parser("data/Demo_rabo/Demo_rabo/Demo_SSIS.dtsx")
+
+    #run_ssis_parser("data/Demo_rabo_rep/Demo_rabo/Demo_SSIS.dtsx")
+
+    run_ssis_parser("data/table_var/table_var/Package.dtsx")
+
 
     
     

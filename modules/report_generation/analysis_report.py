@@ -81,7 +81,7 @@ def load_save_execute(path:str, lineages: pd.DataFrame, nodes: pd.DataFrame, dic
 def report_analysis(path:str):
     lineages = pd.read_csv('output-data/lineages/lineage-Package@Merge and filter.csv') #NOW THE CONTROL NODE WHICH YOU WANT TO ZOOM IN ON IS HARDCODED
     nodes = pd.read_csv('output-data/nodes.csv')
-    with open('output-data/metadata_nodes_controlflow.json', 'r') as file:
+    with open('output-data/nodes/metadata_nodes_controlflow.json', 'r') as file:
         dict_blocks = json.load(file)
     load_save_execute(path, lineages, nodes, dict_blocks)
     return
