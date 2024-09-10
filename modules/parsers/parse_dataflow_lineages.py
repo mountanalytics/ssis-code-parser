@@ -297,21 +297,22 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
     return
 
 def parser_dataflow_lineage(df_name: str):
-    nodes = pd.read_csv(f'output-data/nodes/nodes_order-{df_name}.csv') # nodes
+    nodes = pd.read_csv(f'output-data/nodes/order_nodes-{df_name}.csv') # nodes
     nodes_load = pd.read_csv(f'output-data/nodes/nodes-{df_name}.csv')
-    with open(f'output-data/dict_blocks_dataflow_{df_name}.json', 'r') as json_file: # columns data
+    with open(f'output-data/nodes/metadata_nodes_dataflow_{df_name}.json', 'r') as json_file: # columns data
         dict_blocks = json.load(json_file)
     
     all_paths = order_nodes(nodes)
     main_parser(nodes, all_paths, dict_blocks, nodes_load, df_name)
+
+
+
 if __name__ == "__main__":
     parser_dataflow_lineage('Package@Merge and filter')
     
 # order nodes and add metadata
     
-    
-
-    # Iterate over each remaining DataFrame in all_paths
+# Iterate over each remaining DataFrame in all_paths
     
     
     

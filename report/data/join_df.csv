@@ -1,2 +1,0 @@
-,LABEL_NODE,FUNCTION,JOIN_ARG
-12,Merge and filter@Match with products,Lookup,SupplierID = SupplierID2

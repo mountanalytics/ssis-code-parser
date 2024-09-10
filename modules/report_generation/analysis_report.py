@@ -69,8 +69,6 @@ def load_save_execute(path:str, lineages: pd.DataFrame, nodes: pd.DataFrame, dic
     transformations_df = transformations_dataflow(lineages, nodes)
     split_df, join_df = split_join_argu(nodes)
 
-    #path = "report/data"
-
     source_tables.to_csv(f"{path}/source_df.csv")
     target_tables.to_csv(f"{path}/target_df.csv")
     count_control_flow.to_csv(f"{path}/blocks_control.csv")
@@ -83,7 +81,7 @@ def load_save_execute(path:str, lineages: pd.DataFrame, nodes: pd.DataFrame, dic
 def report_analysis(path:str):
     lineages = pd.read_csv('output-data/lineages/lineage-Package@Merge and filter.csv') #NOW THE CONTROL NODE WHICH YOU WANT TO ZOOM IN ON IS HARDCODED
     nodes = pd.read_csv('output-data/nodes.csv')
-    with open('output-data/dict_blocks_controlflow.json', 'r') as file:
+    with open('output-data/metadata_nodes_controlflow.json', 'r') as file:
         dict_blocks = json.load(file)
     load_save_execute(path, lineages, nodes, dict_blocks)
     return

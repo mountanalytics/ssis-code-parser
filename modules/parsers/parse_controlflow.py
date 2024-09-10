@@ -1,3 +1,5 @@
+import json
+
 def pars_sql_task(control_node: dict) -> dict:
     vars_list = []#pd.DataFrame(columns=["Variable"])
     
@@ -46,4 +48,9 @@ def parse_control_flow(open_dtsx: dict) -> dict:
 
         elif control_node['DTS:CreationName'] =='Microsoft.ExpressionTask': 
             dict_blocks[control_node["DTS:refId"]] = {'Description': control_node['DTS:Description'], 'Expression' : control_node['DTS:ObjectData']['ExpressionTask']['Expression']}
+
+        
+    # Save the converted dictionary as a JSON file
+    with open('output-data/metadata_nodes_controlflow.json', 'w') as json_file:
+        json.dump(dict_blocks, json_file, indent=4)
     return dict_blocks
