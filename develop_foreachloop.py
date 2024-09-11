@@ -50,10 +50,10 @@ for idx,control_node in enumerate(open_dtsx['DTS:Executables']['DTS:Executable']
         vars_list = []
         if type(variables) == list:
 
-            vars_list = [i['DTS:VariableName'] for i in variables]
+            vars_list = [(i['DTS:VariableName'],i["DTS:ValueIndex"]) for i in variables]
 
         elif type(variables) == dict:
-            vars_list.append(variables['DTS:VariableName'])
+            vars_list.append((variables['DTS:VariableName'],variables["DTS:ValueIndex"]))
             
         if type(control_node['DTS:Executables']['DTS:Executable']) == list:
             for i,control_for in enumerate(control_node['DTS:Executables']['DTS:Executable']):
