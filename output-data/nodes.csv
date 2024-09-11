@@ -4,3 +4,4 @@ User::Ship_country,1,Variable,,,User::Ship_country,,green,left_only
 User::Unit_stock,2,Variable,,,User::Unit_stock,,green,left_only
 Package\Execute SQL Task,3,Query,,,Package\Execute SQL Task,Country = 'User::Ship_country' AND UnitsInStock > 'User::Unit_stock',black,left_only
 User::res_set,4,Variable,,,User::res_set,,green,left_only
+Package\Foreach Loop Container,5,ForEachLoopContainer,,,Package\Foreach Loop Container,,gold,left_only
