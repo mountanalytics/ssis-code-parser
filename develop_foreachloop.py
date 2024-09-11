@@ -55,9 +55,6 @@ for idx,control_node in enumerate(open_dtsx['DTS:Executables']['DTS:Executable']
         elif type(variables) == dict:
             vars_list.append(variables['DTS:VariableName'])
             
-            
-            
-            
         if type(control_node['DTS:Executables']['DTS:Executable']) == list:
             for i,control_for in enumerate(control_node['DTS:Executables']['DTS:Executable']):
                 if control_for['DTS:CreationName'] =='Microsoft.ExecuteSQLTask': # if the task is ExecuteSQL then print query and variables
@@ -69,8 +66,8 @@ for idx,control_node in enumerate(open_dtsx['DTS:Executables']['DTS:Executable']
         
         dict_blocks[control_node["DTS:refId"]] = {'Description': control_node['DTS:Description'], 
                                                  'Input_variable': input_table, 
-                                                 'Itter_variables': vars_list, 
-                                                 'Blocks_in_for': dict_blocks_for} 
+                                                 'Iterr_variables': vars_list, 
+                                                 'SQL': dict_blocks_for} 
     
     
     

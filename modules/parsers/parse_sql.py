@@ -319,6 +319,11 @@ def parse_sql_queries(control_flow:dict):
     lineages_dfs = []
     trees = []
     queries=[]
+
+    nodes = []
+    lineages = []
+
+
     for node in control_flow.keys():
         if control_flow[node]['Description'] == 'Execute SQL Task':
 
@@ -365,7 +370,7 @@ def parse_sql_queries(control_flow:dict):
                 #print(insert_tables)
 
 
-                nodes = []
+                #nodes = []
                 
                 # add source tables to nodes
                 for table in source_tables:              
@@ -387,12 +392,12 @@ def parse_sql_queries(control_flow:dict):
                         nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataDestinations', 'JOIN_ARG': None, 'COLOR': "gold"})
                         
                 
-                nodes = pd.DataFrame(nodes)
+                nodes_df = pd.DataFrame(nodes)
                 
-                nodes['ID'] = nodes.index
+                nodes_df['ID'] = nodes_df.index
 
                 node_name = node.replace("\\", "@")
-                nodes.to_csv(f'output-data/nodes/nodes-{node_name}.csv',index=False)
+                nodes_df.to_csv(f'output-data/nodes/nodes-{node_name}.csv',index=False)
 
                 # EXTRACT LINEAGES
                 target_node = insert_tables[0].replace(".", "/")
@@ -416,7 +421,7 @@ def parse_sql_queries(control_flow:dict):
                 transformations = extract_transformation(replaced_trees)
                 target_columns = list(zip(target_columns, transformations)) 
 
-                lineages = []
+                #lineages = []
                 lineages += extract_source_target_transformation(target_columns, lineages, space_table, source_node, query) # append lineages of node to lineages list
                 lineages += extract_source_target_transformation(target_columns, lineages, space_table, query, target_node) # append lineages of node to lineage list                
                 
@@ -424,35 +429,53 @@ def parse_sql_queries(control_flow:dict):
                     lineages.append({'SOURCE_COLUMNS':f'{variable}.{variable}', 'TARGET_COLUMN':f"{query}.{variable}", 'TRANSFORMATION':""})
 
 
-                lineages = pd.DataFrame(lineages)
+                lineages_df = pd.DataFrame(lineages)
 
-                lineages['SOURCE_FIELD'] = lineages['SOURCE_COLUMNS'].str.split('.', expand=True)[1]
-                lineages['TARGET_FIELD'] = lineages['TARGET_COLUMN'].str.split('.', expand=True)[1]
+                lineages_df['SOURCE_FIELD'] = lineages_df['SOURCE_COLUMNS'].str.split('.', expand=True)[1]
+                lineages_df['TARGET_FIELD'] = lineages_df['TARGET_COLUMN'].str.split('.', expand=True)[1]
 
 
-                lineages['SOURCE_NODE'] = lineages['SOURCE_COLUMNS'].str.split('.', expand=True)[0]
-                lineages['TARGET_NODE'] = lineages['TARGET_COLUMN'].str.split('.', expand=True)[0]
+                lineages_df['SOURCE_NODE'] = lineages_df['SOURCE_COLUMNS'].str.split('.', expand=True)[0]
+                lineages_df['TARGET_NODE'] = lineages_df['TARGET_COLUMN'].str.split('.', expand=True)[0]
 
           
 
-                lineages['LINK_VALUE'] = 1
-                lineages['ROW_ID'] = lineages.index
-                lineages['COLOR'] = 'aliceblue'
+                lineages_df['LINK_VALUE'] = 1
+                lineages_df['ROW_ID'] = lineages_df.index
+                lineages_df['COLOR'] = 'aliceblue'
 
 
                 # merge source id
-                lineages = pd.merge(lineages, nodes[['ID', 'LABEL_NODE']], left_on='SOURCE_NODE', right_on = 'LABEL_NODE', how='left')
-                lineages['SOURCE_NODE'] = lineages['ID']
-                lineages.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
+                lineages_df = pd.merge(lineages_df, nodes[['ID', 'LABEL_NODE']], left_on='SOURCE_NODE', right_on = 'LABEL_NODE', how='left')
+                lineages_df['SOURCE_NODE'] = lineages_df['ID']
+                lineages_df.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
 
                 # merge target id
-                lineages = pd.merge(lineages, nodes[['ID', 'LABEL_NODE']], left_on='TARGET_NODE', right_on = 'LABEL_NODE', how='left')
-                lineages['TARGET_NODE'] = lineages['ID']
-                lineages.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
+                lineages_df = pd.merge(lineages_df, nodes[['ID', 'LABEL_NODE']], left_on='TARGET_NODE', right_on = 'LABEL_NODE', how='left')
+                lineages_df['TARGET_NODE'] = lineages_df['ID']
+                lineages_df.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
 
-                lineages = lineages.drop_duplicates(subset =['SOURCE_COLUMNS', 'TARGET_COLUMN', 'TRANSFORMATION']).reset_index(drop=True)
+                lineages_df = lineages_df.drop_duplicates(subset =['SOURCE_COLUMNS', 'TARGET_COLUMN', 'TRANSFORMATION']).reset_index(drop=True)
 
-                lineages.to_csv(f'output-data/lineages/lineage-{node_name}.csv',index=False)
+                lineages_df.to_csv(f'output-data/lineages/lineage-{node_name}.csv',index=False)
+
+        elif control_flow[node]['Description'] == 'Foreach Loop Container':
+            # nodes
+            #nodes = []
+            nodes.append({'NAME_NODE': node,'LABEL_NODE': node, 'FILTER': None, 'FUNCTION': 'ForEachLoopContainer', 'JOIN_ARG': None, 'COLOR': "gold"})
+
+            # lineages
+            #lineages = []
+            variables = control_flow[node]['Iterr_variables']
+            input_table = control_flow[node]['Input_variable']
+
+            for variable in variables:
+                lineages.append({'SOURCE_COLUMNS':f'{input_table}.{COL}', 'TARGET_COLUMN':f"{node}.{COL}", 'TRANSFORMATION':""}) # CORRESPONDING COLUMN
+
+                lineages.append({'SOURCE_COLUMNS':f'{node}.{variable}', 'TARGET_COLUMN':f"{node}.{variable}", 'TRANSFORMATION':""})
+
+
+
 
 
 if __name__ == '__main__':

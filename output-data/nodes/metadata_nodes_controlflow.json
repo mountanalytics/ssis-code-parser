@@ -1,7 +1,7 @@
 {
     "Package\\Execute SQL Task": {
         "Description": "Execute SQL Task",
-        "SQL_state": "SELECT SupplierID, Product_Type FROM [dbo].[Products_Extract]  WHERE Country = ? and UnitsInStock > ?",
+        "SQL_state": "SELECT distinct SupplierID, CategoryID FROM [dbo].[Products_Extract]  WHERE Country = ? and UnitsInStock > ?",
         "Variables": [
             [
                 "User::Ship_country",
@@ -9,5 +9,25 @@
             ]
         ],
         "Result_variable": "User::res_set"
+    },
+    "Package\\Foreach Loop Container": {
+        "Description": "Foreach Loop Container",
+        "Input_variable": "User::res_set",
+        "Iterr_variables": [
+            "User::OrderID",
+            "User::Cat_id"
+        ],
+        "SQL": {
+            "Package\\Foreach Loop Container\\Execute SQL Task 1": {
+                "Description": "Execute SQL Task",
+                "SQL_state": "INSERT INTO Order_write(OrderID, Dateloop,Cat_ID) VALUES(?, GETDATE(),?)\n",
+                "Variables": [
+                    [
+                        "User::OrderID",
+                        "User::Cat_id"
+                    ]
+                ]
+            }
+        }
     }
 }

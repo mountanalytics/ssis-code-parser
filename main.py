@@ -2,7 +2,10 @@ import json
 from sankeyapp.app import main 
 from modules.dtsx_opener import Load
 from modules.parsers.parse_controlflow import parse_control_flow
+
+#from modules.parsers.parse_sql import create_nodes_lineages_controlflow
 from modules.parsers.parse_sql import parse_sql_queries
+
 from modules.parsers.parse_dataflow_nodes import parse_dataflow_nodes
 from modules.parsers.parse_dataflow_lineages import parser_dataflow_lineage
 from modules.merge_nodes_sets import node_lin_pars
@@ -20,6 +23,7 @@ def run_ssis_parser(path_dtsx:str):
     control_flow = parse_control_flow(open_dtsx)
 
     # parse sql queries in control flow
+    #create_nodes_lineages_controlflow(control_flow)
     parse_sql_queries(control_flow)
 
     # parse data flow
@@ -32,8 +36,8 @@ def run_ssis_parser(path_dtsx:str):
     node_lin_pars() 
 
     # generate .docx report
-    report_analysis("output-data/reports/tables")
-    main_report_generation("output-data/reports/tables", "output-data/reports/MA_Rationalization_Model_Results.docx")
+    #report_analysis("output-data/reports/tables")
+    #main_report_generation("output-data/reports/tables", "output-data/reports/MA_Rationalization_Model_Results.docx")
 
     # run sankeyapp dashboard locally
     main('output-data/lineages/', 'output-data/nodes.csv') 
