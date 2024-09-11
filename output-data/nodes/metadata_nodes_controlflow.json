@@ -14,8 +14,14 @@
         "Description": "Foreach Loop Container",
         "Input_variable": "User::res_set",
         "Iterr_variables": [
-            "User::OrderID",
-            "User::Cat_id"
+            [
+                "User::OrderID",
+                0
+            ],
+            [
+                "User::Cat_id",
+                1
+            ]
         ],
         "SQL": {
             "Package\\Foreach Loop Container\\Execute SQL Task 1": {

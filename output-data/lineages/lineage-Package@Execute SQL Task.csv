@@ -1,7 +1,0 @@
-SOURCE_COLUMNS,TARGET_COLUMN,TRANSFORMATION,SOURCE_FIELD,TARGET_FIELD,SOURCE_NODE,TARGET_NODE,LINK_VALUE,ROW_ID,COLOR
-"""dbo""/""Products_Extract"".SupplierID",Package\Execute SQL Task.SupplierID,,SupplierID,SupplierID,0,3,1,0,aliceblue
-"""dbo""/""Products_Extract"".CategoryID",Package\Execute SQL Task.CategoryID,,CategoryID,CategoryID,0,3,1,1,aliceblue
-Package\Execute SQL Task.SupplierID,User::res_set.SupplierID,,SupplierID,SupplierID,3,4,1,4,aliceblue
-Package\Execute SQL Task.CategoryID,User::res_set.CategoryID,,CategoryID,CategoryID,3,4,1,5,aliceblue
-User::Ship_country.User::Ship_country,Package\Execute SQL Task.User::Ship_country,,User::Ship_country,User::Ship_country,1,3,1,10,aliceblue
-User::Unit_stock.User::Unit_stock,Package\Execute SQL Task.User::Unit_stock,,User::Unit_stock,User::Unit_stock,2,3,1,11,aliceblue

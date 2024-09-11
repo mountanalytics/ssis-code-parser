@@ -1,6 +1,0 @@
-NAME_NODE,LABEL_NODE,FILTER,FUNCTION,JOIN_ARG,COLOR,ID
-"""dbo""/""Products_Extract""","""dbo""/""Products_Extract""",,DataSources,,gold,0
-User::Ship_country,User::Ship_country,,Variable,,green,1
-User::Unit_stock,User::Unit_stock,,Variable,,green,2
-Package\Execute SQL Task,Package\Execute SQL Task,Country = 'User::Ship_country' AND UnitsInStock > 'User::Unit_stock',Query,,black,3
-User::res_set,User::res_set,,Variable,,green,4
