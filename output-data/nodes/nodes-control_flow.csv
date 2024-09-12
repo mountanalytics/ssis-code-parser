@@ -1,7 +1,5 @@
 NAME_NODE,LABEL_NODE,FILTER,FUNCTION,JOIN_ARG,COLOR,ID
-"""dbo""/""Products_Extract""","""dbo""/""Products_Extract""",,DataSources,,gold,0
-User::Ship_country,User::Ship_country,,Variable,,green,1
-User::Unit_stock,User::Unit_stock,,Variable,,green,2
-Package\Execute SQL Task,Package\Execute SQL Task,Country = 'User::Ship_country' AND UnitsInStock > 'User::Unit_stock',Query,,black,3
-User::res_set,User::res_set,,Variable,,green,4
-Package\Foreach Loop Container,Package\Foreach Loop Container,,ForEachLoopContainer,,gold,5
+Supp_Prod_output,Supp_Prod_output,,DataSources,,gold,0
+User::CurrentDateTime,User::CurrentDateTime,,Variable,,green,1
+Package\Overwrite insert table,Package\Overwrite insert table,Region = 'User::CurrentDateTime',Query,,black,2
+New_Supp_Prod_output,New_Supp_Prod_output,,DataDestinations,,gold,3

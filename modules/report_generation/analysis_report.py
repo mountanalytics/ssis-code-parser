@@ -44,7 +44,6 @@ def source_target_tables(lineages: pd.DataFrame, nodes: pd.DataFrame) -> tuple[p
 
 def transformations_dataflow(lineages: pd.DataFrame, nodes: pd.DataFrame) -> pd.DataFrame:
     transformations_df = lineages[lineages['TRANSFORMATION'].notna()][["SOURCE_NODE","SOURCE_FIELD","TRANSFORMATION"]]
-    
     transformations_df = transformations_df.merge(
         nodes[['ID', "LABEL_NODE"]], 
         how='left', 
@@ -78,10 +77,10 @@ def load_save_execute(path:str, lineages: pd.DataFrame, nodes: pd.DataFrame, dic
     join_df.to_csv(f"{path}/join_df.csv")
     return
 
-def report_analysis(path:str): ### HARD DICRECTORES, ADD ARGS
-    lineages = pd.read_csv('output-data/lineages/lineage-Package@Merge and filter.csv') #NOW THE CONTROL NODE WHICH YOU WANT TO ZOOM IN ON IS HARDCODED
-    nodes = pd.read_csv('output-data/nodes.csv')
-    with open('output-data/nodes/metadata_nodes_controlflow.json', 'r') as file:
+def report_analysis(path:str, lineage_path: str, node_path: str, control_block: str, metadata_path: str):
+    lineages = pd.read_csv(f'{lineage_path}lineage-{control_block}.csv')
+    nodes = pd.read_csv(node_path)
+    with open(f'{metadata_path}metadata_nodes_controlflow.json', 'r') as file:
         dict_blocks = json.load(file)
     load_save_execute(path, lineages, nodes, dict_blocks)
     return

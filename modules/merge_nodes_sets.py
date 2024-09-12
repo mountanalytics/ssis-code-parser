@@ -39,7 +39,7 @@ def node_lin_pars():
         new_rows = merged[merged['_merge'] == 'left_only']
         node_final = pd.concat([node_final,new_rows],ignore_index=True)
         node_final['ID'] = node_final.index
-        new_rows.loc[:,'NEW_ID'] = range(len(node_final) - len(new_rows), len(node_final))
+        new_rows =  new_rows.assign(NEW_ID=range(len(node_final) - len(new_rows), len(node_final)))
         new_nodes = pd.concat([new_rows,duplicates],ignore_index=True)
         id_to_new_id = new_nodes.set_index('ID')['NEW_ID'].to_dict()
         lineage = pd.read_csv(f"output-data/lineages/lineage-{name}.csv")
