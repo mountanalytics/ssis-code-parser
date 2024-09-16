@@ -40,7 +40,7 @@ def run_ssis_parser(path_dtsx:str):
     main_report_generation("output-data/reports/tables", "output-data/reports/MA_Rationalization_Model_Results.docx")
 
     # run sankeyapp dashboard locally
-    main('output-data/lineages/', 'output-data/nodes.csv') 
+    main('output-data/lineages/', 'output-data/nodes.csv', 'output-data/nodes/', 'output-data/lineages/Delete_error/') 
 
 if __name__ == "__main__":
     run_ssis_parser("data/Demo_rabo/Demo_rabo/Demo_SSIS.dtsx")

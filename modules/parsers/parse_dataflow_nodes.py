@@ -248,6 +248,7 @@ def append_var_node(var_df: pd.DataFrame, df_nodes: pd.DataFrame) -> pd.DataFram
 
 def lineage_path_flow(path_flow: list, components: list, df_name: str):
     df_lineage = pd.DataFrame(columns=["ID_block_out","ID_block_in", "type_block_out", "type_block_in"])
+    marker_block = []
     for blocks in path_flow:
         # add name blocks
         id_block_out = [blocks["startId"].split(".Outputs")[0]]
@@ -256,10 +257,11 @@ def lineage_path_flow(path_flow: list, components: list, df_name: str):
         # add type blocks
         type_block_in = [component['componentClassID'] for component in components if component['refId'] == id_block_in[0]][0]
         type_block_out = [component['componentClassID'] for component in components if component['refId'] == id_block_out[0]][0]
-
-
         df_lineage = pd.concat([df_lineage, pd.DataFrame({"ID_block_out": id_block_out, "ID_block_in": id_block_in, 'type_block_in':type_block_in, 'type_block_out': type_block_out})], ignore_index=True)
-
+        if blocks["name"] == "Lookup No Match Output":
+            marker_block.append(blocks["endId"].split(".Inputs")[0])
+        
+    marker_block = pd.DataFrame(marker_block, columns=["NAME"]).to_csv(f"output-data/nodes/marker_nodes-{df_name}.csv", index=False)
     df_lineage.to_csv(f'output-data/nodes/order_nodes-{df_name}.csv')
     return
 
