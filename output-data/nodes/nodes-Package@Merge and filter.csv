@@ -1,19 +1,23 @@
 LABEL_NODE,ID,FUNCTION,JOIN_ARG,SPLIT_ARG,NAME_NODE,FILTER,COLOR
-User::CurrentDateTime,0,Variable,,,User::CurrentDateTime,,green
-User::Errors_lookup,1,Variable,,,User::Errors_lookup,,green
-User::Rows_suppliers,2,Variable,,,User::Rows_suppliers,,green
-User::Set_SQL,3,Variable,,,User::Set_SQL,,green
-Merge and filter@Alter name pref,4,DerivedColumn,,,Alter name pref,,black
-Merge and filter@Determine rows sup,5,RowCount,,,Determine rows sup,,black
-Merge and filter@Error output table,6,SSISODBCDst,,,Error output table,,black
-dbo.Error_lines,7,DataDestinations,,,dbo.Error_lines,,gold
-Merge and filter@Error_match_column,8,DerivedColumn,,,Error_match_column,,black
-Merge and filter@Load supplier,9,SSISODBCSrc,,,Load supplier,,black
-dbo.Suppliers_Extract,10,DataSources,,,dbo.Suppliers_Extract,,gold
-dbo.Products_Extract,11,DataSources,,,dbo.Products_Extract,,gold
-Merge and filter@Match with products,12,Lookup,SupplierID = SupplierID2,,Match with products,,dodgerblue
-Merge and filter@Row Count errors,13,RowCount,,,Row Count errors,,black
-Merge and filter@Split preferences,14,ConditionalSplit,,Discount > 0,Split preferences,,dodgerblue
-Merge and filter@Union suppliers,15,UnionAll,,,Union suppliers,,black
-Merge and filter@Write Update sup table,16,SSISODBCDst,,,Write Update sup table,,black
-dbo.Supp_Prod_output,17,DataDestinations,,,dbo.Supp_Prod_output,,gold
+User::Cat_id,0,Variable,,,User::Cat_id,,green
+User::CurrentDateTime,1,Variable,,,User::CurrentDateTime,,green
+User::Errors_lookup,2,Variable,,,User::Errors_lookup,,green
+User::res_set,3,Variable,,,User::res_set,,green
+User::Rows_suppliers,4,Variable,,,User::Rows_suppliers,,green
+User::Ship_country,5,Variable,,,User::Ship_country,,green
+User::Sup_id,6,Variable,,,User::Sup_id,,green
+User::Unit_stock,7,Variable,,,User::Unit_stock,,green
+Merge and filter@Alter name pref,8,DerivedColumn,,,Alter name pref,,black
+Merge and filter@Determine rows sup,9,RowCount,,,Determine rows sup,,black
+Merge and filter@Error output table,10,SSISODBCDst,,,Error output table,,black
+dbo.Error_lines,11,DataDestinations,,,dbo.Error_lines,,gold
+Merge and filter@Error_match_column,12,DerivedColumn,,,Error_match_column,,black
+Merge and filter@Load supplier,13,SSISODBCSrc,,,Load supplier,,black
+dbo.Suppliers_Extract,14,DataSources,,,dbo.Suppliers_Extract,,gold
+dbo.Products_Extract,15,DataSources,,,dbo.Products_Extract,,gold
+Merge and filter@Match with products,16,Lookup,SupplierID = SupplierID2,,Match with products,,dodgerblue
+Merge and filter@Row Count errors,17,RowCount,,,Row Count errors,,black
+Merge and filter@Split preferences,18,ConditionalSplit,,Discount > 0,Split preferences,,dodgerblue
+Merge and filter@Union suppliers,19,UnionAll,,,Union suppliers,,black
+Merge and filter@Write Update sup table,20,SSISODBCDst,,,Write Update sup table,,black
+dbo.Supp_Prod_output,21,DataDestinations,,,dbo.Supp_Prod_output,,gold

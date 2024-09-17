@@ -36,18 +36,20 @@ def run_ssis_parser(path_dtsx:str):
     node_lin_pars() 
 
     # generate .docx report
-    report_analysis("output-data/reports/tables",'output-data/lineages/', 'output-data/nodes.csv', "Package@Merge and filter", "output-data/nodes/")
-    main_report_generation("output-data/reports/tables", "output-data/reports/MA_Rationalization_Model_Results.docx")
+    #report_analysis("output-data/reports/tables",'output-data/lineages/', 'output-data/nodes.csv', "Package@Merge and filter", "output-data/nodes/")
+    #main_report_generation("output-data/reports/tables", "output-data/reports/MA_Rationalization_Model_Results.docx")
 
     # run sankeyapp dashboard locally
     main('output-data/lineages/', 'output-data/nodes.csv') 
 
 if __name__ == "__main__":
-    run_ssis_parser("data/Demo_rabo/Demo_rabo/Demo_SSIS.dtsx")
+    #run_ssis_parser("data/Demo_rabo/Demo_rabo/Demo_SSIS.dtsx")
 
     #run_ssis_parser("data/Demo_rabo_rep/Demo_rabo/Demo_SSIS.dtsx")
 
-    #run_ssis_parser("data/table_var/table_var/Package.dtsx")
+    #run_ssis_parser("data/Demo_SSIS_final.dtsx")
+
+    run_ssis_parser("data/Demo_SSIS_3.dtsx")
 
 
     

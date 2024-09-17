@@ -1,4 +1,3 @@
 FUNCTION,count
-Execute SQL Task,4
-Data Flow Task,1
-Expression Task,1
+Execute SQL Task,1
+Foreach Loop Container,1

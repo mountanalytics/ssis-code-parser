@@ -93,9 +93,7 @@ def transformer_functions(node):
     return node
 
 
-def replace_variables(query:str, variables: list):
-
-    
+def replace_variables(query:str, variables: list):    
     # Convert the string to a list so that we can modify it
     result = list(query)
     
@@ -107,7 +105,7 @@ def replace_variables(query:str, variables: list):
         if char == '?':
             # Replace '?' with the current element in replacements
             if replace_index < len(variables):
-                result[i] = "'" + str(variables[replace_index]) +"'"
+                result[i] = "'" + str(variables[replace_index][0]) +"'"
                 replace_index += 1
     
     # Convert list back to a string
@@ -224,7 +222,6 @@ def get_statements(transformed_tree):
     else:
         where_exp = None
 
-
     return source_tables, where_exp
 
 
@@ -247,7 +244,6 @@ def on_statement(select_statement: sqlglot.expressions.Select):
     else:
         return None
     
-
 
 def remove_duplicate_dicts(dict_list):
     # Convert list of dictionaries to a list of frozensets (which are hashable)
@@ -299,13 +295,18 @@ def extract_source_target_transformation(target_columns :list, lineages: list, s
             if 'AS' in target_column[1]: # if there is an alias, append formula and alias
                 for col in source_columns:
                     if split_at_last_as(target_column[1])[0].strip() not in col:
+                        print({'SOURCE_COLUMNS':source_columns, 'TARGET_COLUMN':f"{target_node_name}[{split_at_last_as(target_column[1])[1].strip()}]", 'TRANSFORMATION':split_at_last_as(target_column[1])[0].strip()})
 
-                        lineages.append({'SOURCE_COLUMNS':source_columns, 'TARGET_COLUMN':f"{target_node_name}.{split_at_last_as(target_column[1])[1].strip()}", 'TRANSFORMATION':split_at_last_as(target_column[1])[0].strip()})
+
+                        lineages.append({'SOURCE_COLUMNS':source_columns, 'TARGET_COLUMN':f"{target_node_name}[{split_at_last_as(target_column[1])[1].strip()}]", 'TRANSFORMATION':split_at_last_as(target_column[1])[0].strip()})
                     else:
-                        lineages.append({'SOURCE_COLUMNS':source_columns, 'TARGET_COLUMN':f"{target_node_name}.{split_at_last_as(target_column[1])[1].strip()}", 'TRANSFORMATION': ""})
-            else:
+                        print({'SOURCE_COLUMNS':source_columns, 'TARGET_COLUMN':f"{target_node_name}[{split_at_last_as(target_column[1])[1].strip()}]", 'TRANSFORMATION': ""})
 
-                lineages.append({'SOURCE_COLUMNS':f'{source_node_name}.{source_columns[0].split(".")[-1]}', 'TARGET_COLUMN':f'{target_node_name}.{source_columns[0].split(".")[-1]}', 'TRANSFORMATION': target_column[1]})
+                        lineages.append({'SOURCE_COLUMNS':source_columns, 'TARGET_COLUMN':f"{target_node_name}[{split_at_last_as(target_column[1])[1].strip()}]", 'TRANSFORMATION': ""})
+            else:
+                print({'SOURCE_COLUMNS':f'{source_node_name}[{source_columns[0].split(".")[-1]}]', 'TARGET_COLUMN':f'{target_node_name}[{source_columns[0].split(".")[-1]}]', 'TRANSFORMATION': target_column[1]})
+
+                lineages.append({'SOURCE_COLUMNS':f'{source_node_name}[{source_columns[0].split(".")[-1]}]', 'TARGET_COLUMN':f'{target_node_name}[{source_columns[0].split(".")[-1]}]', 'TRANSFORMATION': target_column[1]})
     return remove_duplicate_dicts(lineages)
 
 def flatten_if_nested(lst):
@@ -314,162 +315,237 @@ def flatten_if_nested(lst):
     return lst  # Return the original if not a nested list
 
 
+
+
+def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, foreach):
+    
+    try: # try if it is part of for each loop
+        #print(control_flow[node_name]['SQL'][i]['Variables'])
+        for i in control_flow[node_name]['SQL']:
+            variables = flatten_if_nested(control_flow[node_name]['SQL'][i]['Variables'])#[0]     
+    except:
+        #print(control_flow[node_name]['Variables'])
+        try:
+            variables = flatten_if_nested(control_flow[node_name]['Variables'])
+        except:
+            pass
+        pass
+
+    #print(variables)
+
+ 
+    try: # try if it is part of for each loop
+        for i in control_flow[node_name]['SQL']:
+            sql_statement = control_flow[node_name]['SQL'][i]['SQL_state'] 
+            previous_node_name = node_name
+            node_name = i
+    except:
+        sql_statement = control_flow[node_name]['SQL_state'] 
+
+
+    # if the sql statement contains a variable, change the ? with the variable name
+    if '?' in sql_statement: 
+        sql_statement = replace_variables(sql_statement, variables)
+
+    else:
+        try:
+            for variable in variables:
+                
+                for i, char in enumerate(sql_statement.replace(" ", "")): #!!!!!!!!!!!!! ADD MORE CONDITIONS
+                    if char == variable[1]:# and ((sql_statement[i+1] == ')') and (sql_statement[i-1] == ',')) or ((sql_statement[i+1] == ',') and (sql_statement[i-1] == '('))  or ((sql_statement[i+1] == ',') and (sql_statement[i-1] == ')')):
+
+                        sql_statement = sql_statement.replace(char, f"'{variable[0]}'")# + '?' + sql_statements[i + 1:]
+
+            sql_statement = replace_variables(sql_statement, variables) 
+
+        except:
+            pass
+    
+    # get sqlglot tree from query
+    tree = parse_query(sql_statement)
+
+    # only parse if there is a select statement
+    if 'select' in sql_statement.lower():
+
+        # find main select statement
+        select = list(tree.find_all(exp.Select))[0]
+
+        # EXTRACT NODES
+        # parse source tables and where condition
+        source_tables, where_exp = get_statements(select) 
+        source_tables = [table.replace('"', "") for table in source_tables]
+
+        print(source_tables)
+
+        
+        # parse on condition
+        on_condition = on_statement(select)
+
+        # parse destination table
+        insert_tables = [table for table in select.find_all(exp.Insert)]
+        insert_tables += [table.this.this.this for table in select.find_all(exp.Into)]
+        try:
+            insert_tables.append(control_flow[node_name]['Result_variable'])
+        except:
+            pass
+
+        # add source tables to nodes
+        for table in source_tables:              
+            nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataSources', 'JOIN_ARG': None, 'COLOR': "gold"})
+            #nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataSources', 'JOIN_ARG': None, 'COLOR': "gold"})
+
+        # add variables to nodes
+        for variable in variables:
+            nodes.append({'NAME_NODE': variable[0],'LABEL_NODE': variable[0], 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
+                
+        # add query node
+        nodes.append({'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': where_exp, 'FUNCTION': 'Query', 'JOIN_ARG': on_condition, 'COLOR': 'black'})
+                
+        # add destination table to nodes
+        for table in insert_tables:     
+            if '::' in table: # if result table is variable
+                nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
+            else:
+                nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataDestinations', 'JOIN_ARG': None, 'COLOR': "gold"})
+
+        # EXTRACT LINEAGES
+        target_node = insert_tables[0]#.replace(".", "/")
+    
+        source_node = list(source_tables)[0]#.replace(".", "/") # CHANGE THIS IN CASE THERE ARE MORE SOURCE TABLES!!!
+        query = node_name
+
+        space_table = find_table_w_spaces(select) # clean tables
+        space_table = list(set(space_table)) # a list of tuples with table names paired (space removed original - original ) Eg. (OrderDetails, Order Details)
+
+        target_columns = []
+        select_statement, target_columns = extract_target_columns(tree) # extract target columns
+        
+        for table in insert_tables:     
+            if '::' in table: # if result table is variable
+                variable_tables[table] = [(col[0].this.this, i) for i, col in enumerate(target_columns)]
+
+        replaced_trees = [x.transform(transformer_functions) for x in select_statement] # replace columns aliases
+
+        # add possible transformation to columns
+        transformations = extract_transformation(replaced_trees)
+        target_columns = list(zip(target_columns, transformations)) 
+
+        lineages += extract_source_target_transformation(target_columns, lineages, space_table, source_node, query) # append lineages of node to lineages list
+        lineages += extract_source_target_transformation(target_columns, lineages, space_table, query, target_node) # append lineages of node to lineage list                
+        
+        for variable in variables: # append variables to lineages
+            lineages.append({'SOURCE_COLUMNS':f'{variable[0]}[{variable[0]}]', 'TARGET_COLUMN':f"{query}[{variable[0]}]", 'TRANSFORMATION':""})
+
+    elif "insert into" in sql_statement.lower():
+        print(sql_statement)
+
+        # find main select statement
+        insert = list(tree.find_all(exp.Insert))[0]
+
+        dest_table = [i.this.this for i in insert.find_all(exp.Table)][0]
+
+        schema = [i for i in insert.find_all(exp.Schema)][0]
+
+        columns = []
+
+        for i in tree.args["this"].args["expressions"]:                  
+            try:
+                columns.append(i.args["this"])
+            except:
+                pass
+
+        transformations = []
+
+        for i in tree.args["expression"].args["expressions"][0].args["expressions"]:
+            try:
+                transformations.append(i.args["this"])
+            except:
+                transformations.append(i)
+      
+        nodes.append({'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': None, 'FUNCTION': 'Query', 'JOIN_ARG': None, 'COLOR': "black"})
+        nodes.append({'NAME_NODE': dest_table,'LABEL_NODE': dest_table, 'FILTER': None, 'FUNCTION': 'DataDestinations', 'JOIN_ARG': None, 'COLOR': "gold"})
+
+        for i, column in enumerate(columns):
+            lineages.append({'SOURCE_COLUMNS':f'{node_name}[{column}]', 'TARGET_COLUMN':f"{dest_table}[{column}]", 'TRANSFORMATION':transformations[i]})
+
+        for transformation in transformations:
+            transformation = str(transformation)
+            if "::" in transformation and foreach==False:
+                nodes.append({'NAME_NODE': transformation,'LABEL_NODE': transformation, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
+
+                lineages.append({'SOURCE_COLUMNS':f'{transformation}[{transformation}]', 'TARGET_COLUMN':f"{node_name}[{column}]", 'TRANSFORMATION':""})
+
+
+    return nodes, lineages, variable_tables, node_name
+
+
+def foreachloop_parser(control_flow, nodes, lineages, variable_tables, node_name):
+
+    nodes.append({'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': None, 'FUNCTION': 'ForEachLoopContainer', 'JOIN_ARG': None, 'COLOR': "black"})
+
+    _, _, _, sql_node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
+
+    variables = control_flow[node_name]['Iterr_variables']
+    input_table = control_flow[node_name]['Input_variable']
+
+    for variable_table in variable_tables:
+        if input_table == variable_table: # if the variable table correspond to the input table
+            for column in variable_tables[variable_table]:
+                for variable in variables:
+                    if column[1] == variable[1]:
+
+                        nodes.append({'NAME_NODE': variable[0],'LABEL_NODE': variable[0], 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
+
+
+                        lineages.append({'SOURCE_COLUMNS':f'{input_table}[{column[0]}]', 'TARGET_COLUMN':f"{node_name}[{column[0]}]", 'TRANSFORMATION':""}) # from the input the table to the foreachloop
+                        lineages.append({'SOURCE_COLUMNS':f'{node_name}[{variable[0]}]', 'TARGET_COLUMN':f"{sql_node_name}[{variable[0]}]", 'TRANSFORMATION':""}) # from the foreachloop to the sql
+                        
+                        lineages.append({'SOURCE_COLUMNS':f'{sql_node_name}[{variable[0]}]', 'TARGET_COLUMN':f"{variable[0]}[{variable[0]}]", 'TRANSFORMATION':""}) # from the foreachloop to the to the variable node
+                        lineages.append({'SOURCE_COLUMNS':f'{variable[0]}[{variable[0]}]', 'TARGET_COLUMN':f"{node_name}[{variable[0]}]", 'TRANSFORMATION':""}) # from the variable node back to the foreachloop
+
+                       # lineages.append({'SOURCE_COLUMNS':f'{sql_node_name}.{variable[0]}', 'TARGET_COLUMN':f"{node_name}.{variable[0]}", 'TRANSFORMATION':""}) # from the sql task back to the foreachlop
+
+
+    return nodes, lineages
+
+
 def parse_sql_queries(control_flow:dict):
 
     nodes = []
     lineages = []
-
     variable_tables = {} # dictionaries with temporary tables and their columns
 
     for node in control_flow.keys():
         if control_flow[node]['Description'] == 'Execute SQL Task':
-
-            try:
-                variables = flatten_if_nested(control_flow[node]['Variables'])
-            except:
-                pass
-    
-
-            sql_statement = control_flow[node]['SQL_state'] 
-
-            # if the sql statement contains a variable, change the ? with the variable name
-            if '?' in sql_statement: 
-                sql_statement = replace_variables(sql_statement, variables)
-            
-            # get sqlglot tree from query
-            tree = parse_query(sql_statement)
-
-            # only parse if there is a select statement
-            if 'select' in sql_statement.lower():
-
-                # find main select statement
-                select = list(tree.find_all(exp.Select))[0]
-
-                
-                # EXTRACT NODES
-
-                # parse source tables and where condition
-                source_tables, where_exp = get_statements(select) 
-                #print(source_tables)
-                
-                # parse on condition
-                on_condition = on_statement(select)
-
-                # parse destination table
-                insert_tables = [table for table in select.find_all(exp.Insert)]
-                insert_tables += [table.this.this.this for table in select.find_all(exp.Into)]
-                try:
-                    insert_tables.append(control_flow[node]['Result_variable'])
-                except:
-                    pass
-
-                # add source tables to nodes
-                for table in source_tables:              
-                        nodes.append({'NAME_NODE': table.replace(".", "/"),'LABEL_NODE': table.replace(".", "/"), 'FILTER': None, 'FUNCTION': 'DataSources', 'JOIN_ARG': None, 'COLOR': "gold"})
-
-                # add variables to nodes
-                for variable in variables:
-                    nodes.append({'NAME_NODE': variable,'LABEL_NODE': variable, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
-                        
-                # add query node
-                nodes.append({'NAME_NODE': node,'LABEL_NODE': node, 'FILTER': where_exp, 'FUNCTION': 'Query', 'JOIN_ARG': on_condition, 'COLOR': 'black'})
-                        
-                # add destination table to nodes
-                for table in insert_tables:     
-                    if '::' in table: # if result table is variable
-                        nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
-                    else:
-                        nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataDestinations', 'JOIN_ARG': None, 'COLOR': "gold"})
-                        
-
-
-                # EXTRACT LINEAGES
-                target_node = insert_tables[0].replace(".", "/")
-          
-                source_node = list(source_tables)[0].replace(".", "/") # CHANGE THIS IN CASE THERE ARE MORE SOURCE TABLES!!!
-                query = node
-
-                space_table = find_table_w_spaces(select) # clean tables
-
-                space_table = list(set(space_table)) # a list of tuples with table names paired (space removed original - original ) Eg. (OrderDetails, Order Details)
-
-                target_columns = []
-                select_statement, target_columns = extract_target_columns(tree) # extract target columns
-             
-                for table in insert_tables:     
-                    if '::' in table: # if result table is variable
-                        variable_tables[table] = [(col[0].this.this, i) for i, col in enumerate(target_columns)]
-
-                replaced_trees = [x.transform(transformer_functions) for x in select_statement] # replace columns aliases
-
-                # add possible transformation to columns
-                transformations = extract_transformation(replaced_trees)
-                target_columns = list(zip(target_columns, transformations)) 
-
-                #lineages = []
-
-
-                lineages += extract_source_target_transformation(target_columns, lineages, space_table, source_node, query) # append lineages of node to lineages list
-                lineages += extract_source_target_transformation(target_columns, lineages, space_table, query, target_node) # append lineages of node to lineage list                
-                
-                for variable in variables: # append variables to lineages
-                    lineages.append({'SOURCE_COLUMNS':f'{variable}.{variable}', 'TARGET_COLUMN':f"{query}.{variable}", 'TRANSFORMATION':""})
-
-
+            nodes, lineages, variable_tables, _ = executesql_parser(control_flow, nodes, lineages, variable_tables, node, False)
 
         elif control_flow[node]['Description'] == 'Foreach Loop Container':
-            # nodes
-
-            nodes.append({'NAME_NODE': node,'LABEL_NODE': node, 'FILTER': None, 'FUNCTION': 'ForEachLoopContainer', 'JOIN_ARG': None, 'COLOR': "gold"})
-            
-            variables = control_flow[node]['Iterr_variables']
-            print(variables)
-            input_table = control_flow[node]['Input_variable']
-
-
-            for i, variable in enumerate(variables):
-                for variable_table in variable_tables:
-                    print(variable_tables[variable_table][i], variable)
-                    
-
-                    if input_table in variable_table and variable_tables[variable_table][i][1] == variable[1]:
-                        #print({'SOURCE_COLUMNS':f'{input_table}.{variable_tables[variable_table][i][0]}', 'TARGET_COLUMN':f"{node}.{variable_tables[variable_table][i]}", 'TRANSFORMATION':""})
-                        lineages.append({'SOURCE_COLUMNS':f'{input_table}.{variable_tables[variable_table][i][0]}', 'TARGET_COLUMN':f"{node}.{variable_tables[variable_table][i][0]}", 'TRANSFORMATION':""}) # CORRESPONDING COLUMN
-
-                    lineages.append({'SOURCE_COLUMNS':f'{node}.{variable[0]}', 'TARGET_COLUMN':f"{node}.{variable[0]}", 'TRANSFORMATION':""})
-
-
+            nodes, lineages = foreachloop_parser(control_flow, nodes, lineages, variable_tables, node)
                     
     nodes_df = pd.DataFrame(nodes)
     nodes_df['ID'] = nodes_df.index
     nodes_df.to_csv(f'output-data/nodes/nodes-control_flow.csv',index=False)
 
-
-
     lineages_df = pd.DataFrame(lineages)
+    lineages_df['SOURCE_FIELD'] = lineages_df['SOURCE_COLUMNS'].str.extract(r'\[([^\]]*)\]')
+    lineages_df['TARGET_FIELD'] = lineages_df['TARGET_COLUMN'].str.extract(r'\[([^\]]*)\]')
 
-    lineages_df['SOURCE_FIELD'] = lineages_df['SOURCE_COLUMNS'].str.split('.', expand=True)[1]
-    lineages_df['TARGET_FIELD'] = lineages_df['TARGET_COLUMN'].str.split('.', expand=True)[1]
-
-    lineages_df['SOURCE_NODE'] = lineages_df['SOURCE_COLUMNS'].str.split('.', expand=True)[0]
-    lineages_df['TARGET_NODE'] = lineages_df['TARGET_COLUMN'].str.split('.', expand=True)[0]
-
+    #lineages_df['SOURCE_FIELD'] = lineages_df['SOURCE_COLUMNS'].str.split('.', expand=True)[1]
+    #lineages_df['TARGET_FIELD'] = lineages_df['TARGET_COLUMN'].str.split('.', expand=True)[1]
+    lineages_df['SOURCE_NODE'] = lineages_df['SOURCE_COLUMNS'].str.split('[', expand=True)[0]
+    lineages_df['TARGET_NODE'] = lineages_df['TARGET_COLUMN'].str.split('[', expand=True)[0]
     lineages_df['LINK_VALUE'] = 1
     lineages_df['ROW_ID'] = lineages_df.index
     lineages_df['COLOR'] = 'aliceblue'
-
     # merge source id
     lineages_df = pd.merge(lineages_df, nodes_df[['ID', 'LABEL_NODE']], left_on='SOURCE_NODE', right_on = 'LABEL_NODE', how='left')
     lineages_df['SOURCE_NODE'] = lineages_df['ID']
     lineages_df.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
-
     # merge target id
     lineages_df = pd.merge(lineages_df, nodes_df[['ID', 'LABEL_NODE']], left_on='TARGET_NODE', right_on = 'LABEL_NODE', how='left')
     lineages_df['TARGET_NODE'] = lineages_df['ID']
     lineages_df.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
-
     lineages_df = lineages_df.drop_duplicates(subset =['SOURCE_COLUMNS', 'TARGET_COLUMN', 'TRANSFORMATION']).reset_index(drop=True)
-
     lineages_df.to_csv(f'output-data/lineages/lineage-control_flow.csv',index=False)
 
 
@@ -478,6 +554,6 @@ if __name__ == '__main__':
     
     with open('./output-data/nodes/metadata_nodes_controlflow.json', 'r') as json_file: # columns data
         control_flow = json.load(json_file)
-    
+
     parse_sql_queries(control_flow)
 
