@@ -292,21 +292,8 @@ def extract_source_target_transformation(target_columns :list, lineages: list, s
             source_columns.append(source_column_complete)
                 
         if source_columns != []:
-            if 'AS' in target_column[1]: # if there is an alias, append formula and alias
-                for col in source_columns:
-                    if split_at_last_as(target_column[1])[0].strip() not in col:
-                        print({'SOURCE_COLUMNS':source_columns, 'TARGET_COLUMN':f"{target_node_name}[{split_at_last_as(target_column[1])[1].strip()}]", 'TRANSFORMATION':split_at_last_as(target_column[1])[0].strip()})
-
-
-                        lineages.append({'SOURCE_COLUMNS':source_columns, 'TARGET_COLUMN':f"{target_node_name}[{split_at_last_as(target_column[1])[1].strip()}]", 'TRANSFORMATION':split_at_last_as(target_column[1])[0].strip()})
-                    else:
-                        print({'SOURCE_COLUMNS':source_columns, 'TARGET_COLUMN':f"{target_node_name}[{split_at_last_as(target_column[1])[1].strip()}]", 'TRANSFORMATION': ""})
-
-                        lineages.append({'SOURCE_COLUMNS':source_columns, 'TARGET_COLUMN':f"{target_node_name}[{split_at_last_as(target_column[1])[1].strip()}]", 'TRANSFORMATION': ""})
-            else:
-                print({'SOURCE_COLUMNS':f'{source_node_name}[{source_columns[0].split(".")[-1]}]', 'TARGET_COLUMN':f'{target_node_name}[{source_columns[0].split(".")[-1]}]', 'TRANSFORMATION': target_column[1]})
-
-                lineages.append({'SOURCE_COLUMNS':f'{source_node_name}[{source_columns[0].split(".")[-1]}]', 'TARGET_COLUMN':f'{target_node_name}[{source_columns[0].split(".")[-1]}]', 'TRANSFORMATION': target_column[1]})
+            lineages.append({'SOURCE_COLUMNS':f'{source_node_name}[{source_columns[0].split(".")[-1]}]', 'TARGET_COLUMN':f'{target_node_name}[{source_columns[0].split(".")[-1]}]', 'TRANSFORMATION': target_column[1]})
+    
     return remove_duplicate_dicts(lineages)
 
 def flatten_if_nested(lst):
@@ -315,23 +302,17 @@ def flatten_if_nested(lst):
     return lst  # Return the original if not a nested list
 
 
-
-
 def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, foreach):
     
     try: # try if it is part of for each loop
-        #print(control_flow[node_name]['SQL'][i]['Variables'])
         for i in control_flow[node_name]['SQL']:
             variables = flatten_if_nested(control_flow[node_name]['SQL'][i]['Variables'])#[0]     
     except:
-        #print(control_flow[node_name]['Variables'])
         try:
             variables = flatten_if_nested(control_flow[node_name]['Variables'])
         except:
             pass
         pass
-
-    #print(variables)
 
  
     try: # try if it is part of for each loop
@@ -375,9 +356,6 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
         source_tables, where_exp = get_statements(select) 
         source_tables = [table.replace('"', "") for table in source_tables]
 
-        print(source_tables)
-
-        
         # parse on condition
         on_condition = on_statement(select)
 
@@ -437,7 +415,6 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
             lineages.append({'SOURCE_COLUMNS':f'{variable[0]}[{variable[0]}]', 'TARGET_COLUMN':f"{query}[{variable[0]}]", 'TRANSFORMATION':""})
 
     elif "insert into" in sql_statement.lower():
-        print(sql_statement)
 
         # find main select statement
         insert = list(tree.find_all(exp.Insert))[0]
