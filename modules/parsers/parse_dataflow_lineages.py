@@ -294,17 +294,24 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         final_lin = pd.concat([final_lin,lineages], ignore_index=True)
     df_no_duplicates = final_lin.drop_duplicates()
     df_no_duplicates.to_csv(f'output-data/lineages/lineage-{df_name}.csv')
-    return
+    return df_no_duplicates
 
-def parser_dataflow_lineage(df_name: str):
-    nodes = pd.read_csv(f'output-data/nodes/order_nodes-{df_name}.csv') # nodes
-    nodes_load = pd.read_csv(f'output-data/nodes/nodes-{df_name}.csv')
-    with open(f'output-data/nodes/metadata_nodes_dataflow_{df_name}.json', 'r') as json_file: # columns data
-        dict_blocks = json.load(json_file)
-    
-    all_paths = order_nodes(nodes)
-    main_parser(nodes, all_paths, dict_blocks, nodes_load, df_name)
+#def parser_dataflow_lineage(df_name: str):
+#    nodes = pd.read_csv(f'output-data/nodes/order_nodes-{df_name}.csv') # nodes
+#    nodes_load = pd.read_csv(f'output-data/nodes/nodes-{df_name}.csv')
+#    with open(f'output-data/nodes/metadata_nodes_dataflow_{df_name}.json', 'r') as json_file: # columns data
+#        dict_blocks = json.load(json_file)
+#    
+#    all_paths = order_nodes(nodes)
+#    lineages = main_parser(nodes, all_paths, dict_blocks, nodes_load, df_name)
+#    return lineages
 
+
+def parser_dataflow_lineage(df_name: str, nodes_df: pd.DataFrame, nodes_order_df: pd.DataFrame, metadata_df: dict) -> pd.DataFrame:
+
+    all_paths = order_nodes(nodes_order_df)
+    lineages = main_parser(nodes_order_df, all_paths, metadata_df, nodes_df, df_name)
+    return lineages
 
 
 if __name__ == "__main__":

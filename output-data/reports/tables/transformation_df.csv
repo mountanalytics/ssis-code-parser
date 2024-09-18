@@ -1,3 +1,3 @@
 ,SOURCE_NAME,SOURCE_FIELD,TRANSFORMATION
-0,Merge and filter@Row Count errors,CompanyName,"""PREF_"" + CompanyName"
-1,Supp_Prod_output,Match_lookup,"""No_match"""
+0,Merge and filter@Alter name pref,CompanyName,"""PREF_"" + CompanyName"
+1,Merge and filter@Error_match_column,Match_lookup,"""No_match"""

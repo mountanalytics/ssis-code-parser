@@ -248,6 +248,7 @@ def append_var_node(var_df: pd.DataFrame, df_nodes: pd.DataFrame) -> pd.DataFram
 
 def lineage_path_flow(path_flow: list, components: list, df_name: str):
     df_lineage = pd.DataFrame(columns=["ID_block_out","ID_block_in", "type_block_out", "type_block_in"])
+    marker_block = []
     for blocks in path_flow:
         # add name blocks
         id_block_out = [blocks["startId"].split(".Outputs")[0]]
@@ -256,12 +257,13 @@ def lineage_path_flow(path_flow: list, components: list, df_name: str):
         # add type blocks
         type_block_in = [component['componentClassID'] for component in components if component['refId'] == id_block_in[0]][0]
         type_block_out = [component['componentClassID'] for component in components if component['refId'] == id_block_out[0]][0]
-
-
         df_lineage = pd.concat([df_lineage, pd.DataFrame({"ID_block_out": id_block_out, "ID_block_in": id_block_in, 'type_block_in':type_block_in, 'type_block_out': type_block_out})], ignore_index=True)
-
+        if blocks["name"] == "Lookup No Match Output":
+            marker_block.append(blocks["endId"].split(".Inputs")[0])
+        
+    marker_block = pd.DataFrame(marker_block, columns=["NAME"]).to_csv(f"output-data/nodes/marker_nodes-{df_name}.csv", index=False)
     df_lineage.to_csv(f'output-data/nodes/order_nodes-{df_name}.csv')
-    return
+    return marker_block, df_lineage
 
 def parse_nodes_df(components: list, df_nodes: pd.DataFrame, path_flow: list, df_name: str) -> dict:
     dict_blocks = {}
@@ -305,7 +307,7 @@ def parse_nodes_df(components: list, df_nodes: pd.DataFrame, path_flow: list, df
             
     df_nodes["ID"] = df_nodes.index        
     df_nodes.to_csv(f'output-data/nodes/nodes-{df_name}.csv',index=False)
-    return dict_blocks
+    return dict_blocks, df_nodes
 
 
 def convert_dataframes(obj: dict) -> dict:
@@ -333,14 +335,15 @@ def parse_dataflow_nodes(open_dtsx: dict, index: int, df_name: str):
     path_flow = open_dtsx["DTS:Executables"]["DTS:Executable"][index]["DTS:ObjectData"]["pipeline"]["paths"]["path"]
 
 
-    lineage_path_flow(path_flow, components, df_name)
-    dict_blocks = parse_nodes_df(components, df_nodes, path_flow, df_name)
+    marker, order_nodes = lineage_path_flow(path_flow, components, df_name)
+    dict_blocks, nodes_df = parse_nodes_df(components, df_nodes, path_flow, df_name)
     dict_blocks = convert_dataframes(dict_blocks) 
     
     # Save the converted dictionary as a JSON file
     with open(f'output-data/nodes/metadata_nodes_dataflow_{df_name}.json', 'w') as json_file:
         json.dump(dict_blocks, json_file, indent=4)
-    return
+
+    return dict_blocks, nodes_df, order_nodes, marker
 
     
     
