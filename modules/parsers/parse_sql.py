@@ -507,8 +507,6 @@ def parse_sql_queries(control_flow:dict):
     lineages_df['SOURCE_FIELD'] = lineages_df['SOURCE_COLUMNS'].str.extract(r'\[([^\]]*)\]')
     lineages_df['TARGET_FIELD'] = lineages_df['TARGET_COLUMN'].str.extract(r'\[([^\]]*)\]')
 
-    #lineages_df['SOURCE_FIELD'] = lineages_df['SOURCE_COLUMNS'].str.split('.', expand=True)[1]
-    #lineages_df['TARGET_FIELD'] = lineages_df['TARGET_COLUMN'].str.split('.', expand=True)[1]
     lineages_df['SOURCE_NODE'] = lineages_df['SOURCE_COLUMNS'].str.split('[', expand=True)[0]
     lineages_df['TARGET_NODE'] = lineages_df['TARGET_COLUMN'].str.split('[', expand=True)[0]
     lineages_df['LINK_VALUE'] = 1
@@ -524,6 +522,8 @@ def parse_sql_queries(control_flow:dict):
     lineages_df.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
     lineages_df = lineages_df.drop_duplicates(subset =['SOURCE_COLUMNS', 'TARGET_COLUMN', 'TRANSFORMATION']).reset_index(drop=True)
     lineages_df.to_csv(f'output-data/lineages/lineage-control_flow.csv',index=False)
+
+    return nodes_df, lineages_df
 
 
 
