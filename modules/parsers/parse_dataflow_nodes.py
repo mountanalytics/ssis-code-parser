@@ -182,47 +182,48 @@ def append_ext_tables(ext_table: str, df_nodes: pd.DataFrame, func = 'DataSource
     return df_nodes
 
 def append_normal_node(refid: str, func: str, df_nodes: pd.DataFrame) -> pd.DataFrame:
-        split_name = refid.split("\\")
-        input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
-                                 'ID': [np.nan],
-                                 'FUNCTION': [func],
-                                 'JOIN_ARG': [np.nan],
-                                 'SPLIT_ARG': [np.nan],
-                                 'NAME_NODE': [split_name[2]],
-                                 'FILTER': [np.nan],
-                                 'COLOR': "black"
-                                 })
-        df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
-        return df_nodes
+    split_name = refid.split("\\")
+    input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
+                                'ID': [np.nan],
+                                'FUNCTION': [func],
+                                'JOIN_ARG': [np.nan],
+                                'SPLIT_ARG': [np.nan],
+                                'NAME_NODE': [split_name[2]],
+                                'FILTER': [np.nan],
+                                'COLOR': "black"
+                                })
+    df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
+    return df_nodes
 
 
 def append_join_node(refid: str, func: str, join_argu: str, df_nodes: pd.DataFrame) -> pd.DataFrame:
-        split_name = refid.split("\\")
-        input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
-                                 'ID': [np.nan],
-                                 'FUNCTION': [func],
-                                 'JOIN_ARG': [join_argu],
-                                 'SPLIT_ARG': [np.nan],
-                                 'NAME_NODE': [split_name[2]],
-                                 'FILTER': [np.nan],
-                                 'COLOR': "dodgerblue"
-                                 })
-        df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
-        return df_nodes
+    split_name = refid.split("\\")
+    input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
+                                'ID': [np.nan],
+                                'FUNCTION': [func],
+                                'JOIN_ARG': [join_argu],
+                                'SPLIT_ARG': [np.nan],
+                                'NAME_NODE': [split_name[2]],
+                                'FILTER': [np.nan],
+                                'COLOR': "dodgerblue"
+                                })
+    df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
+    return df_nodes
+
 
 def append_split_node(refid: str, func: str, split_argu: str, df_nodes: pd.DataFrame) -> pd.DataFrame:
-        split_name = refid.split("\\")
-        input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
-                                 'ID': [np.nan],
-                                 'FUNCTION': [func],
-                                 'JOIN_ARG': [np.nan],
-                                 'SPLIT_ARG': [split_argu],
-                                 'NAME_NODE': [split_name[2]],
-                                 'FILTER': [np.nan],
-                                 'COLOR': "dodgerblue"
-                                 })
-        df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
-        return df_nodes
+    split_name = refid.split("\\")
+    input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
+                                'ID': [np.nan],
+                                'FUNCTION': [func],
+                                'JOIN_ARG': [np.nan],
+                                'SPLIT_ARG': [split_argu],
+                                'NAME_NODE': [split_name[2]],
+                                'FILTER': [np.nan],
+                                'COLOR': "dodgerblue"
+                                })
+    df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
+    return df_nodes
     
     
 def vars_df(open_dtsx: dict) -> pd.DataFrame:
@@ -246,7 +247,11 @@ def append_var_node(var_df: pd.DataFrame, df_nodes: pd.DataFrame) -> pd.DataFram
         df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
     return df_nodes
 
+
 def lineage_path_flow(path_flow: list, components: list, df_name: str):
+    """
+    Function that extracts nodes order and branches of flow
+    """
     df_lineage = pd.DataFrame(columns=["ID_block_out","ID_block_in", "type_block_out", "type_block_in"])
     marker_block = []
     for blocks in path_flow:
@@ -265,45 +270,53 @@ def lineage_path_flow(path_flow: list, components: list, df_name: str):
     df_lineage.to_csv(f'output-data/nodes/order_nodes-{df_name}.csv')
     return marker_block, df_lineage
 
-def parse_nodes_df(components: list, df_nodes: pd.DataFrame, path_flow: list, df_name: str) -> dict:
+def main_parser(components: list, df_nodes: pd.DataFrame, path_flow: list, df_name: str) -> tuple[dict, pd.DataFrame]:
+    """
+    Function that orchestrates the parsing of the nodes of a dataflow
+    """
+
     dict_blocks = {}
     
     for comp in components:
+        # parse derived column nodes
         if comp["componentClassID"] == "Microsoft.DerivedColumn":
             df_nodes = append_normal_node(comp["refId"], "DerivedColumn", df_nodes)
             dict_blocks[comp["refId"]] = derive_column(comp)
+        # parse row count nodes
         if comp["componentClassID"] == "Microsoft.RowCount":
             dict_blocks[comp["refId"]] = comp["properties"]["property"]["#text"]
             df_nodes = append_normal_node(comp["refId"], "RowCount", df_nodes)
+        # parse source nodes
         if comp["componentClassID"] == "Microsoft.SSISODBCSrc":
             dict_blocks[comp["refId"]],ext_table = ODBC_source(comp)
             df_nodes = append_normal_node(comp["refId"], "SSISODBCSrc", df_nodes)
             df_nodes = append_ext_tables(ext_table, df_nodes)
+        # parse destination nodes
         if comp["componentClassID"] == "Microsoft.SSISODBCDst":
             dict_blocks[comp["refId"]],ext_table = ODBC_dest(comp)
             df_nodes = append_normal_node(comp["refId"], "SSISODBCDst", df_nodes)
             df_nodes = append_ext_tables(ext_table, df_nodes, 'DataDestinations')
+        # parse lookup nodes
         if comp["componentClassID"] == "Microsoft.Lookup":
             dict_blocks[comp["refId"]], lookup_table = lookup(comp)
             df_nodes = append_ext_tables(lookup_table, df_nodes)
             joinargu = dict_blocks[comp["refId"]]['on'].loc[0,"Column_lookup"]
             joinargu = re.search(r'\[(.*?)\]', joinargu).group(1) + " = " + dict_blocks[comp["refId"]]['on'].loc[0,"Column_name"]
             df_nodes = append_join_node(comp["refId"], "Lookup", joinargu, df_nodes)
+        # parse conditional split nodes
         if comp["componentClassID"] == "Microsoft.ConditionalSplit":
             df_nodes = append_split_node(comp["refId"], "ConditionalSplit", split_cond(comp), df_nodes)
             dict_blocks[comp["refId"]]  = split_cond(comp)
- 
+        # parse union nodes
         if comp["componentClassID"] == "Microsoft.UnionAll":
             dict_blocks[comp["refId"]]  = union_all(path_flow, comp)
             df_nodes = append_normal_node(comp["refId"], "UnionAll", df_nodes)
-        
-        
-        
+        # parse excel source nodes
         if comp["componentClassID"] == "Microsoft.ExcelSource":
             dict_blocks[comp["refId"]]  = excel_source(comp)
+        # parse excel source destinations
         if comp["componentClassID"] == "Microsoft.ExcelDestination":
             dict_blocks[comp["refId"]] = excel_dest(comp) 
-
             
     df_nodes["ID"] = df_nodes.index        
     df_nodes.to_csv(f'output-data/nodes/nodes-{df_name}.csv',index=False)
@@ -325,7 +338,7 @@ def convert_dataframes(obj: dict) -> dict:
         return obj
     
 
-def parse_dataflow_nodes(open_dtsx: dict, index: int, df_name: str):
+def parser_dataflow_nodes(open_dtsx: dict, index: int, df_name: str):
     df_nodes = pd.DataFrame(columns=['LABEL_NODE', 'ID', 'FUNCTION', 'JOIN_ARG', 'SPLIT_ARG', 'NAME_NODE', 'FILTER', 'COLOR'])
     df_nodes = append_var_node(vars_df(open_dtsx), df_nodes)
 
@@ -334,9 +347,8 @@ def parse_dataflow_nodes(open_dtsx: dict, index: int, df_name: str):
 
     path_flow = open_dtsx["DTS:Executables"]["DTS:Executable"][index]["DTS:ObjectData"]["pipeline"]["paths"]["path"]
 
-
-    marker, order_nodes = lineage_path_flow(path_flow, components, df_name)
-    dict_blocks, nodes_df = parse_nodes_df(components, df_nodes, path_flow, df_name)
+    marker, order_nodes = lineage_path_flow(path_flow, components, df_name) # 
+    dict_blocks, nodes_df = main_parser(components, df_nodes, path_flow, df_name) # parse nodes
     dict_blocks = convert_dataframes(dict_blocks) 
     
     # Save the converted dictionary as a JSON file

@@ -48,7 +48,6 @@ def order_df(nodes: pd.DataFrame) -> list[list]:
     for start_node in start_nodes:
         all_paths.extend(explore_paths(start_node, []))
     
-    
     return all_paths
 
             
@@ -72,20 +71,24 @@ def extract_column(text:str)->str:
     return match.group(1) if match else ''
 
 def order_nodes(nodes: pd.DataFrame) -> list[pd.DataFrame]:
+
     all_paths = order_df(nodes)
     for i,list1 in enumerate(all_paths):
         for j,list2 in enumerate(all_paths):
             filtered_list = [df2 for df2 in list2 if any(df2.equals(df1) for df1 in list1)]
             if len(filtered_list) == len(list1) and list1 != list2:
-                #print(i)
                 all_paths.pop(i)
             elif len(filtered_list) == len(list2) and list1 != list2:
-                #print(j)
                 all_paths.pop(j)
     return all_paths
 
 def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks: dict, nodes_load: pd.DataFrame, df_name:str):
+    """
+    Function that orchestrates the parsing of the lineages of a dataflow
+    """
+
     final_lin = pd.DataFrame()
+
     for ordered_rows in all_paths:
         # Convert the specified columns into a list of lists and extend the final list
         ordered_df = pd.concat(ordered_rows).reset_index(drop=True)
@@ -96,6 +99,7 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         seen_nodes = []
         previous_node = None
         exp_created = []
+
         for nodes_pair in sorted_nodes_metadata:
             for i, node in enumerate(nodes_pair):
     
@@ -105,9 +109,9 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
     
                 # define the type of node
                 if i == 1:
-                    type = nodes.loc[nodes['ID_block_in'] == node, 'type_block_in'].iloc[0]#.item()
+                    type = nodes.loc[nodes['ID_block_in'] == node, 'type_block_in'].iloc[0]
                 if i == 0:
-                    type = nodes.loc[nodes['ID_block_out'] == node, 'type_block_out'].iloc[0]#.item()
+                    type = nodes.loc[nodes['ID_block_out'] == node, 'type_block_out'].iloc[0]
     
     
                 if previous_node:
@@ -117,21 +121,15 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
                     # if the previous node is the same as the current node and the node type is not source then skip
                     if previous_node == node and type != 'Microsoft.SSISODBCSrc':
                         continue
-                    #print([previous_node, node])
-                    seen_nodes.append([previous_node, node])
-    
-                #print(type)
-    
-    
+
+                    seen_nodes.append([previous_node, node])    
+
                 # process source node
                 if type == 'Microsoft.SSISODBCSrc':
                     columns=[d['Column_name'] for d in nodes_pair[node]]
-    
                     columns_in = [d['Column_input'] for d in nodes_pair[node]]
                     columns_out = [node +'[' + d['Column_name']  +']' for d in nodes_pair[node]]
-    
-                    #print(node, len(columns_in), len(columns_out))
-    
+        
                     columns_input += columns_in
                     columns_output += columns_out
     
@@ -140,7 +138,6 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
     
                     columns_in =[d['Column_lookup'] for d in nodes_pair[node]['merged_columns']] + [previous_node + '[' +column+']' for column in columns]
                     columns_out=[node +'[' +d['Column_name']+']' for d in nodes_pair[node]['merged_columns']]+ [node + '[' +column+']' for column in columns]
-                    #print(node, len(columns_in), len(columns_out))
     
                     columns_input +=columns_in
                     columns_output +=columns_out
@@ -165,17 +162,13 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
                                 matched = True
                         if not matched:
                             exp_created.append(node + '[' + expression_column + ']' + " {" + expression[idx] + "}")        
-                        
-
-                                
+                              
                     columns_in += [previous_node + '[' + column+']' for column in columns if column != derived_column]
                     columns_out += [node +'[' +column+']'  for column in columns if column != derived_column]
-    
-                    #print(node, len(columns_in), len(columns_out))
-    
+        
                     columns_input +=columns_in
                     columns_output +=columns_out
-                    #print()
+
                 # process rowcount
                 if type == 'Microsoft.RowCount':
     
@@ -183,11 +176,9 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
                     columns_out=[node +'[' +column+']' for column in columns]
     
                     variable = nodes_pair[node]
-                    #print(node, len(columns_in), len(columns_out))
     
                     columns_in.append(node +'['+"Row Count"+']')
                     columns_out.append(variable +'['+variable+']')
-    
     
                     columns_input +=columns_in
                     columns_output +=columns_out
@@ -196,7 +187,6 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
                 if type == 'Microsoft.ConditionalSplit':
                     columns_in=[previous_node + '[' + column+']' for column in columns]
                     columns_out=[node +'[' +column+']' for column in columns]
-                    #print(node, len(columns_in), len(columns_out))
     
                     columns_input +=columns_in
                     columns_output +=columns_out          
@@ -211,19 +201,15 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
     
                     columns_in = sorted(columns_in, key=extract_column)
                     columns_out = sorted(columns_out, key=extract_column)
-    
-                    #print(node, len(columns_in), len(columns_out))
-    
+
                     columns_input +=columns_in
                     columns_output +=columns_out
                     
-    
                 # process destination
                 if type == 'Microsoft.SSISODBCDst':
                     # second to last node unto last (destination)
                     columns_in =[previous_node + '[' + d['Column_name']+']' for d in nodes_pair[node]]
                     columns_out=[node +'[' +d['Column_name']+']' for d in nodes_pair[node]]
-                    #print(node, len(columns_in), len(columns_out))
     
                     columns_input +=columns_in
                     columns_output +=columns_out
@@ -231,12 +217,10 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
                     # add last node to destination table lineages
                     columns_in =[node + '[' + d['Column_name']+']' for d in nodes_pair[node]]
                     columns_out=[".".join(d['Column_ext'].split('.')[:-1]) +'['+ d['Column_ext'].split('.')[-1] +']' for d in nodes_pair[node]]
-                    #print(node, len(columns_in), len(columns_out))
     
                     columns_input +=columns_in
                     columns_output +=columns_out
     
-                #print()
         # create lineages dataframe and save csv
         lineages = {'column_in': columns_input, 'column_out': columns_output}
     
@@ -246,38 +230,33 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         transformation_in = lineages['column_in'].str.extract(r'\{([^}]*)\}')
 
         lineages['TRANSFORMATION'] = lineages['column_out'].str.extract(r'\{([^}]*)\}')
-    
-    
         lineages['SOURCE_FIELD'] = lineages['column_in'].str.extract(r'\[([^\]]*)\]')
         lineages['TARGET_FIELD'] = lineages['column_out'].str.extract(r'\[([^\]]*)\]')
-    
         lineages['SOURCE_NODE'] =lineages['column_in'].apply(lambda x: "@".join(x.split('[')[0].split('\\')[1:]) if "\\" in x else x.split('[')[0])#.str.extract(r'^(.*?)\s*\[.*\]$')
         lineages['TARGET_NODE'] =lineages['column_out'].apply(lambda x: "@".join(x.split('[')[0].split('\\')[1:]) if "\\" in x else x.split('[')[0])
-    
         lineages['LINK_VALUE'] = 1
         lineages['ROW_ID'] = lineages.index
-    
         lineages.fillna("", inplace=True)
     
         # move transformation to successive node
         name_node = None
+
         for i in range(len(lineages) - 1):
             if lineages.loc[i, 'TRANSFORMATION']:   
                 transformation = lineages.loc[i, 'TRANSFORMATION']
                 name_node = lineages.loc[i, 'column_out']
                 lineages.loc[i, 'TRANSFORMATION'] = ""
                 continue
-    
             if name_node:
                 if lineages.loc[i, 'column_in'] == name_node.split(" {")[0]:
-                    ##print(lineages.loc[i, 'column_in'], name_node)
                     lineages.loc[i, 'TRANSFORMATION'] = transformation
+
         lineages['TRANSFORMATION'] = transformation_in[0].combine_first(lineages['TRANSFORMATION'])
+
         # define color lineages
         lineages['COLOR'] = ["aliceblue" if i == ""  else "orangered" for i in lineages['TRANSFORMATION']]
         non_null_indices = transformation_in[0].notna().index[transformation_in[0].notna()]
         lineages.loc[non_null_indices, 'COLOR'] = 'darkred'
-        
         
         # merge source id
         lineages = pd.merge(lineages, nodes_load[['ID', 'LABEL_NODE']], left_on='SOURCE_NODE', right_on = 'LABEL_NODE', how='left')
@@ -288,7 +267,6 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         lineages = pd.merge(lineages, nodes_load[['ID', 'LABEL_NODE']], left_on='TARGET_NODE', right_on = 'LABEL_NODE', how='left')
         lineages['TARGET_NODE'] = lineages['ID']
         lineages.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
-        #print('End')
         
         # load nodes data
         final_lin = pd.concat([final_lin,lineages], ignore_index=True)
@@ -296,18 +274,8 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
     df_no_duplicates.to_csv(f'output-data/lineages/lineage-{df_name}.csv')
     return df_no_duplicates
 
-#def parser_dataflow_lineage(df_name: str):
-#    nodes = pd.read_csv(f'output-data/nodes/order_nodes-{df_name}.csv') # nodes
-#    nodes_load = pd.read_csv(f'output-data/nodes/nodes-{df_name}.csv')
-#    with open(f'output-data/nodes/metadata_nodes_dataflow_{df_name}.json', 'r') as json_file: # columns data
-#        dict_blocks = json.load(json_file)
-#    
-#    all_paths = order_nodes(nodes)
-#    lineages = main_parser(nodes, all_paths, dict_blocks, nodes_load, df_name)
-#    return lineages
 
-
-def parser_dataflow_lineage(df_name: str, nodes_df: pd.DataFrame, nodes_order_df: pd.DataFrame, metadata_df: dict) -> pd.DataFrame:
+def parser_dataflow_lineages(df_name: str, nodes_df: pd.DataFrame, nodes_order_df: pd.DataFrame, metadata_df: dict) -> pd.DataFrame:
 
     all_paths = order_nodes(nodes_order_df)
     lineages = main_parser(nodes_order_df, all_paths, metadata_df, nodes_df, df_name)
@@ -315,13 +283,9 @@ def parser_dataflow_lineage(df_name: str, nodes_df: pd.DataFrame, nodes_order_df
 
 
 if __name__ == "__main__":
-    parser_dataflow_lineage('Package@Merge and filter')
+    parser_dataflow_lineages('Package@Merge and filter')
     
-# order nodes and add metadata
-    
-# Iterate over each remaining DataFrame in all_paths
-    
-    
+
     
     
     
