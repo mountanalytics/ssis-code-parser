@@ -6,6 +6,9 @@ def control_blocks(dict_blocks: dict) -> pd.Series:
     blocks_count = []
     for key in dict_blocks:
         blocks_count.append(dict_blocks[key]["Description"])
+        if dict_blocks[key]["Description"] == 'Foreach Loop Container':
+            for itter in dict_blocks[key]["SQL"]:
+                blocks_count.append(dict_blocks[key]["SQL"][itter]["Description"])
     count_control_flow = pd.Series(blocks_count).value_counts().rename_axis("FUNCTION")
     return count_control_flow
 

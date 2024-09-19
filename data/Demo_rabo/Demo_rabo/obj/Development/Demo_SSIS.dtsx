@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="114"
-  DTS:VersionGUID="{9A297B91-3D64-4BE5-890C-473BA1FBA5C4}">
+  DTS:VersionBuild="123"
+  DTS:VersionGUID="{9BABF522-7804-498F-B3D8-D94969B1E472}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+HrfcdEKNkCsDUgA5SILsgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADJnKwRdEKmiQm+b3KrP1S36XM6rmwBShM7P4rSk6f9oAAAAAAOgAAAAAIAACAAAAB5XuW7nkqyktHINKlJQ6K3S1MMo3G5xDWPBIttxOL9nzAAAACkDMOC7uLNQHJXG6WgjYySS91vVXpchi9PnQrPBb6Lif20idraVrQhKOn8HCgGNWZAAAAAGMaMP4bVgOYD++nWIKLNt/AqiB75oU8vfIZIVyYzXoW68ZJbvuHRwOu9fmg/1wRIi2/2LNnjOw83iiii2wWVOw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAEtNQr0Zl8Z5zb1mm8k32TxGmAjGkTC5NCMrA4Nbk9GgAAAAAOgAAAAAIAACAAAACNTEgvNt/29hONE0XJOajuo96FyRiPsv6yDGa8cR+3FTAAAACSH+WYnn8b1vLNv+yunUG1avrcf9AhU9WC/r9y7YLUxk24F+bTPj69WuQGgygzJwBAAAAA+INoR0J2ceik8teKSiBRx8E40LvDr09j5H+lIGPcTFdnoHpYrzPgxeyUx7KpJtzNAcyIO2znwvcRWIFFcKnsPA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -58,7 +58,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+HrfcdEKNkCsDUgA5SILsgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAvVC5iZIL4qqt+M6UaRN5QT8rtPzFZ8IN9JWheKf5woQAAAAAOgAAAAAIAACAAAADUzJbn8dQ+37ANM6P73+QQD34Q15q+Xa4Qegx+IWgNtDAAAAD7YVFJ+4C4S0WjjemcVaJgHFMScoImLqkkgTUiLOU7+aDBfMaQDCtg5iRHjDeYYgJAAAAAi7ciTV6T+MV1KrLDkichx3yE0G23tJaaYoJm/wkn6bMpfVI74wn+iy/TjMCV5Fv/0SEg3vnmU/HxYKrZ007OCQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABFmaTTyt9djVEjkqn3j1Wm0rf0JhCocUt1x/seG5NZgwAAAAAOgAAAAAIAACAAAACWjYpAFSu7UY07D0r9hgH7N51ZHCxQVnpp6AsPW2uhujAAAAAuMT2xG7SLVo6r2lW1cItte3wdZ1QaZm1y0vEx12nvivVJRF2B59hnsULmuRUFeQ5AAAAA2he1i7VaLR5McIP/N9ZKe7Pm4nbRCnK9G26dK/XJbVMDeXXhksAINmx7rfFUPzJuCnxMXRYrbPMrnkMhkvuOSA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -75,7 +75,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+HrfcdEKNkCsDUgA5SILsgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAChznWha0lbH6KdmgZRcRUb6o1Z83vUmCRisbPzfBF+bwAAAAAOgAAAAAIAACAAAADFeBJQIKHZrtFnMcpGhZTGgM9KbWqnn03azjfnPncYFDAAAABbMvW7NXsKRM4xVJwn86SWcRARmNBxoH/hyIHqIXGWMjIju3lhiQEpmdRB2MJIURhAAAAAJlZp7FNaDW2lIDOt1rq4oTD7kzLRjhJ9YIlCOgLt+FejsnaOLG6PRw+sOUzP4AehnDtKfGe+UvNF0z1bLfo94Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD96CYJz741pKGWKpNcHHzmu8K/ClEI7dcntYEda8Pi5QAAAAAOgAAAAAIAACAAAAB537sY0KSWhThAzIiXXd6CTpdgPwWfXCrBUsQZpLTwvjAAAABGFSrPhNIJPsGiTJIjK4kvRS6A4LHmEYZ3BUfLfOJhyZ555yz6OLaCeLK9DrKdQuVAAAAA0hfaxJdMhpGKv7pPKuQ5gb08HiKz/CzxMYYJ0nW+Mu7luHBuZEBBaRJ629pPXyCIjGPXeGOO+GuU32xQOloZ/A</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -90,7 +90,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+HrfcdEKNkCsDUgA5SILsgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACqd8ylcGZAyS75uOhqQLPoBeTmrk+rbEbGg3gvqKTuQAAAAAAOgAAAAAIAACAAAAA4re/KqWSC/bK8LYx1QMpwu7NEBX8kTO5H1F3PWtzFFjAAAAD0T1bzpN/fny62nxYZVRAqrerOYiHVHt4vaKYg3DixNWfXZG/3FQGm3OiSQqHuDm9AAAAAjpJL5CwcwRqzVSYtDcAyqpzMRJYaxfEbR0viPWU+T1Arh3AZ99WzfnuykBTywdO9Q77M5XJe2N1Jw6+J+Hrs8Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC7Gf0Q3E57sEtv8fP6T9aapVI6Tqhd7Cz8efMGO/YYfgAAAAAOgAAAAAIAACAAAADjZ2Tg416f3umxJiaf/N/p5Vr3Q5Gef+zd1veuM9XCWDAAAADUu3H3lZ7Xx/vJeAfTbBshHPD86g8tjVr8DCmqbnGjB4klnFjXgu1muBzQJTMM8qxAAAAAX4Fz2lsDdaf0tDYjhxdNC7p+3BkdTuYhT1h23KcGmoD5sdE9c3KpWBfSClNXOj28XuegOAu8/LPqNLPbpRFDyQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -105,7 +105,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+HrfcdEKNkCsDUgA5SILsgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACdd6SLylHiLDYo/LcIwESyxvH5ayktHUGbaEZsGGDTMwAAAAAOgAAAAAIAACAAAAAVdng6SWNlAsXvx4eHqd1P9Nh6up2Uicaj5+bQhoBE8jAAAABrg3hMcMlbuvDlPlsDsHDrOuwk71xjOIZ4PIRkjp7JQNfVYXm+MpbVuTEY/yzqxglAAAAAMoAnTWsQVsRFHf5lV0VnSqTGAHorHkzlXVsp7lNAQPStLxvZQjiiQDWHycU2iCTzamhhYsQFZj4ZTIgq3r9o/Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABWEQG85Fh0kE5g1qNosN13Cwsjm5pIYjKUmXR3XX24SAAAAAAOgAAAAAIAACAAAADneV5gR9pd7ClSlgxA3/lYLyudT0P14uouBB8PZ0QeGjAAAACKAZfr8DGQJ/YZC6RFMOkBkeuo5HlBlSLfbSYeW0h8/RJJeyyRsMj0CgWRdaGw8BNAAAAAWy405CdXYeGLzCCe83zrVestaDrMELj9z+V4B6U9t9ZUos2dcqaG9WNt0lTucmphLU9KaLnyXROr/m/ZKGa0tw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -123,6 +123,24 @@
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4067A249-7C22-4137-9783-CCC38AC03C27}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Cat_id">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{16D50DA7-83D2-4983-9129-0246B37CD98B}"
@@ -144,19 +162,10 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4AA924F2-00FD-46C1-A351-1F4265F10529}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="Rows_suppliers">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
       DTS:DTSID="{FBEEDC7B-2CB1-45B8-998A-08E07B0FF1DA}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="Set_SQL">
+      DTS:ObjectName="res_set">
       <DTS:VariableValue
         DTS:DataSubType="ManagedSerializable"
         DTS:DataType="13">
@@ -168,6 +177,51 @@
           </SOAP-ENV:Body>
         </SOAP-ENV:Envelope>
       </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4AA924F2-00FD-46C1-A351-1F4265F10529}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Rows_suppliers">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8BA341E7-54A9-4523-956D-21AAB27938CB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Ship_country">
+      <DTS:VariableValue
+        DTS:DataType="8">UK</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{294AAA34-E429-4064-B126-022BACD42A53}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Sup_id">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{77127B33-FD44-4EDF-873C-1CFD0F2F07AF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Unit_stock">
+      <DTS:VariableValue
+        DTS:DataType="3">30</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -204,8 +258,81 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{AA1FC44C-ABBD-45AB-B3EB-FFC934A03032}"
-          SQLTask:SqlStatementSource="INSERT INTO SSIS_Logger (ExecutionStartTime, Remark,Affected_rows) VALUES (GETDATE(),'Deleted rows',0 )" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="INSERT INTO SSIS_Logger (ExecutionStartTime, Remark,Affected_rows) VALUES (GETDATE(),'Deleted rows',0 )" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Rows_suppliers"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Loop over variable table"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{8E768662-BCAF-487C-AD44-321C115EF8CC}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loop over variable table">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{AD2C83A9-3D9A-462D-87DF-DCC3E267A9DE}"
+        DTS:ObjectName="{AD2C83A9-3D9A-462D-87DF-DCC3E267A9DE}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::res_set" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Loop over variable table\Insert into order_write"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6A6145BF-6E06-4C0A-8422-DAB6D0838CE2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert into order_write"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{AA1FC44C-ABBD-45AB-B3EB-FFC934A03032}"
+              SQLTask:SqlStatementSource="INSERT INTO Order_write(OrderID, Dateloop,Cat_ID) VALUES(?, GETDATE(),?)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Sup_id"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Cat_id"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{304C7209-941C-4827-AAD5-3E3CA23E224A}"
+          DTS:ObjectName="{304C7209-941C-4827-AAD5-3E3CA23E224A}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Sup_id" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{F6275E25-E025-42FB-9B05-D2213B6E300F}"
+          DTS:ObjectName="{F6275E25-E025-42FB-9B05-D2213B6E300F}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::Cat_id" />
+      </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Merge and filter"
@@ -2350,6 +2477,40 @@ where [refTable].[SupplierID] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Select into variable"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5F3EE80A-5189-4AFF-A2D9-F54DA1279739}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Select into variable"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AA1FC44C-ABBD-45AB-B3EB-FFC934A03032}"
+          SQLTask:SqlStatementSource="SELECT distinct SupplierID, ProductID, CategoryID FROM [dbo].[Products_Extract]  WHERE Country = ? and UnitsInStock &gt; ?"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::res_set" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Ship_country"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::Unit_stock"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Set region"
       DTS:CreationName="Microsoft.ExpressionTask"
       DTS:Description="Expression Task"
@@ -2424,6 +2585,22 @@ where [refTable].[SupplierID] = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Overwrite insert table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{E780D599-228F-4C2D-920B-57EE6D91D126}"
+      DTS:From="Package\Select into variable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Loop over variable table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{29B99080-C4CF-4765-AAFC-852FFDE83FFF}"
+      DTS:From="Package\Loop over variable table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Set region" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2438,50 +2615,32 @@ where [refTable].[SupplierID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="153.6,41.6"
+          Size="165,42"
+          Id="Package\Drop insert table"
+          TopLeft="265.166651686861,792.99999764959" />
+        <NodeLayout
+          Size="154,42"
           Id="Package\insert into logger"
-          TopLeft="282.499984564881,259.133331531352" />
+          TopLeft="273.499984564881,706.133331531352" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Merge and filter"
-          TopLeft="286.499985384445,179.133332254555" />
+          TopLeft="277.499985384445,626.133332254555" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\Overwrite insert table"
-          TopLeft="266.166666985386,430.599998806715" />
+          TopLeft="257.166666985386,877.599998806715" />
         <NodeLayout
-          Size="126.4,41.6"
+          Size="126,42"
           Id="Package\Set region"
-          TopLeft="296.49999931703,12.7333335924811" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="360.499984974663,220.733332254555">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.3999992767968"
-              Start="0,0"
-              End="0,30.8999992767968">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.8999992767968" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="287.49999931703,459.733333592481" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Truncate error table"
-          TopLeft="278.333318125871,95.3333326703972" />
+          TopLeft="269.333318125871,542.333332670397" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="361.416658721451,54.3333335924811">
+          TopLeft="352.416658721451,501.333333592481">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2502,19 +2661,19 @@ where [refTable].[SupplierID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="362.416651755158,136.933332670397">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="351.499984974663,667.733332254555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.199999584158"
+              EndConnector="0,38.3999992767968"
               Start="0,0"
-              End="0,34.699999584158">
+              End="0,30.8999992767968">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.699999584158" />
+                    End="0,30.8999992767968" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2523,13 +2682,9 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Drop insert table"
-          TopLeft="274.166651686861,345.99999764959" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="357.933318125871,300.733331531352">
+          TopLeft="348.933318125871,747.733331531352">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2550,8 +2705,30 @@ where [refTable].[SupplierID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="353.416651755158,583.933332670397">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.199999584158"
+              Start="0,0"
+              End="0,34.699999584158">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.699999584158" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="355.566659336124,387.59999764959">
+          TopLeft="346.566659336124,834.59999764959">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2571,6 +2748,65 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Loop over variable table\Insert into order_write"
+          TopLeft="48,22" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="275,119"
+          Size="275,162"
+          Id="Package\Loop over variable table"
+          TopLeft="212,248" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Select into variable"
+          TopLeft="267,154" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="350.75,196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="349.999999658515,410">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.7333335924811"
+              Start="0,0"
+              End="0,42.2333335924811">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.2333335924811" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2580,43 +2816,43 @@ where [refTable].[SupplierID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="184,41.6"
+          Size="184,42"
           Id="Package\Merge and filter\Write Update sup table"
           TopLeft="392.83330432988,695.399996058544" />
         <NodeLayout
-          Size="164,41.6"
+          Size="164,42"
           Id="Package\Merge and filter\Error output table"
           TopLeft="1203,262" />
         <NodeLayout
-          Size="156.8,41.6"
+          Size="157,42"
           Id="Package\Merge and filter\Split preferences"
           TopLeft="407.333311022984,375.866664039029" />
         <NodeLayout
-          Size="180.8,41.6"
+          Size="181,42"
           Id="Package\Merge and filter\Error_match_column"
           TopLeft="958,258" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Merge and filter\Determine rows sup"
           TopLeft="394.16664513035,149.933332290716" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Merge and filter\Row Count errors"
           TopLeft="696,252" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Merge and filter\Union suppliers"
           TopLeft="408.833335473306,605.13333333936" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Merge and filter\Match with products"
           TopLeft="398.333311569361,247.333331730233" />
         <NodeLayout
-          Size="144.8,41.6"
+          Size="145,42"
           Id="Package\Merge and filter\Load supplier"
           TopLeft="403.833311159579,70.7999994937579" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Merge and filter\Alter name pref"
           TopLeft="620.833299412497,464.533330103027" />
         <EdgeLayout

@@ -1,0 +1,327 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/9/2024 4:29:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-KOEJ2DP"
+  DTS:CreatorName="AzureAD\ErwinSiegers"
+  DTS:DTSID="{9CB0BFE1-BC05-46E4-979E-40780D17FC7B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{81A74DAC-7E44-4B7E-AD78-C8DD68A716CB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[maserver01.database.windows.net.MA_DemoDB_01.erwinsiegers]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A7E7CF0C-321F-4187-9C0A-1DED89E1C4D0}"
+      DTS:ObjectName="maserver01.database.windows.net.MA_DemoDB_01.erwinsiegers">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=maserver01.database.windows.net;User ID=erwinsiegers;Initial Catalog=MA_DemoDB_01;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package-{A7E7CF0C-321F-4187-9C0A-1DED89E1C4D0}maserver01.database.windows.net.MA_DemoDB_01.erwinsiegers;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB9hKZqYRbdl9aY+h/LB65X957wpGiyJG7kDVD5g4PQMwAAAAAOgAAAAAIAACAAAAAToXqBhh0d/9PL+F6ggv8703A5FtZUaYVqzMahHaWNCjAAAAAbTcvnKXOoqlE++0Ht5fMlnnrtA7bha8RM5cUdwIRpeFDwHilKAuRMgsYGaVK1TmxAAAAApHofYjNAT0wIgI/DzckpT+En7s8G/F+tckVaH9mg4JTfLmKCEPWt6DceMZH6VPL84EMazlqQ4m+mDaD1v+mzKw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[RABO]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{D541B68C-69A1-4473-ACF7-9256EA41D57F}"
+      DTS:ObjectName="RABO">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="C:\Users\ErwinSiegers\Documents\Clients\RABO" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Reftable_Currency_Country.xlsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{78004284-23AA-4540-9F11-63E359B00330}"
+      DTS:ObjectName="Reftable_Currency_Country.xlsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\ErwinSiegers\Documents\Clients\NN\Reftable_Currency_Country.xlsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ref_table_SSIS_script_task.xlsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{D2A1A91B-029B-484E-8180-AE2D911EA0C6}"
+      DTS:ObjectName="ref_table_SSIS_script_task.xlsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\ErwinSiegers\Documents\Clients\NN\ref_table_SSIS_script_task.xlsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SSIS__Task.xlsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{61A91CE6-8748-4F97-877C-DF3BED4C3BC5}"
+      DTS:ObjectName="SSIS__Task.xlsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="SSIS__Task.xlsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3C8DA029-A3EF-4955-A61E-273D603F8358}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Cat_id">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4A3279E8-DD4C-4279-9527-E24F81DFA21C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Constraint">
+      <DTS:VariableValue
+        DTS:DataType="8">Matched</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{79630C4C-EF4B-43D5-9475-6FF76566619D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="OrderID">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{99907CAB-40DF-43EA-95EF-22F4067A57E9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="res_set">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D866CCD8-DA1C-4209-B539-4B8FBFE6430A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Ship_country">
+      <DTS:VariableValue
+        DTS:DataType="8">UK</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D659C617-0F69-4702-A1AA-B025FF48E55A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Unit_stock">
+      <DTS:VariableValue
+        DTS:DataType="3">30</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Loop over variable table"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{97FFE08C-3AD7-4799-8182-E4F8569A3601}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loop over variable table">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{D9AB6E39-B5BE-4FB4-86F1-9FCEECFBF6CD}"
+        DTS:ObjectName="{D9AB6E39-B5BE-4FB4-86F1-9FCEECFBF6CD}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::res_set" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Loop over variable table\Insert into order_write"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2F1251D2-2B0C-4A53-AAD4-271255E6036B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert into order_write"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A7E7CF0C-321F-4187-9C0A-1DED89E1C4D0}"
+              SQLTask:SqlStatementSource="INSERT INTO Order_write(OrderID, Dateloop,Cat_ID) VALUES(?, GETDATE(),?)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::OrderID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Cat_id"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{A8756704-6C20-44AB-85B7-AD14C28A7121}"
+          DTS:ObjectName="{A8756704-6C20-44AB-85B7-AD14C28A7121}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::OrderID" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{4C0726FE-FA94-4CB7-ACE0-02A95BBEC6A8}"
+          DTS:ObjectName="{4C0726FE-FA94-4CB7-ACE0-02A95BBEC6A8}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::Cat_id" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Select into variable"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6C23F652-B073-4C3A-8C8C-DF98C8E1C9A6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Select into variable"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A7E7CF0C-321F-4187-9C0A-1DED89E1C4D0}"
+          SQLTask:SqlStatementSource="SELECT distinct SupplierID, ProductID, CategoryID FROM [dbo].[Products_Extract]  WHERE Country = ? and UnitsInStock &gt; ?"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::res_set" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Ship_country"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::Unit_stock"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A48D6DD0-C27C-41DB-BA38-FABA7C409C1D}"
+      DTS:From="Package\Select into variable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Loop over variable table" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Select into variable"
+          TopLeft="803.16666643901,145.13333333936" />
+        <NodeLayout
+          Size="179.2,44"
+          Id="Package\Loop over variable table\Insert into order_write"
+          TopLeft="12,17" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="214.4,116"
+          Size="214.4,159.2"
+          Id="Package\Loop over variable table"
+          TopLeft="784,284" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="889.583333219505,186.73333333936">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97.26666666064"
+              Start="0,0"
+              End="0,89.76666666064">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,89.76666666064" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
