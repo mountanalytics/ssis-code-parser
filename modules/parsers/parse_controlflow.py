@@ -416,6 +416,10 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     # create nodes and lineages dataframes                   
     nodes_df = pd.DataFrame(nodes)
     nodes_df['ID'] = nodes_df.index
+    nodes_df['COLOR'] = nodes_df.apply(
+    lambda row: row['COLOR'] if pd.isnull(row['FILTER']) else 'darkviolet', 
+    axis=1
+    )
     nodes_df.to_csv(f'output-data/nodes/nodes-{file_name}.csv',index=False)
 
     lineages_df = pd.DataFrame(lineages)
@@ -426,7 +430,7 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     lineages_df['TARGET_NODE'] = lineages_df['TARGET_COLUMN'].str.split('[', expand=True)[0]
     lineages_df['LINK_VALUE'] = 1
     lineages_df['ROW_ID'] = lineages_df.index
-    lineages_df['COLOR'] = 'aliceblue'
+    
 
     # merge source id
     lineages_df = pd.merge(lineages_df, nodes_df[['ID', 'LABEL_NODE']], left_on='SOURCE_NODE', right_on = 'LABEL_NODE', how='left')
@@ -438,8 +442,12 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     lineages_df['TARGET_NODE'] = lineages_df['ID']
     lineages_df.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
     lineages_df = lineages_df.drop_duplicates(subset =['SOURCE_COLUMNS', 'TARGET_COLUMN', 'TRANSFORMATION']).reset_index(drop=True)
-    lineages_df.to_csv(f'output-data/lineages/lineage-{file_name}.csv',index=False)
-
+    lineages_df['COLOR'] = 'aliceblue'
+    lineages_df['COLOR'] = lineages_df.apply(
+    lambda row: row['COLOR'] if row['TRANSFORMATION'] == '' or row['TRANSFORMATION'] in nodes_df['NAME_NODE'].values else 'darkred', 
+    axis=1
+)
+    lineages_df.to_csv(f'output-data/lineages/lineage-{file_name}_cf.csv',index=False)
     return nodes_df, lineages_df
 
 

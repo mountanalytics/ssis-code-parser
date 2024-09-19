@@ -2,7 +2,7 @@ LABEL_NODE,ID,FUNCTION,JOIN_ARG,SPLIT_ARG,NAME_NODE,FILTER,COLOR,_merge
 Products_Extract,0,DataSources,,,Products_Extract,,gold,left_only
 User::Ship_country,1,Variable,,,User::Ship_country,,green,left_only
 User::Unit_stock,2,Variable,,,User::Unit_stock,,green,left_only
-Package\Select into variable,3,Query,,,Package\Select into variable,Country = 'User::Ship_country' AND UnitsInStock > 'User::Unit_stock',black,left_only
+Package\Select into variable,3,Query,,,Package\Select into variable,Country = 'User::Ship_country' AND UnitsInStock > 'User::Unit_stock',darkviolet,left_only
 User::res_set,4,Variable,,,User::res_set,,green,left_only
 Package\Loop over variable table,5,ForEachLoopContainer,,,Package\Loop over variable table,,black,left_only
 Package\Loop over variable table\Insert into order_write,6,Query,,,Package\Loop over variable table\Insert into order_write,,black,left_only
@@ -14,7 +14,7 @@ SSIS_Logger,11,DataDestinations,,,SSIS_Logger,,gold,left_only
 User::Rows_suppliers,12,Variable,,,User::Rows_suppliers,,green,left_only
 Supp_Prod_output,13,DataSources,,,Supp_Prod_output,,gold,left_only
 User::CurrentDateTime,14,Variable,,,User::CurrentDateTime,,green,left_only
-Package\Overwrite insert table,15,Query,,,Package\Overwrite insert table,Region = 'User::CurrentDateTime',black,left_only
+Package\Overwrite insert table,15,Query,,,Package\Overwrite insert table,Region = 'User::CurrentDateTime',darkviolet,left_only
 New_Supp_Prod_output,16,DataDestinations,,,New_Supp_Prod_output,,gold,left_only
 User::Errors_lookup,17,Variable,,,User::Errors_lookup,,green,left_only
 Merge and filter@Alter name pref,18,DerivedColumn,,,Alter name pref,,black,left_only
