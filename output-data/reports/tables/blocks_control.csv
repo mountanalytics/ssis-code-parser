@@ -1,0 +1,5 @@
+FUNCTION,count
+Execute SQL Task,5
+Foreach Loop Container,1
+Expression Task,1
+Data Flow Task,1
