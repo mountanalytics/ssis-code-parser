@@ -12,12 +12,10 @@ from modules.report_generation.analysis_report import report_analysis
 from modules.report_generation.create_report import main_report_generation
 
 
-def reset_folders():
+def reset_folders(folders:list):
     """
     This function deletes everything inside the folders where the parsed data is saved.
     """
-    folders = ['output-data/lineages', 'output-data/nodes/', 'output-data/']
-
     for folder_path in folders:
         # Get all files in the folder (ignoring subdirectories)
         files = glob.glob(os.path.join(folder_path, '*'))
@@ -31,7 +29,7 @@ def run_ssis_parser(folder:str):
     """
     Main function of the project, orchestrates the data parsing, the report generation and the launch of the dashboard interface.
     """
-    reset_folders()  # delete old output-data files
+    reset_folders(['output-data/lineages/', 'output-data/nodes/', 'output-data/'])  # delete old output-data files
 
     flow = {}
 
@@ -50,6 +48,7 @@ def run_ssis_parser(folder:str):
             nodes_controlflow, lineages_controlflow = parse_sql_queries(control_flow, file_name) # parse sql queries in control flow (create nodes and lineages datasets)
 
             data_flow = {}
+
             # parse data flow (create nodes and lineages datasets)
             for key in control_flow.keys():
                 if control_flow[key]["Description"] == "Data Flow Task":
