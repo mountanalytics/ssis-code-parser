@@ -18,6 +18,6 @@ dbo.Products_Extract,15,DataSources,,,dbo.Products_Extract,,gold
 Merge and filter@Match with products,16,Lookup,SupplierID = SupplierID2,,Match with products,,dodgerblue
 Merge and filter@Row Count errors,17,RowCount,,,Row Count errors,,black
 Merge and filter@Split preferences,18,ConditionalSplit,,Discount > 0,Split preferences,,dodgerblue
-Merge and filter@Union suppliers,19,UnionAll,,,Union suppliers,,black
+Merge and filter@Union suppliers,19,UnionAll,,,Union suppliers,,dodgerblue
 Merge and filter@Write Update sup table,20,SSISODBCDst,,,Write Update sup table,,black
 dbo.Supp_Prod_output,21,DataDestinations,,,dbo.Supp_Prod_output,,gold

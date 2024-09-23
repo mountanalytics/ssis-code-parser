@@ -190,7 +190,7 @@ def append_normal_node(refid: str, func: str, df_nodes: pd.DataFrame) -> pd.Data
                                 'SPLIT_ARG': [np.nan],
                                 'NAME_NODE': [split_name[2]],
                                 'FILTER': [np.nan],
-                                'COLOR': "black"
+                                'COLOR': "dodgerblue" if func == "UnionAll"  else "black"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
     return df_nodes

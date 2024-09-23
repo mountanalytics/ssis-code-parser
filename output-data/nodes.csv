@@ -27,5 +27,5 @@ Suppliers_Extract,24,DataSources,,,Suppliers_Extract,,gold,left_only
 Merge and filter@Match with products,25,Lookup,SupplierID = SupplierID2,,Match with products,,dodgerblue,left_only
 Merge and filter@Row Count errors,26,RowCount,,,Row Count errors,,black,left_only
 Merge and filter@Split preferences,27,ConditionalSplit,,Discount > 0,Split preferences,,dodgerblue,left_only
-Merge and filter@Union suppliers,28,UnionAll,,,Union suppliers,,black,left_only
+Merge and filter@Union suppliers,28,UnionAll,,,Union suppliers,,dodgerblue,left_only
 Merge and filter@Write Update sup table,29,SSISODBCDst,,,Write Update sup table,,black,left_only
