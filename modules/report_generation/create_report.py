@@ -30,7 +30,7 @@ def font_size(table: pd.DataFrame,font_size: int):
     return 
 
 
-def table_creation(input_table_columns: list,name_table_docx: list,table_int: pd.DataFrame(),title: str, document: Document) -> Document:
+def table_creation(input_table_columns: list,name_table_docx: list,table_int: pd.DataFrame,title: str, document: Document) -> Document:
     """Adding a table to the document with the title, and the set columns""" 
     overviewtransformationsHeader = document.add_heading(f'{title}', level=2)
     overviewtransformationsHeader.alignment = WD_ALIGN_PARAGRAPH.CENTER
