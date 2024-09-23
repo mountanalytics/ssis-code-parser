@@ -178,10 +178,20 @@ def main_report_generation(input_path:str, output_path:str):
     document = table_creation(input_table_columns, name_table_docx, table11, title, document)
     
     #sankey 1
+    path_sankey = f'{input_path}/complete_flow.jpg'
+    data_legend = {
+        'systemName': ["Node", "External table", "Join or split node", "Filter node", "Variable", "Data transmission", "Transformation (existing column)", "Transformation (new column)"],
+        'Color': ['black', 'gold', 'dodgerblue', "darkviolet", 'green', 'aliceblue', 'orangered', 'darkred']
+    }
+    title = "Complete lineage of the analysed SSIS package"
+    picture_creation(path_sankey, title, data_legend, document)
+
+
+    #sankey 2
     path_sankey = f'{input_path}/external_control.jpg'
     data_legend = {
         'systemName': ["External table", "Control flow node"],
-        'Color': ['black', 'aliceblue']
+        'Color': ['gold', 'black']
     }
     title = "External table connection to the control nodes"
     picture_creation(path_sankey, title, data_legend, document)

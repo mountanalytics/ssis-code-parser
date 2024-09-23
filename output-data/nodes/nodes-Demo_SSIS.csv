@@ -2,7 +2,7 @@ NAME_NODE,LABEL_NODE,FILTER,FUNCTION,JOIN_ARG,COLOR,ID
 dbo.Products_Extract,dbo.Products_Extract,,DataSources,,gold,0
 User::Ship_country,User::Ship_country,,Variable,,green,1
 User::Unit_stock,User::Unit_stock,,Variable,,green,2
-Package\Select into variable,Package\Select into variable,Country = 'User::Ship_country' AND UnitsInStock > 'User::Unit_stock',Query,,black,3
+Package\Select into variable,Package\Select into variable,Country = 'User::Ship_country' AND UnitsInStock > 'User::Unit_stock',Query,,darkviolet,3
 User::res_set,User::res_set,,Variable,,green,4
 Package\Loop over variable table,Package\Loop over variable table,,ForEachLoopContainer,,black,5
 Package\Loop over variable table\Insert into order_write,Package\Loop over variable table\Insert into order_write,,Query,,black,6
@@ -14,5 +14,5 @@ SSIS_Logger,SSIS_Logger,,DataDestinations,,gold,11
 User::Rows_suppliers,User::Rows_suppliers,,Variable,,green,12
 Supp_Prod_output,Supp_Prod_output,,DataSources,,gold,13
 User::CurrentDateTime,User::CurrentDateTime,,Variable,,green,14
-Package\Overwrite insert table,Package\Overwrite insert table,Region = 'User::CurrentDateTime',Query,,black,15
+Package\Overwrite insert table,Package\Overwrite insert table,Region = 'User::CurrentDateTime',Query,,darkviolet,15
 New_Supp_Prod_output,New_Supp_Prod_output,,DataDestinations,,gold,16
