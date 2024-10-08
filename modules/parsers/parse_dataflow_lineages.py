@@ -57,7 +57,6 @@ def add_metadata(sorted_nodes:list, dict_blocks: dict) -> list:
 
     for i in sorted_nodes:
         dictionary = {}
-
         dictionary[i[0]] = dict_blocks[i[0]]
         dictionary[i[1]] = dict_blocks[i[1]]
 
@@ -70,8 +69,8 @@ def extract_column(text:str)->str:
     match = re.search(r'\[([^\]]*)\]', text)
     return match.group(1) if match else ''
 
-def order_nodes(nodes: pd.DataFrame) -> list[pd.DataFrame]:
 
+def order_nodes(nodes: pd.DataFrame) -> list[pd.DataFrame]:
     all_paths = order_df(nodes)
     for i,list1 in enumerate(all_paths):
         for j,list2 in enumerate(all_paths):
@@ -82,7 +81,8 @@ def order_nodes(nodes: pd.DataFrame) -> list[pd.DataFrame]:
                 all_paths.pop(j)
     return all_paths
 
-def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks: dict, nodes_load: pd.DataFrame, df_name:str):
+
+def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks: dict, nodes_load: pd.DataFrame, df_name:str) -> pd.DataFrame:
     """
     Function that orchestrates the parsing of the lineages of a dataflow
     """
@@ -254,22 +254,23 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         lineages['TRANSFORMATION'] = transformation_in[0].combine_first(lineages['TRANSFORMATION'])
 
         # define color lineages
-        lineages['COLOR'] = ["aliceblue" if i == ""  else "orangered" for i in lineages['TRANSFORMATION']]
+        lineages['COLOR'] = ["aliceblue" if i == ""  else "#ffb480" for i in lineages['TRANSFORMATION']]
         non_null_indices = transformation_in[0].notna().index[transformation_in[0].notna()]
-        lineages.loc[non_null_indices, 'COLOR'] = 'darkred'
+        lineages.loc[non_null_indices, 'COLOR'] = '#ff6961'
         
-        # merge source id
+        # merge source node id
         lineages = pd.merge(lineages, nodes_load[['ID', 'LABEL_NODE']], left_on='SOURCE_NODE', right_on = 'LABEL_NODE', how='left')
         lineages['SOURCE_NODE'] = lineages['ID']
         lineages.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
     
-        # merge target id
+        # merge target node id
         lineages = pd.merge(lineages, nodes_load[['ID', 'LABEL_NODE']], left_on='TARGET_NODE', right_on = 'LABEL_NODE', how='left')
         lineages['TARGET_NODE'] = lineages['ID']
         lineages.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
         
         # load nodes data
         final_lin = pd.concat([final_lin,lineages], ignore_index=True)
+
     df_no_duplicates = final_lin.drop_duplicates()
     df_no_duplicates.to_csv(f'output-data/lineages/lineage-{df_name}.csv')
     return df_no_duplicates
@@ -277,7 +278,7 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
 
 def parser_dataflow_lineages(df_name: str, nodes_df: pd.DataFrame, nodes_order_df: pd.DataFrame, metadata_df: dict) -> pd.DataFrame:
 
-    all_paths = order_nodes(nodes_order_df)
+    all_paths = order_nodes(nodes_order_df) 
     lineages = main_parser(nodes_order_df, all_paths, metadata_df, nodes_df, df_name)
     return lineages
 

@@ -1,18 +1,15 @@
 NAME_NODE,LABEL_NODE,FILTER,FUNCTION,JOIN_ARG,COLOR,ID
-dbo.Products_Extract,dbo.Products_Extract,,DataSources,,gold,0
-User::Ship_country,User::Ship_country,,Variable,,green,1
-User::Unit_stock,User::Unit_stock,,Variable,,green,2
-Package\Select into variable,Package\Select into variable,Country = 'User::Ship_country' AND UnitsInStock > 'User::Unit_stock',Query,,darkviolet,3
-User::res_set,User::res_set,,Variable,,green,4
-Package\Loop over variable table,Package\Loop over variable table,,ForEachLoopContainer,,black,5
-Package\Loop over variable table\Insert into order_write,Package\Loop over variable table\Insert into order_write,,Query,,black,6
-Order_write,Order_write,,DataDestinations,,gold,7
-User::Sup_id,User::Sup_id,,Variable,,green,8
-User::Cat_id,User::Cat_id,,Variable,,green,9
-Package\insert into logger,Package\insert into logger,,Query,,black,10
-SSIS_Logger,SSIS_Logger,,DataDestinations,,gold,11
-User::Rows_suppliers,User::Rows_suppliers,,Variable,,green,12
-Supp_Prod_output,Supp_Prod_output,,DataSources,,gold,13
-User::CurrentDateTime,User::CurrentDateTime,,Variable,,green,14
-Package\Overwrite insert table,Package\Overwrite insert table,Region = 'User::CurrentDateTime',Query,,darkviolet,15
-New_Supp_Prod_output,New_Supp_Prod_output,,DataDestinations,,gold,16
+dbo.Orders_Extract,dbo.Orders_Extract,,DataSources,,#42d6a4,0
+User::OrderStatus,User::OrderStatus,,Variable,,#cdd408,1
+User::TotalAmount ,User::TotalAmount ,,Variable,,#cdd408,2
+Package\Select into variable,Package\Select into variable,OrderStatus = 'User::OrderStatus' AND TotalAmount > 'User::TotalAmount ',Query,,#db59a5,3
+User::res_set,User::res_set,,Variable,,#cdd408,4
+Package\Insert into table,Package\Insert into table,,ForEachLoopContainer,,#d0d3d3,5
+Package\Insert into table\Insert into order_write,Package\Insert into table\Insert into order_write,,Query,,#d0d3d3,6
+Order_write,Order_write,,DataDestinations,,#42d6a4,7
+User::Sup_id,User::Sup_id,,Variable,,#cdd408,8
+User::Cat_id,User::Cat_id,,Variable,,#cdd408,9
+old_table,old_table,,DataSources,,#42d6a4,10
+Region,Region,,Variable,,#cdd408,11
+Package\Overwrite insert table,Package\Overwrite insert table,Region = 'Region',Query,,#db59a5,12
+New_Supp_Prod_output,New_Supp_Prod_output,,DataDestinations,,#42d6a4,13

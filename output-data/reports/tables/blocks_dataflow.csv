@@ -1,10 +1,10 @@
 FUNCTION,count
-DataSources,3
 Variable,2
 DerivedColumn,2
 RowCount,2
 SSISODBCDst,2
-DataDestinations,1
+DataDestinations,2
+DataSources,2
 SSISODBCSrc,1
 Lookup,1
 ConditionalSplit,1

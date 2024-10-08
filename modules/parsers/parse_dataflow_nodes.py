@@ -176,7 +176,7 @@ def append_ext_tables(ext_table: str, df_nodes: pd.DataFrame, func = 'DataSource
                              'SPLIT_ARG': [np.nan],
                              'NAME_NODE': [ext_table],
                              'FILTER': [np.nan],
-                             'COLOR': "gold"
+                             'COLOR': "#42d6a4"
                              })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
     return df_nodes
@@ -190,7 +190,7 @@ def append_normal_node(refid: str, func: str, df_nodes: pd.DataFrame) -> pd.Data
                                 'SPLIT_ARG': [np.nan],
                                 'NAME_NODE': [split_name[2]],
                                 'FILTER': [np.nan],
-                                'COLOR': "dodgerblue" if func == "UnionAll"  else "black"
+                                'COLOR': "#9d94ff" if func == "UnionAll"  else "#d0d3d3"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
     return df_nodes
@@ -205,7 +205,7 @@ def append_join_node(refid: str, func: str, join_argu: str, df_nodes: pd.DataFra
                                 'SPLIT_ARG': [np.nan],
                                 'NAME_NODE': [split_name[2]],
                                 'FILTER': [np.nan],
-                                'COLOR': "dodgerblue"
+                                'COLOR': "#9d94ff"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
     return df_nodes
@@ -220,7 +220,7 @@ def append_split_node(refid: str, func: str, split_argu: str, df_nodes: pd.DataF
                                 'SPLIT_ARG': [split_argu],
                                 'NAME_NODE': [split_name[2]],
                                 'FILTER': [np.nan],
-                                'COLOR': "dodgerblue"
+                                'COLOR': "#9d94ff"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
     return df_nodes
@@ -242,7 +242,7 @@ def append_var_node(var_df: pd.DataFrame, df_nodes: pd.DataFrame) -> pd.DataFram
                                  'SPLIT_ARG': [np.nan],
                                  'NAME_NODE': [var],
                                  'FILTER': [np.nan],
-                                 'COLOR': "green"
+                                 'COLOR': "#cdd408"
                                  })
         df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
     return df_nodes

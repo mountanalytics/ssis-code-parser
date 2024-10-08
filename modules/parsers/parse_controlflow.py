@@ -37,7 +37,7 @@ def extract_target_columns(tree: sqlglot.expressions.Select):
     for select in list(select_statement_big): # for every select statements, extract the columns
         select_statement += select.expressions 
 
-    target_columns =[]
+    target_columns = []
     for select in select_statement: # for every select statement, find all the target columns and add them to list
         columns = list(select.find_all(exp.Column))
         target_columns.append([i for i in columns])
@@ -114,6 +114,7 @@ def get_statements(transformed_tree):
     """
 
     source_tables = []
+
     # from expression
     from_exp = list(transformed_tree.find_all(exp.From))
     from_table =str(from_exp[0].this).split(' AS')[0] # table
@@ -147,10 +148,10 @@ def on_statement(select_statement: sqlglot.expressions.Select):
     on_conditions = []
     for join in joins:
         try:
-        
             on_conditions.append(f"{list(join.find_all(exp.EQ))[0].this.table}.{list(join.find_all(exp.EQ))[0].this.this} = {list(join.find_all(exp.EQ))[0].expression.table}.{list(join.find_all(exp.EQ))[0].expression.this}")
         except:
             return []
+        
     if joins != []:
         return on_conditions
     else:
@@ -286,21 +287,21 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
 
         # add source tables to nodes
         for table in source_tables:              
-            nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataSources', 'JOIN_ARG': None, 'COLOR': "gold"})
+            nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataSources', 'JOIN_ARG': None, 'COLOR': "#42d6a4"})
 
         # add variables to nodes
         for variable in variables:
-            nodes.append({'NAME_NODE': variable[0],'LABEL_NODE': variable[0], 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
+            nodes.append({'NAME_NODE': variable[0],'LABEL_NODE': variable[0], 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "#cdd408"})
                 
         # add query node
-        nodes.append({'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': where_exp, 'FUNCTION': 'Query', 'JOIN_ARG': on_condition, 'COLOR': 'black'})
+        nodes.append({'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': where_exp, 'FUNCTION': 'Query', 'JOIN_ARG': on_condition, 'COLOR': '#d0d3d3'})
                 
         # add destination table to nodes
         for table in insert_tables:     
             if '::' in table: # if result table is variable
-                nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
+                nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "#cdd408"})
             else:
-                nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataDestinations', 'JOIN_ARG': None, 'COLOR': "gold"})
+                nodes.append({'NAME_NODE': table,'LABEL_NODE': table, 'FILTER': None, 'FUNCTION': 'DataDestinations', 'JOIN_ARG': None, 'COLOR': "#42d6a4"})
 
         # EXTRACT LINEAGES
         target_node = insert_tables[0]
@@ -315,7 +316,7 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
         select_statement, target_columns = extract_target_columns(tree) # extract target columns
         
         for table in insert_tables:     
-            if '::' in table: # if result table is variable
+            if '::' in table: # if result table is a variable
                 variable_tables[table] = [(col[0].this.this, i) for i, col in enumerate(target_columns)]
 
         replaced_trees = [x.transform(transformer_functions) for x in select_statement] # replace columns aliases
@@ -355,8 +356,8 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
             except:
                 transformations.append(i)
       
-        nodes.append({'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': None, 'FUNCTION': 'Query', 'JOIN_ARG': None, 'COLOR': "black"})
-        nodes.append({'NAME_NODE': dest_table,'LABEL_NODE': dest_table, 'FILTER': None, 'FUNCTION': 'DataDestinations', 'JOIN_ARG': None, 'COLOR': "gold"})
+        nodes.append({'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': None, 'FUNCTION': 'Query', 'JOIN_ARG': None, 'COLOR': "#d0d3d3"})
+        nodes.append({'NAME_NODE': dest_table,'LABEL_NODE': dest_table, 'FILTER': None, 'FUNCTION': 'DataDestinations', 'JOIN_ARG': None, 'COLOR': "#42d6a4"})
 
         for i, column in enumerate(columns):
             lineages.append({'SOURCE_COLUMNS':f'{node_name}[{column}]', 'TARGET_COLUMN':f"{dest_table}[{column}]", 'TRANSFORMATION':transformations[i]})
@@ -364,7 +365,7 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
         for transformation in transformations:
             transformation = str(transformation)
             if "::" in transformation and foreach==False:
-                nodes.append({'NAME_NODE': transformation,'LABEL_NODE': transformation, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
+                nodes.append({'NAME_NODE': transformation,'LABEL_NODE': transformation, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "#cdd408"})
 
                 lineages.append({'SOURCE_COLUMNS':f'{transformation}[{transformation}]', 'TARGET_COLUMN':f"{node_name}[{column}]", 'TRANSFORMATION':""})
 
@@ -373,7 +374,7 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
 
 def foreachloop_parser(control_flow, nodes, lineages, variable_tables, node_name):
 
-    nodes.append({'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': None, 'FUNCTION': 'ForEachLoopContainer', 'JOIN_ARG': None, 'COLOR': "black"})
+    nodes.append({'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': None, 'FUNCTION': 'ForEachLoopContainer', 'JOIN_ARG': None, 'COLOR': "#d0d3d3"})
 
     _, _, _, sql_node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
 
@@ -386,7 +387,7 @@ def foreachloop_parser(control_flow, nodes, lineages, variable_tables, node_name
                 for variable in variables:
                     if column[1] == variable[1]: # if the indeces of the column and the variable correspond
 
-                        nodes.append({'NAME_NODE': variable[0],'LABEL_NODE': variable[0], 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "green"})
+                        nodes.append({'NAME_NODE': variable[0],'LABEL_NODE': variable[0], 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "#cdd408"})
 
                         lineages.append({'SOURCE_COLUMNS':f'{input_table}[{column[0]}]', 'TARGET_COLUMN':f"{node_name}[{column[0]}]", 'TRANSFORMATION':""}) # from the input the table to the foreachloop
                         lineages.append({'SOURCE_COLUMNS':f'{node_name}[{variable[0]}]', 'TARGET_COLUMN':f"{sql_node_name}[{variable[0]}]", 'TRANSFORMATION':""}) # from the foreachloop to the sql
@@ -417,10 +418,10 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     nodes_df = pd.DataFrame(nodes)
     nodes_df['ID'] = nodes_df.index
     nodes_df['COLOR'] = nodes_df.apply(
-    lambda row: row['COLOR'] if pd.isnull(row['FILTER']) else 'darkviolet', 
-    axis=1
+        lambda row: row['COLOR'] if pd.isnull(row['FILTER']) else '#db59a5', 
+        axis=1
     )
-    nodes_df.to_csv(f'output-data/nodes/nodes-{file_name}.csv',index=False)
+    nodes_df.to_csv(f'output-data/nodes/nodes-{file_name}.csv',index=False) # save nodes file
 
     lineages_df = pd.DataFrame(lineages)
     lineages_df['SOURCE_FIELD'] = lineages_df['SOURCE_COLUMNS'].str.extract(r'\[([^\]]*)\]')
@@ -444,10 +445,10 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     lineages_df = lineages_df.drop_duplicates(subset =['SOURCE_COLUMNS', 'TARGET_COLUMN', 'TRANSFORMATION']).reset_index(drop=True)
     lineages_df['COLOR'] = 'aliceblue'
     lineages_df['COLOR'] = lineages_df.apply(
-    lambda row: row['COLOR'] if row['TRANSFORMATION'] == '' or row['TRANSFORMATION'] in nodes_df['NAME_NODE'].values else 'darkred', 
-    axis=1
-)
-    lineages_df.to_csv(f'output-data/lineages/lineage-{file_name}_cf.csv',index=False)
+        lambda row: row['COLOR'] if row['TRANSFORMATION'] == '' or row['TRANSFORMATION'] in nodes_df['NAME_NODE'].values else '#ffb480', 
+        axis=1
+    )
+    lineages_df.to_csv(f'output-data/lineages/lineage-{file_name}_cf.csv',index=False) # save lineages file
     return nodes_df, lineages_df
 
 

@@ -48,6 +48,7 @@ def update_datasets(nodes: pd.DataFrame, lineages:pd.DataFrame, file_name:str, n
     lineages['SOURCE_NODE'] = lineages['SOURCE_NODE'].map(id_to_new_id)
     lineages['TARGET_NODE'] = lineages['TARGET_NODE'].map(id_to_new_id)
     csv_files = [f for f in os.listdir("output-data/lineages") if f.endswith('.csv')]
+
     for csv_file in csv_files:
     # Check if the csv_file name matches the file_name
         if file_name in csv_file:
@@ -80,5 +81,6 @@ def node_lin_pars(flows:dict) -> pd.DataFrame:
             lineages = pd.DataFrame(flows[file_name]['data_flow'][flow]['lineages'])
             nodes = pd.DataFrame(flows[file_name]['data_flow'][flow]['nodes'])
             node_final = update_datasets(nodes, lineages, flow, node_final)
+            
     node_final.to_csv("output-data/nodes.csv", index = False)
     return node_final

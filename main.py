@@ -59,7 +59,7 @@ def run_ssis_parser(folder:str):
 
             flow[file_name] = {'control_flow' : {'nodes': nodes_controlflow.to_dict(), 'lineages': lineages_controlflow.to_dict()}, 'data_flow' : data_flow}
 
-    with open(f'output-data/flow.json', 'w') as json_file: # save flow
+    with open(f'output-data/flow.json', 'w') as json_file: # save flow (metadata)
         json.dump(flow, json_file, indent=4, default=str)
 
     nodes = node_lin_pars(flow) # merge nodes
@@ -74,6 +74,8 @@ def run_ssis_parser(folder:str):
 
 if __name__ == "__main__":
     run_ssis_parser("data/Demo_rabo/Demo_rabo/")
+    #run_ssis_parser("data/examples/")
+
     
 # insert into parser
 # columns in control flow lineages between []
