@@ -250,6 +250,8 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
 
     else:
         try:
+            # if the sql statement contains a variable, change the indeces with the variable name
+
             for variable in variables:
                 
                 for i, char in enumerate(sql_statement.replace(" ", "")): #!!!!!!!!!!!!! ADD MORE CONDITIONS
@@ -362,6 +364,8 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
         for i, column in enumerate(columns):
             lineages.append({'SOURCE_COLUMNS':f'{node_name}[{column}]', 'TARGET_COLUMN':f"{dest_table}[{column}]", 'TRANSFORMATION':transformations[i]})
 
+        
+
         for transformation in transformations:
             transformation = str(transformation)
             if "::" in transformation and foreach==False:
@@ -444,8 +448,13 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     lineages_df.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
     lineages_df = lineages_df.drop_duplicates(subset =['SOURCE_COLUMNS', 'TARGET_COLUMN', 'TRANSFORMATION']).reset_index(drop=True)
     lineages_df['COLOR'] = 'aliceblue'
+
     lineages_df['COLOR'] = lineages_df.apply(
-        lambda row: row['COLOR'] if row['TRANSFORMATION'] == '' or row['TRANSFORMATION'] in nodes_df['NAME_NODE'].values else '#ffb480', 
+
+        lambda row: row['COLOR'] if row['TRANSFORMATION'] == '' or row['TRANSFORMATION'] in nodes_df['NAME_NODE'].values else '#ff6961',
+
+        #lambda row: row['COLOR'] if row['TRANSFORMATION'] == '' or row['TRANSFORMATION'] in nodes_df['NAME_NODE'].values else '#ff6961', # ffb480
+        #lambda row: row['COLOR'] if row['TRANSFORMATION'] == '' else ('#ffb480' if row['TRANSFORMATION'] in nodes_df['NAME_NODE'].values else '#ff6961'),
         axis=1
     )
     lineages_df.to_csv(f'output-data/lineages/lineage-{file_name}_cf.csv',index=False) # save lineages file

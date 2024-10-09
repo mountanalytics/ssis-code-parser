@@ -1,55 +1,59 @@
 SOURCE_COLUMNS,TARGET_COLUMN,TRANSFORMATION,SOURCE_FIELD,TARGET_FIELD,SOURCE_NODE,TARGET_NODE,LINK_VALUE,ROW_ID,COLOR
-dbo.Orders_Extract[CustomerID],Package\Select into variable[CustomerID],,CustomerID,CustomerID,0,3,1,0,aliceblue
-dbo.Orders_Extract[OrderID],Package\Select into variable[OrderID],,OrderID,OrderID,0,3,1,1,aliceblue
-dbo.Orders_Extract[OrderDate],Package\Select into variable[OrderDate],,OrderDate,OrderDate,0,3,1,2,aliceblue
-Package\Select into variable[CustomerID],User::res_set[CustomerID],,CustomerID,CustomerID,3,4,1,6,aliceblue
-Package\Select into variable[OrderID],User::res_set[OrderID],,OrderID,OrderID,3,4,1,7,aliceblue
-Package\Select into variable[OrderDate],User::res_set[OrderDate],,OrderDate,OrderDate,3,4,1,8,aliceblue
-User::OrderStatus[User::OrderStatus],Package\Select into variable[User::OrderStatus],,User::OrderStatus,User::OrderStatus,1,3,1,15,aliceblue
-User::TotalAmount [User::TotalAmount ],Package\Select into variable[User::TotalAmount ],,User::TotalAmount ,User::TotalAmount ,2,3,1,16,aliceblue
-Package\Insert into table\Insert into order_write[OrderID],Order_write[OrderID],User::Sup_id,OrderID,OrderID,6,7,1,17,aliceblue
-Package\Insert into table\Insert into order_write[Dateloop],Order_write[Dateloop],CURRENT_TIMESTAMP(),Dateloop,Dateloop,6,7,1,18,#ffb480
-Package\Insert into table\Insert into order_write[Cat_ID],Order_write[Cat_ID],User::Cat_id,Cat_ID,Cat_ID,6,7,1,19,aliceblue
-User::res_set[CustomerID],Package\Insert into table[CustomerID],,CustomerID,CustomerID,4,5,1,20,aliceblue
-Package\Insert into table[User::Sup_id],Package\Insert into table\Insert into order_write[User::Sup_id],,User::Sup_id,User::Sup_id,5,6,1,21,aliceblue
-Package\Insert into table\Insert into order_write[User::Sup_id],User::Sup_id[User::Sup_id],,User::Sup_id,User::Sup_id,6,8,1,22,aliceblue
-User::Sup_id[User::Sup_id],Package\Insert into table[User::Sup_id],,User::Sup_id,User::Sup_id,8,5,1,23,aliceblue
-User::res_set[OrderDate],Package\Insert into table[OrderDate],,OrderDate,OrderDate,4,5,1,24,aliceblue
-Package\Insert into table[User::Cat_id],Package\Insert into table\Insert into order_write[User::Cat_id],,User::Cat_id,User::Cat_id,5,6,1,25,aliceblue
-Package\Insert into table\Insert into order_write[User::Cat_id],User::Cat_id[User::Cat_id],,User::Cat_id,User::Cat_id,6,9,1,26,aliceblue
-User::Cat_id[User::Cat_id],Package\Insert into table[User::Cat_id],,User::Cat_id,User::Cat_id,9,5,1,27,aliceblue
-old_table[CompanyName],Package\Overwrite insert table[CompanyName],,CompanyName,CompanyName,10,12,1,28,aliceblue
-old_table[Preferred],Package\Overwrite insert table[Preferred],,Preferred,Preferred,10,12,1,29,aliceblue
-old_table[Discount],Package\Overwrite insert table[Discount],,Discount,Discount,10,12,1,30,aliceblue
-old_table[Country],Package\Overwrite insert table[Country],,Country,Country,10,12,1,31,aliceblue
-old_table[Address],Package\Overwrite insert table[Address],,Address,Address,10,12,1,32,aliceblue
-old_table[Region],Package\Overwrite insert table[Region],,Region,Region,10,12,1,33,aliceblue
-old_table[Fax],Package\Overwrite insert table[Fax],,Fax,Fax,10,12,1,34,aliceblue
-old_table[Phone],Package\Overwrite insert table[Phone],,Phone,Phone,10,12,1,35,aliceblue
-old_table[City],Package\Overwrite insert table[City],,City,City,10,12,1,36,aliceblue
-old_table[SupplierID],Package\Overwrite insert table[SupplierID],,SupplierID,SupplierID,10,12,1,37,aliceblue
-old_table[ContactName],Package\Overwrite insert table[ContactName],,ContactName,ContactName,10,12,1,38,aliceblue
-old_table[ContactTitle],Package\Overwrite insert table[ContactTitle],,ContactTitle,ContactTitle,10,12,1,39,aliceblue
-old_table[PostalCode],Package\Overwrite insert table[PostalCode],,PostalCode,PostalCode,10,12,1,40,aliceblue
-old_table[ValidFrom],Package\Overwrite insert table[ValidFrom],,ValidFrom,ValidFrom,10,12,1,41,aliceblue
-old_table[ValidTo],Package\Overwrite insert table[ValidTo],,ValidTo,ValidTo,10,12,1,42,aliceblue
-old_table[Active],Package\Overwrite insert table[Active],,Active,Active,10,12,1,43,aliceblue
-old_table[UnitPrice],Package\Overwrite insert table[UnitPrice],,UnitPrice,UnitPrice,10,12,1,44,aliceblue
-Package\Overwrite insert table[CompanyName],New_Supp_Prod_output[CompanyName],,CompanyName,CompanyName,12,13,1,81,aliceblue
-Package\Overwrite insert table[Preferred],New_Supp_Prod_output[Preferred],,Preferred,Preferred,12,13,1,82,aliceblue
-Package\Overwrite insert table[Discount],New_Supp_Prod_output[Discount],,Discount,Discount,12,13,1,83,aliceblue
-Package\Overwrite insert table[Country],New_Supp_Prod_output[Country],,Country,Country,12,13,1,84,aliceblue
-Package\Overwrite insert table[Address],New_Supp_Prod_output[Address],,Address,Address,12,13,1,85,aliceblue
-Package\Overwrite insert table[Region],New_Supp_Prod_output[Region],,Region,Region,12,13,1,86,aliceblue
-Package\Overwrite insert table[Fax],New_Supp_Prod_output[Fax],,Fax,Fax,12,13,1,87,aliceblue
-Package\Overwrite insert table[Phone],New_Supp_Prod_output[Phone],,Phone,Phone,12,13,1,88,aliceblue
-Package\Overwrite insert table[City],New_Supp_Prod_output[City],,City,City,12,13,1,89,aliceblue
-Package\Overwrite insert table[SupplierID],New_Supp_Prod_output[SupplierID],,SupplierID,SupplierID,12,13,1,90,aliceblue
-Package\Overwrite insert table[ContactName],New_Supp_Prod_output[ContactName],,ContactName,ContactName,12,13,1,91,aliceblue
-Package\Overwrite insert table[ContactTitle],New_Supp_Prod_output[ContactTitle],,ContactTitle,ContactTitle,12,13,1,92,aliceblue
-Package\Overwrite insert table[PostalCode],New_Supp_Prod_output[PostalCode],,PostalCode,PostalCode,12,13,1,93,aliceblue
-Package\Overwrite insert table[ValidFrom],New_Supp_Prod_output[ValidFrom],,ValidFrom,ValidFrom,12,13,1,94,aliceblue
-Package\Overwrite insert table[ValidTo],New_Supp_Prod_output[ValidTo],,ValidTo,ValidTo,12,13,1,95,aliceblue
-Package\Overwrite insert table[Active],New_Supp_Prod_output[Active],,Active,Active,12,13,1,96,aliceblue
-Package\Overwrite insert table[UnitPrice],New_Supp_Prod_output[UnitPrice],,UnitPrice,UnitPrice,12,13,1,97,aliceblue
-Region[Region],Package\Overwrite insert table[Region],,Region,Region,11,12,1,151,aliceblue
+dbo.Products_Extract[SupplierID],Package\Select into variable[SupplierID],,SupplierID,SupplierID,0,3,1,0,aliceblue
+dbo.Products_Extract[ProductID],Package\Select into variable[ProductID],,ProductID,ProductID,0,3,1,1,aliceblue
+dbo.Products_Extract[CategoryID],Package\Select into variable[CategoryID],,CategoryID,CategoryID,0,3,1,2,aliceblue
+Package\Select into variable[SupplierID],User::res_set[SupplierID],,SupplierID,SupplierID,3,4,1,6,aliceblue
+Package\Select into variable[ProductID],User::res_set[ProductID],,ProductID,ProductID,3,4,1,7,aliceblue
+Package\Select into variable[CategoryID],User::res_set[CategoryID],,CategoryID,CategoryID,3,4,1,8,aliceblue
+User::Ship_country[User::Ship_country],Package\Select into variable[User::Ship_country],,User::Ship_country,User::Ship_country,1,3,1,15,aliceblue
+User::Unit_stock[User::Unit_stock],Package\Select into variable[User::Unit_stock],,User::Unit_stock,User::Unit_stock,2,3,1,16,aliceblue
+Package\Loop over variable table\Insert into order_write[OrderID],Order_write[OrderID],User::Sup_id,OrderID,OrderID,6,7,1,17,aliceblue
+Package\Loop over variable table\Insert into order_write[Dateloop],Order_write[Dateloop],CURRENT_TIMESTAMP(),Dateloop,Dateloop,6,7,1,18,#ff6961
+Package\Loop over variable table\Insert into order_write[Cat_ID],Order_write[Cat_ID],User::Cat_id,Cat_ID,Cat_ID,6,7,1,19,aliceblue
+User::res_set[SupplierID],Package\Loop over variable table[SupplierID],,SupplierID,SupplierID,4,5,1,20,aliceblue
+Package\Loop over variable table[User::Sup_id],Package\Loop over variable table\Insert into order_write[User::Sup_id],,User::Sup_id,User::Sup_id,5,6,1,21,aliceblue
+Package\Loop over variable table\Insert into order_write[User::Sup_id],User::Sup_id[User::Sup_id],,User::Sup_id,User::Sup_id,6,8,1,22,aliceblue
+User::Sup_id[User::Sup_id],Package\Loop over variable table[User::Sup_id],,User::Sup_id,User::Sup_id,8,5,1,23,aliceblue
+User::res_set[CategoryID],Package\Loop over variable table[CategoryID],,CategoryID,CategoryID,4,5,1,24,aliceblue
+Package\Loop over variable table[User::Cat_id],Package\Loop over variable table\Insert into order_write[User::Cat_id],,User::Cat_id,User::Cat_id,5,6,1,25,aliceblue
+Package\Loop over variable table\Insert into order_write[User::Cat_id],User::Cat_id[User::Cat_id],,User::Cat_id,User::Cat_id,6,9,1,26,aliceblue
+User::Cat_id[User::Cat_id],Package\Loop over variable table[User::Cat_id],,User::Cat_id,User::Cat_id,9,5,1,27,aliceblue
+Package\insert into logger[ExecutionStartTime],SSIS_Logger[ExecutionStartTime],CURRENT_TIMESTAMP(),ExecutionStartTime,ExecutionStartTime,10,11,1,28,#ff6961
+Package\insert into logger[Remark],SSIS_Logger[Remark],Deleted rows,Remark,Remark,10,11,1,29,#ff6961
+Package\insert into logger[Affected_rows],SSIS_Logger[Affected_rows],User::Rows_suppliers,Affected_rows,Affected_rows,10,11,1,30,aliceblue
+User::Rows_suppliers[User::Rows_suppliers],Package\insert into logger[Affected_rows],,User::Rows_suppliers,Affected_rows,12,10,1,31,aliceblue
+Supp_Prod_output[CompanyName],Package\Overwrite insert table[CompanyName],,CompanyName,CompanyName,13,15,1,32,aliceblue
+Supp_Prod_output[Preferred],Package\Overwrite insert table[Preferred],,Preferred,Preferred,13,15,1,33,aliceblue
+Supp_Prod_output[Discount],Package\Overwrite insert table[Discount],,Discount,Discount,13,15,1,34,aliceblue
+Supp_Prod_output[Country],Package\Overwrite insert table[Country],,Country,Country,13,15,1,35,aliceblue
+Supp_Prod_output[Address],Package\Overwrite insert table[Address],,Address,Address,13,15,1,36,aliceblue
+Supp_Prod_output[Region],Package\Overwrite insert table[Region],,Region,Region,13,15,1,37,aliceblue
+Supp_Prod_output[Fax],Package\Overwrite insert table[Fax],,Fax,Fax,13,15,1,38,aliceblue
+Supp_Prod_output[Phone],Package\Overwrite insert table[Phone],,Phone,Phone,13,15,1,39,aliceblue
+Supp_Prod_output[City],Package\Overwrite insert table[City],,City,City,13,15,1,40,aliceblue
+Supp_Prod_output[SupplierID],Package\Overwrite insert table[SupplierID],,SupplierID,SupplierID,13,15,1,41,aliceblue
+Supp_Prod_output[ContactName],Package\Overwrite insert table[ContactName],,ContactName,ContactName,13,15,1,42,aliceblue
+Supp_Prod_output[ContactTitle],Package\Overwrite insert table[ContactTitle],,ContactTitle,ContactTitle,13,15,1,43,aliceblue
+Supp_Prod_output[PostalCode],Package\Overwrite insert table[PostalCode],,PostalCode,PostalCode,13,15,1,44,aliceblue
+Supp_Prod_output[ValidFrom],Package\Overwrite insert table[ValidFrom],,ValidFrom,ValidFrom,13,15,1,45,aliceblue
+Supp_Prod_output[ValidTo],Package\Overwrite insert table[ValidTo],,ValidTo,ValidTo,13,15,1,46,aliceblue
+Supp_Prod_output[Active],Package\Overwrite insert table[Active],,Active,Active,13,15,1,47,aliceblue
+Supp_Prod_output[UnitPrice],Package\Overwrite insert table[UnitPrice],,UnitPrice,UnitPrice,13,15,1,48,aliceblue
+Package\Overwrite insert table[CompanyName],New_Supp_Prod_output[CompanyName],,CompanyName,CompanyName,15,16,1,89,aliceblue
+Package\Overwrite insert table[Preferred],New_Supp_Prod_output[Preferred],,Preferred,Preferred,15,16,1,90,aliceblue
+Package\Overwrite insert table[Discount],New_Supp_Prod_output[Discount],,Discount,Discount,15,16,1,91,aliceblue
+Package\Overwrite insert table[Country],New_Supp_Prod_output[Country],,Country,Country,15,16,1,92,aliceblue
+Package\Overwrite insert table[Address],New_Supp_Prod_output[Address],,Address,Address,15,16,1,93,aliceblue
+Package\Overwrite insert table[Region],New_Supp_Prod_output[Region],,Region,Region,15,16,1,94,aliceblue
+Package\Overwrite insert table[Fax],New_Supp_Prod_output[Fax],,Fax,Fax,15,16,1,95,aliceblue
+Package\Overwrite insert table[Phone],New_Supp_Prod_output[Phone],,Phone,Phone,15,16,1,96,aliceblue
+Package\Overwrite insert table[City],New_Supp_Prod_output[City],,City,City,15,16,1,97,aliceblue
+Package\Overwrite insert table[SupplierID],New_Supp_Prod_output[SupplierID],,SupplierID,SupplierID,15,16,1,98,aliceblue
+Package\Overwrite insert table[ContactName],New_Supp_Prod_output[ContactName],,ContactName,ContactName,15,16,1,99,aliceblue
+Package\Overwrite insert table[ContactTitle],New_Supp_Prod_output[ContactTitle],,ContactTitle,ContactTitle,15,16,1,100,aliceblue
+Package\Overwrite insert table[PostalCode],New_Supp_Prod_output[PostalCode],,PostalCode,PostalCode,15,16,1,101,aliceblue
+Package\Overwrite insert table[ValidFrom],New_Supp_Prod_output[ValidFrom],,ValidFrom,ValidFrom,15,16,1,102,aliceblue
+Package\Overwrite insert table[ValidTo],New_Supp_Prod_output[ValidTo],,ValidTo,ValidTo,15,16,1,103,aliceblue
+Package\Overwrite insert table[Active],New_Supp_Prod_output[Active],,Active,Active,15,16,1,104,aliceblue
+Package\Overwrite insert table[UnitPrice],New_Supp_Prod_output[UnitPrice],,UnitPrice,UnitPrice,15,16,1,105,aliceblue
+User::CurrentDateTime[User::CurrentDateTime],Package\Overwrite insert table[User::CurrentDateTime],,User::CurrentDateTime,User::CurrentDateTime,14,15,1,163,aliceblue
