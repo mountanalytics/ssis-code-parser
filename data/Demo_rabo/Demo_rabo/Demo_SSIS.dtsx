@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="125"
-  DTS:VersionGUID="{256E3CDE-1951-4552-9D59-36E0C82A8C17}">
+  DTS:VersionBuild="126"
+  DTS:VersionGUID="{38235557-6A71-403A-A6A7-44A91062BD27}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABejWxggzXCtv5dEi+91PKykpP+ZrhInvUo87Njczlr0AAAAAAOgAAAAAIAACAAAADVIBuRqRofOMzjOMsCqEQkArD3/u8EFXUO8YkUVg1hqzAAAACbnBW15zRIqibTj1YGkpXgdM4OhtTdDd/HfTAU9M+OnN0HizO/q1nalM2OgWpmDf5AAAAAjdQBvIp4mQXIgiNd/dKoYWgSU8vOqwwzv3xjqVAhnofxFrZ5zsARjdbyg5lrONObklcfJSj3ANmAN4x4exsDKw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADOk4i8ZHp8u0Fa+gEKrpekpsB+H8Ko2y/ek3gh8BtzNAAAAAAOgAAAAAIAACAAAACvv4DpNw4i13jfUOcTLdqki0wlJ2vXQwhKWGPUU7b4CjAAAACmGHKYidiOJz2D6mGPf3wNLy0i0NQwDCzdV//boDCpq9X127jmSQrOYAcG7CPA+aVAAAAAfYmiXYDN4VQYlnA9zGyMcYJje0+UXGRhShVJcwPEe/ND0fHkRhYd91JhYGRWtc+HQo4ddtGK6wby3P0nP1DA0Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -58,7 +58,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABD+zh3nK/ObPqkbuS5DtYkbhOJMHRZS16B699UkPV++wAAAAAOgAAAAAIAACAAAAB4OVISBhdip/yenjCFbNdCgChrK06vBVBEqaUnYcjTITAAAADPlQInb3ccKjxLWVt56LOhyjAUwGn570wBNHsTPf8IZrexE5tBPtNnq04uT0et3DBAAAAAsoHRufFN2gPrgg37iuOkD7pi7IY+Tut63kgybj/V411hzBkdjQRlZl5Q+JGaaSPDWXlhR+CYxRDjqOIarZcuYQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADdPDrrc1dRiPQatAMCPpxUN17A6ESffKk0EY1ULIi3QgAAAAAOgAAAAAIAACAAAACm0xTupzrw7iHLOUdP8fWO2XOAuBp2qR2URWrvRhRv5TAAAAD5uMXmZWKolQnk6UWoAbYtrEGfxsQgXOQvJCt2XG2zf+WwT6x+QjBmisDIaJZvBsBAAAAAeNdhqqnA92pt2E8VEsJe2Qy80KjmitcOjeLsgM8g0B/0eKQhQsCk1Q/z7PrJRgaKWflkT7O/IHknwgmhs7C+Gw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -75,7 +75,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB+gi4G7K6Y3ylFJ1Mzjy5MzXpAKSmP4ktuLUN3FTxFvAAAAAAOgAAAAAIAACAAAACtNtWi4jzWpB8am3OGNoKUReOxcA1AdyjIoEg/YI2nZzAAAAB7Cuj3oa63ooMXoZ0nZwubUEZKk+HBCvT8vEOfCaDoX5KZ8C93NPI1AaSA7mNlGCJAAAAAxaX9OG1fDNyBgAmfipiD3cfhR9QRQ2PqowZ0IwswDSeEK12M8iHUbn/HJKwT+pexi+Th/XGVWWjfmWg5oADWSw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADrH8zzYz3E1Vljj8npdPp6QEfc0TWL7amgDtT0YTDtEAAAAAAOgAAAAAIAACAAAAC1/nO4gmHY+ntbF3SBkAz3CXyoE1UDYi0jPb5HxTYupDAAAADG3fIUwi6+p5sFupNQNJM8GwewutWt/Za19VqC55xj8PSL/YFxsgyoWxTd/DeongJAAAAA5gfXdFkdguIlhMs2Tql9xuRllI8xwg5fKyyw40EtW5LeWls88vVpMQInhoJ4gM/4CscelV7sLdPzHreSeeQt6w</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -90,7 +90,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAKHmCvQLiQgQf907R7g0lhlh+ELX9JJmRvyr4oLMdibAAAAAAOgAAAAAIAACAAAABkwulwqwj8aH+KvU59PvUtkrmM88TcxbO1kb3l1iAcQzAAAADV3qmRDHchuF80VmdAhhrLmN8AIeqgJYHA/cXbYMOFsGZ/zRB+e6CbDEL2ATqSHVdAAAAAbt31A8lt9b7+5qoO0FqkaIRyceO9He+1X7ueXILxT8dZGrmyaN6XnylWi0nwNhglICYkLaV34YfDY2qG69BPhg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADr1lPadAaiHq9HFGYKgqyxJ5ujixJ40fniNTx6Mwf67QAAAAAOgAAAAAIAACAAAACoVFesTj/oDfOif4CD+qlBhsTZoUx28rtLSlpBotqFzTAAAADcPJ9fYSkp85nQs6puvAvnTDIxKut6Ra6+L9qQzVwnS+RAwUBI/Sh4bvhcFOyRukBAAAAAevxi3QaWyBDoly+WLbt/pbimY1igFMgV89XPB1+PqfVlwzYz2AT3oYsBtiFkjycJzaZYu5s/NJLO2UQRDlFeDA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -105,7 +105,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAQWPkTPJ+j0rrg/QYGVOGRxi9q4SEfl5bHVnqy2bCTOAAAAAAOgAAAAAIAACAAAABivJm2N7dstNvwCJ2Z7igujQYfTODQLj0SMUm5aJp/QzAAAACUI0s+hdAd9mPBQsTFouKWwbgeTHh9XE+eHMpIVI2L0kKmFC9JgCODlKLOUyi3E/1AAAAAt+rBHi5QcyOIyLT1Vn2axSHao+sAoLxr/pxizDKtZ69ZTBinrPAmeEUW52IMbGvMNISLwrMxRgnFtDZ6apcn6A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABPWkxTBYA1bPBHK5ji2P+xNWMhS8k/8t4L9fD3nwf27QAAAAAOgAAAAAIAACAAAADsTyU/sig6RGSO78CPLpGPvfKgPvYkq90+AXP+5ogWVTAAAAADqdPQZ9SCD/8LPgPCrrmT02S9JmTO8l0oYLdfQM4h3QNWQ9RgczqCyvxuajxv3VFAAAAAZm8cyLT79KCY/gcaoxAE5+UbWG461LbpmCFSXPJDTtQxR58iMEU6+HOIMj0AopwT4dVu9wZ8q0TgdbQBRo5rDw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2615,27 +2615,42 @@ where [refTable].[SupplierID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="165,42"
+          Size="164.8,41.6"
           Id="Package\Drop insert table"
           TopLeft="265.166651686861,792.99999764959" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\insert into logger"
           TopLeft="273.499984564881,706.133331531352" />
         <NodeLayout
-          Size="150,42"
+          Size="169.6,41.6"
+          Id="Package\Loop over variable table\Insert into order_write"
+          TopLeft="48,22" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="275.2,119.2"
+          Size="275.2,161.6"
+          Id="Package\Loop over variable table"
+          TopLeft="212,248" />
+        <NodeLayout
+          Size="150.4,41.6"
           Id="Package\Merge and filter"
           TopLeft="277.499985384445,626.133332254555" />
         <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Overwrite insert table"
           TopLeft="257.166666985386,877.599998806715" />
         <NodeLayout
-          Size="126,42"
+          Size="169.6,41.6"
+          Id="Package\Select into variable"
+          TopLeft="267,154" />
+        <NodeLayout
+          Size="126.4,41.6"
           Id="Package\Set region"
           TopLeft="287.49999931703,459.733333592481" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Truncate error table"
           TopLeft="269.333318125871,542.333332670397" />
         <EdgeLayout
@@ -2748,21 +2763,6 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Loop over variable table\Insert into order_write"
-          TopLeft="48,22" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="275,119"
-          Size="275,162"
-          Id="Package\Loop over variable table"
-          TopLeft="212,248" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Select into variable"
-          TopLeft="267,154" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="350.75,196">
@@ -2816,43 +2816,43 @@ where [refTable].[SupplierID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="184,42"
+          Size="184,41.6"
           Id="Package\Merge and filter\Write Update sup table"
           TopLeft="392.83330432988,695.399996058544" />
         <NodeLayout
-          Size="164,42"
+          Size="164,41.6"
           Id="Package\Merge and filter\Error output table"
           TopLeft="1203,262" />
         <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\Merge and filter\Split preferences"
           TopLeft="407.333311022984,375.866664039029" />
         <NodeLayout
-          Size="181,42"
+          Size="180.8,41.6"
           Id="Package\Merge and filter\Error_match_column"
           TopLeft="958,258" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Merge and filter\Determine rows sup"
           TopLeft="394.16664513035,149.933332290716" />
         <NodeLayout
-          Size="165,42"
+          Size="164.8,41.6"
           Id="Package\Merge and filter\Row Count errors"
           TopLeft="696,252" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Merge and filter\Union suppliers"
           TopLeft="408.833335473306,605.13333333936" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Merge and filter\Match with products"
           TopLeft="398.333311569361,247.333331730233" />
         <NodeLayout
-          Size="145,42"
+          Size="144.8,41.6"
           Id="Package\Merge and filter\Load supplier"
           TopLeft="403.833311159579,70.7999994937579" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Merge and filter\Alter name pref"
           TopLeft="620.833299412497,464.533330103027" />
         <EdgeLayout

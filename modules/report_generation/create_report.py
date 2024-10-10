@@ -181,7 +181,7 @@ def main_report_generation(input_path:str, output_path:str):
     path_sankey = f'{input_path}/complete_flow.jpg'
     data_legend = {
         'systemName': ["Node", "External table", "Join or split node", "Filter node", "Variable", "Data transmission", "Transformation (existing column)", "Transformation (new column)"],
-        'Color': ['black', 'gold', 'dodgerblue', "darkviolet", 'green', 'aliceblue', 'orangered', 'darkred']
+        'Color': ["#D0D3D3", "#42D6A4", "#9D94FF", "#DB59A5", "#D0D708", "#f0f8ff", "#FFB480", "#FF6961"]
     }
     title = "Complete lineage of the analysed SSIS package"
     picture_creation(path_sankey, title, data_legend, document)
@@ -191,7 +191,7 @@ def main_report_generation(input_path:str, output_path:str):
     path_sankey = f'{input_path}/external_control.jpg'
     data_legend = {
         'systemName': ["External table", "Control flow node"],
-        'Color': ['gold', 'black']
+        'Color': ["#42D6A4", "#D0D3D3"]
     }
     title = "External table connection to the control nodes"
     picture_creation(path_sankey, title, data_legend, document)
@@ -245,7 +245,7 @@ def main_report_generation(input_path:str, output_path:str):
     path_sankey = f'{input_path}/sankey_dataflow.jpg'
     data_legend = {
         'systemName': ["Node", "External table", "Join or split node", "Variable", "Data transmission", "Transformation (existing column)", "Transformation (new column)"],
-        'Color': ['black', 'gold', 'dodgerblue', 'green', 'aliceblue', 'orangered', 'darkred']
+        'Color': ["#D0D3D3", "#42D6A4", "#9D94FF", "#D0D708", "#f0f8ff", "#FFB480", "#FF6961"]
     }
     title = "Lineage within the Merge and filter data flow"
     picture_creation(path_sankey, title, data_legend, document)

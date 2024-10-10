@@ -103,7 +103,7 @@
 119,Package\Merge and filter\Alter name pref[Active],Package\Merge and filter\Union suppliers[Active],,Active,Active,18,28,1,119,aliceblue
 120,Package\Merge and filter\Alter name pref[Address],Package\Merge and filter\Union suppliers[Address],,Address,Address,18,28,1,120,aliceblue
 121,Package\Merge and filter\Alter name pref[City],Package\Merge and filter\Union suppliers[City],,City,City,18,28,1,121,aliceblue
-122,Package\Merge and filter\Alter name pref[CompanyName],Package\Merge and filter\Union suppliers[CompanyName],"""PREF_"" + CompanyName",CompanyName,CompanyName,18,28,1,122,orangered
+122,Package\Merge and filter\Alter name pref[CompanyName],Package\Merge and filter\Union suppliers[CompanyName],"""PREF_"" + CompanyName",CompanyName,CompanyName,18,28,1,122,#ffb480
 123,Package\Merge and filter\Alter name pref[ContactName],Package\Merge and filter\Union suppliers[ContactName],,ContactName,ContactName,18,28,1,123,aliceblue
 124,Package\Merge and filter\Alter name pref[ContactTitle],Package\Merge and filter\Union suppliers[ContactTitle],,ContactTitle,ContactTitle,18,28,1,124,aliceblue
 125,Package\Merge and filter\Alter name pref[Country],Package\Merge and filter\Union suppliers[Country],,Country,Country,18,28,1,125,aliceblue
