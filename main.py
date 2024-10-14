@@ -65,8 +65,8 @@ def run_ssis_parser(folder:str):
     nodes = node_lin_pars(flow) # merge nodes
 
     # generate .docx report
-    report_analysis("output-data/reports/tables",'output-data/lineages/', 'output-data/nodes.csv', "Package@Merge and filter", "output-data/nodes/", file_name)
-    main_report_generation("output-data/reports/tables", "output-data/reports/MA_Rationalization_Model_Results.docx")
+    #report_analysis("output-data/reports/tables",'output-data/lineages/', 'output-data/nodes.csv', "Package@Merge and filter", "output-data/nodes/", file_name)
+    #main_report_generation("output-data/reports/tables", "output-data/reports/MA_Rationalization_Model_Results.docx")
 
     main('output-data/lineages/', 'output-data/nodes.csv', 'output-data/nodes/', 'output-data/lineages/Delete_error/')     # run sankeyapp dashboard locally
 
@@ -74,10 +74,3 @@ def run_ssis_parser(folder:str):
 
 if __name__ == "__main__":
     run_ssis_parser("data/Demo_rabo/Demo_rabo/")
-    #run_ssis_parser("data/examples/")
-
-    
-# insert into parser
-# columns in control flow lineages between []
-# reset folders function
-# everything in memory (apart from sankey and report)
