@@ -30,7 +30,7 @@ Ensure you have **Python > 3.10** installed. You will also need the following Py
 - `xmltodict` (for XML parsing of DTSX files)
 - `python-docx` (for report generation)
 - `Pandas`
-- `Sqlglot` (https://github.com/KaiserM11/sqlglot_ma_Transformations
+- `Sqlglot` (https://github.com/KaiserM11/sqlglot_ma_Transformations)
 
 
 ## Usage
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 3. Access the main.py file, input the path to your .dtsx file, and run the python script
 
-4. Access the dasboard through
+4. Access the dashboard through
 
 ```bash
 http://127.0.0.1:5000
