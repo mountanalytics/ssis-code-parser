@@ -179,6 +179,11 @@
             "Column_input": "dbo.Suppliers_Extract[PostalCode]",
             "Column_ext": "Package\\Merge and filter\\Load supplier.Outputs[ODBC Source Output].Columns[PostalCode]",
             "Column_name": "PostalCode"
+        },
+        {
+            "Column_input": "dbo.Suppliers_Extract[ValidFromNum]",
+            "Column_ext": "Package\\Merge and filter\\Load supplier.Outputs[ODBC Source Output].Columns[ValidFromNum]",
+            "Column_name": "ValidFromNum"
         }
     ],
     "Package\\Merge and filter\\Match with products": {

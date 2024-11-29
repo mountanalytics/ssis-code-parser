@@ -54,7 +54,7 @@
     },
     "Package\\Truncate error table": {
         "Description": "Execute SQL Task",
-        "SQL_state": "Truncate table [dbo].[Error_lines]",
+        "SQL_state": "Truncate table [dbo].[Error_lines]\n\nTruncate table [dbo].[Orginal_territory]\n\nTruncate table [dbo].[Pivot_territory]",
         "Variables": null
     },
     "Package\\Merge and filter": {
@@ -90,5 +90,10 @@
                 ]
             ]
         ]
+    },
+    "Package\\Region merge": {
+        "Description": "Data Flow Task",
+        "Index": 5,
+        "Block_name": "Package@Region merge"
     }
 }

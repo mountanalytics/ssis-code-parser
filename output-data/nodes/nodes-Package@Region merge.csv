@@ -1,0 +1,17 @@
+LABEL_NODE,ID,FUNCTION,JOIN_ARG,SPLIT_ARG,NAME_NODE,FILTER,COLOR
+User::Cat_id,0,Variable,,,User::Cat_id,,#cdd408
+User::CurrentDateTime,1,Variable,,,User::CurrentDateTime,,#cdd408
+User::Errors_lookup,2,Variable,,,User::Errors_lookup,,#cdd408
+User::res_set,3,Variable,,,User::res_set,,#cdd408
+User::Rows_suppliers,4,Variable,,,User::Rows_suppliers,,#cdd408
+User::Ship_country,5,Variable,,,User::Ship_country,,#cdd408
+User::Sup_id,6,Variable,,,User::Sup_id,,#cdd408
+User::Unit_stock,7,Variable,,,User::Unit_stock,,#cdd408
+Region merge@Orginal_table,8,SSISODBCDst,,,Orginal_table,,#d0d3d3
+dbo.Orginal_territory,9,DataDestinations,,,dbo.Orginal_territory,,#42d6a4
+Region merge@Pivot_table,10,SSISODBCDst,,,Pivot_table,,#d0d3d3
+dbo.Pivot_territory,11,DataDestinations,,,dbo.Pivot_territory,,#42d6a4
+Region merge@Region,12,SSISODBCSrc,,,Region,,#d0d3d3
+dbo.Region_Extract,13,DataSources,,,dbo.Region_Extract,,#42d6a4
+Region merge@Teritory,14,SSISODBCSrc,,,Teritory,,#d0d3d3
+dbo.Territories_Extract,15,DataSources,,,dbo.Territories_Extract,,#42d6a4
