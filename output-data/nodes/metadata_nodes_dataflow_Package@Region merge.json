@@ -1,9 +1,73 @@
 {
+    "Package\\Region merge\\Data Conversion": [
+        {
+            "input_column": "RegionDescription",
+            "input_type": "str",
+            "output_column": "DC_RegionDescription",
+            "output_type": "wstr"
+        }
+    ],
+    "Package\\Region merge\\Data Conversion 1": [
+        {
+            "input_column": "RegionID",
+            "input_type": "wstr",
+            "output_column": "DC_RegionID",
+            "output_type": "i4"
+        },
+        {
+            "input_column": "Active",
+            "input_type": "bool",
+            "output_column": "DC_Active",
+            "output_type": "bool"
+        }
+    ],
+    "Package\\Region merge\\Merge Join": {
+        "join_type": "Inner join",
+        "col_mapping": [
+            [
+                "DC_RegionDescription",
+                "DC_RegionDescriptiona"
+            ],
+            [
+                "TerritoryDescription",
+                "TerritoryDescription"
+            ],
+            [
+                "Country",
+                "Country"
+            ],
+            [
+                "RegionID",
+                "RegionID"
+            ],
+            [
+                "TerritoryID",
+                "TerritoryID"
+            ],
+            [
+                "State",
+                "State"
+            ],
+            [
+                "ValidFrom",
+                "ValidFrom"
+            ],
+            [
+                "ValidTo",
+                "ValidTo"
+            ],
+            [
+                "Active",
+                "Active"
+            ]
+        ]
+    },
+    "Package\\Region merge\\Multicast": "Multicast",
     "Package\\Region merge\\Orginal_table": [
         {
-            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescription]",
+            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescriptiona]",
             "Column_ext": "dbo.Orginal_territory.DC_RegionDescription",
-            "Column_name": "DC_RegionDescription"
+            "Column_name": "DC_RegionDescriptiona"
         },
         {
             "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[TerritoryDescription]",
@@ -80,6 +144,46 @@
             "Column_name": "RegionDescription"
         }
     ],
+    "Package\\Region merge\\Sort region": {
+        "sort_arguments": [
+            {
+                "column": "RegionID",
+                "sorting_order": 1,
+                "sorting_type": "ascending"
+            }
+        ],
+        "output_columns": [
+            "RegionID",
+            "DC_RegionDescription"
+        ],
+        "drop_duplicate": "false"
+    },
+    "Package\\Region merge\\Sort teritory": {
+        "sort_arguments": [
+            {
+                "column": "Country",
+                "sorting_order": 2,
+                "sorting_type": "descending"
+            },
+            {
+                "column": "DC_RegionID",
+                "sorting_order": 1,
+                "sorting_type": "ascending"
+            }
+        ],
+        "output_columns": [
+            "TerritoryDescription",
+            "Country",
+            "RegionID",
+            "TerritoryID",
+            "State",
+            "ValidFrom",
+            "ValidTo",
+            "Active",
+            "DC_RegionID"
+        ],
+        "drop_duplicate": "false"
+    },
     "Package\\Region merge\\Teritory": [
         {
             "Column_input": "dbo.Territories_Extract[TerritoryDescription]",
@@ -121,5 +225,42 @@
             "Column_ext": "Package\\Region merge\\Teritory.Outputs[ODBC Source Output].Columns[Active]",
             "Column_name": "Active"
         }
-    ]
+    ],
+    "Package\\Region merge\\Unpivot": {
+        "pivot_attributes": {
+            "pivot_column": "Name",
+            "pivot_entries": [
+                "DC_RegionDescriptiona",
+                "TerritoryDescription",
+                "Country",
+                "State"
+            ]
+        },
+        "column_mapping": [
+            [
+                "DC_RegionDescriptiona",
+                "Name_place"
+            ],
+            [
+                "TerritoryDescription",
+                "Name_place"
+            ],
+            [
+                "Country",
+                "Name_place"
+            ],
+            [
+                "State",
+                "Name_place"
+            ],
+            [
+                "RegionID",
+                "RegionID"
+            ],
+            [
+                "TerritoryID",
+                "TerritoryID"
+            ]
+        ]
+    }
 }

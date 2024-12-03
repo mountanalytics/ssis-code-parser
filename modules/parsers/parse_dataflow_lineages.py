@@ -88,7 +88,6 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
     """
 
     final_lin = pd.DataFrame()
-
     for ordered_rows in all_paths:
         # Convert the specified columns into a list of lists and extend the final list
         ordered_df = pd.concat(ordered_rows).reset_index(drop=True)
@@ -97,9 +96,10 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         columns_input = []
         columns_output = []
         seen_nodes = []
+        convert_marker= []
         previous_node = None
         exp_created = []
-
+        
         for nodes_pair in sorted_nodes_metadata:
             for i, node in enumerate(nodes_pair):
     
@@ -132,7 +132,7 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         
                     columns_input += columns_in
                     columns_output += columns_out
-    
+
                 # process lookup node
                 if type == 'Microsoft.Lookup':
     
@@ -220,7 +220,52 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
     
                     columns_input +=columns_in
                     columns_output +=columns_out
+
+                if type == "Microsoft.DataConvert":
+                    
+                    columns_in=[previous_node + '[' + column+']' for column in columns]
+                    columns_out=[node +'[' +column+']' for column in columns]
+                    for cols in dict_blocks[node]:
+                        columns.append(cols["output_column"])
+                        arg = f'col: {cols["input_column"]}, from: {cols["input_type"]}, to: {cols["output_type"]}'
+                        convert_marker.append({"col_name" :node + '['+cols["output_column"]+']', "arg" : arg})
+                    columns_input +=columns_in
+                    columns_output +=columns_out
+
+                if type == "Microsoft.Sort":
+                    columns_in=[previous_node + '[' + column+']' for column in columns]
+                    columns_out=[node +'[' +column+']' for column in columns]
     
+                    columns_input +=columns_in
+                    columns_output +=columns_out
+
+                if type == "Microsoft.MergeJoin":
+                    columns_in = [previous_node + '[' + column+']' for column in columns]
+                    columns_out = [node +'[' +column+']' for column in columns]
+                    columns_input += columns_in
+                    columns_output += columns_out
+                    
+                    columns = []
+                    for col_map in dict_blocks[node]["col_mapping"]:
+                        columns.append(col_map[1])
+
+                if type == "Microsoft.Multicast":
+                    columns_in=[previous_node + '[' + column+']' for column in columns]
+                    columns_out=[node +'[' +column+']' for column in columns]
+    
+                    columns_input +=columns_in
+                    columns_output +=columns_out
+
+                if type == "Microsoft.UnPivot":
+                    columns_in=[previous_node + '[' + column+']' for column in columns]
+                    columns_out = [node +'[' +column+']' for column in columns]
+                    columns = []
+                    for cols in dict_blocks[node]:
+                        columns.append(cols[1])
+                    columns_input +=columns_in
+                    columns_output +=columns_out
+
+
         # create lineages dataframe and save csv
         lineages = {'column_in': columns_input, 'column_out': columns_output}
     
@@ -237,7 +282,7 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         lineages['LINK_VALUE'] = 1
         lineages['ROW_ID'] = lineages.index
         lineages.fillna("", inplace=True)
-    
+        
         # move transformation to successive node
         name_node = None
 
@@ -258,6 +303,13 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         non_null_indices = transformation_in[0].notna().index[transformation_in[0].notna()]
         lineages.loc[non_null_indices, 'COLOR'] = '#ff6961'
         
+
+        for cols in convert_marker:
+            matching_indices = lineages.index[lineages["column_in"] == cols["col_name"]].tolist()
+            lineages.loc[matching_indices, "TRANSFORMATION"] = cols["arg"]
+            lineages.loc[matching_indices, "COLOR"] = "#ffb480"
+
+
         # merge source node id
         lineages = pd.merge(lineages, nodes_load[['ID', 'LABEL_NODE']], left_on='SOURCE_NODE', right_on = 'LABEL_NODE', how='left')
         lineages['SOURCE_NODE'] = lineages['ID']
@@ -271,7 +323,7 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         # load nodes data
         final_lin = pd.concat([final_lin,lineages], ignore_index=True)
 
-    df_no_duplicates = final_lin.drop_duplicates()
+    df_no_duplicates = final_lin.drop_duplicates(subset=["column_in","column_out", "TRANSFORMATION", "SOURCE_FIELD", "TARGET_FIELD", "SOURCE_NODE", "TARGET_NODE"])
     df_no_duplicates.to_csv(f'output-data/lineages/lineage-{df_name}.csv')
     return df_no_duplicates
 

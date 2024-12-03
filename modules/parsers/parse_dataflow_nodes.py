@@ -166,7 +166,109 @@ def union_all(path_flow: list[dict], comp: dict) -> pd.DataFrame:
                 
                 mapping = pd.concat([mapping, pd.DataFrame({"Column_input": [prefix+"["+inp_col+"]"], "Column_name": [out_col]})], ignore_index=True)
     return mapping
-   
+
+
+def data_conversion_parser(comp: dict) -> list[dict]:
+    conversions = []
+    if type(comp["inputs"]["input"]["inputColumns"]["inputColumn"]) == list:
+        for i in range(len(comp["outputs"]["output"])):
+            input_col = comp["inputs"]["input"]["inputColumns"]["inputColumn"][i]["cachedName"]
+            input_type = comp["inputs"]["input"]["inputColumns"]["inputColumn"][i]["cachedDataType"]
+            out_col = comp["outputs"]["output"][0]["outputColumns"]["outputColumn"][i]["name"]
+            out_type = comp["outputs"]["output"][0]["outputColumns"]["outputColumn"][i]["dataType"]
+            conversions.append({
+                            "input_column": input_col,
+                            "input_type": input_type,
+                            "output_column": out_col,
+                            "output_type": out_type
+                            })
+    else:
+        input_col = comp["inputs"]["input"]["inputColumns"]["inputColumn"]["cachedName"]
+        input_type = comp["inputs"]["input"]["inputColumns"]["inputColumn"]["cachedDataType"]
+        out_col = comp["outputs"]["output"][0]["outputColumns"]["outputColumn"]["name"]
+        out_type = comp["outputs"]["output"][0]["outputColumns"]["outputColumn"]["dataType"]
+        conversions.append({
+                        "input_column": input_col,
+                        "input_type": input_type,
+                        "output_column": out_col,
+                        "output_type": out_type
+                        })
+    return conversions
+
+def merge_join_parser(comp: dict) -> dict:
+    mapping = []
+    match int(comp["properties"]["property"][0]["#text"]):
+        case 0:
+            join_type = "Full outer join"
+        case 1:
+            join_type = "Left outer join"
+        case 2:
+            join_type = "Inner join"
+    for cols in comp["outputs"]["output"]["outputColumns"]["outputColumn"]:
+        output_col = cols["name"]
+        match = re.search(r'Columns\[(.*?)\]', cols["properties"]["property"]["#text"])
+        if match:
+            input_col = match.group(1)
+        mapping.append((input_col,output_col))
+    dict_join = {
+                "join_type": join_type,
+                "col_mapping": mapping}
+    return dict_join
+
+def sort_parser(comp: dict) -> dict:
+    output_cols = []
+    delete_dup_rows = comp["properties"]["property"][0]["#text"]
+    for cols in comp["outputs"]["output"]["outputColumns"]["outputColumn"]:
+        output_cols.append(cols["name"])
+    sort_list = []
+    for sort_col in comp["inputs"]["input"]["inputColumns"]["inputColumn"]:
+        if int(sort_col["properties"]["property"][1]["#text"]) != 0:
+            sort_order = abs(int(sort_col["properties"]["property"][1]["#text"]))
+            match int(sort_col["properties"]["property"][1]["#text"]):
+                case value if value > 0:
+                    sort_type = "ascending"
+                case value if value < 0:
+                    sort_type = "descending"
+            sort_list.append({
+                        "column": sort_col["cachedName"],
+                        "sorting_order": sort_order,
+                        "sorting_type" : sort_type})         
+    dict_sort = {
+                "sort_arguments": sort_list,
+                "output_columns": output_cols,
+                "drop_duplicate": delete_dup_rows}
+    
+    return dict_sort
+
+def unpivot_parser(comp: dict) -> dict:
+    mapping = []
+    pivot_cols = []
+    for cols in comp["inputs"]["input"]["inputColumns"]["inputColumn"]:
+        input_col = cols["cachedName"]
+        match = re.search(r'Columns\[(.*?)\]', cols["properties"]["property"][0]["#text"])
+        if match:
+            output_col = match.group(1)
+        mapping.append((input_col,output_col))
+        if input_col != output_col:
+            pivot_cols.append(input_col)
+    for cols in comp["outputs"]["output"]["outputColumns"]["outputColumn"]:
+        if cols["properties"]["property"]["#text"] == "true":
+            pivot_col = cols["name"]
+            break
+    dict_pivot = {"pivot_attributes": {"pivot_column": pivot_col,
+                                       "pivot_entries": pivot_cols},  
+                  "column_mapping": mapping
+                  }
+    return dict_pivot
+
+
+
+
+
+
+
+
+
 def append_ext_tables(ext_table: str, df_nodes: pd.DataFrame, func = 'DataSources') -> pd.DataFrame:
     ext_table = ext_table.replace('"','')
     input_df = pd.DataFrame({"LABEL_NODE": [ext_table], 
@@ -176,6 +278,8 @@ def append_ext_tables(ext_table: str, df_nodes: pd.DataFrame, func = 'DataSource
                              'SPLIT_ARG': [np.nan],
                              'NAME_NODE': [ext_table],
                              'FILTER': [np.nan],
+                             'SORT': [np.nan],
+                             'PIVOT': [np.nan],
                              'COLOR': "#42d6a4"
                              })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
@@ -190,6 +294,8 @@ def append_normal_node(refid: str, func: str, df_nodes: pd.DataFrame) -> pd.Data
                                 'SPLIT_ARG': [np.nan],
                                 'NAME_NODE': [split_name[2]],
                                 'FILTER': [np.nan],
+                                'SORT': [np.nan],
+                                'PIVOT': [np.nan],
                                 'COLOR': "#9d94ff" if func == "UnionAll"  else "#d0d3d3"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
@@ -205,6 +311,8 @@ def append_join_node(refid: str, func: str, join_argu: str, df_nodes: pd.DataFra
                                 'SPLIT_ARG': [np.nan],
                                 'NAME_NODE': [split_name[2]],
                                 'FILTER': [np.nan],
+                                'SORT': [np.nan],
+                                'PIVOT': [np.nan],
                                 'COLOR': "#9d94ff"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
@@ -220,6 +328,8 @@ def append_split_node(refid: str, func: str, split_argu: str, df_nodes: pd.DataF
                                 'SPLIT_ARG': [split_argu],
                                 'NAME_NODE': [split_name[2]],
                                 'FILTER': [np.nan],
+                                'SORT': [np.nan],
+                                'PIVOT': [np.nan],
                                 'COLOR': "#9d94ff"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
@@ -242,10 +352,45 @@ def append_var_node(var_df: pd.DataFrame, df_nodes: pd.DataFrame) -> pd.DataFram
                                  'SPLIT_ARG': [np.nan],
                                  'NAME_NODE': [var],
                                  'FILTER': [np.nan],
+                                 'SORT': [np.nan],
+                                 'PIVOT': [np.nan],
                                  'COLOR': "#cdd408"
                                  })
         df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
     return df_nodes
+
+def append_sort_node(refid: str, func: str, sort_argu: str, df_nodes: pd.DataFrame) -> pd.DataFrame:
+    split_name = refid.split("\\")
+    input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
+                                'ID': [np.nan],
+                                'FUNCTION': [func],
+                                'JOIN_ARG': [np.nan],
+                                'SPLIT_ARG': [np.nan],
+                                'NAME_NODE': [split_name[2]],
+                                'FILTER': [np.nan],
+                                'SORT': sort_argu,
+                                'PIVOT': [np.nan],
+                                'COLOR': "#4fbdb9"
+                                })
+    df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
+    return df_nodes
+
+def append_pivot_node(refid: str, func: str, pivot_argu: str, df_nodes: pd.DataFrame) -> pd.DataFrame:
+    split_name = refid.split("\\")
+    input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
+                                'ID': [np.nan],
+                                'FUNCTION': [func],
+                                'JOIN_ARG': [np.nan],
+                                'SPLIT_ARG': [np.nan],
+                                'NAME_NODE': [split_name[2]],
+                                'FILTER': [np.nan],
+                                'SORT': [np.nan],
+                                'PIVOT': pivot_argu,
+                                'COLOR': "#8b6fae"
+                                })
+    df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
+    return df_nodes
+
 
 
 def lineage_path_flow(path_flow: list, components: list, df_name: str):
@@ -317,7 +462,26 @@ def main_parser(components: list, df_nodes: pd.DataFrame, path_flow: list, df_na
         # parse excel source destinations
         if comp["componentClassID"] == "Microsoft.ExcelDestination":
             dict_blocks[comp["refId"]] = excel_dest(comp) 
-            
+        if comp["componentClassID"] == "Microsoft.DataConvert":
+            dict_blocks[comp["refId"]] = data_conversion_parser(comp)
+            df_nodes = append_normal_node(comp["refId"], "DataConvert", df_nodes)
+        elif comp["componentClassID"] == "Microsoft.MergeJoin":
+            dict_blocks[comp["refId"]] = merge_join_parser(comp)
+            df_nodes = append_join_node(comp["refId"], "Lookup", dict_blocks[comp["refId"]]["join_type"], df_nodes)
+        elif comp["componentClassID"] == "Microsoft.Sort":
+            dict_blocks[comp["refId"]] = sort_parser(comp)
+            sort_argu = ', '.join(
+            f"{row['sorting_order']}. {row['column']} {'ASC' if row['sorting_type'] == 'ascending' else 'DESC'}"
+            for _, row in pd.DataFrame(dict_blocks[comp["refId"]]["sort_arguments"]).sort_values(by='sorting_order').iterrows()
+            )
+            sort_argu += ", Drop duplicate rows: " + dict_blocks[comp["refId"]]["drop_duplicate"] 
+            df_nodes = append_sort_node(comp["refId"], "Sort", sort_argu, df_nodes)
+        elif comp["componentClassID"] == "Microsoft.UnPivot":
+            dict_blocks[comp["refId"]] = unpivot_parser(comp)
+            df_nodes = append_pivot_node(comp["refId"], "Unpivot",f'Pivot column: {dict_blocks[comp["refId"]]["pivot_attributes"]["pivot_column"]}', df_nodes)
+        elif comp["componentClassID"] == "Microsoft.Multicast":
+            dict_blocks[comp["refId"]] = "Multicast"
+            df_nodes = append_normal_node(comp["refId"], "Multicast", df_nodes)
     df_nodes["ID"] = df_nodes.index        
     df_nodes.to_csv(f'output-data/nodes/nodes-{df_name}.csv',index=False)
     return dict_blocks, df_nodes
@@ -339,10 +503,10 @@ def convert_dataframes(obj: dict) -> dict:
     
 
 def parser_dataflow_nodes(open_dtsx: dict, index: int, df_name: str):
-    df_nodes = pd.DataFrame(columns=['LABEL_NODE', 'ID', 'FUNCTION', 'JOIN_ARG', 'SPLIT_ARG', 'NAME_NODE', 'FILTER', 'COLOR'])
+    df_nodes = pd.DataFrame(columns=['LABEL_NODE', 'ID', 'FUNCTION', 'JOIN_ARG', 'SPLIT_ARG', 'NAME_NODE', 'FILTER', 'SORT', 'PIVOT', 'COLOR'])
     df_nodes = append_var_node(vars_df(open_dtsx), df_nodes)
 
-    #### THE INDEX IS HARDCODED, MAKE IT SMARTER
+
     components = open_dtsx["DTS:Executables"]["DTS:Executable"][index]["DTS:ObjectData"]["pipeline"]["components"]["component"]
 
     path_flow = open_dtsx["DTS:Executables"]["DTS:Executable"][index]["DTS:ObjectData"]["pipeline"]["paths"]["path"]
