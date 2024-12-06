@@ -1,4 +1,4 @@
-column_in,column_out,TRANSFORMATION,SOURCE_FIELD,TARGET_FIELD,SOURCE_NODE,TARGET_NODE,LINK_VALUE,ROW_ID,COLOR
+SOURCE_COLUMNS,TARGET_COLUMN,TRANSFORMATION,SOURCE_FIELD,TARGET_FIELD,SOURCE_NODE,TARGET_NODE,LINK_VALUE,ROW_ID,COLOR
 dbo.Suppliers_Extract[ValidFrom],Package\Merge and filter\Load supplier[ValidFrom],,ValidFrom,ValidFrom,24,23,1,0,aliceblue
 dbo.Suppliers_Extract[ValidTo],Package\Merge and filter\Load supplier[ValidTo],,ValidTo,ValidTo,24,23,1,1,aliceblue
 dbo.Suppliers_Extract[Active],Package\Merge and filter\Load supplier[Active],,Active,Active,24,23,1,2,aliceblue

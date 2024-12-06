@@ -1,4 +1,4 @@
-column_in,column_out,TRANSFORMATION,SOURCE_FIELD,TARGET_FIELD,SOURCE_NODE,TARGET_NODE,LINK_VALUE,ROW_ID,COLOR
+SOURCE_COLUMNS,TARGET_COLUMN,TRANSFORMATION,SOURCE_FIELD,TARGET_FIELD,SOURCE_NODE,TARGET_NODE,LINK_VALUE,ROW_ID,COLOR
 dbo.Territories_Extract[TerritoryDescription],Package\Region merge\Teritory[TerritoryDescription],,TerritoryDescription,TerritoryDescription,43,42,1,0,aliceblue
 dbo.Territories_Extract[Country],Package\Region merge\Teritory[Country],,Country,Country,43,42,1,1,aliceblue
 dbo.Territories_Extract[RegionID],Package\Region merge\Teritory[RegionID],,RegionID,RegionID,43,42,1,2,aliceblue

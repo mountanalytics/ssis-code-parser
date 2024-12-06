@@ -267,18 +267,18 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
 
 
         # create lineages dataframe and save csv
-        lineages = {'column_in': columns_input, 'column_out': columns_output}
+        lineages = {'SOURCE_COLUMNS': columns_input, 'TARGET_COLUMN': columns_output}
     
         lineages = pd.DataFrame(lineages)
         exp_dict = {exp.split(" {")[0]: exp for exp in exp_created}
-        lineages['column_in'] = lineages['column_in'].replace(exp_dict)
-        transformation_in = lineages['column_in'].str.extract(r'\{([^}]*)\}')
+        lineages['SOURCE_COLUMNS'] = lineages['SOURCE_COLUMNS'].replace(exp_dict)
+        transformation_in = lineages['SOURCE_COLUMNS'].str.extract(r'\{([^}]*)\}')
 
-        lineages['TRANSFORMATION'] = lineages['column_out'].str.extract(r'\{([^}]*)\}')
-        lineages['SOURCE_FIELD'] = lineages['column_in'].str.extract(r'\[([^\]]*)\]')
-        lineages['TARGET_FIELD'] = lineages['column_out'].str.extract(r'\[([^\]]*)\]')
-        lineages['SOURCE_NODE'] =lineages['column_in'].apply(lambda x: "@".join(x.split('[')[0].split('\\')[1:]) if "\\" in x else x.split('[')[0])#.str.extract(r'^(.*?)\s*\[.*\]$')
-        lineages['TARGET_NODE'] =lineages['column_out'].apply(lambda x: "@".join(x.split('[')[0].split('\\')[1:]) if "\\" in x else x.split('[')[0])
+        lineages['TRANSFORMATION'] = lineages['TARGET_COLUMN'].str.extract(r'\{([^}]*)\}')
+        lineages['SOURCE_FIELD'] = lineages['SOURCE_COLUMNS'].str.extract(r'\[([^\]]*)\]')
+        lineages['TARGET_FIELD'] = lineages['TARGET_COLUMN'].str.extract(r'\[([^\]]*)\]')
+        lineages['SOURCE_NODE'] =lineages['SOURCE_COLUMNS'].apply(lambda x: "@".join(x.split('[')[0].split('\\')[1:]) if "\\" in x else x.split('[')[0])#.str.extract(r'^(.*?)\s*\[.*\]$')
+        lineages['TARGET_NODE'] =lineages['TARGET_COLUMN'].apply(lambda x: "@".join(x.split('[')[0].split('\\')[1:]) if "\\" in x else x.split('[')[0])
         lineages['LINK_VALUE'] = 1
         lineages['ROW_ID'] = lineages.index
         lineages.fillna("", inplace=True)
@@ -289,11 +289,11 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         for i in range(len(lineages) - 1):
             if lineages.loc[i, 'TRANSFORMATION']:   
                 transformation = lineages.loc[i, 'TRANSFORMATION']
-                name_node = lineages.loc[i, 'column_out']
+                name_node = lineages.loc[i, 'TARGET_COLUMN']
                 lineages.loc[i, 'TRANSFORMATION'] = ""
                 continue
             if name_node:
-                if lineages.loc[i, 'column_in'] == name_node.split(" {")[0]:
+                if lineages.loc[i, 'SOURCE_COLUMNS'] == name_node.split(" {")[0]:
                     lineages.loc[i, 'TRANSFORMATION'] = transformation
 
         lineages['TRANSFORMATION'] = transformation_in[0].combine_first(lineages['TRANSFORMATION'])
@@ -305,7 +305,7 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         
 
         for cols in convert_marker:
-            matching_indices = lineages.index[lineages["column_in"] == cols["col_name"]].tolist()
+            matching_indices = lineages.index[lineages["SOURCE_COLUMNS"] == cols["col_name"]].tolist()
             lineages.loc[matching_indices, "TRANSFORMATION"] = cols["arg"]
             lineages.loc[matching_indices, "COLOR"] = "#ffb480"
 
@@ -323,7 +323,7 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         # load nodes data
         final_lin = pd.concat([final_lin,lineages], ignore_index=True)
 
-    df_no_duplicates = final_lin.drop_duplicates(subset=["column_in","column_out", "TRANSFORMATION", "SOURCE_FIELD", "TARGET_FIELD", "SOURCE_NODE", "TARGET_NODE"])
+    df_no_duplicates = final_lin.drop_duplicates(subset=["SOURCE_COLUMNS","TARGET_COLUMN", "TRANSFORMATION", "SOURCE_FIELD", "TARGET_FIELD", "SOURCE_NODE", "TARGET_NODE"])
     df_no_duplicates.to_csv(f'output-data/lineages/lineage-{df_name}.csv')
     return df_no_duplicates
 

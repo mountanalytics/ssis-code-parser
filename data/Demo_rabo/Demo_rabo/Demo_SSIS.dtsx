@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="151"
-  DTS:VersionGUID="{FD700343-6383-4569-9E3C-93C8AE464F42}">
+  DTS:VersionBuild="152"
+  DTS:VersionGUID="{F4671255-9E43-47EB-8BF4-CDF113E45402}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAHAsBO6eCrVl7zJVgnwzSG1dn72XdwMxMqqZuNod8I6QAAAAAOgAAAAAIAACAAAAANtnfG2QKDwIbfeTy3oX8usoChJks1H40OjVdGp48JDjAAAAAgJ425bK+5LhOHaL54psyLXl6zkE1Z5L2YPmc4P3N9m0av8ojc8jl6WZQzWHmAoIdAAAAA5MA8hwAxnTgjUyl+BzsAs+c3GV6aMVrEa8ghQk4B6ogXw/Lv+3eYHpRLXpSkEFx4GweOiBQUb1UXjDWrEFs5hw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB9MY3uUou/gDZtvDNb6Kg9gg7KvkvW+CnZ2oY6lnKmagAAAAAOgAAAAAIAACAAAAAtNr7kIkc4JPo6ukhMVAtZ3FAlqaoUuv9FTV+2nwOQajAAAABwFR3D+CZ0H98yl9jyG1+dGjIfGfwJ2WUqkyM7Un/U8UdfhXG5SVYZdGmhXbYE4F9AAAAAT+oQflLtdr3wzU9cgh4ss9oViI8AkFFrXq2FjOrBDhK0tOyjXTfOZojNgx9ad9hYcp/p9IA/kisKyD/uvsI3cg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -58,7 +58,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABHzp4SdMTs7GFxwgXSnI78xS4Iy9KmEb8c3yFpVsuklQAAAAAOgAAAAAIAACAAAACN4NJuVkAI8k3c8+iPYeVwV+Po3dV03dafseI7qqfK0jAAAABd7GcK5ndQFNhzgpa9oyUKmS6vR9zPB6lxPTWfA1Wkokx+HTXYkF/tczRFPngSX3dAAAAApK/7D8gHutummDoWWEPSj98cxLzv3LmpghVypnum2MuXZw6AjUgUvHqhdL/UXh3dvRcAsRFsqygjIsFoAQALBA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABfoSw6GuXUkT/zXGea/mH7YZ5LBLg5fsPhiJ2m26fdVwAAAAAOgAAAAAIAACAAAABdXOOrtP4WlAG94oGUfDF6Q/h2XSDVRAuhiMrQzJ+0uzAAAABErRXi4aMIWsUuUS3vwU5/e1qe/VQDYBxauMEJdFNNd6TX1MfrjK137t8cY1d3rqlAAAAA/XFzkXCfhWFrbsFZKcNNdqqf2Zf/2PGkcAexqJCKE6GbeaA/pigOGwQ+a3U9MIVg04qmc8lUqETHMKJlAMPN8g</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -75,7 +75,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACAn1FfzNP2YNbhIYYTi1mmp8vRyq5THiigwf9E/PHtAAAAAAAOgAAAAAIAACAAAAC+Aic7eqxk4t/HjfP4sHqYbAtnlyLC2EKKyDpxQ3xGVTAAAACLRWEjZE+AiN964Kj6kCxP4GGum/G1HWiyM0wpch5m+AJsrd/oFXu+mHyWmcaYis9AAAAAHziXyISO/uL/SiJruZe9H7gtN8yylitSks3dOWKqavZ2ja/CenbWYpPmTa9iJAbDv02ARSlQHvdSfXOKTjKv8Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA7NhKO6ttkS3sGPtRLQStSUpUKAoPDzrqb5iYWPvGTrgAAAAAOgAAAAAIAACAAAADeM3LqlOH/1yElAHAiGQeJbrQooMS/f+rL91Ih20IV3jAAAAABLEKTc1wGYZm/3fx/LGBasAoNIpaC6j4SpkPsLbMKwSbLw26SR659waYpxk79MeVAAAAAtB/pH3hZz+aSu33D91iSqESHUMszt4Mr0wSM1ptEUnWb6HTZ/GTtY31OTOFDHa07XjDyetoFbpb5fCtldbAriw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -90,7 +90,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAgJELlcGk9SlWWM3hSRIeylPRx0FFBoWFrJJsLrSK8cAAAAAAOgAAAAAIAACAAAAC81IABBGgBJiW2lvf55P7/tqrZ+dfBSjTI2HANEoezOjAAAAD1foojY6tRIOixtkOOVEJCF1U1O9kfY1lgXKAKQ+0jdF9hA+FGN+oDCEyjPGK2PAxAAAAAjVQZd+nrFtIKqtv7bp2CeBGNyc2yFRrNCHKLjbW6fQDoxpFsrlEvMiVyhpJTcz1jVYnBs0KAyRFaPeYYlaXaOQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABombSvgWkOHAPv35Y/tjBg/qX4ubnWwUDATToc5LR/rgAAAAAOgAAAAAIAACAAAADrU14gJtoj8s6PxuVajXb0iUpvJZ//8ALxKn9cPuy8FjAAAADbwGPhK52vLnHjXcKFgJ4PFfIuRdSTJYEjfh2ssTr4vfEhmKxrLDmIOyo1FwRRMFdAAAAApi1Y+Z2gpzzkBTUFaWfDxXVA9eWfp2Rn5yuRmGDQFf7365yfChWhb06UViZz4EuhVqtx+lTw2t3EFLNw8GYHPQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -105,7 +105,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABanaR6mbq1jHIIZe2pIazx0cGzKJuUmZ6DfGpARwIR+AAAAAAOgAAAAAIAACAAAAB0bhJUG6mOPemIEnZdqF9wM3hsOk2KuCKw1S95vjGDgTAAAAAkKjxb+qEBGbrHBBG+EbX7xglPgwB7CmguOekhRG5mEMQEa10IpADxDxZOKMolcCZAAAAADae5iT6unkJ6kvOtpiP/hO+T4lspcExNwBj5JShXVJlcauvPgVgRxyc3C3TQpKHSGuj6wK7GyPNU8GjJ+79urQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABjRlMKSpqk5vZg0FvBP+u6HC6FH+NR4enK1V4Zt+oluwAAAAAOgAAAAAIAACAAAADKuvW7EE2twzG/m79WZEyagTcONQafi0HMo5cZYp9H1jAAAADD9tv+JLaSJ6ijSKXX/Xtun/JVaz2DAO4fcaYLRzXQqTV6wperxDAZV5mVQu43ZeRAAAAAk75KFvR04cNn5p7z4B6F/C3QEqDa/TDivSiGsGnQB9U49GpzR1Js2kDZ0u8ACrTe3+JlKHGNJCoiqEQJ6I8S9A</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -4534,46 +4534,46 @@ where [refTable].[SupplierID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Drop insert table"
           TopLeft="265.166651686861,792.99999764959" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\insert into logger"
           TopLeft="273.499984564881,706.133331531352" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Loop over variable table\Insert into order_write"
           TopLeft="48,22" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="275.2,119.2"
-          Size="275.2,161.6"
+          PanelSize="275,119"
+          Size="275,162"
           Id="Package\Loop over variable table"
           TopLeft="212,248" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Merge and filter"
           TopLeft="277.499985384445,626.133332254555" />
         <NodeLayout
-          Size="176.8,41.6"
+          Size="177,42"
           Id="Package\Overwrite insert table"
           TopLeft="257.166666985386,877.599998806715" />
         <NodeLayout
-          Size="144,41.6"
+          Size="144,42"
           Id="Package\Region merge"
           TopLeft="264.166652233237,972.266663605107" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Select into variable"
           TopLeft="267,154" />
         <NodeLayout
-          Size="126.4,41.6"
+          Size="126,42"
           Id="Package\Set region"
           TopLeft="287.49999931703,459.733333592481" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Truncate error table"
           TopLeft="269.333318125871,542.333332670397" />
         <EdgeLayout
@@ -5147,47 +5147,63 @@ where [refTable].[SupplierID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="113.6,41.6"
+          Size="130,42"
+          Id="Package\Region merge\Pivot_table"
+          TopLeft="434.999976232649,669.599996890227" />
+        <NodeLayout
+          Size="114,42"
+          Id="Package\Region merge\Unpivot"
+          TopLeft="467.499974456927,560.133330717749" />
+        <NodeLayout
+          Size="114,42"
           Id="Package\Region merge\Teritory"
           TopLeft="664.999963666003,27.7333331404792" />
         <NodeLayout
-          Size="111.2,41.6"
+          Size="119,42"
+          Id="Package\Region merge\Multicast"
+          TopLeft="602.499967080853,439.799997848471" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Region merge\Sort region"
+          TopLeft="469.999974320333,239.199998336633" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Region merge\Merge Join"
+          TopLeft="590.833301051625,350.13333089855" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Region merge\Data Conversion 1"
+          TopLeft="651.666631061172,117.466665955517" />
+        <NodeLayout
+          Size="111,42"
           Id="Package\Region merge\Region"
           TopLeft="464.166641305719,57.1999996022383" />
         <NodeLayout
-          Size="132,41.6"
+          Size="132,42"
           Id="Package\Region merge\Sort teritory"
           TopLeft="664.166630378201,194.133331983354" />
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Region merge\Merge Join"
-          TopLeft="590.833301051625,350.13333089855" />
+          Size="156,42"
+          Id="Package\Region merge\Data Conversion"
+          TopLeft="436.666642808253,164.666665521595" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Region merge\Orginal_table"
+          TopLeft="768.333291353453,586.533331585593" />
         <EdgeLayout
-          Id="Package\Region merge.Paths[Sort Output]"
-          TopLeft="730.166630378201,235.733331983354">
+          Id="Package\Region merge.Paths[ODBC Source Output1]"
+          TopLeft="517.216642056986,98.7999996022383">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-54.26666265991,114.399998915195"
+              EndConnector="0,65.8666659193569"
               Start="0,0"
-              End="-54.26666265991,106.899998915195">
+              End="0,58.3666659193569">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.8029261863231" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,63.8029261863231"
-                    Point2="0,67.8029261863231"
-                    Point3="-4,67.8029261863231" />
-                  <mssgle:LineSegment
-                    End="-50.26666265991,67.8029261863231" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-50.26666265991,67.8029261863231"
-                    Point2="-54.26666265991,67.8029261863231"
-                    Point3="-54.26666265991,71.8029261863231" />
-                  <mssgle:LineSegment
-                    End="-54.26666265991,106.899998915195" />
+                    End="0,58.3666659193569" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5196,48 +5212,6 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Region merge\Sort region"
-          TopLeft="469.999974320333,239.199998336633" />
-        <EdgeLayout
-          Id="Package\Region merge.Paths[Sort Output1]"
-          TopLeft="534.799974320333,280.799998336633">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100.566660064625,69.3333325619166"
-              Start="0,0"
-              End="100.566660064625,61.8333325619166">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.0926824696238" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.0926824696238"
-                    Point2="0,41.0926824696238"
-                    Point3="4,41.0926824696238" />
-                  <mssgle:LineSegment
-                    End="96.5666600646249,41.0926824696238" />
-                  <mssgle:CubicBezierSegment
-                    Point1="96.5666600646249,41.0926824696238"
-                    Point2="100.566660064625,41.0926824696238"
-                    Point3="100.566660064625,45.0926824696238" />
-                  <mssgle:LineSegment
-                    End="100.566660064625,61.8333325619166" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Region merge\Data Conversion 1"
-          TopLeft="651.666631061172,117.466665955517" />
         <EdgeLayout
           Id="Package\Region merge.Paths[ODBC Source Output]"
           TopLeft="721.799963666003,69.3333331404792">
@@ -5273,109 +5247,31 @@ where [refTable].[SupplierID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Region merge.Paths[Data Conversion Output]"
-          TopLeft="731.916630719687,159.066665955517">
+          Id="Package\Region merge.Paths[Multicast Output 2]"
+          TopLeft="680.633300414186,481.399997848471">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.0666660278373"
+              EndConnector="157.699990939267,105.133333737122"
               Start="0,0"
-              End="0,27.5666660278373">
+              End="157.699990939267,97.6333337371216">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5666660278373" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="113.6,41.6"
-          Id="Package\Region merge\Unpivot"
-          TopLeft="467.499974456927,560.133330717749" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\Region merge\Data Conversion"
-          TopLeft="436.666642808253,164.666665521595" />
-        <EdgeLayout
-          Id="Package\Region merge.Paths[Data Conversion Output1]"
-          TopLeft="514.666642808253,206.266665521595">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.1333315120803,32.9333328150379"
-              Start="0,0"
-              End="20.1333315120803,25.4333328150379">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.466666407519" />
+                    End="0,38.8888301867993" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.466666407519"
-                    Point2="0,16.466666407519"
-                    Point3="4,16.466666407519" />
+                    Point1="0,38.8888301867993"
+                    Point2="0,42.8888301867993"
+                    Point3="4,42.8888301867993" />
                   <mssgle:LineSegment
-                    End="16.1333315120803,16.466666407519" />
+                    End="153.699990939267,42.8888301867993" />
                   <mssgle:CubicBezierSegment
-                    Point1="16.1333315120803,16.466666407519"
-                    Point2="20.1333315120803,16.466666407519"
-                    Point3="20.1333315120803,20.466666407519" />
+                    Point1="153.699990939267,42.8888301867993"
+                    Point2="157.699990939267,42.8888301867993"
+                    Point3="157.699990939267,46.8888301867993" />
                   <mssgle:LineSegment
-                    End="20.1333315120803,25.4333328150379" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Region merge.Paths[ODBC Source Output1]"
-          TopLeft="517.216642056986,98.7999996022383">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65.8666659193569"
-              Start="0,0"
-              End="0,58.3666659193569">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.3666659193569" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="119.2,41.6"
-          Id="Package\Region merge\Multicast"
-          TopLeft="602.499967080853,439.799997848471" />
-        <EdgeLayout
-          Id="Package\Region merge.Paths[Merge Join Output]"
-          TopLeft="658.866634066239,391.73333089855">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48.0666669499212"
-              Start="0,0"
-              End="0,40.5666669499212">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5666669499212" />
+                    End="157.699990939267,97.6333337371216" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5418,10 +5314,84 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Region merge\Pivot_table"
-          TopLeft="434.999976232649,669.599996890227" />
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Merge Join Output]"
+          TopLeft="658.866634066239,391.73333089855">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.0666669499212"
+              Start="0,0"
+              End="0,40.5666669499212">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5666669499212" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Data Conversion Output1]"
+          TopLeft="514.666642808253,206.266665521595">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.1333315120803,32.9333328150379"
+              Start="0,0"
+              End="20.1333315120803,25.4333328150379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.466666407519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.466666407519"
+                    Point2="0,16.466666407519"
+                    Point3="4,16.466666407519" />
+                  <mssgle:LineSegment
+                    End="16.1333315120803,16.466666407519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.1333315120803,16.466666407519"
+                    Point2="20.1333315120803,16.466666407519"
+                    Point3="20.1333315120803,20.466666407519" />
+                  <mssgle:LineSegment
+                    End="20.1333315120803,25.4333328150379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Data Conversion Output]"
+          TopLeft="731.916630719687,159.066665955517">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.0666660278373"
+              Start="0,0"
+              End="0,27.5666660278373">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5666660278373" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Region merge.Paths[Unpivot Output]"
           TopLeft="524.299974456927,601.733330717749">
@@ -5456,36 +5426,66 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\Region merge\Orginal_table"
-          TopLeft="768.333291353453,586.533331585593" />
         <EdgeLayout
-          Id="Package\Region merge.Paths[Multicast Output 2]"
-          TopLeft="680.633300414186,481.399997848471">
+          Id="Package\Region merge.Paths[Sort Output1]"
+          TopLeft="534.799974320333,280.799998336633">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="157.699990939267,105.133333737122"
+              EndConnector="100.566660064625,69.3333325619166"
               Start="0,0"
-              End="157.699990939267,97.6333337371216">
+              End="100.566660064625,61.8333325619166">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.8888301867993" />
+                    End="0,37.0926824696238" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,38.8888301867993"
-                    Point2="0,42.8888301867993"
-                    Point3="4,42.8888301867993" />
+                    Point1="0,37.0926824696238"
+                    Point2="0,41.0926824696238"
+                    Point3="4,41.0926824696238" />
                   <mssgle:LineSegment
-                    End="153.699990939267,42.8888301867993" />
+                    End="96.5666600646249,41.0926824696238" />
                   <mssgle:CubicBezierSegment
-                    Point1="153.699990939267,42.8888301867993"
-                    Point2="157.699990939267,42.8888301867993"
-                    Point3="157.699990939267,46.8888301867993" />
+                    Point1="96.5666600646249,41.0926824696238"
+                    Point2="100.566660064625,41.0926824696238"
+                    Point3="100.566660064625,45.0926824696238" />
                   <mssgle:LineSegment
-                    End="157.699990939267,97.6333337371216" />
+                    End="100.566660064625,61.8333325619166" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Sort Output]"
+          TopLeft="730.166630378201,235.733331983354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-54.26666265991,114.399998915195"
+              Start="0,0"
+              End="-54.26666265991,106.899998915195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.8029261863231" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.8029261863231"
+                    Point2="0,67.8029261863231"
+                    Point3="-4,67.8029261863231" />
+                  <mssgle:LineSegment
+                    End="-50.26666265991,67.8029261863231" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.26666265991,67.8029261863231"
+                    Point2="-54.26666265991,67.8029261863231"
+                    Point3="-54.26666265991,71.8029261863231" />
+                  <mssgle:LineSegment
+                    End="-54.26666265991,106.899998915195" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5498,7 +5498,7 @@ where [refTable].[SupplierID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Region merge\Region">
+    design-time-name="Package\Region merge\Pivot_table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5524,7 +5524,7 @@ where [refTable].[SupplierID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Region merge\Pivot_table">
+    design-time-name="Package\Region merge\Region">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

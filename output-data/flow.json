@@ -984,7 +984,7 @@
                     }
                 },
                 "lineages": {
-                    "column_in": {
+                    "SOURCE_COLUMNS": {
                         "0": "dbo.Suppliers_Extract[ValidFrom]",
                         "1": "dbo.Suppliers_Extract[ValidTo]",
                         "2": "dbo.Suppliers_Extract[Active]",
@@ -1213,7 +1213,7 @@
                         "315": "Package\\Merge and filter\\Error output table[Match_lookup]",
                         "316": "Package\\Merge and filter\\Error output table[SupplierID2]"
                     },
-                    "column_out": {
+                    "TARGET_COLUMN": {
                         "0": "Package\\Merge and filter\\Load supplier[ValidFrom]",
                         "1": "Package\\Merge and filter\\Load supplier[ValidTo]",
                         "2": "Package\\Merge and filter\\Load supplier[Active]",
@@ -3530,7 +3530,7 @@
                     }
                 },
                 "lineages": {
-                    "column_in": {
+                    "SOURCE_COLUMNS": {
                         "0": "dbo.Territories_Extract[TerritoryDescription]",
                         "1": "dbo.Territories_Extract[Country]",
                         "2": "dbo.Territories_Extract[RegionID]",
@@ -3622,7 +3622,7 @@
                         "88": "Package\\Region merge\\Sort region[RegionDescription]",
                         "89": "Package\\Region merge\\Sort region[DC_RegionDescription]"
                     },
-                    "column_out": {
+                    "TARGET_COLUMN": {
                         "0": "Package\\Region merge\\Teritory[TerritoryDescription]",
                         "1": "Package\\Region merge\\Teritory[Country]",
                         "2": "Package\\Region merge\\Teritory[RegionID]",

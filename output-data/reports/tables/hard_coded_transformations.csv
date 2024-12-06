@@ -1,0 +1,4 @@
+,SOURCE_COLUMNS,TARGET_COLUMN,TRANSFORMATION,"('SOURCE_COLUMNS',)","('TARGET_COLUMN',)","('TRANSFORMATION',)"
+0,Package\insert into logger[Remark],SSIS_Logger[Remark],Deleted rows,,,
+1,Package\Merge and filter\Alter name pref[CompanyName],Package\Merge and filter\Union suppliers[CompanyName],"""PREF_"" + CompanyName",,,
+2,"Package\Merge and filter\Error_match_column[Match_lookup] {""No_match""}",Package\Merge and filter\Error output table[Match_lookup],"""No_match""",,,
