@@ -1,0 +1,266 @@
+{
+    "Package\\Region merge\\Data Conversion": [
+        {
+            "input_column": "RegionDescription",
+            "input_type": "str",
+            "output_column": "DC_RegionDescription",
+            "output_type": "wstr"
+        }
+    ],
+    "Package\\Region merge\\Data Conversion 1": [
+        {
+            "input_column": "RegionID",
+            "input_type": "wstr",
+            "output_column": "DC_RegionID",
+            "output_type": "i4"
+        },
+        {
+            "input_column": "Active",
+            "input_type": "bool",
+            "output_column": "DC_Active",
+            "output_type": "bool"
+        }
+    ],
+    "Package\\Region merge\\Merge Join": {
+        "join_type": "Inner join",
+        "col_mapping": [
+            [
+                "DC_RegionDescription",
+                "DC_RegionDescriptiona"
+            ],
+            [
+                "TerritoryDescription",
+                "TerritoryDescription"
+            ],
+            [
+                "Country",
+                "Country"
+            ],
+            [
+                "RegionID",
+                "RegionID"
+            ],
+            [
+                "TerritoryID",
+                "TerritoryID"
+            ],
+            [
+                "State",
+                "State"
+            ],
+            [
+                "ValidFrom",
+                "ValidFrom"
+            ],
+            [
+                "ValidTo",
+                "ValidTo"
+            ],
+            [
+                "Active",
+                "Active"
+            ]
+        ]
+    },
+    "Package\\Region merge\\Multicast": "Multicast",
+    "Package\\Region merge\\Orginal_table": [
+        {
+            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescriptiona]",
+            "Column_ext": "dbo.Orginal_territory.DC_RegionDescription",
+            "Column_name": "DC_RegionDescriptiona"
+        },
+        {
+            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[TerritoryDescription]",
+            "Column_ext": "dbo.Orginal_territory.TerritoryDescription",
+            "Column_name": "TerritoryDescription"
+        },
+        {
+            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[Country]",
+            "Column_ext": "dbo.Orginal_territory.Country",
+            "Column_name": "Country"
+        },
+        {
+            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[RegionID]",
+            "Column_ext": "dbo.Orginal_territory.RegionID",
+            "Column_name": "RegionID"
+        },
+        {
+            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]",
+            "Column_ext": "dbo.Orginal_territory.TerritoryID",
+            "Column_name": "TerritoryID"
+        },
+        {
+            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[State]",
+            "Column_ext": "dbo.Orginal_territory.State",
+            "Column_name": "State"
+        },
+        {
+            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[ValidTo]",
+            "Column_ext": "dbo.Orginal_territory.ValidTo",
+            "Column_name": "ValidTo"
+        },
+        {
+            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[Active]",
+            "Column_ext": "dbo.Orginal_territory.Active",
+            "Column_name": "Active"
+        },
+        {
+            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[ValidFrom]",
+            "Column_ext": "dbo.Orginal_territory.VaidFrom",
+            "Column_name": "ValidFrom"
+        }
+    ],
+    "Package\\Region merge\\Pivot_table": [
+        {
+            "Column_input": "Package\\Region merge\\Unpivot.Outputs[Unpivot Output].Columns[Name]",
+            "Column_ext": "dbo.Pivot_territory.Name",
+            "Column_name": "Name"
+        },
+        {
+            "Column_input": "Package\\Region merge\\Unpivot.Outputs[Unpivot Output].Columns[Name_place]",
+            "Column_ext": "dbo.Pivot_territory.Name_place",
+            "Column_name": "Name_place"
+        },
+        {
+            "Column_input": "Package\\Region merge\\Unpivot.Outputs[Unpivot Output].Columns[RegionID]",
+            "Column_ext": "dbo.Pivot_territory.RegionID",
+            "Column_name": "RegionID"
+        },
+        {
+            "Column_input": "Package\\Region merge\\Unpivot.Outputs[Unpivot Output].Columns[TerritoryID]",
+            "Column_ext": "dbo.Pivot_territory.TerritoryID",
+            "Column_name": "TerritoryID"
+        }
+    ],
+    "Package\\Region merge\\Region": [
+        {
+            "Column_input": "dbo.Region_Extract[RegionID]",
+            "Column_ext": "Package\\Region merge\\Region.Outputs[ODBC Source Output].Columns[RegionID]",
+            "Column_name": "RegionID"
+        },
+        {
+            "Column_input": "dbo.Region_Extract[RegionDescription]",
+            "Column_ext": "Package\\Region merge\\Region.Outputs[ODBC Source Output].Columns[RegionDescription]",
+            "Column_name": "RegionDescription"
+        }
+    ],
+    "Package\\Region merge\\Sort region": {
+        "sort_arguments": [
+            {
+                "column": "RegionID",
+                "sorting_order": 1,
+                "sorting_type": "ascending"
+            }
+        ],
+        "output_columns": [
+            "RegionID",
+            "DC_RegionDescription"
+        ],
+        "drop_duplicate": "false"
+    },
+    "Package\\Region merge\\Sort teritory": {
+        "sort_arguments": [
+            {
+                "column": "Country",
+                "sorting_order": 2,
+                "sorting_type": "descending"
+            },
+            {
+                "column": "DC_RegionID",
+                "sorting_order": 1,
+                "sorting_type": "ascending"
+            }
+        ],
+        "output_columns": [
+            "TerritoryDescription",
+            "Country",
+            "RegionID",
+            "TerritoryID",
+            "State",
+            "ValidFrom",
+            "ValidTo",
+            "Active",
+            "DC_RegionID"
+        ],
+        "drop_duplicate": "false"
+    },
+    "Package\\Region merge\\Teritory": [
+        {
+            "Column_input": "dbo.Territories_Extract[TerritoryDescription]",
+            "Column_ext": "Package\\Region merge\\Teritory.Outputs[ODBC Source Output].Columns[TerritoryDescription]",
+            "Column_name": "TerritoryDescription"
+        },
+        {
+            "Column_input": "dbo.Territories_Extract[Country]",
+            "Column_ext": "Package\\Region merge\\Teritory.Outputs[ODBC Source Output].Columns[Country]",
+            "Column_name": "Country"
+        },
+        {
+            "Column_input": "dbo.Territories_Extract[RegionID]",
+            "Column_ext": "Package\\Region merge\\Teritory.Outputs[ODBC Source Output].Columns[RegionID]",
+            "Column_name": "RegionID"
+        },
+        {
+            "Column_input": "dbo.Territories_Extract[TerritoryID]",
+            "Column_ext": "Package\\Region merge\\Teritory.Outputs[ODBC Source Output].Columns[TerritoryID]",
+            "Column_name": "TerritoryID"
+        },
+        {
+            "Column_input": "dbo.Territories_Extract[State]",
+            "Column_ext": "Package\\Region merge\\Teritory.Outputs[ODBC Source Output].Columns[State]",
+            "Column_name": "State"
+        },
+        {
+            "Column_input": "dbo.Territories_Extract[ValidFrom]",
+            "Column_ext": "Package\\Region merge\\Teritory.Outputs[ODBC Source Output].Columns[ValidFrom]",
+            "Column_name": "ValidFrom"
+        },
+        {
+            "Column_input": "dbo.Territories_Extract[ValidTo]",
+            "Column_ext": "Package\\Region merge\\Teritory.Outputs[ODBC Source Output].Columns[ValidTo]",
+            "Column_name": "ValidTo"
+        },
+        {
+            "Column_input": "dbo.Territories_Extract[Active]",
+            "Column_ext": "Package\\Region merge\\Teritory.Outputs[ODBC Source Output].Columns[Active]",
+            "Column_name": "Active"
+        }
+    ],
+    "Package\\Region merge\\Unpivot": {
+        "pivot_attributes": {
+            "pivot_column": "Name",
+            "pivot_entries": [
+                "DC_RegionDescriptiona",
+                "TerritoryDescription",
+                "Country",
+                "State"
+            ]
+        },
+        "column_mapping": [
+            [
+                "DC_RegionDescriptiona",
+                "Name_place"
+            ],
+            [
+                "TerritoryDescription",
+                "Name_place"
+            ],
+            [
+                "Country",
+                "Name_place"
+            ],
+            [
+                "State",
+                "Name_place"
+            ],
+            [
+                "RegionID",
+                "RegionID"
+            ],
+            [
+                "TerritoryID",
+                "TerritoryID"
+            ]
+        ]
+    }
+}

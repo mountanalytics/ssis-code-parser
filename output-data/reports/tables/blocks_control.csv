@@ -1,5 +1,10 @@
 FUNCTION,count
 Execute SQL Task,6
+<<<<<<< HEAD
 Foreach Loop Container,1
 Data Flow Task,1
+=======
+Data Flow Task,2
+Foreach Loop Container,1
+>>>>>>> dev_pietro
 Expression Task,1

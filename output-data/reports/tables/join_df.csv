@@ -1,2 +1,7 @@
 ,LABEL_NODE,FUNCTION,JOIN_ARG
+<<<<<<< HEAD
 22,Merge and filter@Match with products,Lookup,SupplierID = SupplierID2
+=======
+25,Merge and filter@Match with products,Lookup,SupplierID = SupplierID2
+32,Region merge@Merge Join,Lookup,Inner join
+>>>>>>> dev_pietro

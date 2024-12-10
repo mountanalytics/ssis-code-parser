@@ -11,8 +11,13 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
+<<<<<<< HEAD
   DTS:VersionBuild="123"
   DTS:VersionGUID="{9BABF522-7804-498F-B3D8-D94969B1E472}">
+=======
+  DTS:VersionBuild="138"
+  DTS:VersionGUID="{4596DDFD-8469-4CF5-8414-E697F9C47C89}">
+>>>>>>> dev_pietro
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +46,11 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
+<<<<<<< HEAD
             Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAEtNQr0Zl8Z5zb1mm8k32TxGmAjGkTC5NCMrA4Nbk9GgAAAAAOgAAAAAIAACAAAACNTEgvNt/29hONE0XJOajuo96FyRiPsv6yDGa8cR+3FTAAAACSH+WYnn8b1vLNv+yunUG1avrcf9AhU9WC/r9y7YLUxk24F+bTPj69WuQGgygzJwBAAAAA+INoR0J2ceik8teKSiBRx8E40LvDr09j5H+lIGPcTFdnoHpYrzPgxeyUx7KpJtzNAcyIO2znwvcRWIFFcKnsPA</DTS:Password>
+=======
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADBlrX+kJfhR+2WQiCT+0IaOWs75+Ic52j5olfMq0DEyQAAAAAOgAAAAAIAACAAAAD1eHjCJLmjCK4/Bohhw2MpPVKQac4vJfSsF6ChrMwuEjAAAABT+aaq7guTJgPw0C6MgHYpjklq3vHcqYbfzKlqb6oJlh0hUc4tWDX0lT683dNtwtRAAAAAa92gYhyetSacwnXMG3dsWpyymZnggcvsCsGOeSXFzFS42cTTLlO5E9G7fkBtBfY5rhZoVO7IWfeIGoqfCcL4dg</DTS:Password>
+>>>>>>> dev_pietro
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -58,7 +67,11 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
+<<<<<<< HEAD
             Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABFmaTTyt9djVEjkqn3j1Wm0rf0JhCocUt1x/seG5NZgwAAAAAOgAAAAAIAACAAAACWjYpAFSu7UY07D0r9hgH7N51ZHCxQVnpp6AsPW2uhujAAAAAuMT2xG7SLVo6r2lW1cItte3wdZ1QaZm1y0vEx12nvivVJRF2B59hnsULmuRUFeQ5AAAAA2he1i7VaLR5McIP/N9ZKe7Pm4nbRCnK9G26dK/XJbVMDeXXhksAINmx7rfFUPzJuCnxMXRYrbPMrnkMhkvuOSA</DTS:Password>
+=======
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADgBGFpgyzG7/iQwj455GR5mxa+9VuuPj5ZpM+mN6EB5QAAAAAOgAAAAAIAACAAAACjOFwRM02cEdp/jHK+ZXVs/sLVw9qDkoKlPXav/0S/ezAAAAB7JuMX3wxRxextW0d6QSGrl+aO46B/x1TbZNTgg2jMqxxmpmUYNc7fTHZXNoiPe+1AAAAA7dfIUDPFe00D/g1W1kg7JY/6THSMpoZkAL4Wh+QbPuWAgw8ernHKwtTtQFv1f1jQ5pOPx79nopKpYQ4ADxzpxA</DTS:Password>
+>>>>>>> dev_pietro
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -75,7 +88,11 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
+<<<<<<< HEAD
             Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD96CYJz741pKGWKpNcHHzmu8K/ClEI7dcntYEda8Pi5QAAAAAOgAAAAAIAACAAAAB537sY0KSWhThAzIiXXd6CTpdgPwWfXCrBUsQZpLTwvjAAAABGFSrPhNIJPsGiTJIjK4kvRS6A4LHmEYZ3BUfLfOJhyZ555yz6OLaCeLK9DrKdQuVAAAAA0hfaxJdMhpGKv7pPKuQ5gb08HiKz/CzxMYYJ0nW+Mu7luHBuZEBBaRJ629pPXyCIjGPXeGOO+GuU32xQOloZ/A</DTS:Password>
+=======
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACbLs8p8pj0Prglnsagsa03W+gvRdgE52VPoQWfyoQoHwAAAAAOgAAAAAIAACAAAAAxjMfAviDtLoe1qo1vRXcmz6Vb2epVsTn5yvO874PZGjAAAAB/5p70xyFHS0JMLuugrrbsAVDAdITa4VaHm3HygmC6H/S3R7EjUYrgmuVxnozTuKpAAAAAIKbBDBiRF2DAlgspikFzUbBzU1TBED6B0A+gs4u1x1FvAbxWa+jvGWCFID5aVI/VFQ01Sk4WqDlQPC2OELIuyQ</DTS:Password>
+>>>>>>> dev_pietro
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -90,7 +107,11 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
+<<<<<<< HEAD
             Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC7Gf0Q3E57sEtv8fP6T9aapVI6Tqhd7Cz8efMGO/YYfgAAAAAOgAAAAAIAACAAAADjZ2Tg416f3umxJiaf/N/p5Vr3Q5Gef+zd1veuM9XCWDAAAADUu3H3lZ7Xx/vJeAfTbBshHPD86g8tjVr8DCmqbnGjB4klnFjXgu1muBzQJTMM8qxAAAAAX4Fz2lsDdaf0tDYjhxdNC7p+3BkdTuYhT1h23KcGmoD5sdE9c3KpWBfSClNXOj28XuegOAu8/LPqNLPbpRFDyQ</DTS:Password>
+=======
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABcXOPXVGQfQis0hyefA0hKmctZ/jmP1qaf/ekCTC4JOgAAAAAOgAAAAAIAACAAAACoAe6AEgdLPLmX6SLOcnV6qMBSIm8YNtpAcdrla4NfvzAAAABOSfZB8B6MHblp5jeWDwH9C+sJuiotc6g1jkpV3V8L8l8o6Mfx+BoR+960wG8LK3ZAAAAAJT8WGDficO80l03xGJoS7u0cKm8wc5CPkbcu+iQ4bawL32ietJJpawZTeFAsTKFe3W2kKHNEnmLV4veSIamPFw</DTS:Password>
+>>>>>>> dev_pietro
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -105,7 +126,11 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
+<<<<<<< HEAD
             Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABWEQG85Fh0kE5g1qNosN13Cwsjm5pIYjKUmXR3XX24SAAAAAAOgAAAAAIAACAAAADneV5gR9pd7ClSlgxA3/lYLyudT0P14uouBB8PZ0QeGjAAAACKAZfr8DGQJ/YZC6RFMOkBkeuo5HlBlSLfbSYeW0h8/RJJeyyRsMj0CgWRdaGw8BNAAAAAWy405CdXYeGLzCCe83zrVestaDrMELj9z+V4B6U9t9ZUos2dcqaG9WNt0lTucmphLU9KaLnyXROr/m/ZKGa0tw</DTS:Password>
+=======
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAY2REzWvvwFHFFMWjpNDwfxpOmXZRPDM3tfF4cxyPP0gAAAAAOgAAAAAIAACAAAACvycUdcxszm3qk8KZNeVqBioxnEXoiQrKU87ovKe4bFjAAAADFYUxr8vZ3mWPZn6bnBjhy5yN2SVH2/TaekbYu95BNR1rloQye0YPXzzV38bslXJFAAAAAiP8MMaRj66wv84QkBQymcDD8Ke0Pdfb+6yKVZqYJ5pRw5DY09X8/4xWmzm98hqapr77QT8d+0B7HkBcuwDgW6g</DTS:Password>
+>>>>>>> dev_pietro
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1011,6 +1036,12 @@
                       length="255"
                       lineageId="Package\Merge and filter\Load supplier.Outputs[ODBC Source Output].Columns[PostalCode]"
                       name="PostalCode" />
+                    <outputColumn
+                      refId="Package\Merge and filter\Load supplier.Outputs[ODBC Source Output].Columns[ValidFromNum]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Merge and filter\Load supplier.Outputs[ODBC Source Output].ExternalColumns[ValidFromNum]"
+                      lineageId="Package\Merge and filter\Load supplier.Outputs[ODBC Source Output].Columns[ValidFromNum]"
+                      name="ValidFromNum" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1088,6 +1119,10 @@
                       dataType="wstr"
                       length="255"
                       name="PostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\Merge and filter\Load supplier.Outputs[ODBC Source Output].ExternalColumns[ValidFromNum]"
+                      dataType="r8"
+                      name="ValidFromNum" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1199,6 +1234,12 @@
                       length="255"
                       lineageId="Package\Merge and filter\Load supplier.Outputs[ODBC Source Error Output].Columns[ContactName]"
                       name="ContactName" />
+                    <outputColumn
+                      refId="Package\Merge and filter\Load supplier.Outputs[ODBC Source Error Output].Columns[ValidFromNum]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Merge and filter\Load supplier.Outputs[ODBC Source Output].ExternalColumns[ValidFromNum]"
+                      lineageId="Package\Merge and filter\Load supplier.Outputs[ODBC Source Error Output].Columns[ValidFromNum]"
+                      name="ValidFromNum" />
                     <outputColumn
                       refId="Package\Merge and filter\Load supplier.Outputs[ODBC Source Error Output].Columns[ContactTitle]"
                       dataType="wstr"
@@ -2477,6 +2518,1877 @@ where [refTable].[SupplierID] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+<<<<<<< HEAD
+=======
+      DTS:refId="Package\Region merge"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EA424F7C-B123-4C50-96BF-CF8CFD447A39}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Region merge"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Region merge\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Region merge\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Region merge\Data Conversion.Inputs[Data Conversion Input].Columns[RegionDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RegionDescription"
+                      lineageId="Package\Region merge\Region.Outputs[ODBC Source Output].Columns[RegionDescription]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Region merge\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Data Conversion.Outputs[Data Conversion Output].Columns[DC_RegionDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Region merge\Data Conversion.Outputs[Data Conversion Output].Columns[DC_RegionDescription]"
+                      name="DC_RegionDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Region merge\Region.Outputs[ODBC Source Output].Columns[RegionDescription]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Region merge\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Region merge\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Region merge\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Region merge\Data Conversion 1"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Region merge\Data Conversion 1.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Region merge\Data Conversion 1.Inputs[Data Conversion Input].Columns[RegionID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RegionID"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[RegionID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Region merge\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Output].Columns[DC_RegionID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Output].Columns[DC_RegionID]"
+                      name="DC_RegionID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[RegionID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Region merge\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Region merge\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Region merge\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Region merge\Merge Join.Inputs[Merge Join Left Input].Columns[RegionID]"
+                      cachedDataType="i4"
+                      cachedName="RegionID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Region merge\Sort region.Outputs[Sort Output].Columns[RegionID]" />
+                    <inputColumn
+                      refId="Package\Region merge\Merge Join.Inputs[Merge Join Left Input].Columns[DC_RegionDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DC_RegionDescription"
+                      lineageId="Package\Region merge\Sort region.Outputs[Sort Output].Columns[DC_RegionDescription]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[DC_RegionID]"
+                      cachedDataType="i4"
+                      cachedName="DC_RegionID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[DC_RegionID]" />
+                    <inputColumn
+                      refId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[TerritoryDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TerritoryDescription"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[TerritoryDescription]" />
+                    <inputColumn
+                      refId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[RegionID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RegionID"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[RegionID]" />
+                    <inputColumn
+                      refId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[TerritoryID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TerritoryID"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[TerritoryID]" />
+                    <inputColumn
+                      refId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="State"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[ValidFrom]"
+                      cachedDataType="dbDate"
+                      cachedName="ValidFrom"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[ValidFrom]" />
+                    <inputColumn
+                      refId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[ValidTo]"
+                      cachedDataType="dbDate"
+                      cachedName="ValidTo"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[ValidTo]" />
+                    <inputColumn
+                      refId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[Active]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Merge Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescription]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescription]"
+                      name="DC_RegionDescription">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Region merge\Merge Join.Inputs[Merge Join Left Input].Columns[DC_RegionDescription]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryDescription]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryDescription]"
+                      name="TerritoryDescription">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[TerritoryDescription]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[Country]"
+                      name="Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[RegionID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[RegionID]"
+                      name="RegionID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[RegionID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]"
+                      name="TerritoryID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[TerritoryID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[State]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[State]"
+                      name="State">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[State]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[ValidFrom]"
+                      dataType="dbDate"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[ValidFrom]"
+                      name="ValidFrom">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[ValidFrom]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[ValidTo]"
+                      dataType="dbDate"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[ValidTo]"
+                      name="ValidTo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[ValidTo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[Active]"
+                      dataType="bool"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Region merge\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Region merge\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Region merge\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Region merge\Multicast.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\Region merge\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Region merge\Multicast.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\Region merge\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Region merge\Orginal_table"
+              componentClassID="Microsoft.SSISODBCDst"
+              contactInfo="ODBC Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="ODBC Destination"
+              name="Orginal_table"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The name of the table to be fetched."
+                  expressionType="Notify"
+                  name="TableName">"dbo"."Orginal_territory"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows fetched per batch."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of rows inserted under the same transaction."
+                  expressionType="Notify"
+                  name="TransactionSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines the chunk size allocation for LOB columns"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The code page to use when code page information is unavailable from the data source."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="The method used for inserting data. Possible values are 'Batch' or 'Row by row'."
+                  expressionType="Notify"
+                  name="InsertMethod">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The ODBC C data type for binding numeric data."
+                  expressionType="Notify"
+                  name="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Region merge\Orginal_table.Connections[ODBCConnection]"
+                  connectionManagerID="Package.ConnectionManagers[tcp:maserver01.database.windows.net,1433.MA_DemoDB_01.erwinsiegers]"
+                  connectionManagerRefId="Package.ConnectionManagers[tcp:maserver01.database.windows.net,1433.MA_DemoDB_01.erwinsiegers]"
+                  description="The ODBC runtime connection used to access the database."
+                  name="ODBCConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ODBC Destination Input"
+                  truncationRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[DC_RegionDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DC_RegionDescription"
+                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[DC_RegionDescription]"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescription]" />
+                    <inputColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[TerritoryDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TerritoryDescription"
+                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[TerritoryDescription]"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryDescription]" />
+                    <inputColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[RegionID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RegionID"
+                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[RegionID]"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[RegionID]" />
+                    <inputColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[TerritoryID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TerritoryID"
+                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]" />
+                    <inputColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[State]"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[ValidTo]"
+                      cachedDataType="dbDate"
+                      cachedName="ValidTo"
+                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[ValidTo]"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[ValidTo]" />
+                    <inputColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[ValidFrom]"
+                      cachedDataType="dbDate"
+                      cachedName="ValidFrom"
+                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[VaidFrom]"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[ValidFrom]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[DC_RegionDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DC_RegionDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[TerritoryDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TerritoryDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[RegionID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RegionID" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[TerritoryID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[VaidFrom]"
+                      dataType="dbDate"
+                      name="VaidFrom" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[ValidTo]"
+                      dataType="dbDate"
+                      name="ValidTo" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Orginal_table.Outputs[ODBC Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ODBC Destination Error Output"
+                  synchronousInputId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Orginal_table.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Orginal_table.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Region merge\Orginal_table.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Orginal_table.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Region merge\Pivot_table"
+              componentClassID="Microsoft.SSISODBCDst"
+              contactInfo="ODBC Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="ODBC Destination"
+              name="Pivot_table"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The name of the table to be fetched."
+                  expressionType="Notify"
+                  name="TableName">"dbo"."Pivot_territory"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows fetched per batch."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of rows inserted under the same transaction."
+                  expressionType="Notify"
+                  name="TransactionSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines the chunk size allocation for LOB columns"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The code page to use when code page information is unavailable from the data source."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="The method used for inserting data. Possible values are 'Batch' or 'Row by row'."
+                  expressionType="Notify"
+                  name="InsertMethod">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The ODBC C data type for binding numeric data."
+                  expressionType="Notify"
+                  name="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Region merge\Pivot_table.Connections[ODBCConnection]"
+                  connectionManagerID="Package.ConnectionManagers[tcp:maserver01.database.windows.net,1433.MA_DemoDB_01.erwinsiegers]"
+                  connectionManagerRefId="Package.ConnectionManagers[tcp:maserver01.database.windows.net,1433.MA_DemoDB_01.erwinsiegers]"
+                  description="The ODBC runtime connection used to access the database."
+                  name="ODBCConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ODBC Destination Input"
+                  truncationRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].Columns[Name_place]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name_place"
+                      externalMetadataColumnId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].ExternalColumns[Name_place]"
+                      lineageId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[Name_place]" />
+                    <inputColumn
+                      refId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].Columns[RegionID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RegionID"
+                      externalMetadataColumnId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].ExternalColumns[RegionID]"
+                      lineageId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[RegionID]" />
+                    <inputColumn
+                      refId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].Columns[TerritoryID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TerritoryID"
+                      externalMetadataColumnId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[TerritoryID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].ExternalColumns[Name_place]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Name_place" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].ExternalColumns[RegionID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RegionID" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input].ExternalColumns[TerritoryID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TerritoryID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Pivot_table.Outputs[ODBC Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ODBC Destination Error Output"
+                  synchronousInputId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Pivot_table.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Pivot_table.Outputs[ODBC Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Region merge\Pivot_table.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Pivot_table.Outputs[ODBC Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Region merge\Region"
+              componentClassID="Microsoft.SSISODBCSrc"
+              contactInfo="ODBC Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="ODBC Source"
+              name="Region"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The name of the table to be fetched."
+                  expressionType="Notify"
+                  name="TableName">"dbo"."Region_Extract"</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows fetched per batch."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines the chunk size allocation for LOB columns"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines how the component exposes CHAR columns. If False, CHAR columns are exposed as (multi-)byte strings (DT_STR), if True, CHAR columns are exposed as wide strings (DT_WSTR)"
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The code page to use when code page information is unavailable from the data source."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="The method used for fetching data."
+                  expressionType="Notify"
+                  name="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="The ODBC C data type for binding numeric data."
+                  expressionType="Notify"
+                  name="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The mode used to access the database."
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Region merge\Region.Connections[ODBCConnection]"
+                  connectionManagerID="Package.ConnectionManagers[tcp:maserver01.database.windows.net,1433.MA_DemoDB_01.erwinsiegers]"
+                  connectionManagerRefId="Package.ConnectionManagers[tcp:maserver01.database.windows.net,1433.MA_DemoDB_01.erwinsiegers]"
+                  description="The ODBC runtime connection used to access the database."
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Region.Outputs[ODBC Source Output]"
+                  errorRowDisposition="FailComponent"
+                  name="ODBC Source Output"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Region.Outputs[ODBC Source Output].Columns[RegionID]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Region merge\Region.Outputs[ODBC Source Output].ExternalColumns[RegionID]"
+                      lineageId="Package\Region merge\Region.Outputs[ODBC Source Output].Columns[RegionID]"
+                      name="RegionID" />
+                    <outputColumn
+                      refId="Package\Region merge\Region.Outputs[ODBC Source Output].Columns[RegionDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Region merge\Region.Outputs[ODBC Source Output].ExternalColumns[RegionDescription]"
+                      length="50"
+                      lineageId="Package\Region merge\Region.Outputs[ODBC Source Output].Columns[RegionDescription]"
+                      name="RegionDescription" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Region.Outputs[ODBC Source Output].ExternalColumns[RegionID]"
+                      dataType="i4"
+                      name="RegionID" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Region.Outputs[ODBC Source Output].ExternalColumns[RegionDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RegionDescription" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Region merge\Region.Outputs[ODBC Source Error Output]"
+                  isErrorOut="true"
+                  name="ODBC Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Region.Outputs[ODBC Source Error Output].Columns[RegionID]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Region merge\Region.Outputs[ODBC Source Output].ExternalColumns[RegionID]"
+                      lineageId="Package\Region merge\Region.Outputs[ODBC Source Error Output].Columns[RegionID]"
+                      name="RegionID" />
+                    <outputColumn
+                      refId="Package\Region merge\Region.Outputs[ODBC Source Error Output].Columns[RegionDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Region merge\Region.Outputs[ODBC Source Output].ExternalColumns[RegionDescription]"
+                      length="50"
+                      lineageId="Package\Region merge\Region.Outputs[ODBC Source Error Output].Columns[RegionDescription]"
+                      name="RegionDescription" />
+                    <outputColumn
+                      refId="Package\Region merge\Region.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Region.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Region merge\Region.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Region.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Region merge\Sort region"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort region"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Region merge\Sort region.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Region merge\Sort region.Inputs[Sort Input].Columns[RegionID]"
+                      cachedDataType="i4"
+                      cachedName="RegionID"
+                      lineageId="Package\Region merge\Region.Outputs[ODBC Source Output].Columns[RegionID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Sort region.Inputs[Sort Input].Columns[DC_RegionDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DC_RegionDescription"
+                      lineageId="Package\Region merge\Data Conversion.Outputs[Data Conversion Output].Columns[DC_RegionDescription]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Sort region.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Sort region.Outputs[Sort Output].Columns[RegionID]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Sort region.Outputs[Sort Output].Columns[RegionID]"
+                      name="RegionID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Region merge\Region.Outputs[ODBC Source Output].Columns[RegionID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Sort region.Outputs[Sort Output].Columns[DC_RegionDescription]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Sort region.Outputs[Sort Output].Columns[DC_RegionDescription]"
+                      name="DC_RegionDescription">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Region merge\Data Conversion.Outputs[Data Conversion Output].Columns[DC_RegionDescription]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Region merge\Sort teritory"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort teritory"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Region merge\Sort teritory.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Region merge\Sort teritory.Inputs[Sort Input].Columns[TerritoryDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TerritoryDescription"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[TerritoryDescription]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Sort teritory.Inputs[Sort Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[Country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Sort teritory.Inputs[Sort Input].Columns[RegionID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RegionID"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[RegionID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Sort teritory.Inputs[Sort Input].Columns[TerritoryID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TerritoryID"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[TerritoryID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Sort teritory.Inputs[Sort Input].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="State"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[State]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Sort teritory.Inputs[Sort Input].Columns[ValidFrom]"
+                      cachedDataType="dbDate"
+                      cachedName="ValidFrom"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[ValidFrom]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Sort teritory.Inputs[Sort Input].Columns[ValidTo]"
+                      cachedDataType="dbDate"
+                      cachedName="ValidTo"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[ValidTo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Sort teritory.Inputs[Sort Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[Active]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Sort teritory.Inputs[Sort Input].Columns[DC_RegionID]"
+                      cachedDataType="i4"
+                      cachedName="DC_RegionID"
+                      lineageId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Output].Columns[DC_RegionID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Sort teritory.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[TerritoryDescription]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[TerritoryDescription]"
+                      name="TerritoryDescription">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[TerritoryDescription]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[Country]"
+                      name="Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[RegionID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[RegionID]"
+                      name="RegionID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[RegionID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[TerritoryID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[TerritoryID]"
+                      name="TerritoryID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[TerritoryID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[State]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[State]"
+                      name="State">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[State]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[ValidFrom]"
+                      dataType="dbDate"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[ValidFrom]"
+                      name="ValidFrom">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[ValidFrom]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[ValidTo]"
+                      dataType="dbDate"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[ValidTo]"
+                      name="ValidTo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[ValidTo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[Active]"
+                      dataType="bool"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[DC_RegionID]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[DC_RegionID]"
+                      name="DC_RegionID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Region merge\Data Conversion 1.Outputs[Data Conversion Output].Columns[DC_RegionID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Region merge\Teritory"
+              componentClassID="Microsoft.SSISODBCSrc"
+              contactInfo="ODBC Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="ODBC Source"
+              name="Teritory"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The name of the table to be fetched."
+                  expressionType="Notify"
+                  name="TableName">"dbo"."Territories_Extract"</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows fetched per batch."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines the chunk size allocation for LOB columns"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines how the component exposes CHAR columns. If False, CHAR columns are exposed as (multi-)byte strings (DT_STR), if True, CHAR columns are exposed as wide strings (DT_WSTR)"
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The code page to use when code page information is unavailable from the data source."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="The method used for fetching data."
+                  expressionType="Notify"
+                  name="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="The ODBC C data type for binding numeric data."
+                  expressionType="Notify"
+                  name="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The mode used to access the database."
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Region merge\Teritory.Connections[ODBCConnection]"
+                  connectionManagerID="Package.ConnectionManagers[tcp:maserver01.database.windows.net,1433.MA_DemoDB_01.erwinsiegers]"
+                  connectionManagerRefId="Package.ConnectionManagers[tcp:maserver01.database.windows.net,1433.MA_DemoDB_01.erwinsiegers]"
+                  description="The ODBC runtime connection used to access the database."
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Teritory.Outputs[ODBC Source Output]"
+                  errorRowDisposition="FailComponent"
+                  name="ODBC Source Output"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[TerritoryDescription]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[TerritoryDescription]"
+                      length="255"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[TerritoryDescription]"
+                      name="TerritoryDescription" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[Country]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[Country]"
+                      length="255"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[RegionID]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[RegionID]"
+                      length="255"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[RegionID]"
+                      name="RegionID" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[TerritoryID]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[TerritoryID]"
+                      length="255"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[TerritoryID]"
+                      name="TerritoryID" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[State]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[State]"
+                      length="255"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[ValidFrom]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[ValidFrom]"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[ValidFrom]"
+                      name="ValidFrom" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[ValidTo]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[ValidTo]"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[ValidTo]"
+                      name="ValidTo" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[Active]"
+                      dataType="bool"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[Active]"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[Active]"
+                      name="Active" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[TerritoryDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="TerritoryDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[RegionID]"
+                      dataType="wstr"
+                      length="255"
+                      name="RegionID" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[TerritoryID]"
+                      dataType="wstr"
+                      length="255"
+                      name="TerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="255"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[ValidFrom]"
+                      dataType="dbDate"
+                      name="ValidFrom" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[ValidTo]"
+                      dataType="dbDate"
+                      name="ValidTo" />
+                    <externalMetadataColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output]"
+                  isErrorOut="true"
+                  name="ODBC Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[TerritoryDescription]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[TerritoryDescription]"
+                      length="255"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[TerritoryDescription]"
+                      name="TerritoryDescription" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[Country]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[Country]"
+                      length="255"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[RegionID]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[RegionID]"
+                      length="255"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[RegionID]"
+                      name="RegionID" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[TerritoryID]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[TerritoryID]"
+                      length="255"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[TerritoryID]"
+                      name="TerritoryID" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[State]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[State]"
+                      length="255"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[ValidFrom]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[ValidFrom]"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[ValidFrom]"
+                      name="ValidFrom" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[ValidTo]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[ValidTo]"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[ValidTo]"
+                      name="ValidTo" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[Active]"
+                      dataType="bool"
+                      externalMetadataColumnId="Package\Region merge\Teritory.Outputs[ODBC Source Output].ExternalColumns[Active]"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[Active]"
+                      name="Active" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Region merge\Unpivot"
+              componentClassID="Microsoft.UnPivot"
+              contactInfo="Unpivot;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Expands an un-normalized data flow into a more normalized version. Values from multiple columns of a single record expand to multiple records in a single column. For example, expand a table that lists athletic scores with a column for each game to more records and a single score column."
+              name="Unpivot">
+              <inputs>
+                <input
+                  refId="Package\Region merge\Unpivot.Inputs[Unpivot Input]"
+                  hasSideEffects="true"
+                  name="Unpivot Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Region merge\Unpivot.Inputs[Unpivot Input].Columns[DC_RegionDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DC_RegionDescription"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[Name_place]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">DC_RegionDescription</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Unpivot.Inputs[Unpivot Input].Columns[TerritoryDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TerritoryDescription"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[Name_place]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">TerritoryDescription</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Unpivot.Inputs[Unpivot Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[Country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[Name_place]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">Country</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Unpivot.Inputs[Unpivot Input].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="State"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[State]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[Name_place]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">State</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Unpivot.Inputs[Unpivot Input].Columns[RegionID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RegionID"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[RegionID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[RegionID]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region merge\Unpivot.Inputs[Unpivot Input].Columns[TerritoryID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TerritoryID"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[TerritoryID]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Unpivot.Outputs[Unpivot Output]"
+                  name="Unpivot Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">true</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[Name_place]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[Name_place]"
+                      name="Name_place">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[RegionID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[RegionID]"
+                      name="RegionID">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[TerritoryID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Unpivot.Outputs[Unpivot Output].Columns[TerritoryID]"
+                      name="TerritoryID">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Region merge.Paths[Data Conversion Output]"
+              endId="Package\Region merge\Sort teritory.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Region merge.Paths[Data Conversion Output1]"
+              endId="Package\Region merge\Sort region.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\Region merge\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Region merge.Paths[Merge Join Output]"
+              endId="Package\Region merge\Multicast.Inputs[Multicast Input 1]"
+              name="Merge Join Output"
+              startId="Package\Region merge\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Region merge.Paths[Multicast Output 1]"
+              endId="Package\Region merge\Unpivot.Inputs[Unpivot Input]"
+              name="Multicast Output 1"
+              startId="Package\Region merge\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\Region merge.Paths[Multicast Output 2]"
+              endId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input]"
+              name="Multicast Output 2"
+              startId="Package\Region merge\Multicast.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\Region merge.Paths[ODBC Source Output]"
+              endId="Package\Region merge\Data Conversion 1.Inputs[Data Conversion Input]"
+              name="ODBC Source Output"
+              startId="Package\Region merge\Teritory.Outputs[ODBC Source Output]" />
+            <path
+              refId="Package\Region merge.Paths[ODBC Source Output1]"
+              endId="Package\Region merge\Data Conversion.Inputs[Data Conversion Input]"
+              name="ODBC Source Output"
+              startId="Package\Region merge\Region.Outputs[ODBC Source Output]" />
+            <path
+              refId="Package\Region merge.Paths[Sort Output]"
+              endId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Region merge\Sort teritory.Outputs[Sort Output]" />
+            <path
+              refId="Package\Region merge.Paths[Sort Output1]"
+              endId="Package\Region merge\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Region merge\Sort region.Outputs[Sort Output]" />
+            <path
+              refId="Package\Region merge.Paths[Unpivot Output]"
+              endId="Package\Region merge\Pivot_table.Inputs[ODBC Destination Input]"
+              name="Unpivot Output"
+              startId="Package\Region merge\Unpivot.Outputs[Unpivot Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+>>>>>>> dev_pietro
       DTS:refId="Package\Select into variable"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -2540,7 +4452,7 @@ where [refTable].[SupplierID] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{AA1FC44C-ABBD-45AB-B3EB-FFC934A03032}"
-          SQLTask:SqlStatementSource="Truncate table [dbo].[Error_lines]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="Truncate table [dbo].[Error_lines]&#xA;&#xA;Truncate table [dbo].[Orginal_territory]&#xA;&#xA;Truncate table [dbo].[Pivot_territory]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -2601,6 +4513,17 @@ where [refTable].[SupplierID] = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
       DTS:To="Package\Set region" />
+<<<<<<< HEAD
+=======
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{0D7945CC-ADA2-4D99-A17B-52382D6BBC31}"
+      DTS:From="Package\Overwrite insert table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Region merge" />
+>>>>>>> dev_pietro
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2613,7 +4536,11 @@ where [refTable].[SupplierID] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Drop insert table"
+          TopLeft="265.166651686861,792.99999764959" />
         <NodeLayout
           Size="165,42"
           Id="Package\Drop insert table"
@@ -2622,6 +4549,20 @@ where [refTable].[SupplierID] = ?</property>
           Size="154,42"
           Id="Package\insert into logger"
           TopLeft="273.499984564881,706.133331531352" />
+<<<<<<< HEAD
+=======
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Loop over variable table\Insert into order_write"
+          TopLeft="48,22" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="275.2,119.2"
+          Size="275.2,161.6"
+          Id="Package\Loop over variable table"
+          TopLeft="212,248" />
+>>>>>>> dev_pietro
         <NodeLayout
           Size="150,42"
           Id="Package\Merge and filter"
@@ -2630,6 +4571,17 @@ where [refTable].[SupplierID] = ?</property>
           Size="177,42"
           Id="Package\Overwrite insert table"
           TopLeft="257.166666985386,877.599998806715" />
+<<<<<<< HEAD
+=======
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\Region merge"
+          TopLeft="264.166652233237,972.266663605107" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Select into variable"
+          TopLeft="267,154" />
+>>>>>>> dev_pietro
         <NodeLayout
           Size="126,42"
           Id="Package\Set region"
@@ -2748,6 +4700,7 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+<<<<<<< HEAD
         <NodeLayout
           Size="170,42"
           Id="Package\Loop over variable table\Insert into order_write"
@@ -2763,6 +4716,8 @@ where [refTable].[SupplierID] = ?</property>
           Size="170,42"
           Id="Package\Select into variable"
           TopLeft="267,154" />
+=======
+>>>>>>> dev_pietro
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="350.75,196">
@@ -2807,6 +4762,43 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+<<<<<<< HEAD
+=======
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="345.566666985386,919.199998806715">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.40001475214888,53.0666647983924"
+              Start="0,0"
+              End="-9.40001475214888,45.5666647983924">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5333323991962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5333323991962"
+                    Point2="0,26.5333323991962"
+                    Point3="-4,26.5333323991962" />
+                  <mssgle:LineSegment
+                    End="-5.40001475214888,26.5333323991962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.40001475214888,26.5333323991962"
+                    Point2="-9.40001475214888,26.5333323991962"
+                    Point3="-9.40001475214888,30.5333323991962" />
+                  <mssgle:LineSegment
+                    End="-9.40001475214888,45.5666647983924" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+>>>>>>> dev_pietro
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2816,6 +4808,7 @@ where [refTable].[SupplierID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+<<<<<<< HEAD
           Size="184,42"
           Id="Package\Merge and filter\Write Update sup table"
           TopLeft="392.83330432988,695.399996058544" />
@@ -2833,6 +4826,21 @@ where [refTable].[SupplierID] = ?</property>
           TopLeft="958,258" />
         <NodeLayout
           Size="170,42"
+=======
+          Size="164,41.6"
+          Id="Package\Merge and filter\Error output table"
+          TopLeft="1203,262" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Merge and filter\Error_match_column"
+          TopLeft="958,258" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Merge and filter\Union suppliers"
+          TopLeft="408.833335473306,605.13333333936" />
+        <NodeLayout
+          Size="169.6,41.6"
+>>>>>>> dev_pietro
           Id="Package\Merge and filter\Determine rows sup"
           TopLeft="394.16664513035,149.933332290716" />
         <NodeLayout
@@ -2840,11 +4848,15 @@ where [refTable].[SupplierID] = ?</property>
           Id="Package\Merge and filter\Row Count errors"
           TopLeft="696,252" />
         <NodeLayout
+<<<<<<< HEAD
           Size="150,42"
           Id="Package\Merge and filter\Union suppliers"
           TopLeft="408.833335473306,605.13333333936" />
         <NodeLayout
           Size="170,42"
+=======
+          Size="169.6,41.6"
+>>>>>>> dev_pietro
           Id="Package\Merge and filter\Match with products"
           TopLeft="398.333311569361,247.333331730233" />
         <NodeLayout
@@ -2855,86 +4867,14 @@ where [refTable].[SupplierID] = ?</property>
           Size="150,42"
           Id="Package\Merge and filter\Alter name pref"
           TopLeft="620.833299412497,464.533330103027" />
-        <EdgeLayout
-          Id="Package\Merge and filter.Paths[Lookup Match Output]"
-          TopLeft="484.633311296172,288.933331730233">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,86.933332308796"
-              Start="0,0"
-              End="0,79.433332308796">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,79.433332308796" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,33.911978654398,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge and filter.Paths[Derived Column Output1]"
-          TopLeft="1139,281">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="64,0"
-              Start="0,0"
-              End="56.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="56.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge and filter.Paths[Derived Column Output]"
-          TopLeft="695.633299412497,506.133330103027">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-187.866630605858,99.000003236333"
-              Start="0,0"
-              End="-187.866630605858,91.500003236333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.7747387634651" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,54.7747387634651"
-                    Point2="0,58.7747387634651"
-                    Point3="-4,58.7747387634651" />
-                  <mssgle:LineSegment
-                    End="-183.866630605858,58.7747387634651" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-183.866630605858,58.7747387634651"
-                    Point2="-187.866630605858,58.7747387634651"
-                    Point3="-187.866630605858,62.7747387634651" />
-                  <mssgle:LineSegment
-                    End="-187.866630605858,91.500003236333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Merge and filter\Write Update sup table"
+          TopLeft="392.83330432988,695.399996058544" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Merge and filter\Split preferences"
+          TopLeft="407.333311022984,375.866664039029" />
         <EdgeLayout
           Id="Package\Merge and filter.Paths[Conditional Split Default Output]"
           TopLeft="460.616656581478,417.466664039029">
@@ -3014,7 +4954,9 @@ where [refTable].[SupplierID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3036,7 +4978,9 @@ where [refTable].[SupplierID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3058,7 +5002,9 @@ where [refTable].[SupplierID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3080,7 +5026,9 @@ where [refTable].[SupplierID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3107,22 +5055,93 @@ where [refTable].[SupplierID] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge and filter.Paths[Lookup Match Output]"
+          TopLeft="484.633311296172,288.933331730233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86.933332308796"
+              Start="0,0"
+              End="0,79.433332308796">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.433332308796" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,33.911978654398,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge and filter.Paths[Derived Column Output1]"
+          TopLeft="1139,281">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64,0"
+              Start="0,0"
+              End="56.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge and filter.Paths[Derived Column Output]"
+          TopLeft="695.633299412497,506.133330103027">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-187.866630605858,99.000003236333"
+              Start="0,0"
+              End="-187.866630605858,91.500003236333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.7747387634651" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54.7747387634651"
+                    Point2="0,58.7747387634651"
+                    Point3="-4,58.7747387634651" />
+                  <mssgle:LineSegment
+                    End="-183.866630605858,58.7747387634651" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-183.866630605858,58.7747387634651"
+                    Point2="-187.866630605858,58.7747387634651"
+                    Point3="-187.866630605858,62.7747387634651" />
+                  <mssgle:LineSegment
+                    End="-187.866630605858,91.500003236333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Merge and filter\Write Update sup table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Merge and filter\Error output table">
     <Properties>
@@ -3161,6 +5180,427 @@ where [refTable].[SupplierID] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Merge and filter\Load supplier">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge and filter\Write Update sup table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Region merge">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="113.6,41.6"
+          Id="Package\Region merge\Teritory"
+          TopLeft="664.999963666003,27.7333331404792" />
+        <NodeLayout
+          Size="111.2,41.6"
+          Id="Package\Region merge\Region"
+          TopLeft="464.166641305719,57.1999996022383" />
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\Region merge\Sort teritory"
+          TopLeft="664.166630378201,194.133331983354" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Region merge\Merge Join"
+          TopLeft="590.833301051625,350.13333089855" />
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Sort Output]"
+          TopLeft="730.166630378201,235.733331983354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-54.26666265991,114.399998915195"
+              Start="0,0"
+              End="-54.26666265991,106.899998915195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.8029261863231" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.8029261863231"
+                    Point2="0,67.8029261863231"
+                    Point3="-4,67.8029261863231" />
+                  <mssgle:LineSegment
+                    End="-50.26666265991,67.8029261863231" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.26666265991,67.8029261863231"
+                    Point2="-54.26666265991,67.8029261863231"
+                    Point3="-54.26666265991,71.8029261863231" />
+                  <mssgle:LineSegment
+                    End="-54.26666265991,106.899998915195" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Region merge\Sort region"
+          TopLeft="469.999974320333,239.199998336633" />
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Sort Output1]"
+          TopLeft="534.799974320333,280.799998336633">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.566660064625,69.3333325619166"
+              Start="0,0"
+              End="100.566660064625,61.8333325619166">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.0926824696238" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.0926824696238"
+                    Point2="0,41.0926824696238"
+                    Point3="4,41.0926824696238" />
+                  <mssgle:LineSegment
+                    End="96.5666600646249,41.0926824696238" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.5666600646249,41.0926824696238"
+                    Point2="100.566660064625,41.0926824696238"
+                    Point3="100.566660064625,45.0926824696238" />
+                  <mssgle:LineSegment
+                    End="100.566660064625,61.8333325619166" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Region merge\Data Conversion 1"
+          TopLeft="651.666631061172,117.466665955517" />
+        <EdgeLayout
+          Id="Package\Region merge.Paths[ODBC Source Output]"
+          TopLeft="721.799963666003,69.3333331404792">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.8666673951687,48.1333328150379"
+              Start="0,0"
+              End="11.8666673951687,40.6333328150379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.066666407519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.066666407519"
+                    Point2="0,24.066666407519"
+                    Point3="4,24.066666407519" />
+                  <mssgle:LineSegment
+                    End="7.86666739516875,24.066666407519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.86666739516875,24.066666407519"
+                    Point2="11.8666673951687,24.066666407519"
+                    Point3="11.8666673951687,28.066666407519" />
+                  <mssgle:LineSegment
+                    End="11.8666673951687,40.6333328150379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Data Conversion Output]"
+          TopLeft="731.916630719687,159.066665955517">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.0666660278373"
+              Start="0,0"
+              End="0,27.5666660278373">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5666660278373" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="113.6,41.6"
+          Id="Package\Region merge\Unpivot"
+          TopLeft="467.499974456927,560.133330717749" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Region merge\Data Conversion"
+          TopLeft="436.666642808253,164.666665521595" />
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Data Conversion Output1]"
+          TopLeft="514.666642808253,206.266665521595">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.1333315120803,32.9333328150379"
+              Start="0,0"
+              End="20.1333315120803,25.4333328150379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.466666407519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.466666407519"
+                    Point2="0,16.466666407519"
+                    Point3="4,16.466666407519" />
+                  <mssgle:LineSegment
+                    End="16.1333315120803,16.466666407519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.1333315120803,16.466666407519"
+                    Point2="20.1333315120803,16.466666407519"
+                    Point3="20.1333315120803,20.466666407519" />
+                  <mssgle:LineSegment
+                    End="20.1333315120803,25.4333328150379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region merge.Paths[ODBC Source Output1]"
+          TopLeft="517.216642056986,98.7999996022383">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.8666659193569"
+              Start="0,0"
+              End="0,58.3666659193569">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.3666659193569" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Region merge\Multicast"
+          TopLeft="602.499967080853,439.799997848471" />
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Merge Join Output]"
+          TopLeft="658.866634066239,391.73333089855">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.0666669499212"
+              Start="0,0"
+              End="0,40.5666669499212">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5666669499212" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Multicast Output 1]"
+          TopLeft="662.099967080853,481.399997848471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-137.799992623925,78.7333328692781"
+              Start="0,0"
+              End="-137.799992623925,71.2333328692781">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.3666664346391" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.3666664346391"
+                    Point2="0,39.3666664346391"
+                    Point3="-4,39.3666664346391" />
+                  <mssgle:LineSegment
+                    End="-133.799992623925,39.3666664346391" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-133.799992623925,39.3666664346391"
+                    Point2="-137.799992623925,39.3666664346391"
+                    Point3="-137.799992623925,43.3666664346391" />
+                  <mssgle:LineSegment
+                    End="-137.799992623925,71.2333328692781" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Region merge\Pivot_table"
+          TopLeft="434.999976232649,669.599996890227" />
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Unpivot Output]"
+          TopLeft="524.299974456927,601.733330717749">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.4999982242784,67.8666661724777"
+              Start="0,0"
+              End="-24.4999982242784,60.3666661724777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.9333330862389" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.9333330862389"
+                    Point2="0,33.9333330862389"
+                    Point3="-4,33.9333330862389" />
+                  <mssgle:LineSegment
+                    End="-20.4999982242784,33.9333330862389" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.4999982242784,33.9333330862389"
+                    Point2="-24.4999982242784,33.9333330862389"
+                    Point3="-24.4999982242784,37.9333330862389" />
+                  <mssgle:LineSegment
+                    End="-24.4999982242784,60.3666661724777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Region merge\Orginal_table"
+          TopLeft="768.333291353453,586.533331585593" />
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Multicast Output 2]"
+          TopLeft="680.633300414186,481.399997848471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="157.699990939267,105.133333737122"
+              Start="0,0"
+              End="157.699990939267,97.6333337371216">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.8888301867993" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.8888301867993"
+                    Point2="0,42.8888301867993"
+                    Point3="4,42.8888301867993" />
+                  <mssgle:LineSegment
+                    End="153.699990939267,42.8888301867993" />
+                  <mssgle:CubicBezierSegment
+                    Point1="153.699990939267,42.8888301867993"
+                    Point2="157.699990939267,42.8888301867993"
+                    Point3="157.699990939267,46.8888301867993" />
+                  <mssgle:LineSegment
+                    End="157.699990939267,97.6333337371216" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Region merge\Region">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Region merge\Teritory">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Region merge\Pivot_table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Region merge\Orginal_table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

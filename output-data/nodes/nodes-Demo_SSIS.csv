@@ -1,0 +1,18 @@
+NAME_NODE,LABEL_NODE,FILTER,FUNCTION,JOIN_ARG,COLOR,ID
+dbo.Products_Extract,dbo.Products_Extract,,DataSources,,#42d6a4,0
+User::Ship_country,User::Ship_country,,Variable,,#cdd408,1
+User::Unit_stock,User::Unit_stock,,Variable,,#cdd408,2
+Package\Select into variable,Package\Select into variable,Country = 'User::Ship_country' AND UnitsInStock > 'User::Unit_stock',Query,,#db59a5,3
+User::res_set,User::res_set,,Variable,,#cdd408,4
+Package\Loop over variable table,Package\Loop over variable table,,ForEachLoopContainer,,#d0d3d3,5
+Package\Loop over variable table\Insert into order_write,Package\Loop over variable table\Insert into order_write,,Query,,#d0d3d3,6
+Order_write,Order_write,,DataDestinations,,#42d6a4,7
+User::Sup_id,User::Sup_id,,Variable,,#cdd408,8
+User::Cat_id,User::Cat_id,,Variable,,#cdd408,9
+Package\insert into logger,Package\insert into logger,,Query,,#d0d3d3,10
+SSIS_Logger,SSIS_Logger,,DataDestinations,,#42d6a4,11
+User::Rows_suppliers,User::Rows_suppliers,,Variable,,#cdd408,12
+Supp_Prod_output,Supp_Prod_output,,DataSources,,#42d6a4,13
+User::CurrentDateTime,User::CurrentDateTime,,Variable,,#cdd408,14
+Package\Overwrite insert table,Package\Overwrite insert table,Region = 'User::CurrentDateTime',Query,,#db59a5,15
+New_Supp_Prod_output,New_Supp_Prod_output,,DataDestinations,,#42d6a4,16
