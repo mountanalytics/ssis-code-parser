@@ -262,11 +262,21 @@ def unpivot_parser(comp: dict) -> dict:
     return dict_pivot
 
 
-
-
-
-
-
+def aggregate_parser(comp: dict) -> dict:
+    dict_blocks = {}
+    for comps in comp["outputs"]["output"]["outputColumns"]["outputColumn"]:
+        for props in comps["properties"]["property"]:
+            if props["name"] == "AggregationType":
+                match int(props["#text"]):
+                    case 0:
+                        agg_type = "Group by"
+                    case 1:
+                        agg_type = "Count"
+                    case 3:
+                        agg_type = "Count distinct"
+                dict_blocks[comps["name"]] = agg_type
+                break
+    return dict_blocks
 
 
 def append_ext_tables(ext_table: str, df_nodes: pd.DataFrame, func = 'DataSources') -> pd.DataFrame:
@@ -280,6 +290,7 @@ def append_ext_tables(ext_table: str, df_nodes: pd.DataFrame, func = 'DataSource
                              'FILTER': [np.nan],
                              'SORT': [np.nan],
                              'PIVOT': [np.nan],
+                             'AGGREGATE': [np.nan],
                              'COLOR': "#42d6a4"
                              })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
@@ -296,6 +307,7 @@ def append_normal_node(refid: str, func: str, df_nodes: pd.DataFrame) -> pd.Data
                                 'FILTER': [np.nan],
                                 'SORT': [np.nan],
                                 'PIVOT': [np.nan],
+                                'AGGREGATE': [np.nan],
                                 'COLOR': "#9d94ff" if func == "UnionAll"  else "#d0d3d3"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
@@ -313,6 +325,7 @@ def append_join_node(refid: str, func: str, join_argu: str, df_nodes: pd.DataFra
                                 'FILTER': [np.nan],
                                 'SORT': [np.nan],
                                 'PIVOT': [np.nan],
+                                'AGGREGATE': [np.nan],
                                 'COLOR': "#9d94ff"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
@@ -330,6 +343,7 @@ def append_split_node(refid: str, func: str, split_argu: str, df_nodes: pd.DataF
                                 'FILTER': [np.nan],
                                 'SORT': [np.nan],
                                 'PIVOT': [np.nan],
+                                'AGGREGATE': [np.nan],
                                 'COLOR': "#9d94ff"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
@@ -354,6 +368,7 @@ def append_var_node(var_df: pd.DataFrame, df_nodes: pd.DataFrame) -> pd.DataFram
                                  'FILTER': [np.nan],
                                  'SORT': [np.nan],
                                  'PIVOT': [np.nan],
+                                 'AGGREGATE': [np.nan],
                                  'COLOR': "#cdd408"
                                  })
         df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
@@ -370,6 +385,7 @@ def append_sort_node(refid: str, func: str, sort_argu: str, df_nodes: pd.DataFra
                                 'FILTER': [np.nan],
                                 'SORT': sort_argu,
                                 'PIVOT': [np.nan],
+                                'AGGREGATE': [np.nan],
                                 'COLOR': "#4fbdb9"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
@@ -386,12 +402,28 @@ def append_pivot_node(refid: str, func: str, pivot_argu: str, df_nodes: pd.DataF
                                 'FILTER': [np.nan],
                                 'SORT': [np.nan],
                                 'PIVOT': pivot_argu,
+                                'AGGREGATE': [np.nan],
                                 'COLOR': "#8b6fae"
                                 })
     df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
     return df_nodes
 
-
+def append_aggregate_node(refid: str, func: str, arg_argu: str, df_nodes: pd.DataFrame) -> pd.DataFrame:
+    split_name = refid.split("\\")
+    input_df = pd.DataFrame({"LABEL_NODE": [split_name[1]+"@"+split_name[2]], 
+                                'ID': [np.nan],
+                                'FUNCTION': [func],
+                                'JOIN_ARG': [np.nan],
+                                'SPLIT_ARG': [np.nan],
+                                'NAME_NODE': [split_name[2]],
+                                'FILTER': [np.nan],
+                                'SORT': [np.nan],
+                                'PIVOT': [np.nan],
+                                'AGGREGATE': arg_argu,
+                                'COLOR': "#d6f6ff"
+                                })
+    df_nodes = pd.concat([df_nodes,input_df], ignore_index=True)
+    return df_nodes
 
 def lineage_path_flow(path_flow: list, components: list, df_name: str):
     """
@@ -482,6 +514,9 @@ def main_parser(components: list, df_nodes: pd.DataFrame, path_flow: list, df_na
         elif comp["componentClassID"] == "Microsoft.Multicast":
             dict_blocks[comp["refId"]] = "Multicast"
             df_nodes = append_normal_node(comp["refId"], "Multicast", df_nodes)
+        elif comp["componentClassID"] == "Microsoft.Aggregate":
+            dict_blocks[comp["refId"]] = aggregate_parser(comp)
+            df_nodes = append_aggregate_node(comp["refId"], "Aggregate", "Placeholder", df_nodes)
     df_nodes["ID"] = df_nodes.index        
     df_nodes.to_csv(f'output-data/nodes/nodes-{df_name}.csv',index=False)
     return dict_blocks, df_nodes

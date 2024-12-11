@@ -272,6 +272,10 @@
             "Column_name": "UnitPrice"
         },
         {
+            "Column_input": "Package\\Merge and filter\\Alter name pref[ValidFromNum]",
+            "Column_name": "ValidFromNum"
+        },
+        {
             "Column_input": "Package\\Merge and filter\\Split preferences[ValidFrom]",
             "Column_name": "ValidFrom"
         },
@@ -338,6 +342,10 @@
         {
             "Column_input": "Package\\Merge and filter\\Split preferences[UnitPrice2]",
             "Column_name": "UnitPrice"
+        },
+        {
+            "Column_input": "Package\\Merge and filter\\Split preferences[ValidFromNum]",
+            "Column_name": "ValidFromNum"
         }
     ],
     "Package\\Merge and filter\\Write Update sup table": [

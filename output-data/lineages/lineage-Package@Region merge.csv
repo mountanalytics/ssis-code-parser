@@ -1,91 +1,90 @@
 SOURCE_COLUMNS,TARGET_COLUMN,TRANSFORMATION,SOURCE_FIELD,TARGET_FIELD,SOURCE_NODE,TARGET_NODE,LINK_VALUE,ROW_ID,COLOR
-dbo.Territories_Extract[TerritoryDescription],Package\Region merge\Teritory[TerritoryDescription],,TerritoryDescription,TerritoryDescription,43,42,1,0,aliceblue
-dbo.Territories_Extract[Country],Package\Region merge\Teritory[Country],,Country,Country,43,42,1,1,aliceblue
-dbo.Territories_Extract[RegionID],Package\Region merge\Teritory[RegionID],,RegionID,RegionID,43,42,1,2,aliceblue
-dbo.Territories_Extract[TerritoryID],Package\Region merge\Teritory[TerritoryID],,TerritoryID,TerritoryID,43,42,1,3,aliceblue
-dbo.Territories_Extract[State],Package\Region merge\Teritory[State],,State,State,43,42,1,4,aliceblue
-dbo.Territories_Extract[ValidFrom],Package\Region merge\Teritory[ValidFrom],,ValidFrom,ValidFrom,43,42,1,5,aliceblue
-dbo.Territories_Extract[ValidTo],Package\Region merge\Teritory[ValidTo],,ValidTo,ValidTo,43,42,1,6,aliceblue
-dbo.Territories_Extract[Active],Package\Region merge\Teritory[Active],,Active,Active,43,42,1,7,aliceblue
-Package\Region merge\Teritory[TerritoryDescription],Package\Region merge\Data Conversion 1[TerritoryDescription],,TerritoryDescription,TerritoryDescription,42,31,1,8,aliceblue
-Package\Region merge\Teritory[Country],Package\Region merge\Data Conversion 1[Country],,Country,Country,42,31,1,9,aliceblue
-Package\Region merge\Teritory[RegionID],Package\Region merge\Data Conversion 1[RegionID],,RegionID,RegionID,42,31,1,10,aliceblue
-Package\Region merge\Teritory[TerritoryID],Package\Region merge\Data Conversion 1[TerritoryID],,TerritoryID,TerritoryID,42,31,1,11,aliceblue
-Package\Region merge\Teritory[State],Package\Region merge\Data Conversion 1[State],,State,State,42,31,1,12,aliceblue
-Package\Region merge\Teritory[ValidFrom],Package\Region merge\Data Conversion 1[ValidFrom],,ValidFrom,ValidFrom,42,31,1,13,aliceblue
-Package\Region merge\Teritory[ValidTo],Package\Region merge\Data Conversion 1[ValidTo],,ValidTo,ValidTo,42,31,1,14,aliceblue
-Package\Region merge\Teritory[Active],Package\Region merge\Data Conversion 1[Active],,Active,Active,42,31,1,15,aliceblue
-Package\Region merge\Data Conversion 1[TerritoryDescription],Package\Region merge\Sort teritory[TerritoryDescription],,TerritoryDescription,TerritoryDescription,31,41,1,16,aliceblue
-Package\Region merge\Data Conversion 1[Country],Package\Region merge\Sort teritory[Country],,Country,Country,31,41,1,17,aliceblue
-Package\Region merge\Data Conversion 1[RegionID],Package\Region merge\Sort teritory[RegionID],,RegionID,RegionID,31,41,1,18,aliceblue
-Package\Region merge\Data Conversion 1[TerritoryID],Package\Region merge\Sort teritory[TerritoryID],,TerritoryID,TerritoryID,31,41,1,19,aliceblue
-Package\Region merge\Data Conversion 1[State],Package\Region merge\Sort teritory[State],,State,State,31,41,1,20,aliceblue
-Package\Region merge\Data Conversion 1[ValidFrom],Package\Region merge\Sort teritory[ValidFrom],,ValidFrom,ValidFrom,31,41,1,21,aliceblue
-Package\Region merge\Data Conversion 1[ValidTo],Package\Region merge\Sort teritory[ValidTo],,ValidTo,ValidTo,31,41,1,22,aliceblue
-Package\Region merge\Data Conversion 1[Active],Package\Region merge\Sort teritory[Active],,Active,Active,31,41,1,23,aliceblue
-Package\Region merge\Data Conversion 1[DC_RegionID],Package\Region merge\Sort teritory[DC_RegionID],"col: RegionID, from: wstr, to: i4",DC_RegionID,DC_RegionID,31,41,1,24,#ffb480
-Package\Region merge\Data Conversion 1[DC_Active],Package\Region merge\Sort teritory[DC_Active],"col: Active, from: bool, to: bool",DC_Active,DC_Active,31,41,1,25,#ffb480
-Package\Region merge\Sort teritory[TerritoryDescription],Package\Region merge\Merge Join[TerritoryDescription],,TerritoryDescription,TerritoryDescription,41,32,1,26,aliceblue
-Package\Region merge\Sort teritory[Country],Package\Region merge\Merge Join[Country],,Country,Country,41,32,1,27,aliceblue
-Package\Region merge\Sort teritory[RegionID],Package\Region merge\Merge Join[RegionID],,RegionID,RegionID,41,32,1,28,aliceblue
-Package\Region merge\Sort teritory[TerritoryID],Package\Region merge\Merge Join[TerritoryID],,TerritoryID,TerritoryID,41,32,1,29,aliceblue
-Package\Region merge\Sort teritory[State],Package\Region merge\Merge Join[State],,State,State,41,32,1,30,aliceblue
-Package\Region merge\Sort teritory[ValidFrom],Package\Region merge\Merge Join[ValidFrom],,ValidFrom,ValidFrom,41,32,1,31,aliceblue
-Package\Region merge\Sort teritory[ValidTo],Package\Region merge\Merge Join[ValidTo],,ValidTo,ValidTo,41,32,1,32,aliceblue
-Package\Region merge\Sort teritory[Active],Package\Region merge\Merge Join[Active],,Active,Active,41,32,1,33,aliceblue
-Package\Region merge\Sort teritory[DC_RegionID],Package\Region merge\Merge Join[DC_RegionID],,DC_RegionID,DC_RegionID,41,32,1,34,aliceblue
-Package\Region merge\Sort teritory[DC_Active],Package\Region merge\Merge Join[DC_Active],,DC_Active,DC_Active,41,32,1,35,aliceblue
-Package\Region merge\Merge Join[DC_RegionDescriptiona],Package\Region merge\Multicast[DC_RegionDescriptiona],,DC_RegionDescriptiona,DC_RegionDescriptiona,32,33,1,36,aliceblue
-Package\Region merge\Merge Join[TerritoryDescription],Package\Region merge\Multicast[TerritoryDescription],,TerritoryDescription,TerritoryDescription,32,33,1,37,aliceblue
-Package\Region merge\Merge Join[Country],Package\Region merge\Multicast[Country],,Country,Country,32,33,1,38,aliceblue
-Package\Region merge\Merge Join[RegionID],Package\Region merge\Multicast[RegionID],,RegionID,RegionID,32,33,1,39,aliceblue
-Package\Region merge\Merge Join[TerritoryID],Package\Region merge\Multicast[TerritoryID],,TerritoryID,TerritoryID,32,33,1,40,aliceblue
-Package\Region merge\Merge Join[State],Package\Region merge\Multicast[State],,State,State,32,33,1,41,aliceblue
-Package\Region merge\Merge Join[ValidFrom],Package\Region merge\Multicast[ValidFrom],,ValidFrom,ValidFrom,32,33,1,42,aliceblue
-Package\Region merge\Merge Join[ValidTo],Package\Region merge\Multicast[ValidTo],,ValidTo,ValidTo,32,33,1,43,aliceblue
-Package\Region merge\Merge Join[Active],Package\Region merge\Multicast[Active],,Active,Active,32,33,1,44,aliceblue
-Package\Region merge\Multicast[DC_RegionDescriptiona],Package\Region merge\Unpivot[DC_RegionDescriptiona],,DC_RegionDescriptiona,DC_RegionDescriptiona,33,44,1,45,aliceblue
-Package\Region merge\Multicast[TerritoryDescription],Package\Region merge\Unpivot[TerritoryDescription],,TerritoryDescription,TerritoryDescription,33,44,1,46,aliceblue
-Package\Region merge\Multicast[Country],Package\Region merge\Unpivot[Country],,Country,Country,33,44,1,47,aliceblue
-Package\Region merge\Multicast[RegionID],Package\Region merge\Unpivot[RegionID],,RegionID,RegionID,33,44,1,48,aliceblue
-Package\Region merge\Multicast[TerritoryID],Package\Region merge\Unpivot[TerritoryID],,TerritoryID,TerritoryID,33,44,1,49,aliceblue
-Package\Region merge\Multicast[State],Package\Region merge\Unpivot[State],,State,State,33,44,1,50,aliceblue
-Package\Region merge\Multicast[ValidFrom],Package\Region merge\Unpivot[ValidFrom],,ValidFrom,ValidFrom,33,44,1,51,aliceblue
-Package\Region merge\Multicast[ValidTo],Package\Region merge\Unpivot[ValidTo],,ValidTo,ValidTo,33,44,1,52,aliceblue
-Package\Region merge\Multicast[Active],Package\Region merge\Unpivot[Active],,Active,Active,33,44,1,53,aliceblue
-Package\Region merge\Multicast[DC_RegionDescriptiona],Package\Region merge\Orginal_table[DC_RegionDescriptiona],,DC_RegionDescriptiona,DC_RegionDescriptiona,33,34,1,54,aliceblue
-Package\Region merge\Multicast[TerritoryDescription],Package\Region merge\Orginal_table[TerritoryDescription],,TerritoryDescription,TerritoryDescription,33,34,1,55,aliceblue
-Package\Region merge\Multicast[Country],Package\Region merge\Orginal_table[Country],,Country,Country,33,34,1,56,aliceblue
-Package\Region merge\Multicast[RegionID],Package\Region merge\Orginal_table[RegionID],,RegionID,RegionID,33,34,1,57,aliceblue
-Package\Region merge\Multicast[TerritoryID],Package\Region merge\Orginal_table[TerritoryID],,TerritoryID,TerritoryID,33,34,1,58,aliceblue
-Package\Region merge\Multicast[State],Package\Region merge\Orginal_table[State],,State,State,33,34,1,59,aliceblue
-Package\Region merge\Multicast[ValidTo],Package\Region merge\Orginal_table[ValidTo],,ValidTo,ValidTo,33,34,1,60,aliceblue
-Package\Region merge\Multicast[Active],Package\Region merge\Orginal_table[Active],,Active,Active,33,34,1,61,aliceblue
-Package\Region merge\Multicast[ValidFrom],Package\Region merge\Orginal_table[ValidFrom],,ValidFrom,ValidFrom,33,34,1,62,aliceblue
-Package\Region merge\Orginal_table[DC_RegionDescriptiona],dbo.Orginal_territory[DC_RegionDescription],,DC_RegionDescriptiona,DC_RegionDescription,34,35,1,63,aliceblue
-Package\Region merge\Orginal_table[TerritoryDescription],dbo.Orginal_territory[TerritoryDescription],,TerritoryDescription,TerritoryDescription,34,35,1,64,aliceblue
-Package\Region merge\Orginal_table[Country],dbo.Orginal_territory[Country],,Country,Country,34,35,1,65,aliceblue
-Package\Region merge\Orginal_table[RegionID],dbo.Orginal_territory[RegionID],,RegionID,RegionID,34,35,1,66,aliceblue
-Package\Region merge\Orginal_table[TerritoryID],dbo.Orginal_territory[TerritoryID],,TerritoryID,TerritoryID,34,35,1,67,aliceblue
-Package\Region merge\Orginal_table[State],dbo.Orginal_territory[State],,State,State,34,35,1,68,aliceblue
-Package\Region merge\Orginal_table[ValidTo],dbo.Orginal_territory[ValidTo],,ValidTo,ValidTo,34,35,1,69,aliceblue
-Package\Region merge\Orginal_table[Active],dbo.Orginal_territory[Active],,Active,Active,34,35,1,70,aliceblue
-Package\Region merge\Orginal_table[ValidFrom],dbo.Orginal_territory[VaidFrom],,ValidFrom,VaidFrom,34,35,1,71,aliceblue
-Package\Region merge\Unpivot[Name],Package\Region merge\Pivot_table[Name],,Name,Name,44,36,1,72,aliceblue
-Package\Region merge\Unpivot[Name_place],Package\Region merge\Pivot_table[Name_place],,Name_place,Name_place,44,36,1,73,aliceblue
-Package\Region merge\Unpivot[RegionID],Package\Region merge\Pivot_table[RegionID],,RegionID,RegionID,44,36,1,74,aliceblue
-Package\Region merge\Unpivot[TerritoryID],Package\Region merge\Pivot_table[TerritoryID],,TerritoryID,TerritoryID,44,36,1,75,aliceblue
-Package\Region merge\Pivot_table[Name],dbo.Pivot_territory[Name],,Name,Name,36,37,1,76,aliceblue
-Package\Region merge\Pivot_table[Name_place],dbo.Pivot_territory[Name_place],,Name_place,Name_place,36,37,1,77,aliceblue
-Package\Region merge\Pivot_table[RegionID],dbo.Pivot_territory[RegionID],,RegionID,RegionID,36,37,1,78,aliceblue
-Package\Region merge\Pivot_table[TerritoryID],dbo.Pivot_territory[TerritoryID],,TerritoryID,TerritoryID,36,37,1,79,aliceblue
-dbo.Region_Extract[RegionID],Package\Region merge\Region[RegionID],,RegionID,RegionID,39,38,1,0,aliceblue
-dbo.Region_Extract[RegionDescription],Package\Region merge\Region[RegionDescription],,RegionDescription,RegionDescription,39,38,1,1,aliceblue
-Package\Region merge\Region[RegionID],Package\Region merge\Data Conversion[RegionID],,RegionID,RegionID,38,30,1,2,aliceblue
-Package\Region merge\Region[RegionDescription],Package\Region merge\Data Conversion[RegionDescription],,RegionDescription,RegionDescription,38,30,1,3,aliceblue
-Package\Region merge\Data Conversion[RegionID],Package\Region merge\Sort region[RegionID],,RegionID,RegionID,30,40,1,4,aliceblue
-Package\Region merge\Data Conversion[RegionDescription],Package\Region merge\Sort region[RegionDescription],,RegionDescription,RegionDescription,30,40,1,5,aliceblue
-Package\Region merge\Data Conversion[DC_RegionDescription],Package\Region merge\Sort region[DC_RegionDescription],"col: RegionDescription, from: str, to: wstr",DC_RegionDescription,DC_RegionDescription,30,40,1,6,#ffb480
-Package\Region merge\Sort region[RegionID],Package\Region merge\Merge Join[RegionID],,RegionID,RegionID,40,32,1,7,aliceblue
-Package\Region merge\Sort region[RegionDescription],Package\Region merge\Merge Join[RegionDescription],,RegionDescription,RegionDescription,40,32,1,8,aliceblue
-Package\Region merge\Sort region[DC_RegionDescription],Package\Region merge\Merge Join[DC_RegionDescription],,DC_RegionDescription,DC_RegionDescription,40,32,1,9,aliceblue
+dbo.Territories_Extract[TerritoryDescription],Package\Region merge\Teritory[TerritoryDescription],,TerritoryDescription,TerritoryDescription,44,43,1,0,aliceblue
+dbo.Territories_Extract[Country],Package\Region merge\Teritory[Country],,Country,Country,44,43,1,1,aliceblue
+dbo.Territories_Extract[RegionID],Package\Region merge\Teritory[RegionID],,RegionID,RegionID,44,43,1,2,aliceblue
+dbo.Territories_Extract[TerritoryID],Package\Region merge\Teritory[TerritoryID],,TerritoryID,TerritoryID,44,43,1,3,aliceblue
+dbo.Territories_Extract[State],Package\Region merge\Teritory[State],,State,State,44,43,1,4,aliceblue
+dbo.Territories_Extract[ValidFrom],Package\Region merge\Teritory[ValidFrom],,ValidFrom,ValidFrom,44,43,1,5,aliceblue
+dbo.Territories_Extract[ValidTo],Package\Region merge\Teritory[ValidTo],,ValidTo,ValidTo,44,43,1,6,aliceblue
+dbo.Territories_Extract[Active],Package\Region merge\Teritory[Active],,Active,Active,44,43,1,7,aliceblue
+Package\Region merge\Teritory[TerritoryDescription],Package\Region merge\Data Conversion 1[TerritoryDescription],,TerritoryDescription,TerritoryDescription,43,31,1,8,aliceblue
+Package\Region merge\Teritory[Country],Package\Region merge\Data Conversion 1[Country],,Country,Country,43,31,1,9,aliceblue
+Package\Region merge\Teritory[RegionID],Package\Region merge\Data Conversion 1[RegionID],,RegionID,RegionID,43,31,1,10,aliceblue
+Package\Region merge\Teritory[TerritoryID],Package\Region merge\Data Conversion 1[TerritoryID],,TerritoryID,TerritoryID,43,31,1,11,aliceblue
+Package\Region merge\Teritory[State],Package\Region merge\Data Conversion 1[State],,State,State,43,31,1,12,aliceblue
+Package\Region merge\Teritory[ValidFrom],Package\Region merge\Data Conversion 1[ValidFrom],,ValidFrom,ValidFrom,43,31,1,13,aliceblue
+Package\Region merge\Teritory[ValidTo],Package\Region merge\Data Conversion 1[ValidTo],,ValidTo,ValidTo,43,31,1,14,aliceblue
+Package\Region merge\Teritory[Active],Package\Region merge\Data Conversion 1[Active],,Active,Active,43,31,1,15,aliceblue
+Package\Region merge\Data Conversion 1[TerritoryDescription],Package\Region merge\Sort teritory[TerritoryDescription],,TerritoryDescription,TerritoryDescription,31,42,1,16,aliceblue
+Package\Region merge\Data Conversion 1[Country],Package\Region merge\Sort teritory[Country],,Country,Country,31,42,1,17,aliceblue
+Package\Region merge\Data Conversion 1[RegionID],Package\Region merge\Sort teritory[RegionID],,RegionID,RegionID,31,42,1,18,aliceblue
+Package\Region merge\Data Conversion 1[TerritoryID],Package\Region merge\Sort teritory[TerritoryID],,TerritoryID,TerritoryID,31,42,1,19,aliceblue
+Package\Region merge\Data Conversion 1[State],Package\Region merge\Sort teritory[State],,State,State,31,42,1,20,aliceblue
+Package\Region merge\Data Conversion 1[ValidFrom],Package\Region merge\Sort teritory[ValidFrom],,ValidFrom,ValidFrom,31,42,1,21,aliceblue
+Package\Region merge\Data Conversion 1[ValidTo],Package\Region merge\Sort teritory[ValidTo],,ValidTo,ValidTo,31,42,1,22,aliceblue
+Package\Region merge\Data Conversion 1[Active],Package\Region merge\Sort teritory[Active],,Active,Active,31,42,1,23,aliceblue
+Package\Region merge\Data Conversion 1[DC_RegionID],Package\Region merge\Sort teritory[DC_RegionID],"col: RegionID, from: wstr, to: i4",DC_RegionID,DC_RegionID,31,42,1,24,#ffb480
+Package\Region merge\Data Conversion 1[DC_Active],Package\Region merge\Sort teritory[DC_Active],"col: Active, from: bool, to: bool",DC_Active,DC_Active,31,42,1,25,#ffb480
+Package\Region merge\Sort teritory[TerritoryDescription],Package\Region merge\Merge Join[TerritoryDescription],,TerritoryDescription,TerritoryDescription,42,33,1,26,aliceblue
+Package\Region merge\Sort teritory[Country],Package\Region merge\Merge Join[Country],,Country,Country,42,33,1,27,aliceblue
+Package\Region merge\Sort teritory[RegionID],Package\Region merge\Merge Join[RegionID],,RegionID,RegionID,42,33,1,28,aliceblue
+Package\Region merge\Sort teritory[TerritoryID],Package\Region merge\Merge Join[TerritoryID],,TerritoryID,TerritoryID,42,33,1,29,aliceblue
+Package\Region merge\Sort teritory[State],Package\Region merge\Merge Join[State],,State,State,42,33,1,30,aliceblue
+Package\Region merge\Sort teritory[ValidFrom],Package\Region merge\Merge Join[ValidFrom],,ValidFrom,ValidFrom,42,33,1,31,aliceblue
+Package\Region merge\Sort teritory[ValidTo],Package\Region merge\Merge Join[ValidTo],,ValidTo,ValidTo,42,33,1,32,aliceblue
+Package\Region merge\Sort teritory[Active],Package\Region merge\Merge Join[Active],,Active,Active,42,33,1,33,aliceblue
+Package\Region merge\Sort teritory[DC_RegionID],Package\Region merge\Merge Join[DC_RegionID],,DC_RegionID,DC_RegionID,42,33,1,34,aliceblue
+Package\Region merge\Sort teritory[DC_Active],Package\Region merge\Merge Join[DC_Active],,DC_Active,DC_Active,42,33,1,35,aliceblue
+Package\Region merge\Merge Join[DC_RegionDescriptiona],Package\Region merge\Multicast[DC_RegionDescriptiona],,DC_RegionDescriptiona,DC_RegionDescriptiona,33,34,1,36,aliceblue
+Package\Region merge\Merge Join[TerritoryDescription],Package\Region merge\Multicast[TerritoryDescription],,TerritoryDescription,TerritoryDescription,33,34,1,37,aliceblue
+Package\Region merge\Merge Join[Country],Package\Region merge\Multicast[Country],,Country,Country,33,34,1,38,aliceblue
+Package\Region merge\Merge Join[RegionID],Package\Region merge\Multicast[RegionID],,RegionID,RegionID,33,34,1,39,aliceblue
+Package\Region merge\Merge Join[TerritoryID],Package\Region merge\Multicast[TerritoryID],,TerritoryID,TerritoryID,33,34,1,40,aliceblue
+Package\Region merge\Merge Join[State],Package\Region merge\Multicast[State],,State,State,33,34,1,41,aliceblue
+Package\Region merge\Merge Join[ValidFrom],Package\Region merge\Multicast[ValidFrom],,ValidFrom,ValidFrom,33,34,1,42,aliceblue
+Package\Region merge\Merge Join[ValidTo],Package\Region merge\Multicast[ValidTo],,ValidTo,ValidTo,33,34,1,43,aliceblue
+Package\Region merge\Merge Join[Active],Package\Region merge\Multicast[Active],,Active,Active,33,34,1,44,aliceblue
+Package\Region merge\Multicast[DC_RegionDescriptiona],Package\Region merge\Unpivot[DC_RegionDescriptiona],,DC_RegionDescriptiona,DC_RegionDescriptiona,34,45,1,45,aliceblue
+Package\Region merge\Multicast[TerritoryDescription],Package\Region merge\Unpivot[TerritoryDescription],,TerritoryDescription,TerritoryDescription,34,45,1,46,aliceblue
+Package\Region merge\Multicast[Country],Package\Region merge\Unpivot[Country],,Country,Country,34,45,1,47,aliceblue
+Package\Region merge\Multicast[RegionID],Package\Region merge\Unpivot[RegionID],,RegionID,RegionID,34,45,1,48,aliceblue
+Package\Region merge\Multicast[TerritoryID],Package\Region merge\Unpivot[TerritoryID],,TerritoryID,TerritoryID,34,45,1,49,aliceblue
+Package\Region merge\Multicast[State],Package\Region merge\Unpivot[State],,State,State,34,45,1,50,aliceblue
+Package\Region merge\Multicast[ValidFrom],Package\Region merge\Unpivot[ValidFrom],,ValidFrom,ValidFrom,34,45,1,51,aliceblue
+Package\Region merge\Multicast[ValidTo],Package\Region merge\Unpivot[ValidTo],,ValidTo,ValidTo,34,45,1,52,aliceblue
+Package\Region merge\Multicast[Active],Package\Region merge\Unpivot[Active],,Active,Active,34,45,1,53,aliceblue
+Package\Region merge\Multicast[DC_RegionDescriptiona],Package\Region merge\Grouped_country_state[DC_RegionDescriptiona],,DC_RegionDescriptiona,DC_RegionDescriptiona,34,32,1,54,aliceblue
+Package\Region merge\Multicast[TerritoryDescription],Package\Region merge\Grouped_country_state[TerritoryDescription],,TerritoryDescription,TerritoryDescription,34,32,1,55,aliceblue
+Package\Region merge\Multicast[Country],Package\Region merge\Grouped_country_state[Country],,Country,Country,34,32,1,56,aliceblue
+Package\Region merge\Multicast[RegionID],Package\Region merge\Grouped_country_state[RegionID],,RegionID,RegionID,34,32,1,57,aliceblue
+Package\Region merge\Multicast[TerritoryID],Package\Region merge\Grouped_country_state[TerritoryID],,TerritoryID,TerritoryID,34,32,1,58,aliceblue
+Package\Region merge\Multicast[State],Package\Region merge\Grouped_country_state[State],,State,State,34,32,1,59,aliceblue
+Package\Region merge\Multicast[ValidFrom],Package\Region merge\Grouped_country_state[ValidFrom],,ValidFrom,ValidFrom,34,32,1,60,aliceblue
+Package\Region merge\Multicast[ValidTo],Package\Region merge\Grouped_country_state[ValidTo],,ValidTo,ValidTo,34,32,1,61,aliceblue
+Package\Region merge\Multicast[Active],Package\Region merge\Grouped_country_state[Active],,Active,Active,34,32,1,62,aliceblue
+Package\Region merge\Unpivot[Name],Package\Region merge\Pivot_table[Name],,Name,Name,45,37,1,63,aliceblue
+Package\Region merge\Unpivot[Name_place],Package\Region merge\Pivot_table[Name_place],,Name_place,Name_place,45,37,1,64,aliceblue
+Package\Region merge\Unpivot[RegionID],Package\Region merge\Pivot_table[RegionID],,RegionID,RegionID,45,37,1,65,aliceblue
+Package\Region merge\Unpivot[TerritoryID],Package\Region merge\Pivot_table[TerritoryID],,TerritoryID,TerritoryID,45,37,1,66,aliceblue
+Package\Region merge\Pivot_table[Name],dbo.Pivot_territory[Name],,Name,Name,37,38,1,67,aliceblue
+Package\Region merge\Pivot_table[Name_place],dbo.Pivot_territory[Name_place],,Name_place,Name_place,37,38,1,68,aliceblue
+Package\Region merge\Pivot_table[RegionID],dbo.Pivot_territory[RegionID],,RegionID,RegionID,37,38,1,69,aliceblue
+Package\Region merge\Pivot_table[TerritoryID],dbo.Pivot_territory[TerritoryID],,TerritoryID,TerritoryID,37,38,1,70,aliceblue
+Package\Region merge\Grouped_country_state[Country],Package\Region merge\Orginal_table[Country],,Country,Country,32,35,1,63,aliceblue
+Package\Region merge\Grouped_country_state[RegionID],Package\Region merge\Orginal_table[RegionID],,RegionID,RegionID,32,35,1,64,aliceblue
+Package\Region merge\Grouped_country_state[TerritoryID],Package\Region merge\Orginal_table[TerritoryID],,TerritoryID,TerritoryID,32,35,1,65,aliceblue
+Package\Region merge\Grouped_country_state[State],Package\Region merge\Orginal_table[State],,State,State,32,35,1,66,aliceblue
+Package\Region merge\Orginal_table[Country],dbo.Orginal_territory[Country],,Country,Country,35,36,1,67,aliceblue
+Package\Region merge\Orginal_table[RegionID],dbo.Orginal_territory[RegionID],,RegionID,RegionID,35,36,1,68,aliceblue
+Package\Region merge\Orginal_table[TerritoryID],dbo.Orginal_territory[TerritoryID],,TerritoryID,TerritoryID,35,36,1,69,aliceblue
+Package\Region merge\Orginal_table[State],dbo.Orginal_territory[State],,State,State,35,36,1,70,aliceblue
+dbo.Region_Extract[RegionID],Package\Region merge\Region[RegionID],,RegionID,RegionID,40,39,1,0,aliceblue
+dbo.Region_Extract[RegionDescription],Package\Region merge\Region[RegionDescription],,RegionDescription,RegionDescription,40,39,1,1,aliceblue
+Package\Region merge\Region[RegionID],Package\Region merge\Data Conversion[RegionID],,RegionID,RegionID,39,30,1,2,aliceblue
+Package\Region merge\Region[RegionDescription],Package\Region merge\Data Conversion[RegionDescription],,RegionDescription,RegionDescription,39,30,1,3,aliceblue
+Package\Region merge\Data Conversion[RegionID],Package\Region merge\Sort region[RegionID],,RegionID,RegionID,30,41,1,4,aliceblue
+Package\Region merge\Data Conversion[RegionDescription],Package\Region merge\Sort region[RegionDescription],,RegionDescription,RegionDescription,30,41,1,5,aliceblue
+Package\Region merge\Data Conversion[DC_RegionDescription],Package\Region merge\Sort region[DC_RegionDescription],"col: RegionDescription, from: str, to: wstr",DC_RegionDescription,DC_RegionDescription,30,41,1,6,#ffb480
+Package\Region merge\Sort region[RegionID],Package\Region merge\Merge Join[RegionID],,RegionID,RegionID,41,33,1,7,aliceblue
+Package\Region merge\Sort region[RegionDescription],Package\Region merge\Merge Join[RegionDescription],,RegionDescription,RegionDescription,41,33,1,8,aliceblue
+Package\Region merge\Sort region[DC_RegionDescription],Package\Region merge\Merge Join[DC_RegionDescription],,DC_RegionDescription,DC_RegionDescription,41,33,1,9,aliceblue

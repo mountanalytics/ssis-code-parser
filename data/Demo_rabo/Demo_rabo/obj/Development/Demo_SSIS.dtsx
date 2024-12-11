@@ -11,13 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-<<<<<<< HEAD
-  DTS:VersionBuild="123"
-  DTS:VersionGUID="{9BABF522-7804-498F-B3D8-D94969B1E472}">
-=======
-  DTS:VersionBuild="138"
-  DTS:VersionGUID="{4596DDFD-8469-4CF5-8414-E697F9C47C89}">
->>>>>>> dev_pietro
+  DTS:VersionBuild="155"
+  DTS:VersionGUID="{E46F8B1E-0948-420D-B9A3-035B7A8A5A82}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -46,11 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-<<<<<<< HEAD
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAEtNQr0Zl8Z5zb1mm8k32TxGmAjGkTC5NCMrA4Nbk9GgAAAAAOgAAAAAIAACAAAACNTEgvNt/29hONE0XJOajuo96FyRiPsv6yDGa8cR+3FTAAAACSH+WYnn8b1vLNv+yunUG1avrcf9AhU9WC/r9y7YLUxk24F+bTPj69WuQGgygzJwBAAAAA+INoR0J2ceik8teKSiBRx8E40LvDr09j5H+lIGPcTFdnoHpYrzPgxeyUx7KpJtzNAcyIO2znwvcRWIFFcKnsPA</DTS:Password>
-=======
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADBlrX+kJfhR+2WQiCT+0IaOWs75+Ic52j5olfMq0DEyQAAAAAOgAAAAAIAACAAAAD1eHjCJLmjCK4/Bohhw2MpPVKQac4vJfSsF6ChrMwuEjAAAABT+aaq7guTJgPw0C6MgHYpjklq3vHcqYbfzKlqb6oJlh0hUc4tWDX0lT683dNtwtRAAAAAa92gYhyetSacwnXMG3dsWpyymZnggcvsCsGOeSXFzFS42cTTLlO5E9G7fkBtBfY5rhZoVO7IWfeIGoqfCcL4dg</DTS:Password>
->>>>>>> dev_pietro
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAd0pT3o0T7ecotkxn9y7G//1nRbYHOYkq6upslCixGKwAAAAAOgAAAAAIAACAAAACcCKlFgGlfjnDjkhi+AUtQMKHHnBEjkOk1NqbfxUnUvzAAAAByKLKLTOgA/bCtwOMerfQ5ivBzR4M1Jt2lLB2MaJKxXD3z57Ujf8DEN1AYkIeYLS1AAAAA5Q4FFwpNub9re6znGgvNC01a5mAXjPOhWf1/Itk+zfTs/ZfLnbIAdK9VBLN/ARK9iVMiX9ejCXL3EbnaWLo6vA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -67,11 +58,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-<<<<<<< HEAD
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABFmaTTyt9djVEjkqn3j1Wm0rf0JhCocUt1x/seG5NZgwAAAAAOgAAAAAIAACAAAACWjYpAFSu7UY07D0r9hgH7N51ZHCxQVnpp6AsPW2uhujAAAAAuMT2xG7SLVo6r2lW1cItte3wdZ1QaZm1y0vEx12nvivVJRF2B59hnsULmuRUFeQ5AAAAA2he1i7VaLR5McIP/N9ZKe7Pm4nbRCnK9G26dK/XJbVMDeXXhksAINmx7rfFUPzJuCnxMXRYrbPMrnkMhkvuOSA</DTS:Password>
-=======
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADgBGFpgyzG7/iQwj455GR5mxa+9VuuPj5ZpM+mN6EB5QAAAAAOgAAAAAIAACAAAACjOFwRM02cEdp/jHK+ZXVs/sLVw9qDkoKlPXav/0S/ezAAAAB7JuMX3wxRxextW0d6QSGrl+aO46B/x1TbZNTgg2jMqxxmpmUYNc7fTHZXNoiPe+1AAAAA7dfIUDPFe00D/g1W1kg7JY/6THSMpoZkAL4Wh+QbPuWAgw8ernHKwtTtQFv1f1jQ5pOPx79nopKpYQ4ADxzpxA</DTS:Password>
->>>>>>> dev_pietro
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA4TAeGBs7M0VG+gsW+UyBMcA/MOSDoH9t/mvtcaNAfewAAAAAOgAAAAAIAACAAAADZrK6ihgR6tG6ZwAa+f9AQhjOrXHg1ob0gvGp00hOCNjAAAAB3Y1Je/9SvilOroX9PKw9/RXwvqRldmpa07umT8WpNf+UuueJyzhF8+APovnL1qtFAAAAAEBggPvoMlGfYrY3NTtfy4sTzogR5s+EKDqpvRVBZDicHZ0gCjazcGxm/N/pxE0yNN++i1Txzel3ECdJkIOpOmQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -88,11 +75,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-<<<<<<< HEAD
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD96CYJz741pKGWKpNcHHzmu8K/ClEI7dcntYEda8Pi5QAAAAAOgAAAAAIAACAAAAB537sY0KSWhThAzIiXXd6CTpdgPwWfXCrBUsQZpLTwvjAAAABGFSrPhNIJPsGiTJIjK4kvRS6A4LHmEYZ3BUfLfOJhyZ555yz6OLaCeLK9DrKdQuVAAAAA0hfaxJdMhpGKv7pPKuQ5gb08HiKz/CzxMYYJ0nW+Mu7luHBuZEBBaRJ629pPXyCIjGPXeGOO+GuU32xQOloZ/A</DTS:Password>
-=======
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACbLs8p8pj0Prglnsagsa03W+gvRdgE52VPoQWfyoQoHwAAAAAOgAAAAAIAACAAAAAxjMfAviDtLoe1qo1vRXcmz6Vb2epVsTn5yvO874PZGjAAAAB/5p70xyFHS0JMLuugrrbsAVDAdITa4VaHm3HygmC6H/S3R7EjUYrgmuVxnozTuKpAAAAAIKbBDBiRF2DAlgspikFzUbBzU1TBED6B0A+gs4u1x1FvAbxWa+jvGWCFID5aVI/VFQ01Sk4WqDlQPC2OELIuyQ</DTS:Password>
->>>>>>> dev_pietro
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADGLsKZbf56BKWHI9juEtbUB+AznpGn4Xt9DCygZUYrNQAAAAAOgAAAAAIAACAAAACctZRtvoil/BbqCjSc9s9Uy7JuLxtrvK5iU5y+r3y9/TAAAAD+oKf5Pww5eHydONfiln2UMknsOMkUZqE4IhuyH17ZZtgt53lQCo0UelxnJTAbrGZAAAAAJItgw/w4Eps2V/2ut/f+y7JC9CpRN/cQrHw0Cs55kjmgIfWXj6s0+5e/Y99+jkfO6U7xHPu7FBo4jNtRlSJ9Vg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -107,11 +90,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-<<<<<<< HEAD
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC7Gf0Q3E57sEtv8fP6T9aapVI6Tqhd7Cz8efMGO/YYfgAAAAAOgAAAAAIAACAAAADjZ2Tg416f3umxJiaf/N/p5Vr3Q5Gef+zd1veuM9XCWDAAAADUu3H3lZ7Xx/vJeAfTbBshHPD86g8tjVr8DCmqbnGjB4klnFjXgu1muBzQJTMM8qxAAAAAX4Fz2lsDdaf0tDYjhxdNC7p+3BkdTuYhT1h23KcGmoD5sdE9c3KpWBfSClNXOj28XuegOAu8/LPqNLPbpRFDyQ</DTS:Password>
-=======
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABcXOPXVGQfQis0hyefA0hKmctZ/jmP1qaf/ekCTC4JOgAAAAAOgAAAAAIAACAAAACoAe6AEgdLPLmX6SLOcnV6qMBSIm8YNtpAcdrla4NfvzAAAABOSfZB8B6MHblp5jeWDwH9C+sJuiotc6g1jkpV3V8L8l8o6Mfx+BoR+960wG8LK3ZAAAAAJT8WGDficO80l03xGJoS7u0cKm8wc5CPkbcu+iQ4bawL32ietJJpawZTeFAsTKFe3W2kKHNEnmLV4veSIamPFw</DTS:Password>
->>>>>>> dev_pietro
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAggzcovcPodWoybGp8vQcvET6nA9ILXiFZIdZFff9z0AAAAAAOgAAAAAIAACAAAAChLPz7CUPbNbbz4TLRgYi2/dkDVf20X4VYSPuYcbj3gzAAAAAj7ZQpJQuIvPhCYSs/3/FBvDgGxunWFkmZlubepqCzSIoxtfJekXihTGMHXOyD34lAAAAAtQDgsBE+uln/hRvn5w7w/6UTAkMCqgw44d1fw1VOOW1oeNbD9chIL1q+HVkuuxLya/DwgrunxKOZ+49gaut4Pg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -126,11 +105,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-<<<<<<< HEAD
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABWEQG85Fh0kE5g1qNosN13Cwsjm5pIYjKUmXR3XX24SAAAAAAOgAAAAAIAACAAAADneV5gR9pd7ClSlgxA3/lYLyudT0P14uouBB8PZ0QeGjAAAACKAZfr8DGQJ/YZC6RFMOkBkeuo5HlBlSLfbSYeW0h8/RJJeyyRsMj0CgWRdaGw8BNAAAAAWy405CdXYeGLzCCe83zrVestaDrMELj9z+V4B6U9t9ZUos2dcqaG9WNt0lTucmphLU9KaLnyXROr/m/ZKGa0tw</DTS:Password>
-=======
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAR6ZlaqVA80Czw/nTmL5HZQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAY2REzWvvwFHFFMWjpNDwfxpOmXZRPDM3tfF4cxyPP0gAAAAAOgAAAAAIAACAAAACvycUdcxszm3qk8KZNeVqBioxnEXoiQrKU87ovKe4bFjAAAADFYUxr8vZ3mWPZn6bnBjhy5yN2SVH2/TaekbYu95BNR1rloQye0YPXzzV38bslXJFAAAAAiP8MMaRj66wv84QkBQymcDD8Ke0Pdfb+6yKVZqYJ5pRw5DY09X8/4xWmzm98hqapr77QT8d+0B7HkBcuwDgW6g</DTS:Password>
->>>>>>> dev_pietro
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACf1UapOdzCVAul8MmAobNwZq2VdQPAVHWpxvj7ta0RGAAAAAAOgAAAAAIAACAAAABvxIsed4FscwyW69U2QwGTs5YZ4l0A07NgQC77JrjTezAAAAD2Ax63hPwyUGBH0L1sc8EjEAY6ifoni4vAmTTgnBsEz5oDLV1KiJuJCRbIaeIJPhpAAAAAd2a1K0J65PtOj8gWQ1u89Jd98JoYhoATbOqT25QCSHLUGP1PdkyO/kueHqnKWA4/lS4H9ftDm4wD3koYpme07g</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2518,8 +2493,6 @@ where [refTable].[SupplierID] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-<<<<<<< HEAD
-=======
       DTS:refId="Package\Region merge"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -2629,6 +2602,11 @@ where [refTable].[SupplierID] = ?</property>
                       cachedLength="255"
                       cachedName="RegionID"
                       lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[RegionID]" />
+                    <inputColumn
+                      refId="Package\Region merge\Data Conversion 1.Inputs[Data Conversion Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      lineageId="Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[Active]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2660,6 +2638,26 @@ where [refTable].[SupplierID] = ?</property>
                           name="FastParse">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Output].Columns[DC_Active]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Output].Columns[DC_Active]"
+                      name="DC_Active"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Region merge\Teritory.Outputs[ODBC Source Output].Columns[Active]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -2682,6 +2680,198 @@ where [refTable].[SupplierID] = ?</property>
                       lineageId="Package\Region merge\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Region merge\Grouped_country_state"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Grouped_country_state"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Region merge\Grouped_country_state.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Region merge\Grouped_country_state.Inputs[Aggregate Input 1].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Region merge\Grouped_country_state.Inputs[Aggregate Input 1].Columns[RegionID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="RegionID"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[RegionID]" />
+                    <inputColumn
+                      refId="Package\Region merge\Grouped_country_state.Inputs[Aggregate Input 1].Columns[TerritoryID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TerritoryID"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]" />
+                    <inputColumn
+                      refId="Package\Region merge\Grouped_country_state.Inputs[Aggregate Input 1].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="State"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[State]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[Country]"
+                      dataType="ui8"
+                      lineageId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[Country]"
+                      name="Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[Country]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[RegionID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[RegionID]"
+                      name="RegionID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[RegionID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[TerritoryID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[TerritoryID]"
+                      name="TerritoryID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[State]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[State]"
+                      name="State">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[State]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -2756,6 +2946,7 @@ where [refTable].[SupplierID] = ?</property>
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Country"
+                      cachedSortKeyPosition="-2"
                       lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[Country]" />
                     <inputColumn
                       refId="Package\Region merge\Merge Join.Inputs[Merge Join Right Input].Columns[RegionID]"
@@ -2800,11 +2991,11 @@ where [refTable].[SupplierID] = ?</property>
                   name="Merge Join Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescription]"
+                      refId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescriptiona]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescription]"
-                      name="DC_RegionDescription">
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescriptiona]"
+                      name="DC_RegionDescriptiona">
                       <properties>
                         <property
                           containsID="true"
@@ -2949,17 +3140,17 @@ where [refTable].[SupplierID] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Region merge\Multicast.Outputs[Multicast Output 2]"
+                  refId="Package\Region merge\Multicast.Outputs[Multicast Output 3]"
                   deleteOutputOnPathDetached="true"
-                  name="Multicast Output 2"
+                  name="Multicast Output 3"
                   synchronousInputId="Package\Region merge\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Region merge\Multicast.Outputs[Multicast Output 3]"
+                  refId="Package\Region merge\Multicast.Outputs[Multicast Output 2]"
                   dangling="true"
                   deleteOutputOnPathDetached="true"
-                  name="Multicast Output 3"
+                  name="Multicast Output 2"
                   synchronousInputId="Package\Region merge\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
@@ -3038,80 +3229,35 @@ where [refTable].[SupplierID] = ?</property>
                   truncationRowDisposition="FailComponent">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[DC_RegionDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="DC_RegionDescription"
-                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[DC_RegionDescription]"
-                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescription]" />
-                    <inputColumn
-                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[TerritoryDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="TerritoryDescription"
-                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[TerritoryDescription]"
-                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryDescription]" />
-                    <inputColumn
                       refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[Country]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
+                      cachedDataType="ui8"
                       cachedName="Country"
                       externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[Country]"
-                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[Country]" />
+                      lineageId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[Country]" />
                     <inputColumn
                       refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[RegionID]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="RegionID"
                       externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[RegionID]"
-                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[RegionID]" />
+                      lineageId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[RegionID]" />
                     <inputColumn
                       refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[TerritoryID]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="TerritoryID"
                       externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[TerritoryID]"
-                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]" />
+                      lineageId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[TerritoryID]" />
                     <inputColumn
                       refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[State]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="State"
                       externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[State]"
-                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[State]" />
-                    <inputColumn
-                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[ValidTo]"
-                      cachedDataType="dbDate"
-                      cachedName="ValidTo"
-                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[ValidTo]"
-                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[ValidTo]" />
-                    <inputColumn
-                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[Active]"
-                      cachedDataType="bool"
-                      cachedName="Active"
-                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[Active]"
-                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[Active]" />
-                    <inputColumn
-                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].Columns[ValidFrom]"
-                      cachedDataType="dbDate"
-                      cachedName="ValidFrom"
-                      externalMetadataColumnId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[VaidFrom]"
-                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[ValidFrom]" />
+                      lineageId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1].Columns[State]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[DC_RegionDescription]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="DC_RegionDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[TerritoryDescription]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="TerritoryDescription" />
                     <externalMetadataColumn
                       refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[Country]"
                       codePage="1252"
@@ -3136,18 +3282,6 @@ where [refTable].[SupplierID] = ?</property>
                       dataType="str"
                       length="255"
                       name="State" />
-                    <externalMetadataColumn
-                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[VaidFrom]"
-                      dataType="dbDate"
-                      name="VaidFrom" />
-                    <externalMetadataColumn
-                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[ValidTo]"
-                      dataType="dbDate"
-                      name="ValidTo" />
-                    <externalMetadataColumn
-                      refId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input].ExternalColumns[Active]"
-                      dataType="bool"
-                      name="Active" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3631,7 +3765,7 @@ where [refTable].[SupplierID] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
+                          name="NewSortKeyPosition">-2</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3778,7 +3912,8 @@ where [refTable].[SupplierID] = ?</property>
                       dataType="wstr"
                       length="255"
                       lineageId="Package\Region merge\Sort teritory.Outputs[Sort Output].Columns[Country]"
-                      name="Country">
+                      name="Country"
+                      sortKeyPosition="-2">
                       <properties>
                         <property
                           containsID="true"
@@ -4152,11 +4287,11 @@ where [refTable].[SupplierID] = ?</property>
                   name="Unpivot Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Region merge\Unpivot.Inputs[Unpivot Input].Columns[DC_RegionDescription]"
+                      refId="Package\Region merge\Unpivot.Inputs[Unpivot Input].Columns[DC_RegionDescriptiona]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="DC_RegionDescription"
-                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescription]">
+                      cachedName="DC_RegionDescriptiona"
+                      lineageId="Package\Region merge\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescriptiona]">
                       <properties>
                         <property
                           containsID="true"
@@ -4334,6 +4469,11 @@ where [refTable].[SupplierID] = ?</property>
           </components>
           <paths>
             <path
+              refId="Package\Region merge.Paths[Aggregate Output 1]"
+              endId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\Region merge\Grouped_country_state.Outputs[Aggregate Output 1]" />
+            <path
               refId="Package\Region merge.Paths[Data Conversion Output]"
               endId="Package\Region merge\Sort teritory.Inputs[Sort Input]"
               name="Data Conversion Output"
@@ -4354,10 +4494,10 @@ where [refTable].[SupplierID] = ?</property>
               name="Multicast Output 1"
               startId="Package\Region merge\Multicast.Outputs[Multicast Output 1]" />
             <path
-              refId="Package\Region merge.Paths[Multicast Output 2]"
-              endId="Package\Region merge\Orginal_table.Inputs[ODBC Destination Input]"
-              name="Multicast Output 2"
-              startId="Package\Region merge\Multicast.Outputs[Multicast Output 2]" />
+              refId="Package\Region merge.Paths[Multicast Output 3]"
+              endId="Package\Region merge\Grouped_country_state.Inputs[Aggregate Input 1]"
+              name="Multicast Output 3"
+              startId="Package\Region merge\Multicast.Outputs[Multicast Output 3]" />
             <path
               refId="Package\Region merge.Paths[ODBC Source Output]"
               endId="Package\Region merge\Data Conversion 1.Inputs[Data Conversion Input]"
@@ -4388,7 +4528,6 @@ where [refTable].[SupplierID] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
->>>>>>> dev_pietro
       DTS:refId="Package\Select into variable"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -4513,8 +4652,6 @@ where [refTable].[SupplierID] = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
       DTS:To="Package\Set region" />
-<<<<<<< HEAD
-=======
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
@@ -4523,7 +4660,6 @@ where [refTable].[SupplierID] = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
       DTS:To="Package\Region merge" />
->>>>>>> dev_pietro
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -4538,10 +4674,6 @@ where [refTable].[SupplierID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Drop insert table"
-          TopLeft="265.166651686861,792.99999764959" />
-        <NodeLayout
           Size="165,42"
           Id="Package\Drop insert table"
           TopLeft="265.166651686861,792.99999764959" />
@@ -4549,20 +4681,17 @@ where [refTable].[SupplierID] = ?</property>
           Size="154,42"
           Id="Package\insert into logger"
           TopLeft="273.499984564881,706.133331531352" />
-<<<<<<< HEAD
-=======
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Loop over variable table\Insert into order_write"
           TopLeft="48,22" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="275.2,119.2"
-          Size="275.2,161.6"
+          PanelSize="275,119"
+          Size="275,162"
           Id="Package\Loop over variable table"
           TopLeft="212,248" />
->>>>>>> dev_pietro
         <NodeLayout
           Size="150,42"
           Id="Package\Merge and filter"
@@ -4571,17 +4700,14 @@ where [refTable].[SupplierID] = ?</property>
           Size="177,42"
           Id="Package\Overwrite insert table"
           TopLeft="257.166666985386,877.599998806715" />
-<<<<<<< HEAD
-=======
         <NodeLayout
-          Size="144,41.6"
+          Size="144,42"
           Id="Package\Region merge"
           TopLeft="264.166652233237,972.266663605107" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Select into variable"
           TopLeft="267,154" />
->>>>>>> dev_pietro
         <NodeLayout
           Size="126,42"
           Id="Package\Set region"
@@ -4700,24 +4826,6 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-<<<<<<< HEAD
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Loop over variable table\Insert into order_write"
-          TopLeft="48,22" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="275,119"
-          Size="275,162"
-          Id="Package\Loop over variable table"
-          TopLeft="212,248" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Select into variable"
-          TopLeft="267,154" />
-=======
->>>>>>> dev_pietro
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="350.75,196">
@@ -4762,8 +4870,6 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-<<<<<<< HEAD
-=======
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="345.566666985386,919.199998806715">
@@ -4798,7 +4904,6 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
->>>>>>> dev_pietro
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -4808,25 +4913,6 @@ where [refTable].[SupplierID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-<<<<<<< HEAD
-          Size="184,42"
-          Id="Package\Merge and filter\Write Update sup table"
-          TopLeft="392.83330432988,695.399996058544" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Merge and filter\Error output table"
-          TopLeft="1203,262" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Merge and filter\Split preferences"
-          TopLeft="407.333311022984,375.866664039029" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Merge and filter\Error_match_column"
-          TopLeft="958,258" />
-        <NodeLayout
-          Size="170,42"
-=======
           Size="164,41.6"
           Id="Package\Merge and filter\Error output table"
           TopLeft="1203,262" />
@@ -4840,31 +4926,22 @@ where [refTable].[SupplierID] = ?</property>
           TopLeft="408.833335473306,605.13333333936" />
         <NodeLayout
           Size="169.6,41.6"
->>>>>>> dev_pietro
           Id="Package\Merge and filter\Determine rows sup"
           TopLeft="394.16664513035,149.933332290716" />
         <NodeLayout
-          Size="165,42"
+          Size="164.8,41.6"
           Id="Package\Merge and filter\Row Count errors"
           TopLeft="696,252" />
         <NodeLayout
-<<<<<<< HEAD
-          Size="150,42"
-          Id="Package\Merge and filter\Union suppliers"
-          TopLeft="408.833335473306,605.13333333936" />
-        <NodeLayout
-          Size="170,42"
-=======
           Size="169.6,41.6"
->>>>>>> dev_pietro
           Id="Package\Merge and filter\Match with products"
           TopLeft="398.333311569361,247.333331730233" />
         <NodeLayout
-          Size="145,42"
+          Size="144.8,41.6"
           Id="Package\Merge and filter\Load supplier"
           TopLeft="403.833311159579,70.7999994937579" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Merge and filter\Alter name pref"
           TopLeft="620.833299412497,464.533330103027" />
         <NodeLayout
@@ -5208,49 +5285,65 @@ where [refTable].[SupplierID] = ?</property>
     design-time-name="Package\Region merge">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="113.6,41.6"
+          Size="130,42"
+          Id="Package\Region merge\Pivot_table"
+          TopLeft="434.999976232649,669.599996890227" />
+        <NodeLayout
+          Size="114,42"
+          Id="Package\Region merge\Unpivot"
+          TopLeft="467.499974456927,560.133330717749" />
+        <NodeLayout
+          Size="114,42"
           Id="Package\Region merge\Teritory"
           TopLeft="664.999963666003,27.7333331404792" />
         <NodeLayout
-          Size="111.2,41.6"
+          Size="119,42"
+          Id="Package\Region merge\Multicast"
+          TopLeft="602.499967080853,439.799997848471" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Region merge\Sort region"
+          TopLeft="469.999974320333,239.199998336633" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Region merge\Merge Join"
+          TopLeft="590.833301051625,350.13333089855" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Region merge\Data Conversion 1"
+          TopLeft="651.666631061172,117.466665955517" />
+        <NodeLayout
+          Size="111,42"
           Id="Package\Region merge\Region"
           TopLeft="464.166641305719,57.1999996022383" />
         <NodeLayout
-          Size="132,41.6"
+          Size="132,42"
           Id="Package\Region merge\Sort teritory"
           TopLeft="664.166630378201,194.133331983354" />
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Region merge\Merge Join"
-          TopLeft="590.833301051625,350.13333089855" />
+          Size="156,42"
+          Id="Package\Region merge\Data Conversion"
+          TopLeft="436.666642808253,164.666665521595" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Region merge\Orginal_table"
+          TopLeft="762.333291353453,667.533331585593" />
         <EdgeLayout
-          Id="Package\Region merge.Paths[Sort Output]"
-          TopLeft="730.166630378201,235.733331983354">
+          Id="Package\Region merge.Paths[ODBC Source Output1]"
+          TopLeft="517.216642056986,98.7999996022383">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-54.26666265991,114.399998915195"
+              EndConnector="0,65.8666659193569"
               Start="0,0"
-              End="-54.26666265991,106.899998915195">
+              End="0,58.3666659193569">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.8029261863231" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,63.8029261863231"
-                    Point2="0,67.8029261863231"
-                    Point3="-4,67.8029261863231" />
-                  <mssgle:LineSegment
-                    End="-50.26666265991,67.8029261863231" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-50.26666265991,67.8029261863231"
-                    Point2="-54.26666265991,67.8029261863231"
-                    Point3="-54.26666265991,71.8029261863231" />
-                  <mssgle:LineSegment
-                    End="-54.26666265991,106.899998915195" />
+                    End="0,58.3666659193569" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5259,48 +5352,6 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Region merge\Sort region"
-          TopLeft="469.999974320333,239.199998336633" />
-        <EdgeLayout
-          Id="Package\Region merge.Paths[Sort Output1]"
-          TopLeft="534.799974320333,280.799998336633">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100.566660064625,69.3333325619166"
-              Start="0,0"
-              End="100.566660064625,61.8333325619166">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.0926824696238" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.0926824696238"
-                    Point2="0,41.0926824696238"
-                    Point3="4,41.0926824696238" />
-                  <mssgle:LineSegment
-                    End="96.5666600646249,41.0926824696238" />
-                  <mssgle:CubicBezierSegment
-                    Point1="96.5666600646249,41.0926824696238"
-                    Point2="100.566660064625,41.0926824696238"
-                    Point3="100.566660064625,45.0926824696238" />
-                  <mssgle:LineSegment
-                    End="100.566660064625,61.8333325619166" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Region merge\Data Conversion 1"
-          TopLeft="651.666631061172,117.466665955517" />
         <EdgeLayout
           Id="Package\Region merge.Paths[ODBC Source Output]"
           TopLeft="721.799963666003,69.3333331404792">
@@ -5327,118 +5378,6 @@ where [refTable].[SupplierID] = ?</property>
                     Point3="11.8666673951687,28.066666407519" />
                   <mssgle:LineSegment
                     End="11.8666673951687,40.6333328150379" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Region merge.Paths[Data Conversion Output]"
-          TopLeft="731.916630719687,159.066665955517">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.0666660278373"
-              Start="0,0"
-              End="0,27.5666660278373">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5666660278373" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="113.6,41.6"
-          Id="Package\Region merge\Unpivot"
-          TopLeft="467.499974456927,560.133330717749" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\Region merge\Data Conversion"
-          TopLeft="436.666642808253,164.666665521595" />
-        <EdgeLayout
-          Id="Package\Region merge.Paths[Data Conversion Output1]"
-          TopLeft="514.666642808253,206.266665521595">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.1333315120803,32.9333328150379"
-              Start="0,0"
-              End="20.1333315120803,25.4333328150379">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.466666407519" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.466666407519"
-                    Point2="0,16.466666407519"
-                    Point3="4,16.466666407519" />
-                  <mssgle:LineSegment
-                    End="16.1333315120803,16.466666407519" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.1333315120803,16.466666407519"
-                    Point2="20.1333315120803,16.466666407519"
-                    Point3="20.1333315120803,20.466666407519" />
-                  <mssgle:LineSegment
-                    End="20.1333315120803,25.4333328150379" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Region merge.Paths[ODBC Source Output1]"
-          TopLeft="517.216642056986,98.7999996022383">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65.8666659193569"
-              Start="0,0"
-              End="0,58.3666659193569">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.3666659193569" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="119.2,41.6"
-          Id="Package\Region merge\Multicast"
-          TopLeft="602.499967080853,439.799997848471" />
-        <EdgeLayout
-          Id="Package\Region merge.Paths[Merge Join Output]"
-          TopLeft="658.866634066239,391.73333089855">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48.0666669499212"
-              Start="0,0"
-              End="0,40.5666669499212">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5666669499212" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5481,10 +5420,84 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Region merge\Pivot_table"
-          TopLeft="434.999976232649,669.599996890227" />
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Merge Join Output]"
+          TopLeft="658.866634066239,391.73333089855">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.0666669499212"
+              Start="0,0"
+              End="0,40.5666669499212">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5666669499212" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Data Conversion Output1]"
+          TopLeft="514.666642808253,206.266665521595">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.1333315120803,32.9333328150379"
+              Start="0,0"
+              End="20.1333315120803,25.4333328150379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.466666407519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.466666407519"
+                    Point2="0,16.466666407519"
+                    Point3="4,16.466666407519" />
+                  <mssgle:LineSegment
+                    End="16.1333315120803,16.466666407519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.1333315120803,16.466666407519"
+                    Point2="20.1333315120803,16.466666407519"
+                    Point3="20.1333315120803,20.466666407519" />
+                  <mssgle:LineSegment
+                    End="20.1333315120803,25.4333328150379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Data Conversion Output]"
+          TopLeft="731.916630719687,159.066665955517">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.0666660278373"
+              Start="0,0"
+              End="0,27.5666660278373">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5666660278373" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Region merge.Paths[Unpivot Output]"
           TopLeft="524.299974456927,601.733330717749">
@@ -5519,36 +5532,32 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\Region merge\Orginal_table"
-          TopLeft="768.333291353453,586.533331585593" />
         <EdgeLayout
-          Id="Package\Region merge.Paths[Multicast Output 2]"
-          TopLeft="680.633300414186,481.399997848471">
+          Id="Package\Region merge.Paths[Sort Output1]"
+          TopLeft="534.799974320333,280.799998336633">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="157.699990939267,105.133333737122"
+              EndConnector="100.566660064625,69.3333325619166"
               Start="0,0"
-              End="157.699990939267,97.6333337371216">
+              End="100.566660064625,61.8333325619166">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.8888301867993" />
+                    End="0,37.0926824696238" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,38.8888301867993"
-                    Point2="0,42.8888301867993"
-                    Point3="4,42.8888301867993" />
+                    Point1="0,37.0926824696238"
+                    Point2="0,41.0926824696238"
+                    Point3="4,41.0926824696238" />
                   <mssgle:LineSegment
-                    End="153.699990939267,42.8888301867993" />
+                    End="96.5666600646249,41.0926824696238" />
                   <mssgle:CubicBezierSegment
-                    Point1="153.699990939267,42.8888301867993"
-                    Point2="157.699990939267,42.8888301867993"
-                    Point3="157.699990939267,46.8888301867993" />
+                    Point1="96.5666600646249,41.0926824696238"
+                    Point2="100.566660064625,41.0926824696238"
+                    Point3="100.566660064625,45.0926824696238" />
                   <mssgle:LineSegment
-                    End="157.699990939267,97.6333337371216" />
+                    End="100.566660064625,61.8333325619166" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5557,11 +5566,119 @@ where [refTable].[SupplierID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Sort Output]"
+          TopLeft="730.166630378201,235.733331983354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-54.26666265991,114.399998915195"
+              Start="0,0"
+              End="-54.26666265991,106.899998915195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.8029261863231" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.8029261863231"
+                    Point2="0,67.8029261863231"
+                    Point3="-4,67.8029261863231" />
+                  <mssgle:LineSegment
+                    End="-50.26666265991,67.8029261863231" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.26666265991,67.8029261863231"
+                    Point2="-54.26666265991,67.8029261863231"
+                    Point3="-54.26666265991,71.8029261863231" />
+                  <mssgle:LineSegment
+                    End="-54.26666265991,106.899998915195" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Region merge\Grouped_country_state"
+          TopLeft="704,561" />
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Multicast Output 3]"
+          TopLeft="680.499967080853,481.799997848471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.500032919147,79.200002151529"
+              Start="0,0"
+              End="120.500032919147,71.700002151529">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.3104486389322" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.3104486389322"
+                    Point2="0,32.3104486389322"
+                    Point3="4,32.3104486389322" />
+                  <mssgle:LineSegment
+                    End="116.500032919147,32.3104486389322" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116.500032919147,32.3104486389322"
+                    Point2="120.500032919147,32.3104486389322"
+                    Point3="120.500032919147,36.3104486389322" />
+                  <mssgle:LineSegment
+                    End="120.500032919147,71.700002151529" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region merge.Paths[Aggregate Output 1]"
+          TopLeft="801,603">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.333291353453,64.533331585593"
+              Start="0,0"
+              End="31.333291353453,57.033331585593">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.2666657927965" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.2666657927965"
+                    Point2="0,32.2666657927965"
+                    Point3="4,32.2666657927965" />
+                  <mssgle:LineSegment
+                    End="27.333291353453,32.2666657927965" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.333291353453,32.2666657927965"
+                    Point2="31.333291353453,32.2666657927965"
+                    Point3="31.333291353453,36.2666657927965" />
+                  <mssgle:LineSegment
+                    End="31.333291353453,57.033331585593" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="7.66664567672649,37.2666657927965,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Region merge\Region">
+    design-time-name="Package\Region merge\Pivot_table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5587,7 +5704,7 @@ where [refTable].[SupplierID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Region merge\Pivot_table">
+    design-time-name="Package\Region merge\Region">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

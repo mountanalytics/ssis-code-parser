@@ -1,6 +1,2 @@
 ,LABEL_NODE,FUNCTION,SPLIT_ARG
-<<<<<<< HEAD
-24,Merge and filter@Split preferences,ConditionalSplit,Discount > 0
-=======
 27,Merge and filter@Split preferences,ConditionalSplit,Discount > 0
->>>>>>> dev_pietro

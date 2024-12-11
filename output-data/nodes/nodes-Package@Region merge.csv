@@ -1,24 +1,25 @@
-LABEL_NODE,ID,FUNCTION,JOIN_ARG,SPLIT_ARG,NAME_NODE,FILTER,SORT,PIVOT,COLOR
-User::Cat_id,0,Variable,,,User::Cat_id,,,,#cdd408
-User::CurrentDateTime,1,Variable,,,User::CurrentDateTime,,,,#cdd408
-User::Errors_lookup,2,Variable,,,User::Errors_lookup,,,,#cdd408
-User::res_set,3,Variable,,,User::res_set,,,,#cdd408
-User::Rows_suppliers,4,Variable,,,User::Rows_suppliers,,,,#cdd408
-User::Ship_country,5,Variable,,,User::Ship_country,,,,#cdd408
-User::Sup_id,6,Variable,,,User::Sup_id,,,,#cdd408
-User::Unit_stock,7,Variable,,,User::Unit_stock,,,,#cdd408
-Region merge@Data Conversion,8,DataConvert,,,Data Conversion,,,,#d0d3d3
-Region merge@Data Conversion 1,9,DataConvert,,,Data Conversion 1,,,,#d0d3d3
-Region merge@Merge Join,10,Lookup,Inner join,,Merge Join,,,,#9d94ff
-Region merge@Multicast,11,Multicast,,,Multicast,,,,#d0d3d3
-Region merge@Orginal_table,12,SSISODBCDst,,,Orginal_table,,,,#d0d3d3
-dbo.Orginal_territory,13,DataDestinations,,,dbo.Orginal_territory,,,,#42d6a4
-Region merge@Pivot_table,14,SSISODBCDst,,,Pivot_table,,,,#d0d3d3
-dbo.Pivot_territory,15,DataDestinations,,,dbo.Pivot_territory,,,,#42d6a4
-Region merge@Region,16,SSISODBCSrc,,,Region,,,,#d0d3d3
-dbo.Region_Extract,17,DataSources,,,dbo.Region_Extract,,,,#42d6a4
-Region merge@Sort region,18,Sort,,,Sort region,,"1. RegionID ASC, Drop duplicate rows: false",,#4fbdb9
-Region merge@Sort teritory,19,Sort,,,Sort teritory,,"1. DC_RegionID ASC, 2. Country DESC, Drop duplicate rows: false",,#4fbdb9
-Region merge@Teritory,20,SSISODBCSrc,,,Teritory,,,,#d0d3d3
-dbo.Territories_Extract,21,DataSources,,,dbo.Territories_Extract,,,,#42d6a4
-Region merge@Unpivot,22,Unpivot,,,Unpivot,,,Pivot column: Name,#8b6fae
+LABEL_NODE,ID,FUNCTION,JOIN_ARG,SPLIT_ARG,NAME_NODE,FILTER,SORT,PIVOT,COLOR,AGGREGATE
+User::Cat_id,0,Variable,,,User::Cat_id,,,,#cdd408,
+User::CurrentDateTime,1,Variable,,,User::CurrentDateTime,,,,#cdd408,
+User::Errors_lookup,2,Variable,,,User::Errors_lookup,,,,#cdd408,
+User::res_set,3,Variable,,,User::res_set,,,,#cdd408,
+User::Rows_suppliers,4,Variable,,,User::Rows_suppliers,,,,#cdd408,
+User::Ship_country,5,Variable,,,User::Ship_country,,,,#cdd408,
+User::Sup_id,6,Variable,,,User::Sup_id,,,,#cdd408,
+User::Unit_stock,7,Variable,,,User::Unit_stock,,,,#cdd408,
+Region merge@Data Conversion,8,DataConvert,,,Data Conversion,,,,#d0d3d3,
+Region merge@Data Conversion 1,9,DataConvert,,,Data Conversion 1,,,,#d0d3d3,
+Region merge@Grouped_country_state,10,Aggregate,,,Grouped_country_state,,,,#d6f6ff,Placeholder
+Region merge@Merge Join,11,Lookup,Inner join,,Merge Join,,,,#9d94ff,
+Region merge@Multicast,12,Multicast,,,Multicast,,,,#d0d3d3,
+Region merge@Orginal_table,13,SSISODBCDst,,,Orginal_table,,,,#d0d3d3,
+dbo.Orginal_territory,14,DataDestinations,,,dbo.Orginal_territory,,,,#42d6a4,
+Region merge@Pivot_table,15,SSISODBCDst,,,Pivot_table,,,,#d0d3d3,
+dbo.Pivot_territory,16,DataDestinations,,,dbo.Pivot_territory,,,,#42d6a4,
+Region merge@Region,17,SSISODBCSrc,,,Region,,,,#d0d3d3,
+dbo.Region_Extract,18,DataSources,,,dbo.Region_Extract,,,,#42d6a4,
+Region merge@Sort region,19,Sort,,,Sort region,,"1. RegionID ASC, Drop duplicate rows: false",,#4fbdb9,
+Region merge@Sort teritory,20,Sort,,,Sort teritory,,"1. DC_RegionID ASC, 2. Country DESC, Drop duplicate rows: false",,#4fbdb9,
+Region merge@Teritory,21,SSISODBCSrc,,,Teritory,,,,#d0d3d3,
+dbo.Territories_Extract,22,DataSources,,,dbo.Territories_Extract,,,,#42d6a4,
+Region merge@Unpivot,23,Unpivot,,,Unpivot,,,Pivot column: Name,#8b6fae,

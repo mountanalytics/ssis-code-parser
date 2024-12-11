@@ -88,6 +88,7 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
     """
 
     final_lin = pd.DataFrame()
+    cols_splits = {}
     for ordered_rows in all_paths:
         # Convert the specified columns into a list of lists and extend the final list
         ordered_df = pd.concat(ordered_rows).reset_index(drop=True)
@@ -102,7 +103,7 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
         
         for nodes_pair in sorted_nodes_metadata:
             for i, node in enumerate(nodes_pair):
-    
+                
                 # define previous node
                 if i == 0:
                     previous_node = node
@@ -121,9 +122,10 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
                     # if the previous node is the same as the current node and the node type is not source then skip
                     if previous_node == node and type != 'Microsoft.SSISODBCSrc':
                         continue
-
-                    seen_nodes.append([previous_node, node])    
-
+                    
+                    seen_nodes.append([previous_node, node])
+                if previous_node in cols_splits.keys():
+                    columns = cols_splits[previous_node]
                 # process source node
                 if type == 'Microsoft.SSISODBCSrc':
                     columns=[d['Column_name'] for d in nodes_pair[node]]
@@ -189,7 +191,9 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
                     columns_out=[node +'[' +column+']' for column in columns]
     
                     columns_input +=columns_in
-                    columns_output +=columns_out          
+                    columns_output +=columns_out
+                    if node not in cols_splits.keys():
+                        cols_splits[node] = columns         
     
                 # process unionall
                 if type == 'Microsoft.UnionAll':
@@ -252,19 +256,30 @@ def main_parser(nodes: pd.DataFrame, all_paths: list[pd.DataFrame], dict_blocks:
                 if type == "Microsoft.Multicast":
                     columns_in=[previous_node + '[' + column+']' for column in columns]
                     columns_out=[node +'[' +column+']' for column in columns]
-    
+                    
                     columns_input +=columns_in
                     columns_output +=columns_out
+                    if node not in cols_splits.keys():
+                        cols_splits[node] = columns
 
                 if type == "Microsoft.UnPivot":
                     columns_in=[previous_node + '[' + column+']' for column in columns]
                     columns_out = [node +'[' +column+']' for column in columns]
                     columns = []
-                    for cols in dict_blocks[node]:
+                    
+                    for cols in dict_blocks[node]['column_mapping']:
                         columns.append(cols[1])
                     columns_input +=columns_in
                     columns_output +=columns_out
-
+                
+                if type == "Microsoft.Aggregate":
+                    columns_in=[previous_node + '[' + column+']' for column in columns]
+                    columns_out = [node +'[' +column+']' for column in columns]
+                    columns = []
+                    for cols in dict_blocks[node].keys():
+                        columns.append(cols)
+                    columns_input +=columns_in
+                    columns_output +=columns_out
 
         # create lineages dataframe and save csv
         lineages = {'SOURCE_COLUMNS': columns_input, 'TARGET_COLUMN': columns_output}

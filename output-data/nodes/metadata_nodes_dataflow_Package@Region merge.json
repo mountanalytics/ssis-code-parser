@@ -21,6 +21,12 @@
             "output_type": "bool"
         }
     ],
+    "Package\\Region merge\\Grouped_country_state": {
+        "Country": "Group by",
+        "RegionID": "Group by",
+        "TerritoryID": "Group by",
+        "State": "Group by"
+    },
     "Package\\Region merge\\Merge Join": {
         "join_type": "Inner join",
         "col_mapping": [
@@ -65,49 +71,24 @@
     "Package\\Region merge\\Multicast": "Multicast",
     "Package\\Region merge\\Orginal_table": [
         {
-            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[DC_RegionDescriptiona]",
-            "Column_ext": "dbo.Orginal_territory.DC_RegionDescription",
-            "Column_name": "DC_RegionDescriptiona"
-        },
-        {
-            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[TerritoryDescription]",
-            "Column_ext": "dbo.Orginal_territory.TerritoryDescription",
-            "Column_name": "TerritoryDescription"
-        },
-        {
-            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[Country]",
+            "Column_input": "Package\\Region merge\\Grouped_country_state.Outputs[Aggregate Output 1].Columns[Country]",
             "Column_ext": "dbo.Orginal_territory.Country",
             "Column_name": "Country"
         },
         {
-            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[RegionID]",
+            "Column_input": "Package\\Region merge\\Grouped_country_state.Outputs[Aggregate Output 1].Columns[RegionID]",
             "Column_ext": "dbo.Orginal_territory.RegionID",
             "Column_name": "RegionID"
         },
         {
-            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[TerritoryID]",
+            "Column_input": "Package\\Region merge\\Grouped_country_state.Outputs[Aggregate Output 1].Columns[TerritoryID]",
             "Column_ext": "dbo.Orginal_territory.TerritoryID",
             "Column_name": "TerritoryID"
         },
         {
-            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[State]",
+            "Column_input": "Package\\Region merge\\Grouped_country_state.Outputs[Aggregate Output 1].Columns[State]",
             "Column_ext": "dbo.Orginal_territory.State",
             "Column_name": "State"
-        },
-        {
-            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[ValidTo]",
-            "Column_ext": "dbo.Orginal_territory.ValidTo",
-            "Column_name": "ValidTo"
-        },
-        {
-            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[Active]",
-            "Column_ext": "dbo.Orginal_territory.Active",
-            "Column_name": "Active"
-        },
-        {
-            "Column_input": "Package\\Region merge\\Merge Join.Outputs[Merge Join Output].Columns[ValidFrom]",
-            "Column_ext": "dbo.Orginal_territory.VaidFrom",
-            "Column_name": "ValidFrom"
         }
     ],
     "Package\\Region merge\\Pivot_table": [
