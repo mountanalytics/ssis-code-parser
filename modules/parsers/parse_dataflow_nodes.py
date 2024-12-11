@@ -502,11 +502,11 @@ def main_parser(components: list, df_nodes: pd.DataFrame, path_flow: list, df_na
             df_nodes = append_join_node(comp["refId"], "Lookup", dict_blocks[comp["refId"]]["join_type"], df_nodes)
         elif comp["componentClassID"] == "Microsoft.Sort":
             dict_blocks[comp["refId"]] = sort_parser(comp)
-            sort_argu = ', '.join(
+            sort_argu = "<br />".join(
             f"{row['sorting_order']}. {row['column']} {'ASC' if row['sorting_type'] == 'ascending' else 'DESC'}"
             for _, row in pd.DataFrame(dict_blocks[comp["refId"]]["sort_arguments"]).sort_values(by='sorting_order').iterrows()
             )
-            sort_argu += ", Drop duplicate rows: " + dict_blocks[comp["refId"]]["drop_duplicate"] 
+            sort_argu += "<br />Drop duplicate rows: " + dict_blocks[comp["refId"]]["drop_duplicate"] 
             df_nodes = append_sort_node(comp["refId"], "Sort", sort_argu, df_nodes)
         elif comp["componentClassID"] == "Microsoft.UnPivot":
             dict_blocks[comp["refId"]] = unpivot_parser(comp)
@@ -516,7 +516,7 @@ def main_parser(components: list, df_nodes: pd.DataFrame, path_flow: list, df_na
             df_nodes = append_normal_node(comp["refId"], "Multicast", df_nodes)
         elif comp["componentClassID"] == "Microsoft.Aggregate":
             dict_blocks[comp["refId"]] = aggregate_parser(comp)
-            df_nodes = append_aggregate_node(comp["refId"], "Aggregate", "Placeholder", df_nodes)
+            df_nodes = append_aggregate_node(comp["refId"], "Aggregate", "<br />".join([f"Column: {key}, Aggregation type: {value}" for key, value in dict_blocks[comp["refId"]].items()]), df_nodes)
     df_nodes["ID"] = df_nodes.index        
     df_nodes.to_csv(f'output-data/nodes/nodes-{df_name}.csv',index=False)
     return dict_blocks, df_nodes
