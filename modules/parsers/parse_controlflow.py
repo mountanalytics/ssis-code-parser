@@ -1,10 +1,8 @@
-import pypyodbc as odbc
 import configparser
 import copy
 from collections import defaultdict
 from collections import OrderedDict 
 import pandas as pd
-import pypyodbc as odbc
 import configparser
 import os
 import json
@@ -251,7 +249,6 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
     else:
         try:
             # if the sql statement contains a variable, change the indeces with the variable name
-
             for variable in variables:
                 
                 for i, char in enumerate(sql_statement.replace(" ", "")): #!!!!!!!!!!!!! ADD MORE CONDITIONS
@@ -282,6 +279,7 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
         # parse destination table
         insert_tables = [table for table in select.find_all(exp.Insert)]
         insert_tables += [table.this.this.this for table in select.find_all(exp.Into)]
+        
         try:
             insert_tables.append(control_flow[node_name]['Result_variable'])
         except:

@@ -1,0 +1,105 @@
+{
+    "Package\\FTP_unvipot": {
+        "Description": "Execute SQL Task",
+        "SQL_state": "Update [staging].[FTP_Unpivot]\nset [Dirty Price] = 0\nwhere\n(\n\tLevel_4 = 'Fixed Rate Mortgages'\n\tand Forward_Starting = 'FS'\n\tand [Funding Component] in ('Basefundinginterest', 'Principal', 'Total Value')\n\tand market_shock not in ('Book Value', 'Face Amount', 'Net WAC', 'WAL_0')\n)\nor\n(\n\tinstrument_set = 'Mortgage Proposal'\n\tand [Funding Component] in ('Basefundinginterest', 'Principal', 'Total Value')\n\tand market_shock not in ('Book Value', 'Face Amount', 'Net WAC', 'WAL_0')\n)\nAnd\n(\n\tPortfolio like '%OBV' or Portfolio like '%ABB'\n);\n\n\nUPDATE [staging].[FTP_Unpivot]\nSET [Dirty Price] = 0\nWHERE\n(\n\t\tLevel_4 = 'Fixed Rate Mortgages'\n\t\tAND instrumnet_set IN (\n\t\t\t'mortgage'\n\t\t\t,'offset mortgage'\n\t\t\t)\n\t\tAND external_counterparty_segment = 'households'\n\t\tAND (\n\t\t\tmarket_shock LIKE '%SOT'\n\t\t\tOR market_shock LIKE '%EVEatR'\n\t\t\t)\n\t\t)\n\n\tOR (\n\t\tLevel_4 = 'Fixed Rate Mortgage Savings'\n\t\tAND instrument_set = 'mortgage savings'\n\t\tAND (\n\t\t\tmarket_shock LIKE '%SOT'\n\t\t\tOR market_shock LIKE '%EVEatR'\n\t\t\t)\n\t\t)\n\tAND (\n\t\tPortfolio LIKE '%OBV'\n\t\tOR Portfolio LIKE '%ABB'\n\t\t);",
+        "Variables": null
+    },
+    "Package\\Delete_discount_factors": {
+        "Description": "Execute SQL Task",
+        "SQL_state": "SELECT COUNT(*)\nFROM [dbo].[REP_Discount_Factors]\nWHERE [Market] = '12/31/2021';\nWHILE 1=1\n\tBEGIN\n\t\tDELETE TOP(100000)\n\t\tFROM [dbo].[REP_Discount_Factors]\n\t\tWHERE [Market] = '12/31/2021' IF @@ROWCOUNT = 0 BREAK\n\tEND\nGO;",
+        "Variables": null
+    },
+    "Package\\del_master_gap": {
+        "Description": "Execute SQL Task",
+        "SQL_state": "SELECT COUNT(*)\nFROM [dbo].[REP_Master_GAP]\nWHERE Entity = CASE WHEN 'TRG' ='BWF' THEN 'BPD' ELSE 'TRG' END AND Source ='QRM'  AND Market_as_of_date = '3/31/2016';\nWHILE 1=1\n\tBEGIN\n\t\tDELETE TOP(100000)\n\t\tFROM [dbo].[REP_Master_GAP]\n\t\tWHERE Entity = CASE WHEN 'TRG' ='BWF' THEN 'BPD' ELSE 'TRG' END AND Source ='QRM'  AND Market_as_of_date = '3/31/2016' IF @@ROWCOUNT = 0 BREAK\n\tEND\nGO;",
+        "Variables": null
+    },
+    "Package\\select_res": {
+        "Description": "Execute SQL Task",
+        "SQL_state": "DECLARE @PortfolioCurrent varchar(255)\t=\t?;\nDECLARE @Market date\t\t\t=\t?;\nDECLARE @LikeMatchGap varchar(255)\t=\t?;\nDECLARE @CompanyName varchar(255)\t=\t?;\n\nSELECT convert(INT,forecastid) as forcastid FROM QRM.Run_Time_Description WHERE\n 1=1\n AND Portfolio = @PortfolioCurrent\n AND Convert(Date,Market) = Convert(Date,@Market)\n AND Strategy like @LikeMatchGap\n AND CompanyName = @CompanyName\n AND DateTimeStamp = (select max(DateTimeStamp) FROM [QRM].[Run_Time_Description] where CompanyName = @CompanyName AND Portfolio = @PortfolioCurrent);\n\nDECLARE @PortfolioCurrent varchar(255)\t=\t'5/31/2024';\nDECLARE @Entity varchar(10)\t=\t'OBV';\nDECLARE @DataSetEmpty bit = 0;\n\nIF NOT EXISTS (\n\tSELECT 1\n\tFROM exp.MDSStoBETValuationResult\n\tWHERE Entity = @Entity\n\tand CONVERT(date, PortfolioAsOfDate) = CONVERT(date, @PortfolioCurrent)\n)\nSET @DataSetEmpty = 1;",
+        "Variables": [
+            [
+                [
+                    "User::Port_current",
+                    "0"
+                ],
+                [
+                    "User::Market_date",
+                    "1"
+                ],
+                [
+                    "User::Matchgap",
+                    "2"
+                ],
+                [
+                    "User::Comp_Name",
+                    "3"
+                ]
+            ]
+        ]
+    },
+    "Package\\RecordCount": {
+        "Description": "Execute SQL Task",
+        "SQL_state": "Select\t\tFBA_CNT+\n\t\tFSH_CNT+\n\t\tFUP_CNT As RecordCount from\n\n\n(Select count(*) as FBA_CNT from [staging].[FTP_Base])FBA join\n(Select count(*) as FSH_CNT from [staging].[FTP_Shocks])FSH on 1=1 join\n(Select count(*) as FUP_CNT from [staging].[FTP_Unpivot])FUP on 1=1;\n\n\ntruncate table [staging].[FTP_Base];\ntruncate table [staging].[FTP_Shocks];\ntruncate table [staging].[FTP_Unpivot];",
+        "Variables": null,
+        "Result_variable": "User::RecordCount"
+    },
+    "Package\\Long_title": {
+        "Description": "Execute SQL Task",
+        "SQL_state": "DECLARE @Product AS CHAR(3)\t= ?;\nDECLARE @Period AS VARCHAR(6)\t= ?;\nDECLARE @FileID AS SMALLINT\t= ?;\n\nSELECT\n\t\t\tPF.Import_Table\n,\t\t\tPF.Input_Location\n,\t\t\tPF.Import_error_table\n,\t\t\tPF.Mastertable_Tabel_Field\n,\t\t\tPF.Imported_Location\n,\t\t\tPF.Mail_Group\n,\t\t\tFS.[File_Name]\n,\t\t\tPP1.Parameter_Value\n,\t\t\tPP2.Parameter_Value AS Reporting_Database\n,\t\t\tPP3.Parameter_Value AS Reporting_Server\nFROM\t\tdbo.tbl_Product PR\nINNER JOIN\tdbo.tbl_Product_file PF\nON\t\t\tPR.Product_id = PF.Product_id\nAND\t\t\tPR.Period = PF.Period\nLEFT JOIN\tdbo.tbl_File_State FS\nON\t\t\tPF.Product_id = FS.Product_id\nAND\t\t\tPF.Period = FS.Period\nAND\t\t\tPF.[File_id] = FS.[File_id]\nINNER JOIN\tdbo.tbl_Product_parameter PP1\nON\t\t\tPF.Product_id = PP1.Product_id\t\t\nAND\t\t\tPF.Period = PP1.Period\nINNER JOIN\tdbo.tbl_Product_parameter PP2\nON\t\t\tPP2.Product_id = 'GEN' AND PF.Period = PP2.Period\nINNER JOIN\tdbo.tbl_Product_parameter PP3\nON\t\t\tPP3.Product_id = 'GEN' AND PF.Period = PP3.Period\nAND\t\t\tPF.Period = PP1.Period\nWHERE\t\tPP1.Action_Take = 'Portdate'\nAND\t\t\tPP2.Action_Take = 'ReportingDatabase'\nAND\t\t\tPP3.Action_Take = 'ReportingServer'\nAND\t\t\tPR.Product_id = @Product\nAND\t\t\tPR.Period = @Period\nAND\t\t\tPF.[File_id] = @FileID;\n",
+        "Variables": [
+            [
+                [
+                    "User::Product",
+                    "0"
+                ],
+                [
+                    "User::Period",
+                    "1"
+                ],
+                [
+                    "User::FileID",
+                    "2"
+                ]
+            ]
+        ],
+        "Result_variable": "User::New_table_long"
+    },
+    "Package\\rec_count": {
+        "Description": "Execute SQL Task",
+        "SQL_state": "Select PLN.PLN_CNT+RTD.RTD_CNT+ACD.ACD_CNT+FOP.FOP_CNT+GAP.GAP_CNT from\n(Select count(*) as PLN_CNT from [staging].[PlanningDimentsions])PLN join\n(Select count(*) as RTD_CNT from [staging].[Run_Time_Description])RTD on 1=1 join\n(Select count(*) as ACD_CNT from [staging].[Account_Dimension])ACD on 1=1 join\n(Select count(*) as FOP_CNT from [staging].[Forecast_Periods])FOP on 1=1 join\n(Select count(*) as GAP_CNT from [staging].[GAP])GAP on 1=1 ;\n\ntruncate table [staging].[PlanningDimentsions];\ntruncate table [staging].[Run_Time_Description];\ntruncate table [staging].[Account_Dimension];\ntruncate table [staging].[Forecast_Periods];\ntruncate table [staging].[GAP];",
+        "Variables": null,
+        "Result_variable": "User::Rec_cnt"
+    },
+    "Package\\Update_GAP": {
+        "Description": "Execute SQL Task",
+        "SQL_state": "Update gap\nset\n gap.[Intercompany_segment] = ISNULL(cp.[Intercompany_segment], 'LKP_error')\nFROM [staging].[GAP] gap\nLeft Join [cfg].[LKP_Counterparty] cp\non\n cp.[Intercompany_Legal_Entity] = gap.Intercompany_Legal_Entity\n and cp.[Intercompany_Counterparty] = gap.[Intercompany_Counterparty];",
+        "Variables": null
+    },
+    "Package\\GAP_DCF": {
+        "Description": "Execute SQL Task",
+        "SQL_state": "Update staging.GAP_DCF_Intermediate\nset [ValueResult]=0, [ValueCorrected]=0\nwhere\n((\n\tLevel_04 = 'Fixed Rate Mortgages'\n\tand Forward_Starting = 'FS'\n\tand [Funding_Component_Mapping_ID] in ('Base funding interest', 'Principal', 'Total Value')\n)\nor\n(\n\tinstrument_set = 'Mortgage Proposal'\n\tand [Funding_Component_Mapping_ID] in ('Base funding interest', 'Principal', 'Total Value')\n))\nAnd\n(\n\tEntity in ('OBV','ABB')\n);",
+        "Variables": null
+    },
+    "Package\\Long_tab2": {
+        "Description": "Execute SQL Task",
+        "SQL_state": "DECLARE @Product AS CHAR(3)\t= ?;\nDECLARE @Period AS VARCHAR(6)\t= ?;\nDECLARE @FileID AS INT\t\t= ?;\n\nSELECT\n\t\t\tPF.Import_Table\n,\t\t\tPF.Input_Location\n,\t\t\tPF.Import_error_table\n,\t\t\tPF.Mastertable_Tabel_Field\n,\t\t\tPF.Imported_Location\n,\t\t\tISNULL(PF.Mail_Group, '') Mail_Group\n,\t\t\tFS.[File_Name]\n,\t\t\tPP1.Parameter_Value\n,\t\t\tPP2.Parameter_Value AS Reporting_Database\n,\t\t\tPP3.Parameter_Value AS Reporting_Server\nFROM\t\tdbo.tbl_Product PR\nINNER JOIN\tdbo.tbl_Product_file PF\nON\t\t\tPR.Product_id = PF.Product_id\nAND\t\t\tPR.Period = PF.Period\nLEFT JOIN\tdbo.tbl_File_State FS\nON\t\t\tPF.Product_id = FS.Product_id\nAND\t\t\tPF.Period = FS.Period\nAND\t\t\tPF.[File_id] = FS.[File_id]\nINNER JOIN\tdbo.tbl_Product_parameter PP1\nON\t\t\tPF.Product_id = PP1.Product_id\t\t\nAND\t\t\tPF.Period = PP1.Period\nINNER JOIN\tdbo.tbl_Product_parameter PP2\nON\t\t\tPP2.Product_id = 'GEN' AND PF.Period = PP2.Period\nINNER JOIN\tdbo.tbl_Product_parameter PP3\nON\t\t\tPP3.Product_id = 'GEN' AND PF.Period = PP3.Period\nWHERE\t\tPP1.Action_Take = 'Portdate'\nAND\t\t\tPR.Product_id = @Product\nAND\t\t\tPR.Period = @Period\nAND\t\t\tPF.[File_id] = @FileID\nAND\t\t\tPP2.Action_Take = 'ReportingDatabase'\nAND\t\t\tPP3.Action_Take = 'ReportingServer';",
+        "Variables": [
+            [
+                [
+                    "User::Product",
+                    "0"
+                ],
+                [
+                    "User::Period",
+                    "1"
+                ],
+                [
+                    "User::FileID",
+                    "2"
+                ]
+            ]
+        ],
+        "Result_variable": "User::Table_joins"
+    }
+}
