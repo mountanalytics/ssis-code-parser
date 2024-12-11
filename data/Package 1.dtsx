@@ -1,0 +1,831 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/9/2024 10:30:38 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-KOEJ2DP"
+  DTS:CreatorName="AzureAD\ErwinSiegers"
+  DTS:DTSID="{6FB434AC-EFFB-4E2A-9D1F-0C22B95BFED0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{A175B157-C833-40B1-8CBE-997182E60604}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[maserver01.database.windows.net.MA_DemoDB_01.erwinsiegers]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{03DB9327-8D1E-4020-B2B8-4AAB44297718}"
+      DTS:ObjectName="maserver01.database.windows.net.MA_DemoDB_01.erwinsiegers">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=maserver01.database.windows.net;User ID=erwinsiegers;Initial Catalog=MA_DemoDB_01;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package-{03DB9327-8D1E-4020-B2B8-4AAB44297718}maserver01.database.windows.net.MA_DemoDB_01.erwinsiegers;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAgHT7GBTK7Y92URCx+dxVrBjnoqUrE1thUuAWtpYOk6AAAAAAOgAAAAAIAACAAAADcQB8vz3HUFycO/y1CZNRZCLq2VkhfQbN9Uy+tHCpETjAAAACXAg5T1S1F2wBTupUruuzALhTlwGIXvnx85z+IfIdvjp+7CjUXJkxWijLXpX9M24dAAAAAc+NSvZ7qfA568QqqNMN9wp2kSG39ycVNqKZN/ovehTP8DhuOdHielxorBUzfjOEqH0YiQtlD83w7yKXNc953OQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A3556945-EEAF-48B3-A89A-514AE9885779}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Comp_Name">
+      <DTS:VariableValue
+        DTS:DataType="8">Mount</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{380B7997-AD7D-4C28-B7CD-EB3EA98464A5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DataSetEmpty">
+      <DTS:VariableValue
+        DTS:DataType="17">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E95BCD76-BE91-4CB7-B6AB-049929C3519E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileID">
+      <DTS:VariableValue
+        DTS:DataType="3">18</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{458D56F5-2CDA-465A-9B7B-F411960798D0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Market_date">
+      <DTS:VariableValue
+        DTS:DataType="7">11/9/2024 10:50:31 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{07BEB7A3-8489-4881-B68D-2CD87AD01F43}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Matchgap">
+      <DTS:VariableValue
+        DTS:DataType="8">ABC</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DCD4992F-A5E3-4777-B2BE-095D83E2EC55}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="New_table_long">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EB3781D1-F28A-46B3-BE54-6E8A7197EFA8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Period">
+      <DTS:VariableValue
+        DTS:DataType="8">June</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5958DC86-B4A5-4211-A1C8-EC848830536B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Port_current">
+      <DTS:VariableValue
+        DTS:DataType="8">mort</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D8200B80-C156-4725-AD9D-2822E741B85B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Product">
+      <DTS:VariableValue
+        DTS:DataType="8">AQ</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BF7CA951-C670-4CE8-B77C-476AEC820B8E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RecordCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{20C2835C-6C40-418E-8831-214361D7344B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Rec_cnt">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E74A2EF-799D-46F9-83D9-BF7534F9AE59}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Run_time_descip">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0CFB87DB-79CC-4D83-836E-99EAB8477535}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Table_joins">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Delete_discount_factors"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{304E55B6-D1EA-4C1B-9AAF-5759337525FB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete_discount_factors"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03DB9327-8D1E-4020-B2B8-4AAB44297718}"
+          SQLTask:SqlStatementSource="SELECT COUNT(*)&#xA;FROM [dbo].[REP_Discount_Factors]&#xA;WHERE [Market] = '12/31/2021';&#xA;WHILE 1=1&#xA;&#x9;BEGIN&#xA;&#x9;&#x9;DELETE TOP(100000)&#xA;&#x9;&#x9;FROM [dbo].[REP_Discount_Factors]&#xA;&#x9;&#x9;WHERE [Market] = '12/31/2021' IF @@ROWCOUNT = 0 BREAK&#xA;&#x9;END&#xA;GO;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\del_master_gap"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B83E9F84-4F16-46BA-AA17-9316F4913A68}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="del_master_gap"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03DB9327-8D1E-4020-B2B8-4AAB44297718}"
+          SQLTask:SqlStatementSource="SELECT COUNT(*)&#xA;FROM [dbo].[REP_Master_GAP]&#xA;WHERE Entity = CASE WHEN 'TRG' ='BWF' THEN 'BPD' ELSE 'TRG' END AND Source ='QRM'  AND Market_as_of_date = '3/31/2016';&#xA;WHILE 1=1&#xA;&#x9;BEGIN&#xA;&#x9;&#x9;DELETE TOP(100000)&#xA;&#x9;&#x9;FROM [dbo].[REP_Master_GAP]&#xA;&#x9;&#x9;WHERE Entity = CASE WHEN 'TRG' ='BWF' THEN 'BPD' ELSE 'TRG' END AND Source ='QRM'  AND Market_as_of_date = '3/31/2016' IF @@ROWCOUNT = 0 BREAK&#xA;&#x9;END&#xA;GO;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FTP_unvipot"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{DA6E0925-229A-4767-A70D-C82EDF45FAFC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FTP_unvipot"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03DB9327-8D1E-4020-B2B8-4AAB44297718}"
+          SQLTask:SqlStatementSource="Update [staging].[FTP_Unpivot]&#xA;set [Dirty Price] = 0&#xA;where&#xA;(&#xA;&#x9;Level_4 = 'Fixed Rate Mortgages'&#xA;&#x9;and Forward_Starting = 'FS'&#xA;&#x9;and [Funding Component] in ('Basefundinginterest', 'Principal', 'Total Value')&#xA;&#x9;and market_shock not in ('Book Value', 'Face Amount', 'Net WAC', 'WAL_0')&#xA;)&#xA;or&#xA;(&#xA;&#x9;instrument_set = 'Mortgage Proposal'&#xA;&#x9;and [Funding Component] in ('Basefundinginterest', 'Principal', 'Total Value')&#xA;&#x9;and market_shock not in ('Book Value', 'Face Amount', 'Net WAC', 'WAL_0')&#xA;)&#xA;And&#xA;(&#xA;&#x9;Portfolio like '%OBV' or Portfolio like '%ABB'&#xA;);&#xA;&#xA;&#xA;UPDATE [staging].[FTP_Unpivot]&#xA;SET [Dirty Price] = 0&#xA;WHERE&#xA;(&#xA;&#x9;&#x9;Level_4 = 'Fixed Rate Mortgages'&#xA;&#x9;&#x9;AND instrumnet_set IN (&#xA;&#x9;&#x9;&#x9;'mortgage'&#xA;&#x9;&#x9;&#x9;,'offset mortgage'&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;AND external_counterparty_segment = 'households'&#xA;&#x9;&#x9;AND (&#xA;&#x9;&#x9;&#x9;market_shock LIKE '%SOT'&#xA;&#x9;&#x9;&#x9;OR market_shock LIKE '%EVEatR'&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#xA;&#x9;OR (&#xA;&#x9;&#x9;Level_4 = 'Fixed Rate Mortgage Savings'&#xA;&#x9;&#x9;AND instrument_set = 'mortgage savings'&#xA;&#x9;&#x9;AND (&#xA;&#x9;&#x9;&#x9;market_shock LIKE '%SOT'&#xA;&#x9;&#x9;&#x9;OR market_shock LIKE '%EVEatR'&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;AND (&#xA;&#x9;&#x9;Portfolio LIKE '%OBV'&#xA;&#x9;&#x9;OR Portfolio LIKE '%ABB'&#xA;&#x9;&#x9;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GAP_DCF"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3028782A-CCEB-4CEC-B6CA-8C34A482E50E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GAP_DCF"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03DB9327-8D1E-4020-B2B8-4AAB44297718}"
+          SQLTask:SqlStatementSource="Update staging.GAP_DCF_Intermediate&#xA;set [ValueResult]=0, [ValueCorrected]=0&#xA;where&#xA;((&#xA;&#x9;Level_04 = 'Fixed Rate Mortgages'&#xA;&#x9;and Forward_Starting = 'FS'&#xA;&#x9;and [Funding_Component_Mapping_ID] in ('Base funding interest', 'Principal', 'Total Value')&#xA;)&#xA;or&#xA;(&#xA;&#x9;instrument_set = 'Mortgage Proposal'&#xA;&#x9;and [Funding_Component_Mapping_ID] in ('Base funding interest', 'Principal', 'Total Value')&#xA;))&#xA;And&#xA;(&#xA;&#x9;Entity in ('OBV','ABB')&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Long_tab2"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8B9F58C2-AEAB-4BF6-8CA6-39EAE009E8E9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Long_tab2"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03DB9327-8D1E-4020-B2B8-4AAB44297718}"
+          SQLTask:SqlStatementSource="DECLARE @Product AS CHAR(3)&#x9;= ?;&#xA;DECLARE @Period AS VARCHAR(6)&#x9;= ?;&#xA;DECLARE @FileID AS INT&#x9;&#x9;= ?;&#xA;&#xA;SELECT&#xA;&#x9;&#x9;&#x9;PF.Import_Table&#xA;,&#x9;&#x9;&#x9;PF.Input_Location&#xA;,&#x9;&#x9;&#x9;PF.Import_error_table&#xA;,&#x9;&#x9;&#x9;PF.Mastertable_Tabel_Field&#xA;,&#x9;&#x9;&#x9;PF.Imported_Location&#xA;,&#x9;&#x9;&#x9;ISNULL(PF.Mail_Group, '') Mail_Group&#xA;,&#x9;&#x9;&#x9;FS.[File_Name]&#xA;,&#x9;&#x9;&#x9;PP1.Parameter_Value&#xA;,&#x9;&#x9;&#x9;PP2.Parameter_Value AS Reporting_Database&#xA;,&#x9;&#x9;&#x9;PP3.Parameter_Value AS Reporting_Server&#xA;FROM&#x9;&#x9;dbo.tbl_Product PR&#xA;INNER JOIN&#x9;dbo.tbl_Product_file PF&#xA;ON&#x9;&#x9;&#x9;PR.Product_id = PF.Product_id&#xA;AND&#x9;&#x9;&#x9;PR.Period = PF.Period&#xA;LEFT JOIN&#x9;dbo.tbl_File_State FS&#xA;ON&#x9;&#x9;&#x9;PF.Product_id = FS.Product_id&#xA;AND&#x9;&#x9;&#x9;PF.Period = FS.Period&#xA;AND&#x9;&#x9;&#x9;PF.[File_id] = FS.[File_id]&#xA;INNER JOIN&#x9;dbo.tbl_Product_parameter PP1&#xA;ON&#x9;&#x9;&#x9;PF.Product_id = PP1.Product_id&#x9;&#x9;&#xA;AND&#x9;&#x9;&#x9;PF.Period = PP1.Period&#xA;INNER JOIN&#x9;dbo.tbl_Product_parameter PP2&#xA;ON&#x9;&#x9;&#x9;PP2.Product_id = 'GEN' AND PF.Period = PP2.Period&#xA;INNER JOIN&#x9;dbo.tbl_Product_parameter PP3&#xA;ON&#x9;&#x9;&#x9;PP3.Product_id = 'GEN' AND PF.Period = PP3.Period&#xA;WHERE&#x9;&#x9;PP1.Action_Take = 'Portdate'&#xA;AND&#x9;&#x9;&#x9;PR.Product_id = @Product&#xA;AND&#x9;&#x9;&#x9;PR.Period = @Period&#xA;AND&#x9;&#x9;&#x9;PF.[File_id] = @FileID&#xA;AND&#x9;&#x9;&#x9;PP2.Action_Take = 'ReportingDatabase'&#xA;AND&#x9;&#x9;&#x9;PP3.Action_Take = 'ReportingServer';"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Table_joins" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Product"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::Period"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::FileID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Long_title"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{85351BEE-FF3A-44DD-ADC4-CA7C581EB573}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Long_title"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03DB9327-8D1E-4020-B2B8-4AAB44297718}"
+          SQLTask:SqlStatementSource="DECLARE @Product AS CHAR(3)&#x9;= ?;&#xA;DECLARE @Period AS VARCHAR(6)&#x9;= ?;&#xA;DECLARE @FileID AS SMALLINT&#x9;= ?;&#xA;&#xA;SELECT&#xA;&#x9;&#x9;&#x9;PF.Import_Table&#xA;,&#x9;&#x9;&#x9;PF.Input_Location&#xA;,&#x9;&#x9;&#x9;PF.Import_error_table&#xA;,&#x9;&#x9;&#x9;PF.Mastertable_Tabel_Field&#xA;,&#x9;&#x9;&#x9;PF.Imported_Location&#xA;,&#x9;&#x9;&#x9;PF.Mail_Group&#xA;,&#x9;&#x9;&#x9;FS.[File_Name]&#xA;,&#x9;&#x9;&#x9;PP1.Parameter_Value&#xA;,&#x9;&#x9;&#x9;PP2.Parameter_Value AS Reporting_Database&#xA;,&#x9;&#x9;&#x9;PP3.Parameter_Value AS Reporting_Server&#xA;FROM&#x9;&#x9;dbo.tbl_Product PR&#xA;INNER JOIN&#x9;dbo.tbl_Product_file PF&#xA;ON&#x9;&#x9;&#x9;PR.Product_id = PF.Product_id&#xA;AND&#x9;&#x9;&#x9;PR.Period = PF.Period&#xA;LEFT JOIN&#x9;dbo.tbl_File_State FS&#xA;ON&#x9;&#x9;&#x9;PF.Product_id = FS.Product_id&#xA;AND&#x9;&#x9;&#x9;PF.Period = FS.Period&#xA;AND&#x9;&#x9;&#x9;PF.[File_id] = FS.[File_id]&#xA;INNER JOIN&#x9;dbo.tbl_Product_parameter PP1&#xA;ON&#x9;&#x9;&#x9;PF.Product_id = PP1.Product_id&#x9;&#x9;&#xA;AND&#x9;&#x9;&#x9;PF.Period = PP1.Period&#xA;INNER JOIN&#x9;dbo.tbl_Product_parameter PP2&#xA;ON&#x9;&#x9;&#x9;PP2.Product_id = 'GEN' AND PF.Period = PP2.Period&#xA;INNER JOIN&#x9;dbo.tbl_Product_parameter PP3&#xA;ON&#x9;&#x9;&#x9;PP3.Product_id = 'GEN' AND PF.Period = PP3.Period&#xA;AND&#x9;&#x9;&#x9;PF.Period = PP1.Period&#xA;WHERE&#x9;&#x9;PP1.Action_Take = 'Portdate'&#xA;AND&#x9;&#x9;&#x9;PP2.Action_Take = 'ReportingDatabase'&#xA;AND&#x9;&#x9;&#x9;PP3.Action_Take = 'ReportingServer'&#xA;AND&#x9;&#x9;&#x9;PR.Product_id = @Product&#xA;AND&#x9;&#x9;&#x9;PR.Period = @Period&#xA;AND&#x9;&#x9;&#x9;PF.[File_id] = @FileID;&#xA;"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::New_table_long" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Product"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::Period"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::FileID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\RecordCount"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{df645227-8a9f-44fc-8805-4f6acabfd974}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="RecordCount"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03DB9327-8D1E-4020-B2B8-4AAB44297718}"
+          SQLTask:SqlStatementSource="Select&#x9;&#x9;FBA_CNT+&#xA;&#x9;&#x9;FSH_CNT+&#xA;&#x9;&#x9;FUP_CNT As RecordCount from&#xA;&#xA;&#xA;(Select count(*) as FBA_CNT from [staging].[FTP_Base])FBA join&#xA;(Select count(*) as FSH_CNT from [staging].[FTP_Shocks])FSH on 1=1 join&#xA;(Select count(*) as FUP_CNT from [staging].[FTP_Unpivot])FUP on 1=1;&#xA;&#xA;&#xA;truncate table [staging].[FTP_Base];&#xA;truncate table [staging].[FTP_Shocks];&#xA;truncate table [staging].[FTP_Unpivot];"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::RecordCount" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\rec_count"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F5C367BC-FCAC-491F-B0E8-E8D5297490F6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="rec_count"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03DB9327-8D1E-4020-B2B8-4AAB44297718}"
+          SQLTask:SqlStatementSource="Select PLN.PLN_CNT+RTD.RTD_CNT+ACD.ACD_CNT+FOP.FOP_CNT+GAP.GAP_CNT from&#xA;(Select count(*) as PLN_CNT from [staging].[PlanningDimentsions])PLN join&#xA;(Select count(*) as RTD_CNT from [staging].[Run_Time_Description])RTD on 1=1 join&#xA;(Select count(*) as ACD_CNT from [staging].[Account_Dimension])ACD on 1=1 join&#xA;(Select count(*) as FOP_CNT from [staging].[Forecast_Periods])FOP on 1=1 join&#xA;(Select count(*) as GAP_CNT from [staging].[GAP])GAP on 1=1 ;&#xA;&#xA;truncate table [staging].[PlanningDimentsions];&#xA;truncate table [staging].[Run_Time_Description];&#xA;truncate table [staging].[Account_Dimension];&#xA;truncate table [staging].[Forecast_Periods];&#xA;truncate table [staging].[GAP];"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Rec_cnt" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\select_res"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7BBE1C78-AE71-42A7-A32D-30FC9C22685B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="select_res"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03DB9327-8D1E-4020-B2B8-4AAB44297718}"
+          SQLTask:SqlStatementSource="DECLARE @PortfolioCurrent varchar(255)&#x9;=&#x9;?;&#xA;DECLARE @Market date&#x9;&#x9;&#x9;=&#x9;?;&#xA;DECLARE @LikeMatchGap varchar(255)&#x9;=&#x9;?;&#xA;DECLARE @CompanyName varchar(255)&#x9;=&#x9;?;&#xA;&#xA;SELECT convert(INT,forecastid) as forcastid FROM QRM.Run_Time_Description WHERE&#xA; 1=1&#xA; AND Portfolio = @PortfolioCurrent&#xA; AND Convert(Date,Market) = Convert(Date,@Market)&#xA; AND Strategy like @LikeMatchGap&#xA; AND CompanyName = @CompanyName&#xA; AND DateTimeStamp = (select max(DateTimeStamp) FROM [QRM].[Run_Time_Description] where CompanyName = @CompanyName AND Portfolio = @PortfolioCurrent);&#xA;&#xA;DECLARE @PortfolioCurrent varchar(255)&#x9;=&#x9;'5/31/2024';&#xA;DECLARE @Entity varchar(10)&#x9;=&#x9;'OBV';&#xA;DECLARE @DataSetEmpty bit = 0;&#xA;&#xA;IF NOT EXISTS (&#xA;&#x9;SELECT 1&#xA;&#x9;FROM exp.MDSStoBETValuationResult&#xA;&#x9;WHERE Entity = @Entity&#xA;&#x9;and CONVERT(date, PortfolioAsOfDate) = CONVERT(date, @PortfolioCurrent)&#xA;)&#xA;SET @DataSetEmpty = 1;"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Run_time_descip" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="1"
+            SQLTask:DtsVariableName="User::DataSetEmpty" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Port_current"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::Market_date"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::Matchgap"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::Comp_Name"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update_GAP"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{573BAB43-4187-4C8D-9222-77E2A246BE73}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update_GAP"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03DB9327-8D1E-4020-B2B8-4AAB44297718}"
+          SQLTask:SqlStatementSource="Update gap&#xA;set&#xA; gap.[Intercompany_segment] = ISNULL(cp.[Intercompany_segment], 'LKP_error')&#xA;FROM [staging].[GAP] gap&#xA;Left Join [cfg].[LKP_Counterparty] cp&#xA;on&#xA; cp.[Intercompany_Legal_Entity] = gap.Intercompany_Legal_Entity&#xA; and cp.[Intercompany_Counterparty] = gap.[Intercompany_Counterparty];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{81353CA2-9728-4713-A6DE-4DACFAEB3969}"
+      DTS:From="Package\FTP_unvipot"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Delete_discount_factors" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{973F4537-69E6-431F-A2B7-6E085807B631}"
+      DTS:From="Package\Delete_discount_factors"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\del_master_gap" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{C8D28F63-6C2B-4924-B3C1-D91A173A013F}"
+      DTS:From="Package\del_master_gap"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\select_res" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{D44B7085-FCA1-46CD-A0BF-AE9607036B2E}"
+      DTS:From="Package\select_res"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\RecordCount" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{F2A0D95A-78C4-4A55-BA74-685F7E4C3811}"
+      DTS:From="Package\RecordCount"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Long_title" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{4C1C574F-AAE3-4CC9-84D1-B4CA68D66870}"
+      DTS:From="Package\Long_title"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\rec_count" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{CD6B580F-AB4C-4F3C-B6FD-56EE0C758CE8}"
+      DTS:From="Package\rec_count"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Update_GAP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{DF7C548E-6502-4A6A-BB7D-DC6F784B1D3F}"
+      DTS:From="Package\Update_GAP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\GAP_DCF" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{B0F10722-3C77-4CB7-9FFA-282233375947}"
+      DTS:From="Package\GAP_DCF"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Long_tab2" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\del_master_gap"
+          TopLeft="552.499969812732,364.866664129429" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Delete_discount_factors"
+          TopLeft="538.333303920098,262.599998173912" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\FTP_unvipot"
+          TopLeft="531.666637617682,137.799999041756" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\GAP_DCF"
+          TopLeft="543.33330364691,993.333331043191" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Long_tab2"
+          TopLeft="547.49997008592,1115.99999631166" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Long_title"
+          TopLeft="548.333303373722,681.066664111349" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\rec_count"
+          TopLeft="541.666637071306,778.333330446548" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\RecordCount"
+          TopLeft="534.166637481088,576.066663044625" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\select_res"
+          TopLeft="534.99997076889,462.799996781747" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Update_GAP"
+          TopLeft="532.499970905484,879.333330790069" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="600.466637617682,179.399999041756">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.266666302416,83.1999991321564"
+              Start="0,0"
+              End="20.266666302416,75.6999991321564">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5999995660782" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.5999995660782"
+                    Point2="0,41.5999995660782"
+                    Point3="4,41.5999995660782" />
+                  <mssgle:LineSegment
+                    End="16.266666302416,41.5999995660782" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.266666302416,41.5999995660782"
+                    Point2="20.266666302416,41.5999995660782"
+                    Point3="20.266666302416,45.5999995660782" />
+                  <mssgle:LineSegment
+                    End="20.266666302416,75.6999991321564" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="620.733303920098,304.199998173912">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.1666658926343,60.666665955517"
+              Start="0,0"
+              End="14.1666658926343,53.166665955517">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.3333329777585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.3333329777585"
+                    Point2="0,30.3333329777585"
+                    Point3="4,30.3333329777585" />
+                  <mssgle:LineSegment
+                    End="10.1666658926343,30.3333329777585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.1666658926343,30.3333329777585"
+                    Point2="14.1666658926343,30.3333329777585"
+                    Point3="14.1666658926343,34.3333329777585" />
+                  <mssgle:LineSegment
+                    End="14.1666658926343,53.166665955517" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="634.899969812732,406.466664129429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.4999990438424,56.333332652317"
+              Start="0,0"
+              End="-17.4999990438424,48.833332652317">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1666663261585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.1666663261585"
+                    Point2="0,28.1666663261585"
+                    Point3="-4,28.1666663261585" />
+                  <mssgle:LineSegment
+                    End="-13.4999990438424,28.1666663261585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.4999990438424,28.1666663261585"
+                    Point2="-17.4999990438424,28.1666663261585"
+                    Point3="-17.4999990438424,32.1666663261585" />
+                  <mssgle:LineSegment
+                    End="-17.4999990438424,48.833332652317" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="616.983304124989,504.399996781747">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71.6666662628784"
+              Start="0,0"
+              End="0,64.1666662628784">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.1666662628784" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="616.566637481088,617.666663044625">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.5666658926344,63.4000010667244"
+              Start="0,0"
+              End="18.5666658926344,55.9000010667244">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.7000005333622" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.7000005333622"
+                    Point2="0,31.7000005333622"
+                    Point3="4,31.7000005333622" />
+                  <mssgle:LineSegment
+                    End="14.5666658926344,31.7000005333622" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.5666658926344,31.7000005333622"
+                    Point2="18.5666658926344,31.7000005333622"
+                    Point3="18.5666658926344,35.7000005333622" />
+                  <mssgle:LineSegment
+                    End="18.5666658926344,55.9000010667244" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="631.799970222514,722.666664111349">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.6666663351986"
+              Start="0,0"
+              End="0,48.1666663351986">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.1666663351986" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="628.466637071306,819.933330446548">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.16666616582177,59.4000003435215"
+              Start="0,0"
+              End="-9.16666616582177,51.9000003435215">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.7000001717607" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.7000001717607"
+                    Point2="0,29.7000001717607"
+                    Point3="-4,29.7000001717607" />
+                  <mssgle:LineSegment
+                    End="-5.16666616582177,29.7000001717607" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.16666616582177,29.7000001717607"
+                    Point2="-9.16666616582177,29.7000001717607"
+                    Point3="-9.16666616582177,33.7000001717607" />
+                  <mssgle:LineSegment
+                    End="-9.16666616582177,51.9000003435215" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="622.516637276197,920.933330790069">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72.4000002531211"
+              Start="0,0"
+              End="0,64.9000002531211">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.9000002531211" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="627.816636866415,1034.93333104319">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81.0666652684743"
+              Start="0,0"
+              End="0,73.5666652684743">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.5666652684743" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
