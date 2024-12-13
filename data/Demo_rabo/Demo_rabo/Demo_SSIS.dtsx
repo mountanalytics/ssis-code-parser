@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="158"
-  DTS:VersionGUID="{9F184FBC-9E92-4011-BE16-A1A6E20EFAFE}">
+  DTS:VersionBuild="160"
+  DTS:VersionGUID="{62AD2BE7-4CBB-4F12-8945-FA74764D42A8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAVsT1O+DKnr6zhl2pl9NYCszx6CgDGTuvNMyFCJ4UUogAAAAAOgAAAAAIAACAAAAAtMXvE4mB4iM+UjOSJJJhapmlStOXsQe76nGE4++HFuDAAAABUOIyk93vq0Ws6rxXha5O53qU/F9bV3nsY6UN6bnOizAB/3NSmco8HRieEodXjx5hAAAAA1UA/0aQM1BbC8kJu8O3gAzISXJY/GUQorQ03n0V9Tc7AZyW6D29jaEjr4Zm5smo9ZRZzMVOLgfB6VzaSUZ4XmQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD+5+ApqrBch146A3C92+0JURtMkrTXp3Qcmng4fpYppwAAAAAOgAAAAAIAACAAAAAfd6nbe/XvC0sAYuVF3xr1f2xAF5SE3qQj5XtweoDHpjAAAAAcf1mLFWTVdsmd6dE0awq77F6NzDs3/mbKSEcZUwp5T4exGSJ3tD6OUOM/iG0koxJAAAAAYfZIPy6Ci3wl5PQoh6c/t1up8eDyBZBC4eU3wAf7mADtZZMTP/9m5CN/0JXHKEGydgzZxCasOhPBW3TxwkgFNg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -58,7 +58,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACetpCBX+7sEYDNEO3ojNvbH1CLcZ5wklzyxnWg2uus7wAAAAAOgAAAAAIAACAAAAAqAmmwcEJ3lOACVjlOS/y4qliqt5iADqnIh92VLnTOkDAAAABZ/qbjUjBIGTZKdMCr47Vae70+2AcFkOdKY3vApKrBFoHM2NLvb/hPUTgK+Ozss7ZAAAAAXwiFXtf9O/biaZfm3UVGhtu4DPnO9IMaCCCayRSNo2axV2byoSIQNCj+TdV+JWcIAh6NMDSjjQwpwsFDrChsdQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABz31a59pVB11VvyfjgWvJ7o84tHZ9KuVfrYs5enKVINgAAAAAOgAAAAAIAACAAAABdxCu37qxrDthZ2u4Sfe0niYbRriKofdwZvKhsFzxX4jAAAABE/Z5uOt/477NCpfTdzH2iNlkMogIpKxIsPTZaSP3B32TL/8Pzr5vJAXlMu+q/C5hAAAAATVN5+PzVgWkg0qqokU21e0q8KHkTAyP0XUACSrFUv2xMQiv+qEQwVhpUPHHX0rW6FIg/KK+cByvgEQtbmnj6ew</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -75,7 +75,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADXkfUuTR2YzMyryBIFLpWvNl/3cJrjuqg6oxbWqqj7HAAAAAAOgAAAAAIAACAAAABd7YIZ6QW/8XMWi/CpCiwRDmUESzAp+YjQ/Mtvr9zRaTAAAAAJmUbGDZwFsYR37vIttYbq1kzWsOUudp7P1P2qfdtxfpng2i4ri2kw+nC3b0EnibRAAAAAM+wSDIvOCIxB5IFlOt39EJqqz4JAJnHAoJODsfVsqsS0HvDvKCf/2KMCazzHOnzG9YyjvFbJ/P35iGs/JnTizA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADZqrNjZ+XODDZ0H050mXdsCwMqy7wdRJ9YUqmAuY+OvAAAAAAOgAAAAAIAACAAAAA0Zuq18B3RmaM3s2z+YIGrDlLygiqh46Kdnnf6wnUlvDAAAAAdZdAYlSE1bcyF7HWB85cYmyoRoDCl09Y8Bl6X4AimxaCaMviqMHkUmglWN/KxKFFAAAAA65DMA1EH2TrO1uQZVVoFRZ63zeGQC+kM+MhQXimbv71sojieJxz1c+cl1ADLnbEJkbgAhp3s6C/RdCLPMDvBhQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -90,7 +90,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAATI/32xQh3bzPARLDPTaHW5D1nUhx1Ldkj7poAgsfc+QAAAAAOgAAAAAIAACAAAAA0tIEKITVGbC6ZGSzQFICPS8O9z5XIljs9FiFHBnixqTAAAADHCyHtoAdkEQylNL5cDjyHeuBG+r7QLeVpZmEatYEbbyVJU+QQqFPxXtK1YkI9UHNAAAAAxNV9NhF4y4yFq3IRMbNbcaPo8YWXA3bwyPqmmGP7flqaMmRQJpO9m3Uwwbo1eVIYGl3LNb1wkR4F6GudF6QVWg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAcK/m72mzact1soG0+kjBPRv01ukgC7Fw0KZj9vPYT1gAAAAAOgAAAAAIAACAAAABs22t0/UWZ4cwLTKpkE1DXmCQ0nw4xWhARV1ANJsEItDAAAABkoEuu2A0TryiG54IEcaLTVCVaAlK3LLLpqzQmfBwyVkdPHA1MSQceZdxpZWiCQsFAAAAA8qJTeyT6e90qggkpCNWEa3xQkFeK1eONTywb/esQ5haM30Sx7llRBMJUzsAHRlPemcLGRRr1jsG7burP9RaJLQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -105,7 +105,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAuIOoUDaMwlWNyluLU2Sd71wUu5avEOs9Z+YBbukOhSAAAAAAOgAAAAAIAACAAAAC4hrM+dkFgjISL6+wH8Fo8FxSWuBHZsCiq0btLDSYncTAAAABYlWzS/Mv2d7wMv528EepxtYwRPJpZ9Vr1Nuy11Qbv3Ks9O/xp6Hx5l9n3BrVoOP9AAAAAxdUCotNfXDzZ98T91xjBofBmeHZhxuLDkX3Gqbg01zimYiBtVK0UFWuESlinEbbw4iL9xuMDjzO527FRc+3k6Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACAlj2ASt5LE8LbVIDNoGnNR50mkZaam6MMzgnKW3yyWAAAAAAOgAAAAAIAACAAAABOzprycs1pjpwS7gzQfMJg9S3ZcZAJ4moVLn78lFUPeTAAAACP9QN8R58VtdlfZN/UuWdCoXFk1pY4cCl2LR880rrMiUYRfFJ343HZcjkAMqOIudxAAAAA4pUv6vOQ8IXh3Cwbt1MnyEL+EWTTsSK8cVeErLIwFZLHtKfdUfcJI6FHPNIPuZBH6o/0Y7ZWTr2NHhokP3SifA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -4707,46 +4707,46 @@ where [refTable].[SupplierID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="165,42"
+          Size="164.8,41.6"
           Id="Package\Drop insert table"
           TopLeft="265.166651686861,792.99999764959" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\insert into logger"
           TopLeft="273.499984564881,706.133331531352" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Loop over variable table\Insert into order_write"
           TopLeft="48,22" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="275,119"
-          Size="275,162"
+          PanelSize="275.2,119.2"
+          Size="275.2,161.6"
           Id="Package\Loop over variable table"
           TopLeft="212,248" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Merge and filter"
           TopLeft="277.499985384445,626.133332254555" />
         <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Overwrite insert table"
           TopLeft="257.166666985386,877.599998806715" />
         <NodeLayout
-          Size="144,42"
+          Size="144,41.6"
           Id="Package\Region merge"
           TopLeft="264.166652233237,972.266663605107" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Select into variable"
           TopLeft="267,154" />
         <NodeLayout
-          Size="126,42"
+          Size="126.4,41.6"
           Id="Package\Set region"
           TopLeft="287.49999931703,459.733333592481" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Truncate error table"
           TopLeft="269.333318125871,542.333332670397" />
         <EdgeLayout
@@ -5254,6 +5254,19 @@ where [refTable].[SupplierID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Merge and filter\Write Update sup table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Merge and filter\Match with products">
     <Properties>
       <Property>
@@ -5278,19 +5291,6 @@ where [refTable].[SupplierID] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Merge and filter\Load supplier">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Merge and filter\Write Update sup table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5697,19 +5697,6 @@ where [refTable].[SupplierID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Region merge\Pivot_table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Region merge\Teritory">
     <Properties>
       <Property>
@@ -5724,6 +5711,19 @@ where [refTable].[SupplierID] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Region merge\Region">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Region merge\Pivot_table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -100,7 +100,6 @@ def parse_control_flow(open_dtsx: dict, file_name:str) -> dict:
 
         if control_node['DTS:CreationName'] =='Microsoft.ExecuteSQLTask': 
             dict_blocks[control_node["DTS:refId"]] = parse_sql_task(control_node)
-            
         elif control_node['DTS:CreationName'] == 'Microsoft.Pipeline':
             dict_blocks[control_node["DTS:refId"]] = {'Description': control_node['DTS:Description'], 'Index': idx, "Block_name": control_node['DTS:refId'].replace("\\", "@")}
 

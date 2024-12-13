@@ -4,24 +4,25 @@ import json
 from modules.parsers.parse_controlflow import *
 from sql_parser.main import main
 
-with open('output-data/nodes/metadata_nodes_Package 1.json', 'r') as json_file: # columns data
+with open('output-data/nodes/metadata_nodes_Package 1.json', 'r') as json_file:
+#with open('output-data/nodes/metadata_nodes_Demo_SSIS.json', 'r') as json_file: # columns data
     control_flow = json.load(json_file)
 
 """
 for node in control_flow.keys():
     if control_flow[node]['Description'] == 'Execute SQL Task':
 
-        print(control_flow[node]['SQL_state'])
-        print(control_flow[node]['Variables'])
+        #print(control_flow[node]['SQL_state'])
+        #print(control_flow[node]['Variables'])
 
         try:
 
-            print(control_flow[node]['Result_variable'])
+            #print(control_flow[node]['Result_variable'])
         except KeyError:
             pass
 
-        print('##############################')
-        print()
+        #print('##############################')
+        #print()
 
         """
 
@@ -84,9 +85,11 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
     nodes, lineages, _ = main(sql_statement, result_set, nodes, lineages, variable_tables, node_name)
 
     for i in nodes:
+        pass
         print(i)
     print()
     for i in lineages:
+        pass
         print(i)
     print('----------------')
     print() 

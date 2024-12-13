@@ -10,6 +10,8 @@ import re
 import sqlglot
 from sqlglot import parse_one, exp
 from sqlglot.dialects.tsql import TSQL
+from modules.parsers.parse_controlflow import *
+from sql_parser.main import main
 
 
 def find_table_w_spaces(tree: sqlglot.expressions):
@@ -261,6 +263,35 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
         except:
             pass
     
+    try:
+        result_set = control_flow[node_name]['Result_variable']
+        #print(result_set)
+        #print()
+    except:
+        result_set = None
+
+
+    #print(sql_statement)
+    #print()
+
+    nodes, lineages, variable_tables = main(sql_statement, result_set, nodes, lineages, variable_tables, node_name)
+
+    for i in nodes:
+        pass
+        #print(i)
+    #print()
+    for i in lineages:
+        pass
+        #print(i)
+    #print('----------------')
+    #print() 
+
+    return nodes, lineages, variable_tables, node_name
+    
+    
+    
+    
+    """
     # get sqlglot tree from query
     tree = parse_query(sql_statement)
 
@@ -370,16 +401,16 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
                 nodes.append({'NAME_NODE': transformation,'LABEL_NODE': transformation, 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "#cdd408"})
 
                 lineages.append({'SOURCE_COLUMNS':f'{transformation}[{transformation}]', 'TARGET_COLUMN':f"{node_name}[{column}]", 'TRANSFORMATION':""})
-
+    
     return nodes, lineages, variable_tables, node_name
-
+    """
 
 def foreachloop_parser(control_flow, nodes, lineages, variable_tables, node_name):
 
     nodes.append({'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': None, 'FUNCTION': 'ForEachLoopContainer', 'JOIN_ARG': None, 'COLOR': "#d0d3d3"})
 
-    _, _, _, sql_node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
-
+    #_, _, _, sql_node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
+    _, sql_node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
     variables = control_flow[node_name]['Iterr_variables']
     input_table = control_flow[node_name]['Input_variable']
 
@@ -404,23 +435,25 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     Function that orchestrates the extraction of data from SQL queries in the control flow
     """
 
-    nodes = []
-    lineages = []
+    nodes = pd.DataFrame()
+    lineages = pd.DataFrame()
     variable_tables = {} 
 
     # iterate through the control flow nodes and extract and parse SQL statement
     for node in control_flow.keys():
         if control_flow[node]['Description'] == 'Execute SQL Task':
-            nodes, lineages, variable_tables, _ = executesql_parser(control_flow, nodes, lineages, variable_tables, node, False)
-
+            #nodes, lineages, variable_tables, _ = executesql_parser(control_flow, nodes, lineages, variable_tables, node, False)
+            nodes_sql, lin_sql, variable_tables, node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node, False)
+            lineages = pd.concat([lineages,pd.DataFrame(lin_sql)])
+            nodes = pd.concat([nodes,pd.DataFrame(nodes_sql)])
         elif control_flow[node]['Description'] == 'Foreach Loop Container':
             nodes, lineages = foreachloop_parser(control_flow, nodes, lineages, variable_tables, node)
 
     # create nodes and lineages dataframes                   
-    nodes_df = pd.DataFrame(nodes)
+    nodes_df = pd.DataFrame(nodes).reset_index(drop=True)
     nodes_df['ID'] = nodes_df.index
     nodes_df['COLOR'] = nodes_df.apply(
-        lambda row: row['COLOR'] if pd.isnull(row['FILTER']) else '#db59a5', 
+        lambda row: row['COLOR'] if row['FILTER'] is None or all(pd.isna(x) for x in row['FILTER']) else '#db59a5', 
         axis=1
     )
     nodes_df.to_csv(f'output-data/nodes/nodes-{file_name}.csv',index=False) # save nodes file
@@ -436,14 +469,14 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     
 
     # merge source id
-    lineages_df = pd.merge(lineages_df, nodes_df[['ID', 'LABEL_NODE']], left_on='SOURCE_NODE', right_on = 'LABEL_NODE', how='left')
+    lineages_df = pd.merge(lineages_df, nodes_df[['ID', 'NAME_NODE']], left_on='SOURCE_NODE', right_on = 'NAME_NODE', how='left')
     lineages_df['SOURCE_NODE'] = lineages_df['ID']
-    lineages_df.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
+    lineages_df.drop(columns=['ID', 'NAME_NODE'], inplace=True)
 
     # merge target id
-    lineages_df = pd.merge(lineages_df, nodes_df[['ID', 'LABEL_NODE']], left_on='TARGET_NODE', right_on = 'LABEL_NODE', how='left')
+    lineages_df = pd.merge(lineages_df, nodes_df[['ID', 'NAME_NODE']], left_on='TARGET_NODE', right_on = 'NAME_NODE', how='left')
     lineages_df['TARGET_NODE'] = lineages_df['ID']
-    lineages_df.drop(columns=['ID', 'LABEL_NODE'], inplace=True)
+    lineages_df.drop(columns=['ID', 'NAME_NODE'], inplace=True)
     lineages_df = lineages_df.drop_duplicates(subset =['SOURCE_COLUMNS', 'TARGET_COLUMN', 'TRANSFORMATION']).reset_index(drop=True)
     lineages_df['COLOR'] = 'aliceblue'
 

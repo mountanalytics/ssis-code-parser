@@ -1,3 +1,3 @@
 ,LABEL_NODE,FUNCTION,JOIN_ARG
-25,Merge and filter@Match with products,Lookup,SupplierID = SupplierID2
-33,Region merge@Merge Join,Lookup,Inner join
+19,Merge and filter@Match with products,Lookup,SupplierID = SupplierID2
+28,Region merge@Merge Join,Lookup,Inner join

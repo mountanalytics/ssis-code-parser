@@ -3,8 +3,8 @@ import pandas as pd
 
 
 def replace_after_last_dot(s):
-    if '.' in s:
-        return s.split('.')[-1]
+    if '.' in str(s):
+        return str(s).split('.')[-1]
     return s
 
 
@@ -81,6 +81,6 @@ def node_lin_pars(flows:dict) -> pd.DataFrame:
             lineages = pd.DataFrame(flows[file_name]['data_flow'][flow]['lineages'])
             nodes = pd.DataFrame(flows[file_name]['data_flow'][flow]['nodes'])
             node_final = update_datasets(nodes, lineages, flow, node_final)
-            
+
     node_final.to_csv("output-data/nodes.csv", index = False)
     return node_final
