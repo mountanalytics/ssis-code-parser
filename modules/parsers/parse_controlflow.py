@@ -456,9 +456,12 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
         lambda row: row['COLOR'] if row['FILTER'] is None or all(pd.isna(x) for x in row['FILTER']) else '#db59a5', 
         axis=1
     )
+    nodes_df["NAME_NODE"] = nodes_df["NAME_NODE"].apply(lambda x: x.replace("_doublecolumns_","::").replace("'",""))
+    nodes_df["LABEL_NODE"] = nodes_df["LABEL_NODE"].apply(lambda x: x.replace("_doublecolumns_","::").replace("'",""))
     nodes_df.to_csv(f'output-data/nodes/nodes-{file_name}.csv',index=False) # save nodes file
-
     lineages_df = pd.DataFrame(lineages)
+    lineages_df['SOURCE_COLUMNS'] = lineages_df['SOURCE_COLUMNS'].apply(lambda x: x.replace("_doublecolumns_","::").replace("@",""))
+    lineages_df['TARGET_COLUMN'] = lineages_df['TARGET_COLUMN'].apply(lambda x: x.replace("_doublecolumns_","::").replace("@",""))
     lineages_df['SOURCE_FIELD'] = lineages_df['SOURCE_COLUMNS'].str.extract(r'\[([^\]]*)\]')
     lineages_df['TARGET_FIELD'] = lineages_df['TARGET_COLUMN'].str.extract(r'\[([^\]]*)\]')
 
@@ -472,7 +475,6 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     lineages_df = pd.merge(lineages_df, nodes_df[['ID', 'NAME_NODE']], left_on='SOURCE_NODE', right_on = 'NAME_NODE', how='left')
     lineages_df['SOURCE_NODE'] = lineages_df['ID']
     lineages_df.drop(columns=['ID', 'NAME_NODE'], inplace=True)
-
     # merge target id
     lineages_df = pd.merge(lineages_df, nodes_df[['ID', 'NAME_NODE']], left_on='TARGET_NODE', right_on = 'NAME_NODE', how='left')
     lineages_df['TARGET_NODE'] = lineages_df['ID']
