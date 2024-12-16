@@ -407,10 +407,10 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
 
 def foreachloop_parser(control_flow, nodes, lineages, variable_tables, node_name):
 
-    nodes.append({'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': None, 'FUNCTION': 'ForEachLoopContainer', 'JOIN_ARG': None, 'COLOR': "#d0d3d3"})
+    nodes = pd.concat([nodes, pd.DataFrame([{'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': None, 'FUNCTION': 'ForEachLoopContainer', 'JOIN_ARG': None, 'COLOR': "#d0d3d3"}])], ignore_index=True)
 
-    #_, _, _, sql_node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
-    _, sql_node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
+    _, _, _, sql_node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
+    #_, sql_node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
     variables = control_flow[node_name]['Iterr_variables']
     input_table = control_flow[node_name]['Input_variable']
 
@@ -420,13 +420,13 @@ def foreachloop_parser(control_flow, nodes, lineages, variable_tables, node_name
                 for variable in variables:
                     if column[1] == variable[1]: # if the indeces of the column and the variable correspond
 
-                        nodes.append({'NAME_NODE': variable[0],'LABEL_NODE': variable[0], 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "#cdd408"})
+                        nodes = pd.concat([nodes, pd.DataFrame([{'NAME_NODE': variable[0],'LABEL_NODE': variable[0], 'FILTER': None, 'FUNCTION': 'Variable', 'JOIN_ARG': None, 'COLOR': "#cdd408"}])], ignore_index=True)
 
-                        lineages.append({'SOURCE_COLUMNS':f'{input_table}[{column[0]}]', 'TARGET_COLUMN':f"{node_name}[{column[0]}]", 'TRANSFORMATION':""}) # from the input the table to the foreachloop
-                        lineages.append({'SOURCE_COLUMNS':f'{node_name}[{variable[0]}]', 'TARGET_COLUMN':f"{sql_node_name}[{variable[0]}]", 'TRANSFORMATION':""}) # from the foreachloop to the sql
+                        lineages = pd.concat([lineages, pd.DataFrame([{'SOURCE_COLUMNS':f'{input_table}[{column[0]}]', 'TARGET_COLUMN':f"{node_name}[{column[0]}]", 'TRANSFORMATION':""}])], ignore_index=True) # from the input the table to the foreachloop
+                        lineages = pd.concat([lineages, pd.DataFrame([{'SOURCE_COLUMNS':f'{node_name}[{variable[0]}]', 'TARGET_COLUMN':f"{sql_node_name}[{variable[0]}]", 'TRANSFORMATION':""}])], ignore_index=True) # from the foreachloop to the sql
                         
-                        lineages.append({'SOURCE_COLUMNS':f'{sql_node_name}[{variable[0]}]', 'TARGET_COLUMN':f"{variable[0]}[{variable[0]}]", 'TRANSFORMATION':""}) # from the foreachloop to the to the variable node
-                        lineages.append({'SOURCE_COLUMNS':f'{variable[0]}[{variable[0]}]', 'TARGET_COLUMN':f"{node_name}[{variable[0]}]", 'TRANSFORMATION':""}) # from the variable node back to the foreachloop
+                        lineages = pd.concat([lineages, pd.DataFrame([{'SOURCE_COLUMNS':f'{sql_node_name}[{variable[0]}]', 'TARGET_COLUMN':f"{variable[0]}[{variable[0]}]", 'TRANSFORMATION':""}])], ignore_index=True) # from the foreachloop to the to the variable node
+                        lineages = pd.concat([lineages, pd.DataFrame([{'SOURCE_COLUMNS':f'{variable[0]}[{variable[0]}]', 'TARGET_COLUMN':f"{node_name}[{variable[0]}]", 'TRANSFORMATION':""}])], ignore_index=True) # from the variable node back to the foreachloop
 
     return nodes, lineages
 
@@ -456,12 +456,12 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
         lambda row: row['COLOR'] if row['FILTER'] is None or all(pd.isna(x) for x in row['FILTER']) else '#db59a5', 
         axis=1
     )
-    nodes_df["NAME_NODE"] = nodes_df["NAME_NODE"].apply(lambda x: x.replace("_doublecolumns_","::").replace("'",""))
-    nodes_df["LABEL_NODE"] = nodes_df["LABEL_NODE"].apply(lambda x: x.replace("_doublecolumns_","::").replace("'",""))
+    nodes_df["NAME_NODE"] = nodes_df["NAME_NODE"].apply(lambda x: str(x).replace("_doublecolumns_","::").replace("'",""))
+    nodes_df["LABEL_NODE"] = nodes_df["LABEL_NODE"].apply(lambda x: str(x).replace("_doublecolumns_","::").replace("'",""))
     nodes_df.to_csv(f'output-data/nodes/nodes-{file_name}.csv',index=False) # save nodes file
     lineages_df = pd.DataFrame(lineages)
-    lineages_df['SOURCE_COLUMNS'] = lineages_df['SOURCE_COLUMNS'].apply(lambda x: x.replace("_doublecolumns_","::").replace("@",""))
-    lineages_df['TARGET_COLUMN'] = lineages_df['TARGET_COLUMN'].apply(lambda x: x.replace("_doublecolumns_","::").replace("@",""))
+    lineages_df['SOURCE_COLUMNS'] = lineages_df['SOURCE_COLUMNS'].apply(lambda x: str(x).replace("_doublecolumns_","::").replace("@","").replace("'",""))
+    lineages_df['TARGET_COLUMN'] = lineages_df['TARGET_COLUMN'].apply(lambda x: str(x).replace("_doublecolumns_","::").replace("@","").replace("'",""))
     lineages_df['SOURCE_FIELD'] = lineages_df['SOURCE_COLUMNS'].str.extract(r'\[([^\]]*)\]')
     lineages_df['TARGET_FIELD'] = lineages_df['TARGET_COLUMN'].str.extract(r'\[([^\]]*)\]')
 

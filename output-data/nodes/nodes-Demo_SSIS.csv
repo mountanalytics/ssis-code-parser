@@ -1,0 +1,8 @@
+NAME_NODE,LABEL_NODE,FILTER,FUNCTION,JOIN_ARG,COLOR,ID
+query_User::res_set,query_User::res_set,dbo.Products_Extract.Country = @User_doublecolumns_Ship_country AND dbo.Products_Extract.UnitsInStock > @User_doublecolumns_Unit_stock,query,[],#db59a5,0
+User::res_set,User::res_set,,variable,,#D0D708,1
+dbo.Products_Extract,dbo.Products_Extract,,DataSources,,#42d6a4,2
+Package\Loop over variable table,Package\Loop over variable table,,ForEachLoopContainer,,#d0d3d3,3
+User::Rows_suppliers,User::Rows_suppliers,,variable,,#d0d3d3,4
+SSIS_Logger,SSIS_Logger,,DataSources,,#d0d3d3,5
+query_Package\insert into logger_1,query_Package\insert into logger_1,None,query,,#db59a5,6
