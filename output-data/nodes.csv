@@ -1,0 +1,85 @@
+LABEL_NODE,ID,FUNCTION,JOIN_ARG,SPLIT_ARG,NAME_NODE,FILTER,COLOR,_merge
+FTP_Unpivot,0,DataSources,,,FTP_Unpivot,,#42d6a4,left_only
+query_Package\FTP_unvipot_1,1,query,[],,query_Package\FTP_unvipot_1,"[""WHERE (Level_4 equals 'Fixed Rate Mortgages'"", ""and Forward_Starting equals 'FS'"", ""and Funding_space_Component is one of 'Basefundinginterest', 'Principal', 'Total Value'"", ""and NOT market_shock is one of 'Book Value', 'Face Amount', 'Net WAC', 'WAL_0')"", ""or (instrument_set equals 'Mortgage Proposal'"", ""and Funding_space_Component is one of 'Basefundinginterest', 'Principal', 'Total Value'"", ""and NOT market_shock is one of 'Book Value', 'Face Amount', 'Net WAC', 'WAL_0')"", ""and (Portfolio ends with 'OBV'"", ""or Portfolio ends with 'ABB')""]",#db59a5,left_only
+FTP_Unpivot,2,DataSources,,,FTP_Unpivot,,#42d6a4,left_only
+query_Package\FTP_unvipot_2,3,query,[],,query_Package\FTP_unvipot_2,"[""WHERE (Level_4 equals 'Fixed Rate Mortgages'"", ""and instrumnet_set is one of 'mortgage', 'offset mortgage'"", ""and external_counterparty_segment equals 'households'"", ""and (market_shock ends with 'SOT'"", ""or market_shock ends with 'EVEatR'))"", ""or (Level_4 equals 'Fixed Rate Mortgage Savings'"", ""and instrument_set equals 'mortgage savings'"", ""and (market_shock ends with 'SOT'"", ""or market_shock ends with 'EVEatR'))"", ""and (Portfolio ends with 'OBV'"", ""or Portfolio ends with 'ABB')""]",#db59a5,left_only
+REP_Discount_Factors,4,DataSources,,,REP_Discount_Factors,,#d0d3d3,left_only
+query_Package\Delete_discount_factors_2,5,query,,,query_Package\Delete_discount_factors_2,DELETE WHERE Market equals '12/31/2021',#db59a5,left_only
+REP_Master_GAP,6,DataSources,,,REP_Master_GAP,,#d0d3d3,left_only
+query_Package\del_master_gap_2,7,query,,,query_Package\del_master_gap_2,DELETE WHERE Entity equals CASE WHEN 'TRG' equals 'BWF' THEN 'BPD' ELSE 'TRG' END and Source equals 'QRM' and Market_as_of_date equals '3/31/2016',#db59a5,left_only
+User::Port_current,8,variable,,,User::Port_current,,#D0D708,left_only
+User::Market_date,9,variable,,,User::Market_date,,#D0D708,left_only
+User::Matchgap,10,variable,,,User::Matchgap,,#D0D708,left_only
+User::Comp_Name,11,variable,,,User::Comp_Name,,#D0D708,left_only
+Package\select_res@subquery_1,12,subquery,[],,subquery_1,QRM.Run_Time_Description.CompanyName = @@User_doublecolumns_Comp_Name AND QRM.Run_Time_Description.Portfolio = @@User_doublecolumns_Port_current,#db59a5,left_only
+Run_Time_Description,13,DataSources,,,Run_Time_Description,,#42d6a4,left_only
+query_User::Run_time_descip,14,query,[],,query_User::Run_time_descip,1 = 1 AND QRM.Run_Time_Description.Portfolio = @@User_doublecolumns_Port_current AND CAST(QRM.Run_Time_Description.Date,#db59a5,left_only
+User::Run_time_descip,15,variable,,,User::Run_time_descip,,#D0D708,left_only
+Run_Time_Description,16,DataSources,,,Run_Time_Description,,#42d6a4,left_only
+5/31/2024,17,variable,,,5/31/2024,,#D0D708,left_only
+OBV,18,variable,,,OBV,,#D0D708,left_only
+0,19,variable,,,0,,#D0D708,left_only
+@DataSetEmpty,20,query,,,@DataSetEmpty,"IF NOT EXISTS (
+	SELECT 1
+	FROM exp.MDSStoBETValuationResult
+	WHERE Entity = @Entity
+	and CONVERT(date, PortfolioAsOfDate) = CONVERT(date, @PortfolioCurrent)
+)
+SET @DataSetEmpty = 1",#db59a5,left_only
+Package\RecordCount@subquery_3,21,subquery,[],,subquery_3,,#d0d3d3,left_only
+FTP_Unpivot,22,DataSources,,,FTP_Unpivot,,#42d6a4,left_only
+Package\RecordCount@subquery_2,23,subquery,[],,subquery_2,,#d0d3d3,left_only
+FTP_Shocks,24,DataSources,,,FTP_Shocks,,#42d6a4,left_only
+Package\RecordCount@subquery_1,25,subquery,[],,subquery_1,,#d0d3d3,left_only
+FTP_Base,26,DataSources,,,FTP_Base,,#42d6a4,left_only
+query_User::RecordCount,27,query,"['JOIN (subquery_2) AS FSH ON 1 = 1', 'JOIN (subquery_3) AS FUP ON 1 = 1']",,query_User::RecordCount,,#9D94FF,left_only
+User::RecordCount,28,variable,,,User::RecordCount,,#D0D708,left_only
+Package\RecordCount@(subquery_1),29,subquery,"['JOIN (subquery_2) AS FSH ON 1 = 1', 'JOIN (subquery_3) AS FUP ON 1 = 1']",,(subquery_1),,#d0d3d3,left_only
+Package\RecordCount@(subquery_2),30,subquery,"['JOIN (subquery_2) AS FSH ON 1 = 1', 'JOIN (subquery_3) AS FUP ON 1 = 1']",,(subquery_2),,#d0d3d3,left_only
+Package\RecordCount@(subquery_3),31,subquery,"['JOIN (subquery_2) AS FSH ON 1 = 1', 'JOIN (subquery_3) AS FUP ON 1 = 1']",,(subquery_3),,#d0d3d3,left_only
+User::Product,32,variable,,,User::Product,,#D0D708,left_only
+User::Period,33,variable,,,User::Period,,#D0D708,left_only
+User::FileID,34,variable,,,User::FileID,,#D0D708,left_only
+query_User::New_table_long,35,query,"['INNER JOIN dbo.tbl_Product_file AS PF ON dbo.tbl_Product.Product_id = dbo.tbl_Product_file.Product_id AND dbo.tbl_Product.Period = dbo.tbl_Product_file.Period', 'LEFT JOIN dbo.tbl_File_State AS FS ON dbo.tbl_Product_file.Product_id = dbo.tbl_File_State.Product_id AND dbo.tbl_Product_file.Period = dbo.tbl_File_State.Period AND dbo.tbl_Product_file.File_id = dbo.tbl_File_State.File_id', 'INNER JOIN dbo.tbl_Product_parameter AS PP1 ON dbo.tbl_Product_file.Product_id = dbo.tbl_Product_parameter.Product_id AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period', ""INNER JOIN dbo.tbl_Product_parameter AS PP2 ON dbo.tbl_Product_parameter.Product_id = 'GEN' AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period"", ""INNER JOIN dbo.tbl_Product_parameter AS PP3 ON dbo.tbl_Product_parameter.Product_id = 'GEN' AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period""]",,query_User::New_table_long,dbo.tbl_Product_parameter.Action_Take = 'Portdate' AND dbo.tbl_Product_parameter.Action_Take = 'ReportingDatabase' AND dbo.tbl_Product_parameter.Action_Take = 'ReportingServer' AND dbo.tbl_Product.Product_id = @@User_doublecolumns_Product AND dbo.tbl_Product.Period = @@User_doublecolumns_Period AND dbo.tbl_Product_file.File_id = @@User_doublecolumns_FileID,#db59a5,left_only
+User::New_table_long,36,variable,,,User::New_table_long,,#D0D708,left_only
+tbl_Product,37,DataSources,,,tbl_Product,,#42d6a4,left_only
+tbl_Product_file,38,DataSources,,,tbl_Product_file,,#42d6a4,left_only
+tbl_File_State,39,DataSources,,,tbl_File_State,,#42d6a4,left_only
+tbl_Product_parameter,40,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
+tbl_Product_parameter,41,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
+tbl_Product_parameter,42,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
+Package\rec_count@subquery_5,43,subquery,[],,subquery_5,,#d0d3d3,left_only
+GAP,44,DataSources,,,GAP,,#42d6a4,left_only
+Package\rec_count@subquery_4,45,subquery,[],,subquery_4,,#d0d3d3,left_only
+Forecast_Periods,46,DataSources,,,Forecast_Periods,,#42d6a4,left_only
+Package\rec_count@subquery_3,47,subquery,[],,subquery_3,,#d0d3d3,left_only
+Account_Dimension,48,DataSources,,,Account_Dimension,,#42d6a4,left_only
+Package\rec_count@subquery_2,49,subquery,[],,subquery_2,,#d0d3d3,left_only
+Run_Time_Description,50,DataSources,,,Run_Time_Description,,#42d6a4,left_only
+Package\rec_count@subquery_1,51,subquery,[],,subquery_1,,#d0d3d3,left_only
+PlanningDimentsions,52,DataSources,,,PlanningDimentsions,,#42d6a4,left_only
+query_User::Rec_cnt,53,query,"['JOIN (subquery_2) AS RTD ON 1 = 1', 'JOIN (subquery_3) AS ACD ON 1 = 1', 'JOIN (subquery_4) AS FOP ON 1 = 1', 'JOIN (subquery_5) AS GAP ON 1 = 1']",,query_User::Rec_cnt,,#9D94FF,left_only
+User::Rec_cnt,54,variable,,,User::Rec_cnt,,#D0D708,left_only
+Package\rec_count@(subquery_1),55,subquery,"['JOIN (subquery_2) AS RTD ON 1 = 1', 'JOIN (subquery_3) AS ACD ON 1 = 1', 'JOIN (subquery_4) AS FOP ON 1 = 1', 'JOIN (subquery_5) AS GAP ON 1 = 1']",,(subquery_1),,#d0d3d3,left_only
+Package\rec_count@(subquery_2),56,subquery,"['JOIN (subquery_2) AS RTD ON 1 = 1', 'JOIN (subquery_3) AS ACD ON 1 = 1', 'JOIN (subquery_4) AS FOP ON 1 = 1', 'JOIN (subquery_5) AS GAP ON 1 = 1']",,(subquery_2),,#d0d3d3,left_only
+Package\rec_count@(subquery_3),57,subquery,"['JOIN (subquery_2) AS RTD ON 1 = 1', 'JOIN (subquery_3) AS ACD ON 1 = 1', 'JOIN (subquery_4) AS FOP ON 1 = 1', 'JOIN (subquery_5) AS GAP ON 1 = 1']",,(subquery_3),,#d0d3d3,left_only
+Package\rec_count@(subquery_4),58,subquery,"['JOIN (subquery_2) AS RTD ON 1 = 1', 'JOIN (subquery_3) AS ACD ON 1 = 1', 'JOIN (subquery_4) AS FOP ON 1 = 1', 'JOIN (subquery_5) AS GAP ON 1 = 1']",,(subquery_4),,#d0d3d3,left_only
+Package\rec_count@(subquery_5),59,subquery,"['JOIN (subquery_2) AS RTD ON 1 = 1', 'JOIN (subquery_3) AS ACD ON 1 = 1', 'JOIN (subquery_4) AS FOP ON 1 = 1', 'JOIN (subquery_5) AS GAP ON 1 = 1']",,(subquery_5),,#d0d3d3,left_only
+LKP_Counterparty,60,DataSources,,,LKP_Counterparty,,#42d6a4,left_only
+GAP,61,DataSources,,,GAP,,#42d6a4,left_only
+GAP,62,DataSources,,,GAP,,#42d6a4,left_only
+GAP,63,DataSources,,,GAP,,#42d6a4,left_only
+query_Package\Update_GAP_1,64,query,"['LEFT JOIN cfg.LKP_Counterparty AS cp ON cp.Intercompany_Legal_Entity = staging.GAP.Intercompany_Legal_Entity', 'AND cp.Intercompany_Counterparty = staging.GAP.Intercompany_Counterparty']",,query_Package\Update_GAP_1,,#9D94FF,left_only
+GAP_DCF_Intermediate,65,DataSources,,,GAP_DCF_Intermediate,,#42d6a4,left_only
+query_Package\GAP_DCF_1,66,query,[],,query_Package\GAP_DCF_1,"[""WHERE ((Level_04 equals 'Fixed Rate Mortgages'"", ""and Forward_Starting equals 'FS'"", ""and Funding_Component_Mapping_ID is one of 'Base funding interest', 'Principal', 'Total Value')"", ""or (instrument_set equals 'Mortgage Proposal'"", ""and Funding_Component_Mapping_ID is one of 'Base funding interest', 'Principal', 'Total Value'))"", ""and (Entity is one of 'OBV', 'ABB')""]",#db59a5,left_only
+User::Product,67,variable,,,User::Product,,#D0D708,left_only
+User::Period,68,variable,,,User::Period,,#D0D708,left_only
+User::FileID,69,variable,,,User::FileID,,#D0D708,left_only
+query_User::Table_joins,70,query,"['INNER JOIN dbo.tbl_Product_file AS PF ON dbo.tbl_Product.Product_id = dbo.tbl_Product_file.Product_id AND dbo.tbl_Product.Period = dbo.tbl_Product_file.Period', 'LEFT JOIN dbo.tbl_File_State AS FS ON dbo.tbl_Product_file.Product_id = dbo.tbl_File_State.Product_id AND dbo.tbl_Product_file.Period = dbo.tbl_File_State.Period AND dbo.tbl_Product_file.File_id = dbo.tbl_File_State.File_id', 'INNER JOIN dbo.tbl_Product_parameter AS PP1 ON dbo.tbl_Product_file.Product_id = dbo.tbl_Product_parameter.Product_id AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period', ""INNER JOIN dbo.tbl_Product_parameter AS PP2 ON dbo.tbl_Product_parameter.Product_id = 'GEN' AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period"", ""INNER JOIN dbo.tbl_Product_parameter AS PP3 ON dbo.tbl_Product_parameter.Product_id = 'GEN' AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period""]",,query_User::Table_joins,dbo.tbl_Product_parameter.Action_Take = 'Portdate' AND dbo.tbl_Product.Product_id = @@User_doublecolumns_Product AND dbo.tbl_Product.Period = @@User_doublecolumns_Period AND dbo.tbl_Product_file.File_id = @@User_doublecolumns_FileID AND dbo.tbl_Product_parameter.Action_Take = 'ReportingDatabase' AND dbo.tbl_Product_parameter.Action_Take = 'ReportingServer',#db59a5,left_only
+User::Table_joins,71,variable,,,User::Table_joins,,#D0D708,left_only
+tbl_Product,72,DataSources,,,tbl_Product,,#42d6a4,left_only
+tbl_Product_file,73,DataSources,,,tbl_Product_file,,#42d6a4,left_only
+tbl_File_State,74,DataSources,,,tbl_File_State,,#42d6a4,left_only
+tbl_Product_parameter,75,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
+tbl_Product_parameter,76,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
+tbl_Product_parameter,77,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
