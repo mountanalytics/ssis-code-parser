@@ -72,6 +72,11 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
             pass
 
     try:
+        print(result_set = control_flow[node_name]['Result_variable'])
+    except:
+        pass
+
+    try:
         result_set = control_flow[node_name]['Result_variable']
         print(result_set)
         print()

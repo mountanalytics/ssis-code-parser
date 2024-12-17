@@ -446,20 +446,30 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
             nodes_sql, lin_sql, variable_tables, node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node, False)
             lineages = pd.concat([lineages,pd.DataFrame(lin_sql)])
             nodes = pd.concat([nodes,pd.DataFrame(nodes_sql)])
+
         elif control_flow[node]['Description'] == 'Foreach Loop Container':
-            nodes, lineages = foreachloop_parser(control_flow, nodes, lineages, variable_tables, node)
+            nodes_sql, lin_sql = foreachloop_parser(control_flow, nodes, lineages, variable_tables, node)
+            lineages = pd.concat([lineages,pd.DataFrame(lin_sql)])
+            nodes = pd.concat([nodes,pd.DataFrame(nodes_sql)])
 
     # create nodes and lineages dataframes                   
     nodes_df = pd.DataFrame(nodes).reset_index(drop=True)
     nodes_df['ID'] = nodes_df.index
     nodes_df['COLOR'] = nodes_df.apply(
-        lambda row: row['COLOR'] if row['FILTER'] is None or all(pd.isna(x) for x in row['FILTER']) else '#db59a5', 
+        lambda row: row['COLOR'] if row['FILTER'] is None or all(pd.isna(x) for x in row['FILTER']) and row['FUNCTION'] == 'delete table where' else '#db59a5', 
         axis=1
     )
+
+    nodes_df['COLOR'] = nodes_df.apply(
+        lambda row: '#3270C0' if row['FUNCTION'] == 'delete table where' else  row['COLOR'], 
+        axis=1
+    )
+
     nodes_df["NAME_NODE"] = nodes_df["NAME_NODE"].apply(lambda x: str(x).replace("_doublecolumns_","::").replace("'",""))
     nodes_df["LABEL_NODE"] = nodes_df["LABEL_NODE"].apply(lambda x: str(x).replace("_doublecolumns_","::").replace("'",""))
     nodes_df.to_csv(f'output-data/nodes/nodes-{file_name}.csv',index=False) # save nodes file
     lineages_df = pd.DataFrame(lineages)
+
     lineages_df['SOURCE_COLUMNS'] = lineages_df['SOURCE_COLUMNS'].apply(lambda x: str(x).replace("_doublecolumns_","::").replace("@","").replace("'",""))
     lineages_df['TARGET_COLUMN'] = lineages_df['TARGET_COLUMN'].apply(lambda x: str(x).replace("_doublecolumns_","::").replace("@","").replace("'",""))
     lineages_df['SOURCE_FIELD'] = lineages_df['SOURCE_COLUMNS'].str.extract(r'\[([^\]]*)\]')
@@ -469,7 +479,6 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     lineages_df['TARGET_NODE'] = lineages_df['TARGET_COLUMN'].str.split('[', expand=True)[0]
     lineages_df['LINK_VALUE'] = 1
     lineages_df['ROW_ID'] = lineages_df.index
-    
 
     # merge source id
     lineages_df = pd.merge(lineages_df, nodes_df[['ID', 'NAME_NODE']], left_on='SOURCE_NODE', right_on = 'NAME_NODE', how='left')
@@ -483,9 +492,7 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     lineages_df['COLOR'] = 'aliceblue'
 
     lineages_df['COLOR'] = lineages_df.apply(
-
         lambda row: row['COLOR'] if row['TRANSFORMATION'] == '' or row['TRANSFORMATION'] in nodes_df['NAME_NODE'].values else '#ff6961',
-
         #lambda row: row['COLOR'] if row['TRANSFORMATION'] == '' or row['TRANSFORMATION'] in nodes_df['NAME_NODE'].values else '#ff6961', # ffb480
         #lambda row: row['COLOR'] if row['TRANSFORMATION'] == '' else ('#ffb480' if row['TRANSFORMATION'] in nodes_df['NAME_NODE'].values else '#ff6961'),
         axis=1
