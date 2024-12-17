@@ -1,2 +1,7 @@
 ,LABEL_NODE,FUNCTION,SPLIT_ARG,FILTER
-0,Merge and filter@Split preferences,ConditionalSplit,Discount > 0,
+0,query_Package\FTP_unvipot_1,query,,"WHERE (Level_4 = 'Fixed Rate Mortgages' AND Forward_Starting = 'FS' AND Funding_space_Component IN ('Basefundinginterest', 'Principal', 'Total Value') AND NOT market_shock IN ('Book Value', 'Face Amount', 'Net WAC', 'WAL_0')) OR (instrument_set = 'Mortgage Proposal' AND Funding_space_Component IN ('Basefundinginterest', 'Principal', 'Total Value') AND NOT market_shock IN ('Book Value', 'Face Amount', 'Net WAC', 'WAL_0')) AND (Portfolio LIKE '%OBV' OR Portfolio LIKE '%ABB')"
+1,query_Package\FTP_unvipot_2,query,,"WHERE (Level_4 = 'Fixed Rate Mortgages' AND instrumnet_set IN ('mortgage', 'offset mortgage') AND external_counterparty_segment = 'households' AND (market_shock LIKE '%SOT' OR market_shock LIKE '%EVEatR')) OR (Level_4 = 'Fixed Rate Mortgage Savings' AND instrument_set = 'mortgage savings' AND (market_shock LIKE '%SOT' OR market_shock LIKE '%EVEatR')) AND (Portfolio LIKE '%OBV' OR Portfolio LIKE '%ABB')"
+2,query_Package\Delete_discount_factors_2,delete table where,,DELETE WHERE Market = '12/31/2021'
+3,PortfolioCurrent,variable,,'5/31/2024'
+4,Entity,variable,,'OBV'
+5,DataSetEmpty,variable,,0
