@@ -37,13 +37,13 @@ def format_hover_label_join(join_string: str) -> str:
         recombined_list.insert(0, current_part)
     form_string = " ".join(recombined_list).strip()
     return form_string
-def extract_uasage_error_tables(folder_path: str) -> tuple[pd.DataFrame,pd.DataFrame]:
+def extract_usage_error_tables(folder_path: str) -> tuple[pd.DataFrame,pd.DataFrame]:
     csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
     nodes = pd.read_csv("output-data/nodes.csv")
     nodes_no_error_table = pd.DataFrame()
     nodes_with_error_table = pd.DataFrame()
     for files in csv_files:
-        lineages = pd.read_csv(f"{folder_path}/{files}")
+        lineages = pd.read_csv(f"{folder_path}{files}")
         
         
         nodes = nodes[pd.notna(nodes["JOIN_ARG"])]
@@ -59,11 +59,14 @@ def extract_uasage_error_tables(folder_path: str) -> tuple[pd.DataFrame,pd.DataF
         nodes_no_error_table = pd.concat([nodes_no_error_table,nodes_no_error_table_temp],ignore_index=True)
     return nodes_no_error_table, nodes_with_error_table
 
-folder_path = "output-data/lineages"
-nodes_no_error_table, nodes_with_error_table = extract_uasage_error_tables(folder_path)
-
-
-
+folder_path = "output-data/lineages/"
+nodes_no_error_table, nodes_with_error_table = extract_usage_error_tables(folder_path)
+nodes_no_error_table["flag"] = "no_error_table"
+nodes_with_error_table["flag"] = "error_table"
+flag_table = pd.concat([nodes_no_error_table, nodes_with_error_table],ignore_index=True)[["LABEL_NODE","flag"]]
+new_row = pd.DataFrame({"LABEL_NODE": ["query_User::RecordCount"], "flag": ["hard_coded"]})
+flag_table = pd.concat([flag_table, new_row], ignore_index=True)
+flag_table.to_csv("output-data/nodes_rat_score.csv",index=False)
 
 
 

@@ -1,0 +1,78 @@
+SOURCE_COLUMNS,TARGET_COLUMN,TRANSFORMATION,SOURCE_FIELD,TARGET_FIELD,SOURCE_NODE,TARGET_NODE,LINK_VALUE,ROW_ID,COLOR
+query_Package\FTP_unvipot_1[value: 0],staging.FTP_Unpivot[Dirty_space_Price],,value: 0,Dirty_space_Price,1,0,1,0,aliceblue
+query_Package\FTP_unvipot_2[value: 0],staging.FTP_Unpivot[Dirty_space_Price],,value: 0,Dirty_space_Price,3,0,1,1,aliceblue
+dbo.REP_Discount_Factors[DEL],query_Package\Delete_discount_factors_2[DEL],,DEL,DEL,4,5,1,0,aliceblue
+dbo.REP_Master_GAP[DEL],query_Package\del_master_gap_2[DEL],,DEL,DEL,6,7,1,0,aliceblue
+QRM.Run_Time_Description[MAX(QRM.Run_Time_Description.DateTimeStamp)],subquery_1_Package\select_res[MAX(QRM.Run_Time_Description.DateTimeStamp)],,MAX(QRM.Run_Time_Description.DateTimeStamp),MAX(QRM.Run_Time_Description.DateTimeStamp),13,12,1,0,aliceblue
+subquery_1_Package\select_res[MAX(QRM.Run_Time_Description.DateTimeStamp)],query_User::Run_time_descip[MAX(QRM.Run_Time_Description.DateTimeStamp)],MAX(QRM.Run_Time_Description.DateTimeStamp),MAX(QRM.Run_Time_Description.DateTimeStamp),MAX(QRM.Run_Time_Description.DateTimeStamp),12,14,1,1,#ff6961
+User::Comp_Name[User::Comp_Name],subquery_1_Package\select_res[User::Comp_Name],,User::Comp_Name,User::Comp_Name,11,12,1,2,aliceblue
+User::Port_current[User::Port_current],subquery_1_Package\select_res[User::Port_current],,User::Port_current,User::Port_current,8,12,1,3,aliceblue
+QRM.Run_Time_Description[(CONVERT QRM.Run_Time_Description.forecastid TO INTEGER)],query_User::Run_time_descip[(CONVERT QRM.Run_Time_Description.forecastid TO INTEGER)],,(CONVERT QRM.Run_Time_Description.forecastid TO INTEGER),(CONVERT QRM.Run_Time_Description.forecastid TO INTEGER),13,14,1,4,aliceblue
+query_User::Run_time_descip[(CONVERT QRM.Run_Time_Description.forecastid TO INTEGER)],User::Run_time_descip[forcastid],CAST(QRM.Run_Time_Description.forecastid AS INTEGER) AS forcastid,(CONVERT QRM.Run_Time_Description.forecastid TO INTEGER),forcastid,14,15,1,5,#ff6961
+User::Comp_Name[User::Comp_Name],query_User::Run_time_descip[User::Comp_Name],,User::Comp_Name,User::Comp_Name,11,14,1,6,aliceblue
+User::Matchgap[User::Matchgap],query_User::Run_time_descip[User::Matchgap],,User::Matchgap,User::Matchgap,10,14,1,7,aliceblue
+User::Port_current[User::Port_current],query_User::Run_time_descip[User::Port_current],,User::Port_current,User::Port_current,8,14,1,8,aliceblue
+User::Market_date[User::Market_date],query_User::Run_time_descip[User::Market_date],,User::Market_date,User::Market_date,9,14,1,9,aliceblue
+staging.FTP_Unpivot[COUNTS ALL ROWS],subquery_3_Package\RecordCount[COUNTS ALL ROWS],,COUNTS ALL ROWS,COUNTS ALL ROWS,0,21,1,0,aliceblue
+subquery_3_Package\RecordCount[COUNTS ALL ROWS],query_User::RecordCount[FUP_CNT],COUNT(*) AS FUP_CNT,COUNTS ALL ROWS,FUP_CNT,21,27,1,1,#ff6961
+staging.FTP_Shocks[COUNTS ALL ROWS],subquery_2_Package\RecordCount[COUNTS ALL ROWS],,COUNTS ALL ROWS,COUNTS ALL ROWS,24,23,1,2,aliceblue
+subquery_2_Package\RecordCount[COUNTS ALL ROWS],query_User::RecordCount[FSH_CNT],COUNT(*) AS FSH_CNT,COUNTS ALL ROWS,FSH_CNT,23,27,1,3,#ff6961
+staging.FTP_Base[COUNTS ALL ROWS],subquery_1_Package\RecordCount[COUNTS ALL ROWS],,COUNTS ALL ROWS,COUNTS ALL ROWS,26,25,1,4,aliceblue
+subquery_1_Package\RecordCount[COUNTS ALL ROWS],query_User::RecordCount[FBA_CNT],COUNT(*) AS FBA_CNT,COUNTS ALL ROWS,FBA_CNT,25,27,1,5,#ff6961
+query_User::RecordCount[FBA_CNT + FSH_CNT + FUP_CNT],User::RecordCount[RecordCount],FBA_CNT + FSH_CNT + FUP_CNT AS RecordCount,FBA_CNT + FSH_CNT + FUP_CNT,RecordCount,27,28,1,6,#ff6961
+dbo.tbl_Product_file[Import_Table],query_User::New_table_long[Import_Table],,Import_Table,Import_Table,38,35,1,0,aliceblue
+query_User::New_table_long[Import_Table],User::New_table_long[Import_Table],,Import_Table,Import_Table,35,36,1,1,aliceblue
+dbo.tbl_Product_file[Input_Location],query_User::New_table_long[Input_Location],,Input_Location,Input_Location,38,35,1,2,aliceblue
+query_User::New_table_long[Input_Location],User::New_table_long[Input_Location],,Input_Location,Input_Location,35,36,1,3,aliceblue
+dbo.tbl_Product_file[Import_error_table],query_User::New_table_long[Import_error_table],,Import_error_table,Import_error_table,38,35,1,4,aliceblue
+query_User::New_table_long[Import_error_table],User::New_table_long[Import_error_table],,Import_error_table,Import_error_table,35,36,1,5,aliceblue
+dbo.tbl_Product_file[Mastertable_Tabel_Field],query_User::New_table_long[Mastertable_Tabel_Field],,Mastertable_Tabel_Field,Mastertable_Tabel_Field,38,35,1,6,aliceblue
+query_User::New_table_long[Mastertable_Tabel_Field],User::New_table_long[Mastertable_Tabel_Field],,Mastertable_Tabel_Field,Mastertable_Tabel_Field,35,36,1,7,aliceblue
+dbo.tbl_Product_file[Imported_Location],query_User::New_table_long[Imported_Location],,Imported_Location,Imported_Location,38,35,1,8,aliceblue
+query_User::New_table_long[Imported_Location],User::New_table_long[Imported_Location],,Imported_Location,Imported_Location,35,36,1,9,aliceblue
+dbo.tbl_Product_file[Mail_Group],query_User::New_table_long[Mail_Group],,Mail_Group,Mail_Group,38,35,1,10,aliceblue
+query_User::New_table_long[Mail_Group],User::New_table_long[Mail_Group],,Mail_Group,Mail_Group,35,36,1,11,aliceblue
+dbo.tbl_File_State[File_Name],query_User::New_table_long[File_Name],,File_Name,File_Name,39,35,1,12,aliceblue
+query_User::New_table_long[File_Name],User::New_table_long[File_Name],,File_Name,File_Name,35,36,1,13,aliceblue
+dbo.tbl_Product_parameter[Parameter_Value],query_User::New_table_long[Parameter_Value],,Parameter_Value,Parameter_Value,40,35,1,14,aliceblue
+query_User::New_table_long[Parameter_Value],User::New_table_long[Parameter_Value],,Parameter_Value,Parameter_Value,35,36,1,15,aliceblue
+query_User::New_table_long[dbo.tbl_Product_parameter.Parameter_Value],User::New_table_long[Reporting_Database],dbo.tbl_Product_parameter.Parameter_Value AS Reporting_Database,dbo.tbl_Product_parameter.Parameter_Value,Reporting_Database,35,36,1,16,#ff6961
+query_User::New_table_long[dbo.tbl_Product_parameter.Parameter_Value],User::New_table_long[Reporting_Server],dbo.tbl_Product_parameter.Parameter_Value AS Reporting_Server,dbo.tbl_Product_parameter.Parameter_Value,Reporting_Server,35,36,1,17,#ff6961
+User::FileID[User::FileID],query_User::New_table_long[User::FileID],,User::FileID,User::FileID,34,35,1,18,aliceblue
+User::Period[User::Period],query_User::New_table_long[User::Period],,User::Period,User::Period,33,35,1,19,aliceblue
+User::Product[User::Product],query_User::New_table_long[User::Product],,User::Product,User::Product,32,35,1,20,aliceblue
+staging.GAP[COUNTS ALL ROWS],subquery_5_Package\rec_count[COUNTS ALL ROWS],,COUNTS ALL ROWS,COUNTS ALL ROWS,44,43,1,0,aliceblue
+subquery_5_Package\rec_count[COUNTS ALL ROWS],query_User::Rec_cnt[GAP_CNT],COUNT(*) AS GAP_CNT,COUNTS ALL ROWS,GAP_CNT,43,53,1,1,#ff6961
+staging.Forecast_Periods[COUNTS ALL ROWS],subquery_4_Package\rec_count[COUNTS ALL ROWS],,COUNTS ALL ROWS,COUNTS ALL ROWS,46,45,1,2,aliceblue
+subquery_4_Package\rec_count[COUNTS ALL ROWS],query_User::Rec_cnt[FOP_CNT],COUNT(*) AS FOP_CNT,COUNTS ALL ROWS,FOP_CNT,45,53,1,3,#ff6961
+staging.Account_Dimension[COUNTS ALL ROWS],subquery_3_Package\rec_count[COUNTS ALL ROWS],,COUNTS ALL ROWS,COUNTS ALL ROWS,48,47,1,4,aliceblue
+subquery_3_Package\rec_count[COUNTS ALL ROWS],query_User::Rec_cnt[ACD_CNT],COUNT(*) AS ACD_CNT,COUNTS ALL ROWS,ACD_CNT,47,53,1,5,#ff6961
+staging.Run_Time_Description[COUNTS ALL ROWS],subquery_2_Package\rec_count[COUNTS ALL ROWS],,COUNTS ALL ROWS,COUNTS ALL ROWS,50,49,1,6,aliceblue
+subquery_2_Package\rec_count[COUNTS ALL ROWS],query_User::Rec_cnt[RTD_CNT],COUNT(*) AS RTD_CNT,COUNTS ALL ROWS,RTD_CNT,49,53,1,7,#ff6961
+staging.PlanningDimentsions[COUNTS ALL ROWS],subquery_1_Package\rec_count[COUNTS ALL ROWS],,COUNTS ALL ROWS,COUNTS ALL ROWS,52,51,1,8,aliceblue
+subquery_1_Package\rec_count[COUNTS ALL ROWS],query_User::Rec_cnt[PLN_CNT],COUNT(*) AS PLN_CNT,COUNTS ALL ROWS,PLN_CNT,51,53,1,9,#ff6961
+query_User::Rec_cnt[PLN.PLN_CNT + RTD.RTD_CNT + ACD.ACD_CNT + FOP.FOP_CNT + GAP.GAP_CNT],User::Rec_cnt[ANONYM],PLN.PLN_CNT + RTD.RTD_CNT + ACD.ACD_CNT + FOP.FOP_CNT + GAP.GAP_CNT AS ANONYM,PLN.PLN_CNT + RTD.RTD_CNT + ACD.ACD_CNT + FOP.FOP_CNT + GAP.GAP_CNT,ANONYM,53,54,1,10,#ff6961
+cfg.LKP_Counterparty[Intercompany_segment],query_Package\Update_GAP_1[Intercompany_segment],,Intercompany_segment,Intercompany_segment,60,64,1,0,aliceblue
+query_Package\Update_GAP_1[LKP_Counterparty.Intercompany_segment],"staging.GAP[IF cfg.LKP_Counterparty.Intercompany_segment IS NULL THEN \""LKP_error\""]","ISNULL(cfg.LKP_Counterparty.Intercompany_segment, 'LKP_error')",LKP_Counterparty.Intercompany_segment,"IF cfg.LKP_Counterparty.Intercompany_segment IS NULL THEN \""LKP_error\""",64,44,1,1,#ff6961
+query_Package\GAP_DCF_1[value: 0],staging.GAP_DCF_Intermediate[ValueResult],,value: 0,ValueResult,66,65,1,0,aliceblue
+query_Package\GAP_DCF_1[value: 0],staging.GAP_DCF_Intermediate[ValueCorrected],,value: 0,ValueCorrected,66,65,1,1,aliceblue
+dbo.tbl_Product_file[Import_Table],query_User::Table_joins[Import_Table],,Import_Table,Import_Table,38,70,1,0,aliceblue
+query_User::Table_joins[Import_Table],User::Table_joins[Import_Table],,Import_Table,Import_Table,70,71,1,1,aliceblue
+dbo.tbl_Product_file[Input_Location],query_User::Table_joins[Input_Location],,Input_Location,Input_Location,38,70,1,2,aliceblue
+query_User::Table_joins[Input_Location],User::Table_joins[Input_Location],,Input_Location,Input_Location,70,71,1,3,aliceblue
+dbo.tbl_Product_file[Import_error_table],query_User::Table_joins[Import_error_table],,Import_error_table,Import_error_table,38,70,1,4,aliceblue
+query_User::Table_joins[Import_error_table],User::Table_joins[Import_error_table],,Import_error_table,Import_error_table,70,71,1,5,aliceblue
+dbo.tbl_Product_file[Mastertable_Tabel_Field],query_User::Table_joins[Mastertable_Tabel_Field],,Mastertable_Tabel_Field,Mastertable_Tabel_Field,38,70,1,6,aliceblue
+query_User::Table_joins[Mastertable_Tabel_Field],User::Table_joins[Mastertable_Tabel_Field],,Mastertable_Tabel_Field,Mastertable_Tabel_Field,70,71,1,7,aliceblue
+dbo.tbl_Product_file[Imported_Location],query_User::Table_joins[Imported_Location],,Imported_Location,Imported_Location,38,70,1,8,aliceblue
+query_User::Table_joins[Imported_Location],User::Table_joins[Imported_Location],,Imported_Location,Imported_Location,70,71,1,9,aliceblue
+"query_User::Table_joins[IF dbo.tbl_Product_file.Mail_Group IS NULL THEN \""\""]",User::Table_joins[Mail_Group],"ISNULL(dbo.tbl_Product_file.Mail_Group, '') AS Mail_Group","IF dbo.tbl_Product_file.Mail_Group IS NULL THEN \""\""",Mail_Group,70,71,1,10,#ff6961
+dbo.tbl_File_State[File_Name],query_User::Table_joins[File_Name],,File_Name,File_Name,39,70,1,11,aliceblue
+query_User::Table_joins[File_Name],User::Table_joins[File_Name],,File_Name,File_Name,70,71,1,12,aliceblue
+dbo.tbl_Product_parameter[Parameter_Value],query_User::Table_joins[Parameter_Value],,Parameter_Value,Parameter_Value,40,70,1,13,aliceblue
+query_User::Table_joins[Parameter_Value],User::Table_joins[Parameter_Value],,Parameter_Value,Parameter_Value,70,71,1,14,aliceblue
+query_User::Table_joins[dbo.tbl_Product_parameter.Parameter_Value],User::Table_joins[Reporting_Database],dbo.tbl_Product_parameter.Parameter_Value AS Reporting_Database,dbo.tbl_Product_parameter.Parameter_Value,Reporting_Database,70,71,1,15,#ff6961
+query_User::Table_joins[dbo.tbl_Product_parameter.Parameter_Value],User::Table_joins[Reporting_Server],dbo.tbl_Product_parameter.Parameter_Value AS Reporting_Server,dbo.tbl_Product_parameter.Parameter_Value,Reporting_Server,70,71,1,16,#ff6961
+User::FileID[User::FileID],query_User::Table_joins[User::FileID],,User::FileID,User::FileID,34,70,1,17,aliceblue
+User::Period[User::Period],query_User::Table_joins[User::Period],,User::Period,User::Period,33,70,1,18,aliceblue
+User::Product[User::Product],query_User::Table_joins[User::Product],,User::Product,User::Product,32,70,1,19,aliceblue
