@@ -1,19 +1,19 @@
 NAME_NODE,LABEL_NODE,FILTER,FUNCTION,JOIN_ARG,COLOR,ID
 staging.FTP_Unpivot,staging.FTP_Unpivot,,DataSources,,#42d6a4,0
-query_Package\FTP_unvipot_1,query_Package\FTP_unvipot_1,"[""WHERE (Level_4 equals 'Fixed Rate Mortgages'"", ""and Forward_Starting equals 'FS'"", ""and Funding_space_Component is one of 'Basefundinginterest', 'Principal', 'Total Value'"", ""and NOT market_shock is one of 'Book Value', 'Face Amount', 'Net WAC', 'WAL_0')"", ""or (instrument_set equals 'Mortgage Proposal'"", ""and Funding_space_Component is one of 'Basefundinginterest', 'Principal', 'Total Value'"", ""and NOT market_shock is one of 'Book Value', 'Face Amount', 'Net WAC', 'WAL_0')"", ""and (Portfolio ends with 'OBV'"", ""or Portfolio ends with 'ABB')""]",query,[],#db59a5,1
+query_Package\FTP_unvipot_1,query_Package\FTP_unvipot_1,"WHERE (Level_4 = 'Fixed Rate Mortgages' AND Forward_Starting = 'FS' AND Funding_space_Component IS ONE OF ('Basefundinginterest', 'Principal', 'Total Value') AND market_shock IS NOT ONE OF ('Book Value', 'Face Amount', 'Net WAC', 'WAL_0')) OR (instrument_set = 'Mortgage Proposal' AND Funding_space_Component IS ONE OF ('Basefundinginterest', 'Principal', 'Total Value') AND market_shock IS NOT ONE OF ('Book Value', 'Face Amount', 'Net WAC', 'WAL_0')) AND (Portfolio ENDS WITH 'OBV' OR Portfolio ENDS WITH 'ABB')",query,None,#db59a5,1
 staging.FTP_Unpivot,staging.FTP_Unpivot,,DataSources,,#42d6a4,2
-query_Package\FTP_unvipot_2,query_Package\FTP_unvipot_2,"[""WHERE (Level_4 equals 'Fixed Rate Mortgages'"", ""and instrumnet_set is one of 'mortgage', 'offset mortgage'"", ""and external_counterparty_segment equals 'households'"", ""and (market_shock ends with 'SOT'"", ""or market_shock ends with 'EVEatR'))"", ""or (Level_4 equals 'Fixed Rate Mortgage Savings'"", ""and instrument_set equals 'mortgage savings'"", ""and (market_shock ends with 'SOT'"", ""or market_shock ends with 'EVEatR'))"", ""and (Portfolio ends with 'OBV'"", ""or Portfolio ends with 'ABB')""]",query,[],#db59a5,3
+query_Package\FTP_unvipot_2,query_Package\FTP_unvipot_2,"WHERE (Level_4 = 'Fixed Rate Mortgages' AND instrumnet_set IS ONE OF ('mortgage', 'offset mortgage') AND external_counterparty_segment = 'households' AND (market_shock ENDS WITH 'SOT' OR market_shock ENDS WITH 'EVEatR')) OR (Level_4 = 'Fixed Rate Mortgage Savings' AND instrument_set = 'mortgage savings' AND (market_shock ENDS WITH 'SOT' OR market_shock ENDS WITH 'EVEatR')) AND (Portfolio ENDS WITH 'OBV' OR Portfolio ENDS WITH 'ABB')",query,None,#db59a5,3
 dbo.REP_Discount_Factors,dbo.REP_Discount_Factors,,DataSources,,#42d6a4,4
-query_Package\Delete_discount_factors_2,query_Package\Delete_discount_factors_2,DELETE WHERE Market equals '12/31/2021',delete table where,,#3270C0,5
+query_Package\Delete_discount_factors_2,query_Package\Delete_discount_factors_2,DELETE WHERE Market = '12/31/2021',delete table where,,#3270C0,5
 dbo.REP_Master_GAP,dbo.REP_Master_GAP,,DataSources,,#42d6a4,6
-query_Package\del_master_gap_2,query_Package\del_master_gap_2,DELETE WHERE Entity equals CASE WHEN 'TRG' equals 'BWF' THEN 'BPD' ELSE 'TRG' END and Source equals 'QRM' and Market_as_of_date equals '3/31/2016',delete table where,,#3270C0,7
+query_Package\del_master_gap_2,query_Package\del_master_gap_2,"DELETE WHERE Entity = IF 'TRG' = 'BWF', THEN 'BPD', ELSE 'TRG' AND Source = 'QRM' AND Market_as_of_date = '3/31/2016'",delete table where,,#3270C0,7
 User::Port_current,User::Port_current,,variable,,#D0D708,8
 User::Market_date,User::Market_date,,variable,,#D0D708,9
 User::Matchgap,User::Matchgap,,variable,,#D0D708,10
 User::Comp_Name,User::Comp_Name,,variable,,#D0D708,11
 subquery_1_Package\select_res,Package\select_res@subquery_1_Package\select_res,QRM.Run_Time_Description.CompanyName = User::Comp_Name AND QRM.Run_Time_Description.Portfolio = User::Port_current,subquery,,#db59a5,12
 QRM.Run_Time_Description,QRM.Run_Time_Description,,DataSources,,#42d6a4,13
-query_User::Run_time_descip,query_User::Run_time_descip,1 = 1 AND QRM.Run_Time_Description.Portfolio = User::Port_current AND CAST(QRM.Run_Time_Description.Date,query,,#db59a5,14
+query_User::Run_time_descip,query_User::Run_time_descip,1 = 1 AND QRM.Run_Time_Description.Portfolio = User::Port_current AND (CONVERT QRM.Run_Time_Description.Market TO DATE) = (CONVERT User::Market_date TO DATE) AND QRM.Run_Time_Description.Strategy CONTAINS User::Matchgap AND QRM.Run_Time_Description.CompanyName = User::Comp_Name AND QRM.Run_Time_Description.DateTimeStamp = (subquery_1_Package\select_res),query,,#db59a5,14
 User::Run_time_descip,User::Run_time_descip,,variable,,#D0D708,15
 QRM.Run_Time_Description,QRM.Run_Time_Description,,DataSources,,#42d6a4,16
 PortfolioCurrent,PortfolioCurrent,'5/31/2024',variable,,#db59a5,17
@@ -71,7 +71,7 @@ cfg.LKP_Counterparty,cfg.LKP_Counterparty,,DataSources,,#42d6a4,60
 staging.GAP,staging.GAP,,DataSources,,#42d6a4,63
 query_Package\Update_GAP_1,query_Package\Update_GAP_1,,query,"['LEFT JOIN cfg.LKP_Counterparty AS cp ON cp.Intercompany_Legal_Entity = staging.GAP.Intercompany_Legal_Entity', 'AND cp.Intercompany_Counterparty = staging.GAP.Intercompany_Counterparty']",#9D94FF,64
 staging.GAP_DCF_Intermediate,staging.GAP_DCF_Intermediate,,DataSources,,#42d6a4,65
-query_Package\GAP_DCF_1,query_Package\GAP_DCF_1,"[""WHERE ((Level_04 equals 'Fixed Rate Mortgages'"", ""and Forward_Starting equals 'FS'"", ""and Funding_Component_Mapping_ID is one of 'Base funding interest', 'Principal', 'Total Value')"", ""or (instrument_set equals 'Mortgage Proposal'"", ""and Funding_Component_Mapping_ID is one of 'Base funding interest', 'Principal', 'Total Value'))"", ""and (Entity is one of 'OBV', 'ABB')""]",query,[],#db59a5,66
+query_Package\GAP_DCF_1,query_Package\GAP_DCF_1,"WHERE ((Level_04 = 'Fixed Rate Mortgages' AND Forward_Starting = 'FS' AND Funding_Component_Mapping_ID IS ONE OF ('Base funding interest', 'Principal', 'Total Value')) OR (instrument_set = 'Mortgage Proposal' AND Funding_Component_Mapping_ID IS ONE OF ('Base funding interest', 'Principal', 'Total Value'))) AND (Entity IS ONE OF ('OBV', 'ABB'))",query,None,#db59a5,66
 User::Product,User::Product,,variable,,#D0D708,67
 User::Period,User::Period,,variable,,#D0D708,68
 User::FileID,User::FileID,,variable,,#D0D708,69
