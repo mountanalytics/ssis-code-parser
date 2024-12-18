@@ -1,3 +1,19 @@
 ,SOURCE_NAME,SOURCE_FIELD,TRANSFORMATION
-0,Merge and filter@Alter name pref,CompanyName,"""PREF_"" + CompanyName"
-1,Merge and filter@Error_match_column,Match_lookup,"""No_match"""
+0,Package\select_res@subquery_1_Package\select_res,MAX(QRM.Run_Time_Description.DateTimeStamp),MAX(QRM.Run_Time_Description.DateTimeStamp)
+1,query_User::Run_time_descip,CAST(QRM.Run_Time_Description.forecastid,CAST(QRM.Run_Time_Description.forecastid AS INTEGER) AS forcastid
+2,Package\RecordCount@subquery_3_Package\RecordCount,COUNT(*),COUNT(*) AS FUP_CNT
+3,Package\RecordCount@subquery_2_Package\RecordCount,COUNT(*),COUNT(*) AS FSH_CNT
+4,Package\RecordCount@subquery_1_Package\RecordCount,COUNT(*),COUNT(*) AS FBA_CNT
+5,query_User::RecordCount,FBA_CNT + FSH_CNT + FUP_CNT,FBA_CNT + FSH_CNT + FUP_CNT AS RecordCount
+6,query_User::New_table_long,dbo.tbl_Product_parameter.Parameter_Value,dbo.tbl_Product_parameter.Parameter_Value AS Reporting_Database
+7,query_User::New_table_long,dbo.tbl_Product_parameter.Parameter_Value,dbo.tbl_Product_parameter.Parameter_Value AS Reporting_Server
+8,Package\rec_count@subquery_5_Package\rec_count,COUNT(*),COUNT(*) AS GAP_CNT
+9,Package\rec_count@subquery_4_Package\rec_count,COUNT(*),COUNT(*) AS FOP_CNT
+10,Package\rec_count@subquery_3_Package\rec_count,COUNT(*),COUNT(*) AS ACD_CNT
+11,Package\rec_count@subquery_2_Package\rec_count,COUNT(*),COUNT(*) AS RTD_CNT
+12,Package\rec_count@subquery_1_Package\rec_count,COUNT(*),COUNT(*) AS PLN_CNT
+13,query_User::Rec_cnt,PLN.PLN_CNT + RTD.RTD_CNT + ACD.ACD_CNT + FOP.FOP_CNT + GAP.GAP_CNT,PLN.PLN_CNT + RTD.RTD_CNT + ACD.ACD_CNT + FOP.FOP_CNT + GAP.GAP_CNT AS ANONYM
+14,query_Package\Update_GAP_1,Intercompany_segment,"ISNULL(cfg.LKP_Counterparty.Intercompany_segment, 'LKP_error')"
+15,query_User::Table_joins,"ISNULL(dbo.tbl_Product_file.Mail_Group, )","ISNULL(dbo.tbl_Product_file.Mail_Group, '') AS Mail_Group"
+16,query_User::Table_joins,dbo.tbl_Product_parameter.Parameter_Value,dbo.tbl_Product_parameter.Parameter_Value AS Reporting_Database
+17,query_User::Table_joins,dbo.tbl_Product_parameter.Parameter_Value,dbo.tbl_Product_parameter.Parameter_Value AS Reporting_Server
