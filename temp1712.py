@@ -2,6 +2,7 @@ import pandas as pd
 import itertools
 import re
 import os
+import pickle
 """
 def format_hover_label_join(join_string: str) -> str:
     join_string = join_string.replace("['","").replace("']","").replace("', '"," ")
@@ -46,7 +47,8 @@ def format_hover_label_join(join_string: str) -> str:
 
 
 def error_tables_flag(folder_path: str, label_node_dict: dict) -> dict:
-    label_node_dict = {label: {"no_error_table": False, "error_table": False} for label in label_node_dict.keys()}
+    for first_key in label_node_dict.keys():  # Get the first key in the dictionary
+        label_node_dict[first_key].update({"no_error_table": False, "error_table": False})
     csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
     nodes = pd.read_csv("output-data/nodes.csv")
     for files in csv_files:
@@ -57,15 +59,23 @@ def error_tables_flag(folder_path: str, label_node_dict: dict) -> dict:
         nodes_no_error_table_temp = nodes[nodes["ID"].isin(source_node_counts[source_node_counts == 1].index)][["LABEL_NODE","JOIN_ARG"]]
         nodes_with_error_table_temp = nodes[nodes["ID"].isin(source_node_counts[source_node_counts > 1].index)][["LABEL_NODE","JOIN_ARG"]]
         for _, label in nodes_no_error_table_temp.iterrows():
-            label_node_dict[label["LABEL_NODE"]]["no_error_table"] = True
+            if label["LABEL_NODE"] in label_node_dict.keys():
+                label_node_dict[label["LABEL_NODE"]]["no_error_table"] = True
+            else:
+                label_node_dict[label["LABEL_NODE"]] = {"no_error_table": True, "error_table": False}
         for _, label in nodes_with_error_table_temp.iterrows():
-            label_node_dict[label["LABEL_NODE"]]["error_table"] = True
+            if label["LABEL_NODE"] in label_node_dict.keys():
+                label_node_dict[label["LABEL_NODE"]]["error_table"] = True
+            else:
+                label_node_dict[label["LABEL_NODE"]] = {"error_table": True, "no_error_table": False}
     return label_node_dict
 
 folder_path = "output-data/lineages/"
 nodes = pd.read_csv("output-data/nodes.csv")
-label_node_dict = {label: None for label in nodes["LABEL_NODE"]}
+with open('output-data/nodes_flag.pickle', 'rb') as handle:
+    label_node_dict = pickle.load(handle)
 label_node_dict = error_tables_flag(folder_path, label_node_dict)
+
 
 
 
