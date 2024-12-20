@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="165"
-  DTS:VersionGUID="{3BACA533-F691-4A3C-8C62-0A6D5007CADB}">
+  DTS:VersionBuild="167"
+  DTS:VersionGUID="{212D7E09-2CC2-4D3B-92DA-A090CF8DF84C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABEqHKTnJXIOc2fZxOY64NdeEOHvvmhXYHoEBhDbY5C6QAAAAAOgAAAAAIAACAAAAAxdpad3syUPEFza7HUd8JhHzMyBlzkd5WYXg8zwTTI5TAAAAALLRftuB8v+juMjmAdSozPGeQ3I/m9KoF8Zqbi9cW8hbAAU+/F18Hl2pk7h4pUkd5AAAAAhtaU1crw/2n8zI1EbfEpe7MYE4dgjOYr+0wRDZD+vhjKZJ+x9wbFXYdRciUjpguDM/xN0HLg7SMMeiPZo6r/9w</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABAKXviAgiJADdLh7ZZxLYjdK1OQOyQv8UboQAgCgPPywAAAAAOgAAAAAIAACAAAADr/lsCaq8jQPto+Wf/B1yt0TXY6bVQJz//zPhWByqJUjAAAADxXwoyOtxSucqqNIS/fA4Q1MrKJHMsgslVbP8FcsvhiPwVElBdxA8HT4hXm1zcxBZAAAAAVgEh1xsfe4nKx0uHCp14NyDuAgR1WBi7XIw56tfJyAmOhieKiN+7PJ0GsVg2cWGnffxQVZU/KuuIYqrdlcWCsA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -58,7 +58,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAkthip6lwCe4ULgi+6nJOgu+V79gf3HOb4h/5qlILYRAAAAAAOgAAAAAIAACAAAABp6oje183CJMn/7ReGpw4G9tLbjNzW/9/FTtynAG6qNDAAAACzO5ECsv57/i2cvTNPneZT3Je8T8a/e+fFl8k7ybE79n3KprxSEzwGl3l3+H3kZKFAAAAAUUf1AeATnJxauLZTUrCEV287JvWW31WacbfnnwpcLJrB9RnYfRkzMO/mWQBT7CpJNFiyqQgJrFNZpjlXK12i9w</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA+9y86bLs1+fHIbitpgmYSuoaJWixF6xRxxqso04awHgAAAAAOgAAAAAIAACAAAABwaEahDDywSxf/gxhU0DXTCCQWSCk5+CXQMtv5mD6EVTAAAACqECohBmmkEW1xuzZymWtgFp/u/omzhrWsHSmT5xxrIJ9jVEMnNUpo4zvENTrQjxtAAAAAmbD4PHnkxEbNE9m2dJ8kfN4RQcAoNlUeqiVnyWJXk9c2lCWF5RTrBtSDNw2mfDRg69HnrUD53Vau9DZkOlrjNw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -75,7 +75,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA+0csLHj5pxBQKRPFgN4eP9xltXURlbDDujpSbB2jWsAAAAAAOgAAAAAIAACAAAABm+EMui8oy4aXEPZcK2+HKOsa4lSUBemgYKGMVNF8tBzAAAAAUfit0Hzf6N+R4/c0qrOUrjU662qWfdTLFcSbbR11tsQiao+TgLYMuUY7cshZy+pdAAAAA+xn+DKU0nwFtI9bKIfFl9cD0RgcSR6GoYitNjLL81+g4cuy4b7u4+yBN8eNdfeREt9nVUsByv1nSiIWMtFzqxg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABj5CSggO55iBcsD7Gh1fE1gXk41XKCx8pqZsWiadAuZAAAAAAOgAAAAAIAACAAAACkm02x0Aj1xXsrwSNI/vZbTNOSOhJWI4Z6gH5BSUDnKzAAAAAAbZpDe/hTyeGQUl5bY1RIxDHRcCG6g+Ywx5HcbQbGoTxU0O9kETDrx5wmJwicdoxAAAAA3IDxFxC74ZLYs0hB/62B6/oEZ1NnJ6vec++KW0gbvzpakXk4VBJRf84V40EukyvmpZONJHzjBg7HaoBwa/73zg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -90,7 +90,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACmeGlSpWbEznPQg+4crq75/WIbVdUfLF9vvAyNieFPFQAAAAAOgAAAAAIAACAAAAC0+Dbbf2ezUmgornKSImpg611QkAG+7Fp6344lHjIVLjAAAACFyR8c9gMKw0LIa4+nZe/g8QXWuo9CaOdmPTL+XuYwI8DznSsVsHH5AYkW14AmOf9AAAAAVBYEBt4E2NzLf19wIgH7/NRtizmeIbOHTkk3DZ0VsfzxfKs9q7YiOSQ8K76AYXTsQC3HUiU82iNvmx4dEuDGSQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABFThnS1HMXK2Ft9t8uq8PnNn5nn8d689xh8q/YUbISIAAAAAAOgAAAAAIAACAAAABo840VPHPy1HuSpeM6KmONoWig7VhFJhLyZ3b0tA6BOjAAAADnZgYZfNsdDsoerbc6XvPnkU7HOMtSefDnYpRTOJwpb1Fph9TGqTh5F3iootkrFYJAAAAAcRuB+uPqJnrHaQf6XdjrpYmzjOKAf1vkuUvcjPA9yNvM/byI3w8d/hd5fJ8nP8+A/LIltuR43jtj323jAhnjEQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -105,7 +105,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABMdSpcsRBL8mh19i6NHjG7DHpE9Zh0WybMa3wztZiNqgAAAAAOgAAAAAIAACAAAABnWUMT54rroHklyKJooB/Y47DNLrjtp6F67JLsXux90DAAAACLiFVjMt4p1cfgNAqHVQSX1pfDbSYPuvyJBSZE/bAilsAUPFD2qYihSwLELno/zN5AAAAAqXJsIr/ag+6y1ByawvIhH/QRMTSmwwYyvsys1WeqEFIIeYtaGEirOpJNpLjWt/7sn3ym/VOIT2C5iUirKwSx9w</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArG6i17rZf0qcvO9mrqymBAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAV7BCzqgKcaOABUWeCFZzcjoNNk5qEF5B/UvscGOFXfAAAAAAOgAAAAAIAACAAAACI3q8lmkDKoPFKjct+9Fgp2c0A/S+cg3vWjR2R9c63iDAAAAAuZj+FUbn0r1lpOjSSRtb3WFnJkiuBQtF+NIAwONG4DgdooQtHGD7bQWttyTNhg8xAAAAA7TXgroyPb9DVJGEN8I1ymFmdaFIZTw7w8IJoo2bPpWBOhuBfnJHr/iyG7hC+kjaJFJ3JlXT0TfovjB3qgKeNeg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -4580,30 +4580,6 @@ where [refTable].[SupplierID] = ?</property>
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Sequence Container\Overwrite insert table"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5FAA16B2-9A75-4BFF-B741-F4C530F4570C}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Overwrite insert table"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{AA1FC44C-ABBD-45AB-B3EB-FFC934A03032}"
-              SQLTask:SqlStatementSource="SELECT   CompanyName, Preferred, Discount, Country, Address, Region, Fax, Phone, City, SupplierID, ContactName, ContactTitle, PostalCode, ValidFrom, ValidTo, Active, UnitPrice&#xA;INTO New_Supp_Prod_output&#xA;FROM Supp_Prod_output&#xA;WHERE Region = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::CurrentDateTime"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
@@ -4614,14 +4590,6 @@ where [refTable].[SupplierID] = ?</property>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\Sequence Container\Drop insert table" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
-          DTS:CreationName=""
-          DTS:DTSID="{1472E28F-888A-4A0E-A255-09B30BCB6BA7}"
-          DTS:From="Package\Sequence Container\Drop insert table"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Sequence Container\Overwrite insert table" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -4842,63 +4810,25 @@ where [refTable].[SupplierID] = ?</property>
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Sequence Container\insert into logger"
-          TopLeft="28,9.0666645271906" />
+          TopLeft="31.333333151208,8.19999786655069" />
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Sequence Container\Drop insert table"
           TopLeft="31.3333331512084,111.533330536948" />
-        <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Sequence Container\Overwrite insert table"
-          TopLeft="24.1666817375353,205.666664961113" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
-          TopLeft="104.8,50.6666645271906">
+          TopLeft="110.933333151208,49.7999978665507">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.93333315120843,60.8666660097574"
+              EndConnector="0,61.7333326703974"
               Start="0,0"
-              End="8.93333315120843,53.3666660097574">
+              End="0,54.2333326703974">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.4333330048787" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.4333330048787"
-                    Point2="0,30.4333330048787"
-                    Point3="4,30.4333330048787" />
-                  <mssgle:LineSegment
-                    End="4.93333315120843,30.4333330048787" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.93333315120843,30.4333330048787"
-                    Point2="8.93333315120843,30.4333330048787"
-                    Point3="8.93333315120843,34.4333330048787" />
-                  <mssgle:LineSegment
-                    End="8.93333315120843,53.3666660097574" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="113.150007444372,153.133330536948">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.5333344241649"
-              Start="0,0"
-              End="0,45.0333344241649">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.0333344241649" />
+                    End="0,54.2333326703974" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
