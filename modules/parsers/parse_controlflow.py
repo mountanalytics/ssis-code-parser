@@ -1,5 +1,6 @@
 import configparser
 import copy
+import pickle
 from collections import defaultdict
 from collections import OrderedDict 
 import pandas as pd
@@ -274,7 +275,7 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
     #print(sql_statement)
     #print()
 
-    nodes, lineages, variable_tables = main(sql_statement, result_set, nodes, lineages, variable_tables, node_name)
+    nodes, lineages, variable_tables, nodes_flag = main(sql_statement, result_set, nodes, lineages, variable_tables, node_name)
 
     for i in nodes:
         pass
@@ -286,7 +287,7 @@ def executesql_parser(control_flow, nodes, lineages, variable_tables, node_name,
     #print('----------------')
     #print() 
 
-    return nodes, lineages, variable_tables, node_name
+    return nodes, lineages, variable_tables, node_name, nodes_flag
     
     
     
@@ -409,7 +410,7 @@ def foreachloop_parser(control_flow, nodes, lineages, variable_tables, node_name
 
     nodes = pd.concat([nodes, pd.DataFrame([{'NAME_NODE': node_name,'LABEL_NODE': node_name, 'FILTER': None, 'FUNCTION': 'ForEachLoopContainer', 'JOIN_ARG': None, 'COLOR': "#d0d3d3"}])], ignore_index=True)
 
-    _, _, _, sql_node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
+    _, _, _, sql_node_name, _ = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
     #_, sql_node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node_name, True)
     variables = control_flow[node_name]['Iterr_variables']
     input_table = control_flow[node_name]['Input_variable']
@@ -438,14 +439,15 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
     nodes = pd.DataFrame()
     lineages = pd.DataFrame()
     variable_tables = {} 
-
+    node_flag_main = {}
     # iterate through the control flow nodes and extract and parse SQL statement
     for node in control_flow.keys():
         if control_flow[node]['Description'] == 'Execute SQL Task':
             #nodes, lineages, variable_tables, _ = executesql_parser(control_flow, nodes, lineages, variable_tables, node, False)
-            nodes_sql, lin_sql, variable_tables, node_name = executesql_parser(control_flow, nodes, lineages, variable_tables, node, False)
+            nodes_sql, lin_sql, variable_tables, node_name, node_flag = executesql_parser(control_flow, nodes, lineages, variable_tables, node, False)
             lineages = pd.concat([lineages,pd.DataFrame(lin_sql)])
             nodes = pd.concat([nodes,pd.DataFrame(nodes_sql)])
+            node_flag_main.update(node_flag)
 
         elif control_flow[node]['Description'] == 'Foreach Loop Container':
             nodes_sql, lin_sql = foreachloop_parser(control_flow, nodes, lineages, variable_tables, node)
@@ -498,6 +500,8 @@ def parse_sql_queries(control_flow:dict, file_name:str) -> tuple[pd.DataFrame, p
         axis=1
     )
     lineages_df.to_csv(f'output-data/lineages/lineage-{file_name}_cf.csv',index=False) # save lineages file
+    with open('output-data/nodes_flag.pickle', 'wb') as handle:
+        pickle.dump(node_flag_main, handle)
     return nodes_df, lineages_df
 
 

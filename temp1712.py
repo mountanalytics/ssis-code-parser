@@ -1,7 +1,9 @@
 import pandas as pd
+import itertools
 import re
 import os
-
+import pickle
+"""
 def format_hover_label_join(join_string: str) -> str:
     join_string = join_string.replace("['","").replace("']","").replace("', '"," ")
     join_string = re.sub(r'\b\s[Aa][Ss]\s+\w+', '', join_string)
@@ -37,36 +39,49 @@ def format_hover_label_join(join_string: str) -> str:
         recombined_list.insert(0, current_part)
     form_string = " ".join(recombined_list).strip()
     return form_string
-def extract_usage_error_tables(folder_path: str) -> tuple[pd.DataFrame,pd.DataFrame]:
+"""
+
+
+
+
+
+
+def error_tables_flag(folder_path: str, label_node_dict: dict) -> dict:
+    for first_key in label_node_dict.keys():  # Get the first key in the dictionary
+        label_node_dict[first_key].update({"no_error_table": False, "error_table": False})
     csv_files = [f for f in os.listdir(folder_path) if f.endswith('.csv')]
     nodes = pd.read_csv("output-data/nodes.csv")
-    nodes_no_error_table = pd.DataFrame()
-    nodes_with_error_table = pd.DataFrame()
     for files in csv_files:
         lineages = pd.read_csv(f"{folder_path}{files}")
-        
-        
         nodes = nodes[pd.notna(nodes["JOIN_ARG"])]
         lineages = lineages[lineages["SOURCE_NODE"].isin(nodes["ID"])].drop_duplicates(subset=["SOURCE_NODE", "TARGET_NODE"])
         source_node_counts = lineages["SOURCE_NODE"].value_counts()
         nodes_no_error_table_temp = nodes[nodes["ID"].isin(source_node_counts[source_node_counts == 1].index)][["LABEL_NODE","JOIN_ARG"]]
         nodes_with_error_table_temp = nodes[nodes["ID"].isin(source_node_counts[source_node_counts > 1].index)][["LABEL_NODE","JOIN_ARG"]]
-        nodes_no_error_table_temp["JOIN_ARG"] = nodes_no_error_table_temp["JOIN_ARG"].apply(format_hover_label_join)
-        nodes_with_error_table_temp["JOIN_ARG"] = nodes_with_error_table_temp["JOIN_ARG"].apply(format_hover_label_join)
-        
-        
-        nodes_with_error_table = pd.concat([nodes_with_error_table,nodes_with_error_table_temp],ignore_index=True)
-        nodes_no_error_table = pd.concat([nodes_no_error_table,nodes_no_error_table_temp],ignore_index=True)
-    return nodes_no_error_table, nodes_with_error_table
+        for _, label in nodes_no_error_table_temp.iterrows():
+            if label["LABEL_NODE"] in label_node_dict.keys():
+                label_node_dict[label["LABEL_NODE"]]["no_error_table"] = True
+            else:
+                label_node_dict[label["LABEL_NODE"]] = {"no_error_table": True, "error_table": False}
+        for _, label in nodes_with_error_table_temp.iterrows():
+            if label["LABEL_NODE"] in label_node_dict.keys():
+                label_node_dict[label["LABEL_NODE"]]["error_table"] = True
+            else:
+                label_node_dict[label["LABEL_NODE"]] = {"error_table": True, "no_error_table": False}
+    return label_node_dict
 
 folder_path = "output-data/lineages/"
-nodes_no_error_table, nodes_with_error_table = extract_usage_error_tables(folder_path)
-nodes_no_error_table["flag"] = "no_error_table"
-nodes_with_error_table["flag"] = "error_table"
-flag_table = pd.concat([nodes_no_error_table, nodes_with_error_table],ignore_index=True)[["LABEL_NODE","flag"]]
-new_row = pd.DataFrame({"LABEL_NODE": ["query_User::RecordCount"], "flag": ["hard_coded"]})
-flag_table = pd.concat([flag_table, new_row], ignore_index=True)
-flag_table.to_csv("output-data/nodes_rat_score.csv",index=False)
+nodes = pd.read_csv("output-data/nodes.csv")
+with open('output-data/nodes_flag.pickle', 'rb') as handle:
+    label_node_dict = pickle.load(handle)
+label_node_dict = error_tables_flag(folder_path, label_node_dict)
+
+
+
+
+
+
+
 
 
 
