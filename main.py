@@ -73,5 +73,11 @@ def run_ssis_parser(folder:str):
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     run_ssis_parser("data/Demo_rabo/Demo_rabo/")
     #run_ssis_parser("data/")
+=======
+    #run_ssis_parser("data/Demo_rabo/Demo_rabo/")
+    run_ssis_parser("data/")
+ 
+>>>>>>> 7eb4878bf107e2020591b10827a1a731fb2315f0
