@@ -1,0 +1,12 @@
+,ID_block_out,ID_block_in,type_block_out,type_block_in
+0,Package\Region merge\Grouped_country_state,Package\Region merge\Orginal_table,Microsoft.Aggregate,Microsoft.SSISODBCDst
+1,Package\Region merge\Data Conversion 1,Package\Region merge\Sort teritory,Microsoft.DataConvert,Microsoft.Sort
+2,Package\Region merge\Data Conversion,Package\Region merge\Sort region,Microsoft.DataConvert,Microsoft.Sort
+3,Package\Region merge\Merge Join,Package\Region merge\Multicast,Microsoft.MergeJoin,Microsoft.Multicast
+4,Package\Region merge\Multicast,Package\Region merge\Unpivot,Microsoft.Multicast,Microsoft.UnPivot
+5,Package\Region merge\Multicast,Package\Region merge\Grouped_country_state,Microsoft.Multicast,Microsoft.Aggregate
+6,Package\Region merge\Teritory,Package\Region merge\Data Conversion 1,Microsoft.SSISODBCSrc,Microsoft.DataConvert
+7,Package\Region merge\Region,Package\Region merge\Data Conversion,Microsoft.SSISODBCSrc,Microsoft.DataConvert
+8,Package\Region merge\Sort teritory,Package\Region merge\Merge Join,Microsoft.Sort,Microsoft.MergeJoin
+9,Package\Region merge\Sort region,Package\Region merge\Merge Join,Microsoft.Sort,Microsoft.MergeJoin
+10,Package\Region merge\Unpivot,Package\Region merge\Pivot_table,Microsoft.UnPivot,Microsoft.SSISODBCDst

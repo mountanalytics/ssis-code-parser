@@ -109,12 +109,36 @@ def parse_control_flow(open_dtsx: dict, file_name:str) -> dict:
         elif control_node['DTS:CreationName'] =='STOCK:FOREACHLOOP':
             dict_blocks[control_node["DTS:refId"]] = parse_foreach_container(control_node)
 
+        if control_node["DTS:CreationName"] == "STOCK:SEQUENCE":
+            dict_blocks[control_node["DTS:refId"]] = {'Description': control_node['DTS:Description'], "key": idx}
+            for seq_comp in control_node["DTS:Executables"]["DTS:Executable"]:
+                if seq_comp['DTS:CreationName'] =='Microsoft.ExecuteSQLTask': 
+                    dict_blocks[seq_comp["DTS:refId"]] = parse_sql_task(seq_comp)
+                elif seq_comp['DTS:CreationName'] == 'Microsoft.Pipeline':
+                    dict_blocks[seq_comp["DTS:refId"]] = {'Description': seq_comp['DTS:Description'], 'Index': idx, "Block_name": seq_comp['DTS:refId'].replace("\\", "@")}
+
+                elif seq_comp['DTS:CreationName'] =='Microsoft.ExpressionTask': 
+                    dict_blocks[seq_comp["DTS:refId"]] = {'Description': seq_comp['DTS:Description'], 'Expression' : seq_comp['DTS:ObjectData']['ExpressionTask']['Expression']}
+
+                elif seq_comp['DTS:CreationName'] =='STOCK:FOREACHLOOP':
+                    dict_blocks[seq_comp["DTS:refId"]] = parse_foreach_container(seq_comp)
+                
+                
     # sort the nodes
     df_lineage = pd.DataFrame(columns=["ID_block_out","ID_block_in"])
 
     for const in open_dtsx["DTS:PrecedenceConstraints"]["DTS:PrecedenceConstraint"]:
-        df_lineage = pd.concat([df_lineage,pd.DataFrame({"ID_block_out" : [const["DTS:From"]], "ID_block_in": [const["DTS:To"]]})])
-
+        if dict_blocks[const["DTS:From"]]['Description'] != 'Sequence Container':
+            df_lineage = pd.concat([df_lineage,pd.DataFrame({"ID_block_out" : [const["DTS:From"]], "ID_block_in": [const["DTS:To"]]})])
+        if dict_blocks[const["DTS:To"]]['Description'] == 'Sequence Container':
+            from_seq = open_dtsx["DTS:Executables"]["DTS:Executable"][dict_blocks[const["DTS:To"]]['key']]["DTS:PrecedenceConstraints"]["DTS:PrecedenceConstraint"][0]["DTS:From"]
+            df_lineage = pd.concat([df_lineage,pd.DataFrame({"ID_block_out" : [const["DTS:To"]], "ID_block_in": [from_seq]})])
+            for seq_const in open_dtsx["DTS:Executables"]["DTS:Executable"][dict_blocks[const["DTS:To"]]['key']]["DTS:PrecedenceConstraints"]["DTS:PrecedenceConstraint"]:
+                df_lineage = pd.concat([df_lineage,pd.DataFrame({"ID_block_out" : [seq_const["DTS:From"]], "ID_block_in": [seq_const["DTS:To"]]})])
+        elif dict_blocks[const["DTS:From"]]['Description'] == 'Sequence Container':
+            from_seq = open_dtsx["DTS:Executables"]["DTS:Executable"][dict_blocks[const["DTS:From"]]['key']]["DTS:PrecedenceConstraints"]["DTS:PrecedenceConstraint"][-1]["DTS:To"]
+            df_lineage = pd.concat([df_lineage,pd.DataFrame({"ID_block_out" : [from_seq], "ID_block_in": [const["DTS:To"]]})])
+            
     start_node = df_lineage['ID_block_out'][~df_lineage['ID_block_out'].isin(df_lineage['ID_block_in'])].values[0]
     end_node = df_lineage['ID_block_in'][~df_lineage['ID_block_in'].isin(df_lineage['ID_block_out'])].values[0]
 

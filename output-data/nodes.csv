@@ -1,85 +1,46 @@
-LABEL_NODE,ID,FUNCTION,JOIN_ARG,SPLIT_ARG,NAME_NODE,FILTER,COLOR,_merge
-FTP_Unpivot,0,DataSources,,,FTP_Unpivot,,#42d6a4,left_only
-query_Package\FTP_unvipot_1,1,query,None,,query_Package\FTP_unvipot_1,"WHERE (Level_4 = 'Fixed Rate Mortgages' AND Forward_Starting = 'FS' AND Funding_space_Component IS ONE OF ('Basefundinginterest', 'Principal', 'Total Value') AND market_shock IS NOT ONE OF ('Book Value', 'Face Amount', 'Net WAC', 'WAL_0')) OR (instrument_set = 'Mortgage Proposal' AND Funding_space_Component IS ONE OF ('Basefundinginterest', 'Principal', 'Total Value') AND market_shock IS NOT ONE OF ('Book Value', 'Face Amount', 'Net WAC', 'WAL_0')) AND (Portfolio ENDS WITH 'OBV' OR Portfolio ENDS WITH 'ABB')",#db59a5,left_only
-FTP_Unpivot,2,DataSources,,,FTP_Unpivot,,#42d6a4,left_only
-query_Package\FTP_unvipot_2,3,query,None,,query_Package\FTP_unvipot_2,"WHERE (Level_4 = 'Fixed Rate Mortgages' AND instrumnet_set IS ONE OF ('mortgage', 'offset mortgage') AND external_counterparty_segment = 'households' AND (market_shock ENDS WITH 'SOT' OR market_shock ENDS WITH 'EVEatR')) OR (Level_4 = 'Fixed Rate Mortgage Savings' AND instrument_set = 'mortgage savings' AND (market_shock ENDS WITH 'SOT' OR market_shock ENDS WITH 'EVEatR')) AND (Portfolio ENDS WITH 'OBV' OR Portfolio ENDS WITH 'ABB')",#db59a5,left_only
-REP_Discount_Factors,4,DataSources,,,REP_Discount_Factors,,#42d6a4,left_only
-query_Package\Delete_discount_factors_2,5,delete table where,,,query_Package\Delete_discount_factors_2,DELETE WHERE Market = '12/31/2021',#3270C0,left_only
-REP_Master_GAP,6,DataSources,,,REP_Master_GAP,,#42d6a4,left_only
-query_Package\del_master_gap_2,7,delete table where,,,query_Package\del_master_gap_2,"DELETE WHERE Entity = IF 'TRG' = 'BWF', THEN 'BPD', ELSE 'TRG' AND Source = 'QRM' AND Market_as_of_date = '3/31/2016'",#3270C0,left_only
-User::Port_current,8,variable,,,User::Port_current,,#D0D708,left_only
-User::Market_date,9,variable,,,User::Market_date,,#D0D708,left_only
-User::Matchgap,10,variable,,,User::Matchgap,,#D0D708,left_only
-User::Comp_Name,11,variable,,,User::Comp_Name,,#D0D708,left_only
-Package\select_res@subquery_1_Package\select_res,12,subquery,,,subquery_1_Package\select_res,QRM.Run_Time_Description.CompanyName = User::Comp_Name AND QRM.Run_Time_Description.Portfolio = User::Port_current,#db59a5,left_only
-Run_Time_Description,13,DataSources,,,Run_Time_Description,,#42d6a4,left_only
-query_User::Run_time_descip,14,query,,,query_User::Run_time_descip,1 = 1 AND QRM.Run_Time_Description.Portfolio = User::Port_current AND (CONVERT QRM.Run_Time_Description.Market TO DATE) = (CONVERT User::Market_date TO DATE) AND QRM.Run_Time_Description.Strategy CONTAINS User::Matchgap AND QRM.Run_Time_Description.CompanyName = User::Comp_Name AND QRM.Run_Time_Description.DateTimeStamp = (subquery_1_Package\select_res),#db59a5,left_only
-User::Run_time_descip,15,variable,,,User::Run_time_descip,,#D0D708,left_only
-Run_Time_Description,16,DataSources,,,Run_Time_Description,,#42d6a4,left_only
-PortfolioCurrent,17,variable,,,PortfolioCurrent,'5/31/2024',#db59a5,left_only
-Entity,18,variable,,,Entity,'OBV',#db59a5,left_only
-DataSetEmpty,19,variable,,,DataSetEmpty,0,#db59a5,left_only
-@DataSetEmpty,20,variable,,,@DataSetEmpty,"IF NOT EXISTS (
-	SELECT 1
-	FROM exp.MDSStoBETValuationResult
-	WHERE Entity = @Entity
-	and CONVERT(date, PortfolioAsOfDate) = CONVERT(date, @PortfolioCurrent)
-)
-SET @DataSetEmpty = 1",#db59a5,left_only
-Package\RecordCount@subquery_3_Package\RecordCount,21,subquery,,,subquery_3_Package\RecordCount,,#d0d3d3,left_only
-FTP_Unpivot,22,DataSources,,,FTP_Unpivot,,#42d6a4,left_only
-Package\RecordCount@subquery_2_Package\RecordCount,23,subquery,,,subquery_2_Package\RecordCount,,#d0d3d3,left_only
-FTP_Shocks,24,DataSources,,,FTP_Shocks,,#42d6a4,left_only
-Package\RecordCount@subquery_1_Package\RecordCount,25,subquery,,,subquery_1_Package\RecordCount,,#d0d3d3,left_only
-FTP_Base,26,DataSources,,,FTP_Base,,#42d6a4,left_only
-query_User::RecordCount,27,query,JOIN (subquery_2_Package\RecordCount) AS FSH ON 1 = 1 JOIN (subquery_3_Package\RecordCount) AS FUP ON 1 = 1,,query_User::RecordCount,,#9D94FF,left_only
-User::RecordCount,28,variable,,,User::RecordCount,,#D0D708,left_only
-Package\RecordCount@(subquery_1_Package\RecordCount),29,subquery,JOIN (subquery_2_Package\RecordCount) AS FSH ON 1 = 1 JOIN (subquery_3_Package\RecordCount) AS FUP ON 1 = 1,,(subquery_1_Package\RecordCount),,#d0d3d3,left_only
-Package\RecordCount@(subquery_2_Package\RecordCount),30,subquery,JOIN (subquery_2_Package\RecordCount) AS FSH ON 1 = 1 JOIN (subquery_3_Package\RecordCount) AS FUP ON 1 = 1,,(subquery_2_Package\RecordCount),,#d0d3d3,left_only
-Package\RecordCount@(subquery_3_Package\RecordCount),31,subquery,JOIN (subquery_2_Package\RecordCount) AS FSH ON 1 = 1 JOIN (subquery_3_Package\RecordCount) AS FUP ON 1 = 1,,(subquery_3_Package\RecordCount),,#d0d3d3,left_only
-User::Product,32,variable,,,User::Product,,#D0D708,left_only
-User::Period,33,variable,,,User::Period,,#D0D708,left_only
-User::FileID,34,variable,,,User::FileID,,#D0D708,left_only
-query_User::New_table_long,35,query,INNER JOIN dbo.tbl_Product_file AS PF ON dbo.tbl_Product.Product_id = dbo.tbl_Product_file.Product_id AND dbo.tbl_Product.Period = dbo.tbl_Product_file.Period LEFT JOIN dbo.tbl_File_State AS FS ON dbo.tbl_Product_file.Product_id = dbo.tbl_File_State.Product_id AND dbo.tbl_Product_file.Period = dbo.tbl_File_State.Period AND dbo.tbl_Product_file.File_id = dbo.tbl_File_State.File_id INNER JOIN dbo.tbl_Product_parameter AS PP1 ON dbo.tbl_Product_file.Product_id = dbo.tbl_Product_parameter.Product_id AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period INNER JOIN dbo.tbl_Product_parameter AS PP2 ON dbo.tbl_Product_parameter.Product_id = 'GEN' AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period INNER JOIN dbo.tbl_Product_parameter AS PP3 ON dbo.tbl_Product_parameter.Product_id = 'GEN' AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period,,query_User::New_table_long,dbo.tbl_Product_parameter.Action_Take = 'Portdate' AND dbo.tbl_Product_parameter.Action_Take = 'ReportingDatabase' AND dbo.tbl_Product_parameter.Action_Take = 'ReportingServer' AND dbo.tbl_Product.Product_id = User::Product AND dbo.tbl_Product.Period = User::Period AND dbo.tbl_Product_file.File_id = User::FileID,#db59a5,left_only
-User::New_table_long,36,variable,,,User::New_table_long,,#D0D708,left_only
-tbl_Product,37,DataSources,,,tbl_Product,,#42d6a4,left_only
-tbl_Product_file,38,DataSources,,,tbl_Product_file,,#42d6a4,left_only
-tbl_File_State,39,DataSources,,,tbl_File_State,,#42d6a4,left_only
-tbl_Product_parameter,40,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
-tbl_Product_parameter,41,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
-tbl_Product_parameter,42,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
-Package\rec_count@subquery_5_Package\rec_count,43,subquery,,,subquery_5_Package\rec_count,,#d0d3d3,left_only
-GAP,44,DataSources,,,GAP,,#42d6a4,left_only
-Package\rec_count@subquery_4_Package\rec_count,45,subquery,,,subquery_4_Package\rec_count,,#d0d3d3,left_only
-Forecast_Periods,46,DataSources,,,Forecast_Periods,,#42d6a4,left_only
-Package\rec_count@subquery_3_Package\rec_count,47,subquery,,,subquery_3_Package\rec_count,,#d0d3d3,left_only
-Account_Dimension,48,DataSources,,,Account_Dimension,,#42d6a4,left_only
-Package\rec_count@subquery_2_Package\rec_count,49,subquery,,,subquery_2_Package\rec_count,,#d0d3d3,left_only
-Run_Time_Description,50,DataSources,,,Run_Time_Description,,#42d6a4,left_only
-Package\rec_count@subquery_1_Package\rec_count,51,subquery,,,subquery_1_Package\rec_count,,#d0d3d3,left_only
-PlanningDimentsions,52,DataSources,,,PlanningDimentsions,,#42d6a4,left_only
-query_User::Rec_cnt,53,query,JOIN (subquery_2_Package\rec_count) AS RTD ON 1 = 1 JOIN (subquery_3_Package\rec_count) AS ACD ON 1 = 1 JOIN (subquery_4_Package\rec_count) AS FOP ON 1 = 1 JOIN (subquery_5_Package\rec_count) AS GAP ON 1 = 1,,query_User::Rec_cnt,,#9D94FF,left_only
-User::Rec_cnt,54,variable,,,User::Rec_cnt,,#D0D708,left_only
-Package\rec_count@(subquery_1_Package\rec_count),55,subquery,JOIN (subquery_2_Package\rec_count) AS RTD ON 1 = 1 JOIN (subquery_3_Package\rec_count) AS ACD ON 1 = 1 JOIN (subquery_4_Package\rec_count) AS FOP ON 1 = 1 JOIN (subquery_5_Package\rec_count) AS GAP ON 1 = 1,,(subquery_1_Package\rec_count),,#d0d3d3,left_only
-Package\rec_count@(subquery_2_Package\rec_count),56,subquery,JOIN (subquery_2_Package\rec_count) AS RTD ON 1 = 1 JOIN (subquery_3_Package\rec_count) AS ACD ON 1 = 1 JOIN (subquery_4_Package\rec_count) AS FOP ON 1 = 1 JOIN (subquery_5_Package\rec_count) AS GAP ON 1 = 1,,(subquery_2_Package\rec_count),,#d0d3d3,left_only
-Package\rec_count@(subquery_3_Package\rec_count),57,subquery,JOIN (subquery_2_Package\rec_count) AS RTD ON 1 = 1 JOIN (subquery_3_Package\rec_count) AS ACD ON 1 = 1 JOIN (subquery_4_Package\rec_count) AS FOP ON 1 = 1 JOIN (subquery_5_Package\rec_count) AS GAP ON 1 = 1,,(subquery_3_Package\rec_count),,#d0d3d3,left_only
-Package\rec_count@(subquery_4_Package\rec_count),58,subquery,JOIN (subquery_2_Package\rec_count) AS RTD ON 1 = 1 JOIN (subquery_3_Package\rec_count) AS ACD ON 1 = 1 JOIN (subquery_4_Package\rec_count) AS FOP ON 1 = 1 JOIN (subquery_5_Package\rec_count) AS GAP ON 1 = 1,,(subquery_4_Package\rec_count),,#d0d3d3,left_only
-Package\rec_count@(subquery_5_Package\rec_count),59,subquery,JOIN (subquery_2_Package\rec_count) AS RTD ON 1 = 1 JOIN (subquery_3_Package\rec_count) AS ACD ON 1 = 1 JOIN (subquery_4_Package\rec_count) AS FOP ON 1 = 1 JOIN (subquery_5_Package\rec_count) AS GAP ON 1 = 1,,(subquery_5_Package\rec_count),,#d0d3d3,left_only
-LKP_Counterparty,60,DataSources,,,LKP_Counterparty,,#42d6a4,left_only
-GAP,61,DataSources,,,GAP,,#42d6a4,left_only
-GAP,62,DataSources,,,GAP,,#42d6a4,left_only
-GAP,63,DataSources,,,GAP,,#42d6a4,left_only
-query_Package\Update_GAP_1,64,query,"['LEFT JOIN cfg.LKP_Counterparty AS cp ON cp.Intercompany_Legal_Entity = staging.GAP.Intercompany_Legal_Entity', 'AND cp.Intercompany_Counterparty = staging.GAP.Intercompany_Counterparty']",,query_Package\Update_GAP_1,,#9D94FF,left_only
-GAP_DCF_Intermediate,65,DataSources,,,GAP_DCF_Intermediate,,#42d6a4,left_only
-query_Package\GAP_DCF_1,66,query,None,,query_Package\GAP_DCF_1,"WHERE ((Level_04 = 'Fixed Rate Mortgages' AND Forward_Starting = 'FS' AND Funding_Component_Mapping_ID IS ONE OF ('Base funding interest', 'Principal', 'Total Value')) OR (instrument_set = 'Mortgage Proposal' AND Funding_Component_Mapping_ID IS ONE OF ('Base funding interest', 'Principal', 'Total Value'))) AND (Entity IS ONE OF ('OBV', 'ABB'))",#db59a5,left_only
-User::Product,67,variable,,,User::Product,,#D0D708,left_only
-User::Period,68,variable,,,User::Period,,#D0D708,left_only
-User::FileID,69,variable,,,User::FileID,,#D0D708,left_only
-query_User::Table_joins,70,query,INNER JOIN dbo.tbl_Product_file AS PF ON dbo.tbl_Product.Product_id = dbo.tbl_Product_file.Product_id AND dbo.tbl_Product.Period = dbo.tbl_Product_file.Period LEFT JOIN dbo.tbl_File_State AS FS ON dbo.tbl_Product_file.Product_id = dbo.tbl_File_State.Product_id AND dbo.tbl_Product_file.Period = dbo.tbl_File_State.Period AND dbo.tbl_Product_file.File_id = dbo.tbl_File_State.File_id INNER JOIN dbo.tbl_Product_parameter AS PP1 ON dbo.tbl_Product_file.Product_id = dbo.tbl_Product_parameter.Product_id AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period INNER JOIN dbo.tbl_Product_parameter AS PP2 ON dbo.tbl_Product_parameter.Product_id = 'GEN' AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period INNER JOIN dbo.tbl_Product_parameter AS PP3 ON dbo.tbl_Product_parameter.Product_id = 'GEN' AND dbo.tbl_Product_file.Period = dbo.tbl_Product_parameter.Period,,query_User::Table_joins,dbo.tbl_Product_parameter.Action_Take = 'Portdate' AND dbo.tbl_Product.Product_id = User::Product AND dbo.tbl_Product.Period = User::Period AND dbo.tbl_Product_file.File_id = User::FileID AND dbo.tbl_Product_parameter.Action_Take = 'ReportingDatabase' AND dbo.tbl_Product_parameter.Action_Take = 'ReportingServer',#db59a5,left_only
-User::Table_joins,71,variable,,,User::Table_joins,,#D0D708,left_only
-tbl_Product,72,DataSources,,,tbl_Product,,#42d6a4,left_only
-tbl_Product_file,73,DataSources,,,tbl_Product_file,,#42d6a4,left_only
-tbl_File_State,74,DataSources,,,tbl_File_State,,#42d6a4,left_only
-tbl_Product_parameter,75,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
-tbl_Product_parameter,76,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
-tbl_Product_parameter,77,DataSources,,,tbl_Product_parameter,,#42d6a4,left_only
+LABEL_NODE,ID,FUNCTION,JOIN_ARG,SPLIT_ARG,NAME_NODE,FILTER,COLOR,_merge,SORT,PIVOT,AGGREGATE
+query_User::res_set,0,query,,,query_User::res_set,dbo.Products_Extract.Country = User::Ship_country AND dbo.Products_Extract.UnitsInStock > User::Unit_stock,#db59a5,left_only,,,
+User::res_set,1,variable,,,User::res_set,,#D0D708,left_only,,,
+Products_Extract,2,DataSources,,,Products_Extract,,#42d6a4,left_only,,,
+query_User::res_set,3,query,,,query_User::res_set,dbo.Products_Extract.Country = User::Ship_country AND dbo.Products_Extract.UnitsInStock > User::Unit_stock,#db59a5,left_only,,,
+User::res_set,4,variable,,,User::res_set,,#D0D708,left_only,,,
+Products_Extract,5,DataSources,,,Products_Extract,,#42d6a4,left_only,,,
+Package\Loop over variable table,6,ForEachLoopContainer,,,Package\Loop over variable table,,#d0d3d3,left_only,,,
+User::Rows_suppliers,7,variable,,,User::Rows_suppliers,,#d0d3d3,left_only,,,
+SSIS_Logger,8,DataSources,,,SSIS_Logger,,#d0d3d3,left_only,,,
+query_Package\Sequence Container\insert into logger_1,9,query,,,query_Package\Sequence Container\insert into logger_1,None,#db59a5,left_only,,,
+User::Cat_id,10,Variable,,,User::Cat_id,,#cdd408,left_only,,,
+User::CurrentDateTime,11,Variable,,,User::CurrentDateTime,,#cdd408,left_only,,,
+User::Errors_lookup,12,Variable,,,User::Errors_lookup,,#cdd408,left_only,,,
+User::Ship_country,13,Variable,,,User::Ship_country,,#cdd408,left_only,,,
+User::Sup_id,14,Variable,,,User::Sup_id,,#cdd408,left_only,,,
+User::Unit_stock,15,Variable,,,User::Unit_stock,,#cdd408,left_only,,,
+Merge and filter@Alter name pref,16,DerivedColumn,,,Alter name pref,,#d0d3d3,left_only,,,
+Merge and filter@Determine rows sup,17,RowCount,,,Determine rows sup,,#d0d3d3,left_only,,,
+Merge and filter@Error output table,18,SSISODBCDst,,,Error output table,,#d0d3d3,left_only,,,
+Error_lines,19,DataDestinations,,,Error_lines,,#42d6a4,left_only,,,
+Merge and filter@Error_match_column,20,DerivedColumn,,,Error_match_column,,#d0d3d3,left_only,,,
+Merge and filter@Load supplier,21,SSISODBCSrc,,,Load supplier,,#d0d3d3,left_only,,,
+Suppliers_Extract,22,DataSources,,,Suppliers_Extract,,#42d6a4,left_only,,,
+Merge and filter@Match with products,23,Lookup,SupplierID = SupplierID2,,Match with products,,#9d94ff,left_only,,,
+Merge and filter@Row Count errors,24,RowCount,,,Row Count errors,,#d0d3d3,left_only,,,
+Merge and filter@Split preferences,25,ConditionalSplit,,Discount > 0,Split preferences,,#9d94ff,left_only,,,
+Merge and filter@Union suppliers,26,UnionAll,,,Union suppliers,,#9d94ff,left_only,,,
+Merge and filter@Write Update sup table,27,SSISODBCDst,,,Write Update sup table,,#d0d3d3,left_only,,,
+Supp_Prod_output,28,DataDestinations,,,Supp_Prod_output,,#42d6a4,left_only,,,
+Region merge@Data Conversion,29,DataConvert,,,Data Conversion,,#d0d3d3,left_only,,,
+Region merge@Data Conversion 1,30,DataConvert,,,Data Conversion 1,,#d0d3d3,left_only,,,
+Region merge@Grouped_country_state,31,Aggregate,,,Grouped_country_state,,#d6f6ff,left_only,,,"Column: Country, Aggregation type: Group by<br />Column: RegionID, Aggregation type: Group by<br />Column: TerritoryID, Aggregation type: Group by<br />Column: State, Aggregation type: Group by"
+Region merge@Merge Join,32,Lookup,Inner join,,Merge Join,,#9d94ff,left_only,,,
+Region merge@Multicast,33,Multicast,,,Multicast,,#d0d3d3,left_only,,,
+Region merge@Orginal_table,34,SSISODBCDst,,,Orginal_table,,#d0d3d3,left_only,,,
+Orginal_territory,35,DataDestinations,,,Orginal_territory,,#42d6a4,left_only,,,
+Region merge@Pivot_table,36,SSISODBCDst,,,Pivot_table,,#d0d3d3,left_only,,,
+Pivot_territory,37,DataDestinations,,,Pivot_territory,,#42d6a4,left_only,,,
+Region merge@Region,38,SSISODBCSrc,,,Region,,#d0d3d3,left_only,,,
+Region_Extract,39,DataSources,,,Region_Extract,,#42d6a4,left_only,,,
+Region merge@Sort region,40,Sort,,,Sort region,,#4fbdb9,left_only,1. RegionID ASC<br />Drop duplicate rows: false,,
+Region merge@Sort teritory,41,Sort,,,Sort teritory,,#4fbdb9,left_only,1. DC_RegionID ASC<br />2. Country DESC<br />Drop duplicate rows: false,,
+Region merge@Teritory,42,SSISODBCSrc,,,Teritory,,#d0d3d3,left_only,,,
+Territories_Extract,43,DataSources,,,Territories_Extract,,#42d6a4,left_only,,,
+Region merge@Unpivot,44,Unpivot,,,Unpivot,,#8b6fae,left_only,,Pivot column: Name,

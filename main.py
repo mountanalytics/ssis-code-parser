@@ -63,7 +63,7 @@ def run_ssis_parser(folder:str):
         json.dump(flow, json_file, indent=4, default=str)
 
     nodes = node_lin_pars(flow) # merge nodes
-
+    
     # generate .docx report
     #report_analysis("output-data/reports/tables",'output-data/lineages/', 'output-data/nodes.csv', "Package 1_cf", "output-data/nodes/", file_name)
     #main_report_generation("output-data/reports/tables", "output-data/reports/MA_Rationalization_Model_Results.docx")
@@ -73,5 +73,5 @@ def run_ssis_parser(folder:str):
 
 
 if __name__ == "__main__":
-    #run_ssis_parser("data/Demo_rabo/Demo_rabo/")
-    run_ssis_parser("data/")
+    run_ssis_parser("data/Demo_rabo/Demo_rabo/")
+    #run_ssis_parser("data/")

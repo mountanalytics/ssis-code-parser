@@ -75,8 +75,29 @@ nodes = pd.read_csv("output-data/nodes.csv")
 with open('output-data/nodes_flag.pickle', 'rb') as handle:
     label_node_dict = pickle.load(handle)
 label_node_dict = error_tables_flag(folder_path, label_node_dict)
+a = label_node_dict.copy()
 
+# Define the default structure with 9 keys
+default_structure = {
+    "error_table": False,
+    "hard_coded": 0,
+    "more_3_joins": 0,
+    "more_5_vars": 0,
+    "no_error_table": False,
+    "query_length": 0,
+    "repl_null": 0,
+    "subqueries": 0,
+    "type_conversion": 0
+}
 
+# Iterate through each LABEL_NODE in the nodes DataFrame
+for label in nodes["LABEL_NODE"]:
+    if label not in label_node_dict:
+        label_node_dict[label] = default_structure
+    else:
+        for key in default_structure:
+            if key not in label_node_dict[label]:
+                label_node_dict[label][key] = default_structure[key]
 
 
 
